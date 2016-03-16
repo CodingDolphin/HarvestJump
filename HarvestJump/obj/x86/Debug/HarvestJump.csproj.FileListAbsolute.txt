@@ -54,3 +54,28 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\Harvest Jump\bin\Windows\Debug\Sh
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\Harvest Jump\obj\x86\Debug\HarvestJump.csprojResolveAssemblyReference.cache
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\Harvest Jump.exe
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\Harvest Jump.pdb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\blackPixel.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\IntroAssets\CompanyLogo.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Harvest Jump.exe
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Harvest Jump.pdb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\HarvestJump.csprojResolveAssemblyReference.cache

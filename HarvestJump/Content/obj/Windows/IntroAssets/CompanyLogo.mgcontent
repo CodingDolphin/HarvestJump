@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/Harvest Jump/Content/IntroAssets/CompanyLogo.png</SourceFile>
+  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/IntroAssets/CompanyLogo.png</SourceFile>
   <SourceTime>2016-03-15T12:31:05.8614867+01:00</SourceTime>
-  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/Harvest Jump/Content/bin/Windows/IntroAssets/CompanyLogo.xnb</DestFile>
-  <DestTime>2016-03-16T15:02:04.0154747+01:00</DestTime>
+  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/IntroAssets/CompanyLogo.xnb</DestFile>
+  <DestTime>2016-03-16T15:40:15.358506+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

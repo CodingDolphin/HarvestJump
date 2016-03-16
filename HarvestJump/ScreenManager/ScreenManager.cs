@@ -25,10 +25,6 @@ namespace Harvest_Jump
         private int screenWidth { get; set; }
         private int screenHeight { get; set; }
 
-        //Testing
-
-        Texture2D testSprite;
-
         //Declare all Constructor's here.
 
         public ScreenManager(GraphicsDeviceManager graphicsDeviceManager)
@@ -42,8 +38,8 @@ namespace Harvest_Jump
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
-            graphicDeviceManager.PreferredBackBufferWidth = screenWidth;
-            graphicDeviceManager.PreferredBackBufferHeight = screenHeight;
+            graphicDeviceManager.PreferredBackBufferWidth = 800;
+            graphicDeviceManager.PreferredBackBufferHeight = 600;
 
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
@@ -56,6 +52,8 @@ namespace Harvest_Jump
 
             screenList.Add(new MenuScreen("MENU", screenWidth, screenHeight));
             screenList.Add(new IntroScreen("INTRO", screenWidth, screenHeight));
+            screenList.Add(new PlayScreen("PLAYSCREEN", screenWidth, screenHeight));
+            currentScreen = screenList[2];
         }
         
         public void LoadContent(ContentManager content)
@@ -64,13 +62,12 @@ namespace Harvest_Jump
 
             this.content = content;
 
-            //Load Content here
-
-            testSprite = content.Load <Texture2D>("IntroAssets/CompanyLogo");
+            currentScreen.LoadContent(content);
         }
 
         public void Update(GameTime gameTime)
         {
+            currentScreen.Update(gameTime);
         }
 
         //buttonName has to Match ScreenName
@@ -85,7 +82,7 @@ namespace Harvest_Jump
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(testSprite, new Rectangle(0, 0, 100, 100), Color.White);
+            currentScreen.Draw(spriteBatch);
 
             spriteBatch.End();
 

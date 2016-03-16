@@ -12,7 +12,6 @@ namespace Harvest_Jump
     {
         //Only configurate the Intro Duration here !
 
-
         private const double introDuration = 5d;
 
         public IntroScreen(string screenName, int screenWidth, int screenHeight) : base(screenName, screenWidth, screenHeight)
