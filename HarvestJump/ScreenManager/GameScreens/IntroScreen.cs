@@ -33,6 +33,5 @@ namespace Harvest_Jump
         {
             throw new NotImplementedException();
         }
-
     }
 }
