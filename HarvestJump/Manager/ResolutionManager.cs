@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace Harvest_Jump
+namespace HarvestJump
 {
     class ResolutionManager
     {

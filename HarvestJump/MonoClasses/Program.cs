@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Harvest_Jump
+namespace HarvestJump
 {
 #if WINDOWS || LINUX
     /// <summary>

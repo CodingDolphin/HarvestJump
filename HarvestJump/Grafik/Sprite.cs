@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace Harvest_Jump
+namespace HarvestJump
 {
     class Sprite
     {
-        public Rectangle spriteRectangle;
-        public Texture2D spriteTexture;
+        public Rectangle spriteRectangle { get; set; }
+        public Texture2D spriteTexture { get; set; }
 
         public Sprite()
         {

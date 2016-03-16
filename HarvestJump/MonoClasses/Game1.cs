@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Harvest_Jump
+namespace HarvestJump
 {
     /// <summary>
     /// This is the main type for your game.

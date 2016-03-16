@@ -8,8 +8,8 @@
     <ProjectGuid>{8539A9C4-567C-49C6-A6CA-EF73C2B134F2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Harvest_Jump</RootNamespace>
-    <AssemblyName>Harvest Jump</AssemblyName>
+    <RootNamespace>HarvestJump</RootNamespace>
+    <AssemblyName>HarvestJump</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <MonoGameContentBuilderExe>
@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
+    <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
     <Compile Include="GameEntity\GameEntity.cs" />
     <Compile Include="ScreenManager\GameScreens\GameScreen.cs" />
