@@ -85,8 +85,6 @@ namespace HarvestJump
             currentScreen.Draw(spriteBatch);
 
             spriteBatch.End();
-
-
         }
     }
 }

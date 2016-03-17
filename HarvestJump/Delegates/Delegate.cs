@@ -6,8 +6,4 @@ using System.Text;
 namespace HarvestJump
 {
     public delegate void ScreenHandler(string screenName);
-
-    class Delegate
-    {
-    }
 }

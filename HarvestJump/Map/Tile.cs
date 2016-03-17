@@ -6,27 +6,20 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace HarvestJump.Map
+namespace HarvestJump
 {
     class Tile
     {
-        Texture2D tileTexture { get; set; }
-        Rectangle collisionBox { get; set; }
-
-        int tileWidth { get; set; }
-        int tileHeight { get; set; }
-
-        public Tile(int tileWidth, int tileHeight)
+        private Sprite tileSprite { get; set; }
+         
+        public Tile()
         {
-            this.tileWidth = tileWidth;
-            this.tileHeight = tileHeight;
-
-            collisionBox = new Rectangle(0, 0, tileWidth, tileHeight);
+            tileSprite = new Sprite();
         }
 
         public void LoadContent(ContentManager content, string assetName)
         {
-            tileTexture = content.Load<Texture2D>(assetName);
+            tileSprite.LoadContent(content, assetName);
         }
 
         public void Update(GameTime gameTime)
@@ -35,7 +28,7 @@ namespace HarvestJump.Map
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(tileTexture, Vector2.Zero, Color.White);
+            spriteBatch.Draw(tileSprite.spriteTexture, Vector2.Zero, Color.White);
         }
     }
 }
