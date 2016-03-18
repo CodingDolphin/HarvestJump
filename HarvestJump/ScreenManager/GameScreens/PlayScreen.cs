@@ -11,6 +11,7 @@ namespace HarvestJump
     class PlayScreen : GameScreen
     {
         Sprite testSprite;
+        RandomPlatformerMap platformerWorld;
 
         public PlayScreen(string screenName, int screenWidth, int screenHeight) : base(screenName, screenWidth, screenHeight)
         {

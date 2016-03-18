@@ -49,7 +49,7 @@
     <Compile Include="GameEntity\Player.cs" />
     <Compile Include="MonoClasses\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Map\RandomJumpMap.cs" />
+    <Compile Include="Map\RandomPlatformerMap.cs" />
     <Compile Include="Manager\ResolutionManager.cs" />
     <Compile Include="ScreenManager\GameScreens\PlayScreen.cs" />
     <Compile Include="ScreenManager\ScreenManager.cs" />
