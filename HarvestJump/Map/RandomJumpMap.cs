@@ -30,6 +30,7 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
+
         }
     }
 }
