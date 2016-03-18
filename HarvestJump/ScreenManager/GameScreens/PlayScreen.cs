@@ -15,12 +15,14 @@ namespace HarvestJump
 
         public PlayScreen(string screenName, int screenWidth, int screenHeight) : base(screenName, screenWidth, screenHeight)
         {
-            testSprite = new Sprite();
+            testSprite = new Sprite(0, 0, 800, 600);
+            platformerWorld = new RandomPlatformerMap();
         }
 
         public override void LoadContent(ContentManager content)
         {
             testSprite.spriteTexture = content.Load <Texture2D>("IntroAssets/CompanyLogo");
+            platformerWorld.LoadContent(content);
         }
 
         public override void Update(GameTime gameTime)
@@ -29,7 +31,8 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            testSprite.Draw(spriteBatch);
+            //testSprite.Draw(spriteBatch);
+            platformerWorld.Draw(spriteBatch);
         }
     }
 }

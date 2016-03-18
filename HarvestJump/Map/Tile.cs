@@ -10,11 +10,11 @@ namespace HarvestJump
 {
     class Tile
     {
-        private Sprite tileSprite { get; set; }
+        public Sprite tileSprite { get; set; }
          
-        public Tile()
+        public Tile(int x, int y, int tileWidth, int tileHeight)
         {
-            tileSprite = new Sprite();
+            tileSprite = new Sprite(x, y, tileWidth, tileHeight);
         }
 
         public void LoadContent(ContentManager content, string assetName)

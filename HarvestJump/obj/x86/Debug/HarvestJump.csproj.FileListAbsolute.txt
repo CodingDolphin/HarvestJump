@@ -106,3 +106,4 @@ C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.XInput.xml
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\Content\MapAssets\grassBlock.png
