@@ -46,9 +46,9 @@ namespace HarvestJump
             levelConstructed = false;
 
             maxPlatformLenght = 6;
-            maxHorizentalPlatformSpace = 4;
-            minPlatformLenght = 3;
-            minHorizontalPlatformSpace = 1;
+            maxHorizentalPlatformSpace = 5;
+            minPlatformLenght = 4;
+            minHorizontalPlatformSpace = 2;
 
             tileWidth = 32;
             tileHeight = 32;

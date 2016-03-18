@@ -38,8 +38,8 @@ namespace HarvestJump
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
-            graphicDeviceManager.PreferredBackBufferWidth = 800;
-            graphicDeviceManager.PreferredBackBufferHeight = 600;
+            graphicDeviceManager.PreferredBackBufferWidth = 1280;
+            graphicDeviceManager.PreferredBackBufferHeight = 720;
 
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
