@@ -10,9 +10,7 @@ namespace HarvestJump
 {
     class MenuScreen : GameScreen
     {
-        string screennamme;
-
-        public MenuScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
+        public MenuScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)  
         {
         }
         public override void Draw(SpriteBatch spriteBatch)

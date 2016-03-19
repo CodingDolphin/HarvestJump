@@ -38,6 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Content\SpriteSheet.cs" />
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
@@ -72,6 +73,7 @@
     <Content Include="Content\MapAssets\grassBlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\MapAssets\GrassPlatformSheet.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

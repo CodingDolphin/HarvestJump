@@ -10,18 +10,15 @@ namespace HarvestJump
 {
     class PlayScreen : GameScreen
     {
-        Sprite testSprite;
         RandomPlatformerMap platformerWorld;
 
         public PlayScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
-            testSprite = new Sprite(0, 0, 800, 600);
             platformerWorld = new RandomPlatformerMap();
         }
 
         public override void LoadContent(ContentManager content)
         {
-            testSprite.spriteTexture = content.Load <Texture2D>("IntroAssets/CompanyLogo");
             platformerWorld.LoadContent(content);
         }
 
