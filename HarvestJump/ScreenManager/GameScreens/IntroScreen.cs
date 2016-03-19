@@ -13,7 +13,7 @@ namespace HarvestJump
     {
         //Konstanten hier deklarieren
 
-        private const double introDuration = 4d;
+        private const double introDuration = 5d;
 
         //Klassenvariablen hier deklarieren
 
@@ -56,7 +56,7 @@ namespace HarvestJump
             }
         }
 
-        //Intro Ende hier behandeln
+        //Intro Ende hier behandeln und ScreenManager informieren
 
         private void onIntroEnd()
         {

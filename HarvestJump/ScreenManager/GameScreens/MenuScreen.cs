@@ -14,7 +14,6 @@ namespace HarvestJump
 
         public MenuScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
-            this.screennamme = screenName;
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
