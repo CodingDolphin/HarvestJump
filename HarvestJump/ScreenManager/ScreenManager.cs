@@ -9,27 +9,27 @@ namespace HarvestJump
 {
     class ScreenManager
     {
-        //Mono Components
+        //Alle Monogame Komponenten
 
         private GraphicsDeviceManager graphicDeviceManager { get; set; }
         private ContentManager content { get; set; }
 
-        //Declare all Properties here.
+        //Alle Klassenvariablen
 
         private List<GameScreen> screenList { get; set; }
         private GameScreen currentScreen { get; set; }
         private int screenWidth { get; set; }
         private int screenHeight { get; set; }
 
-        //Declare all Constructor's here.
+        //Alle Konstruktoren
 
         public ScreenManager(GraphicsDeviceManager graphicsDeviceManager)
         {
-            //Take Reference to all Important Graphic Objects
+            //Referenz zu GrafikDeviceManager holen
 
             this.graphicDeviceManager = graphicsDeviceManager;
 
-            //Configurate Screen
+            //Alle start Bildschimreinstellungen hier vornehmen
 
             graphicDeviceManager.PreferredBackBufferWidth = 800;
             graphicDeviceManager.PreferredBackBufferHeight = 600;
@@ -40,26 +40,26 @@ namespace HarvestJump
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
 
-            //Initialize all important Variables
+            //Alle wichtigen Variablen instanzieren
 
             screenList = new List<GameScreen>();
 
-            //Define all available Screens and give each Screen a Name for ScreenChange Events
+            //Weitere GameScreens hier hinzufügen
 
             screenList.Add(new IntroScreen(screenWidth, screenHeight));
             screenList.Add(new MenuScreen(screenWidth, screenHeight));
             screenList.Add(new PlayScreen(screenWidth, screenHeight));
             currentScreen = screenList[0];
 
-            //Register all Events here
+            //Events hier registrieren
 
             screenList[0].ScreenChanged += HandleScreenChange;
         }
 
+        //Allen Content hier laden
+
         public void LoadContent(ContentManager content)
         {
-            //Take Reference to the Content Manager
-
             this.content = content;
 
             foreach (GameScreen screen in screenList)
@@ -68,12 +68,14 @@ namespace HarvestJump
             }
         }
 
+        //Spiel Updaten
+
         public void Update(GameTime gameTime)
         {
             currentScreen.Update(gameTime);
         }
 
-        //buttonName has to Match ScreenName
+        //ScreenChange Events hier behandeln
 
         public void HandleScreenChange(ScreenName input)
         {
@@ -84,6 +86,8 @@ namespace HarvestJump
                 case ScreenName.PLAYSCREEN: currentScreen = screenList[2]; break;
             }
         }
+
+        //Aktuellen Gamescreen zeichnen
 
         public void Draw(SpriteBatch spriteBatch)
         {

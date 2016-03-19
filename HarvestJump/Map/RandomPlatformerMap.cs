@@ -10,11 +10,11 @@ namespace HarvestJump
 {
     class RandomPlatformerMap
     {
-        //Constants
+        //Konstanten hier deklarieren
 
         private const float gravity = 9.71f;
 
-        //Random World Properties
+        //Klassenvariablen hier deklarieren
 
         private bool levelConstructed { get; set; }
         private int platformLenght { get; set; }
@@ -25,30 +25,28 @@ namespace HarvestJump
         private int currentPositionX { get; set; }
         private int currentPositionY { get; set; }
 
-        //Horizontal Vars
-
-        private int maxHorizentalPlatformSpace { get; set; }
-        private int minHorizontalPlatformSpace { get; set; }
-
-        //Vertical Vars
-
-        private int maxVerticalPlatformSpace { get; set; }
-        private int minVerticalPlatformSpace { get; set; }
-
-        //Config Tile size here
-
-        private int tileWidth { get; set; }
-        private int tileHeight { get; set; }
-
-        //Declare all Properties here.
-
         private List<Tile> tileList;
         private Random random;
         private Sprite grassTile;
 
+        //Horizontale Variablen
+
+        private int maxHorizentalPlatformSpace { get; set; }
+        private int minHorizontalPlatformSpace { get; set; }
+
+        //Vertikale Variablen
+
+        private int maxVerticalPlatformSpace { get; set; }
+        private int minVerticalPlatformSpace { get; set; }
+
+        //Tile größe
+
+        private int tileWidth { get; set; }
+        private int tileHeight { get; set; }
+
         public RandomPlatformerMap()
         {
-            //New World config
+            //Map Eigenschaften hier einstellen
 
             startHeight = 400;
             maxPlatforms = 0;
@@ -68,7 +66,7 @@ namespace HarvestJump
             tileList = new List<Tile>();
             random = new Random();
 
-            //Start Map Generation
+            //Map Generierung starten
 
             CreateMap();         
         }

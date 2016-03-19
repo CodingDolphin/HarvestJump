@@ -23,14 +23,14 @@ namespace HarvestJump
 
     abstract class GameScreen
     {
-        //Member Variables for all GameScreens
+        //Alle Klassenvariablen für jeden GameScreen
 
         public ScreenState screenState { get; set; }
         public string screenName { get; protected set; }
         public int screenWidth { get; private set; }
         public int screenHeight { get; private set; }
 
-        //Declare all Constructor's here
+        //Alle Konstruktoren hier deklarieren
 
         protected GameScreen(int screenWidth, int screenHeight)
         {
@@ -39,7 +39,7 @@ namespace HarvestJump
             this.screenHeight = screenHeight;
         }
 
-        //Screen Change Event
+        //Registrierte Methoden über ScreenChange Event informieren
 
         public event ScreenHandler ScreenChanged;
 
@@ -49,7 +49,7 @@ namespace HarvestJump
                 ScreenChanged(input); 
         }
 
-        //Abstract Method Declartion
+        //Abstakte Methoden für jeden Screen
 
         public abstract void LoadContent(ContentManager content);
 

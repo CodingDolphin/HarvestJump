@@ -11,25 +11,31 @@ namespace HarvestJump
 {
     class IntroScreen : GameScreen
     {
-        //Constants configurate Intro Time here
+        //Konstanten hier deklarieren
 
         private const double introDuration = 3d;
 
-        //Declare Class Propertys here
+        //Klassenvariablen hier deklarieren
 
         private double deltaTime { get; set; }
         private Sprite menuBackground { get; set; }
         private SoundEffect introSound { get; set; }
+
+        //Konstruktoren hier deklarieren
 
         public IntroScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
             menuBackground = new Sprite(0, 0, screenWidth, screenHeight);
         }
 
+        //Allen Content hier laden
+
         public override void LoadContent(ContentManager content)
         {
             menuBackground.spriteTexture = content.Load<Texture2D>("IntroAssets/CompanyLogo");
         }
+
+        //GameScreen hier updaten
 
         public override void Update(GameTime gameTime)
         {
@@ -41,10 +47,14 @@ namespace HarvestJump
             }
         }
 
+        //Intro Ende hier behandeln
+
         private void onIntroEnd()
         {
             NotifyScreenChange(ScreenName.PLAYSCREEN);
         }
+
+        //Aktuellen Screen zeichnen
 
         public override void Draw(SpriteBatch spriteBatch)
         {
