@@ -28,7 +28,7 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(tileSprite.spriteTexture, Vector2.Zero, Color.White);
+            tileSprite.Draw(spriteBatch);
         }
     }
 }

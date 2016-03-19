@@ -5,5 +5,5 @@ using System.Text;
 
 namespace HarvestJump
 {
-    public delegate void ScreenHandler(string screenName);
+    public delegate void ScreenHandler(ScreenName input);
 }

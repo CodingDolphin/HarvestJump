@@ -9,10 +9,6 @@ namespace HarvestJump
 {
     class ScreenManager
     {
-        //Declare all Events here.
-
-        public event ScreenHandler MenuButtonPressed;
-
         //Mono Components
 
         private GraphicsDeviceManager graphicDeviceManager { get; set; }
@@ -35,11 +31,11 @@ namespace HarvestJump
 
             //Configurate Screen
 
-            screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            graphicDeviceManager.PreferredBackBufferWidth = 800;
+            graphicDeviceManager.PreferredBackBufferHeight = 600;
 
-            graphicDeviceManager.PreferredBackBufferWidth = 1280;
-            graphicDeviceManager.PreferredBackBufferHeight = 720;
+            screenWidth = graphicDeviceManager.PreferredBackBufferWidth;
+            screenHeight = graphicDeviceManager.PreferredBackBufferHeight;
 
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
@@ -50,19 +46,26 @@ namespace HarvestJump
 
             //Define all available Screens and give each Screen a Name for ScreenChange Events
 
-            screenList.Add(new MenuScreen("MENU", screenWidth, screenHeight));
-            screenList.Add(new IntroScreen("INTRO", screenWidth, screenHeight));
-            screenList.Add(new PlayScreen("PLAYSCREEN", screenWidth, screenHeight));
-            currentScreen = screenList[2];
+            screenList.Add(new IntroScreen(screenWidth, screenHeight));
+            screenList.Add(new MenuScreen(screenWidth, screenHeight));
+            screenList.Add(new PlayScreen(screenWidth, screenHeight));
+            currentScreen = screenList[0];
+
+            //Register all Events here
+
+            screenList[0].ScreenChanged += HandleScreenChange;
         }
-        
+
         public void LoadContent(ContentManager content)
         {
             //Take Reference to the Content Manager
 
             this.content = content;
 
-            currentScreen.LoadContent(content);
+            foreach (GameScreen screen in screenList)
+            {
+                screen.LoadContent(content);
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -72,8 +75,14 @@ namespace HarvestJump
 
         //buttonName has to Match ScreenName
 
-        public void HandleScreenChange(GameScreen source, string buttonName)
+        public void HandleScreenChange(ScreenName input)
         {
+            switch (input)
+            {
+                case ScreenName.INTROSCREEN: currentScreen = screenList[0]; break;
+                case ScreenName.MENUSCREEN: currentScreen = screenList[1]; break;
+                case ScreenName.PLAYSCREEN: currentScreen = screenList[2]; break;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -81,9 +90,7 @@ namespace HarvestJump
             graphicDeviceManager.GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-
             currentScreen.Draw(spriteBatch);
-
             spriteBatch.End();
         }
     }

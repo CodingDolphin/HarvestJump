@@ -26,7 +26,7 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteTexture, Vector2.Zero, Color.White);
+            spriteBatch.Draw(spriteTexture, spriteRectangle, Color.White);
         }
     }
 }

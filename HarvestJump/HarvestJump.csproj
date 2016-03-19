@@ -65,6 +65,8 @@
   <ItemGroup>
     <Content Include="Content\IntroAssets\CompanyLogo.png" />
     <Content Include="Content\blackPixel.png" />
+    <Content Include="Content\IntroAssets\Logo1.png" />
+    <Content Include="Content\IntroAssets\LogoSound.wav" />
     <Content Include="Content\MapAssets\grassBlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -13,7 +13,7 @@ namespace HarvestJump
         Sprite testSprite;
         RandomPlatformerMap platformerWorld;
 
-        public PlayScreen(string screenName, int screenWidth, int screenHeight) : base(screenName, screenWidth, screenHeight)
+        public PlayScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
             testSprite = new Sprite(0, 0, 800, 600);
             platformerWorld = new RandomPlatformerMap();
@@ -31,7 +31,6 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            //testSprite.Draw(spriteBatch);
             platformerWorld.Draw(spriteBatch);
         }
     }

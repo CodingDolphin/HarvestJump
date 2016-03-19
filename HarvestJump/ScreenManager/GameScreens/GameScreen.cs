@@ -4,11 +4,21 @@ using Microsoft.Xna.Framework.Content;
 
 namespace HarvestJump
 {
+    //Declare Enums here
+
     public enum ScreenState
     {
         isActive,
+        isInactive,
         transitionOn,
         hidden,
+    }
+
+    public enum ScreenName
+    {
+        PLAYSCREEN,
+        MENUSCREEN,
+        INTROSCREEN,
     }
 
     abstract class GameScreen
@@ -22,11 +32,21 @@ namespace HarvestJump
 
         //Declare all Constructor's here
 
-        protected GameScreen(string screenName, int screenWidth, int screenHeight)
+        protected GameScreen(int screenWidth, int screenHeight)
         {
             this.screenName = screenName;
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
+        }
+
+        //Screen Change Event
+
+        public event ScreenHandler ScreenChanged;
+
+        protected void NotifyScreenChange(ScreenName input)
+        {
+            if (ScreenChanged != null)
+                ScreenChanged(input); 
         }
 
         //Abstract Method Declartion

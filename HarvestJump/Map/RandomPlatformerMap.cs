@@ -16,15 +16,24 @@ namespace HarvestJump
 
         //Random World Properties
 
-        private int maxPlatformLenght { get; set; }
-        private int maxHorizentalPlatformSpace { get; set; }
-        private int minPlatformLenght { get; set; }
-        private int minHorizontalPlatformSpace { get; set; }
-        private int startHeight { get; set; }
-        private int maxPlatforms { get; set; }
         private bool levelConstructed { get; set; }
-        private int currentPosition { get; set; }
         private int platformLenght { get; set; }
+        private int maxPlatforms { get; set; }
+        private int startHeight { get; set; }
+        private int maxPlatformLenght { get; set; }  
+        private int minPlatformLenght { get; set; }
+        private int currentPositionX { get; set; }
+        private int currentPositionY { get; set; }
+
+        //Horizontal Vars
+
+        private int maxHorizentalPlatformSpace { get; set; }
+        private int minHorizontalPlatformSpace { get; set; }
+
+        //Vertical Vars
+
+        private int maxVerticalPlatformSpace { get; set; }
+        private int minVerticalPlatformSpace { get; set; }
 
         //Config Tile size here
 
@@ -91,17 +100,17 @@ namespace HarvestJump
 
             for (int i = 0; i < platformLenght; i++)
             {
-                tileList.Add(new Tile(tileWidth * i + currentPosition, startHeight, tileWidth, tileHeight));
+                tileList.Add(new Tile(tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
             }
 
             int space = random.Next(minHorizontalPlatformSpace, maxHorizentalPlatformSpace);
 
             for (int i = 0; i < space; i++)
             {
-                currentPosition = currentPosition + tileWidth;
+                currentPositionX = currentPositionX + tileWidth;
             }
 
-            currentPosition = platformLenght * tileWidth + currentPosition;
+            currentPositionX = platformLenght * tileWidth + currentPositionX;
         }
 
         public void Draw(SpriteBatch spriteBatch)

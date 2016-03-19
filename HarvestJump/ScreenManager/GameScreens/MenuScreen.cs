@@ -12,23 +12,20 @@ namespace HarvestJump
     {
         string screennamme;
 
-        public MenuScreen(string screenName, int screenWidth, int screenHeight) : base(screenName, screenWidth, screenHeight)
+        public MenuScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
             this.screennamme = screenName;
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
         }
 
         public override void LoadContent(ContentManager content)
         {
-            throw new NotImplementedException();
         }
 
         public override void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
         }
     }
 }
