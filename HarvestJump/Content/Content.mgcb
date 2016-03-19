@@ -35,3 +35,20 @@
 /processorParam:TextureFormat=Color
 /build:blackPixel.png
 
+#begin IntroAssets/LogoSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:IntroAssets/LogoSound.wav
+
+#begin MapAssets/grassBlock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:MapAssets/grassBlock.png
+

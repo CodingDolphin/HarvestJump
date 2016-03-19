@@ -108,3 +108,6 @@ C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\HarvestJump\bin\Windows\Debug\Content\MapAssets\grassBlock.png
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\MapAssets\grassBlock.png
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\IntroAssets\LogoSound.wav
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\IntroAssets\LogoSound.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\MapAssets\grassBlock.xnb
