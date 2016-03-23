@@ -91,8 +91,6 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            graphicDeviceManager.GraphicsDevice.Clear(Color.CornflowerBlue);
-
             spriteBatch.Begin();
             currentScreen.Draw(spriteBatch);
             spriteBatch.End();

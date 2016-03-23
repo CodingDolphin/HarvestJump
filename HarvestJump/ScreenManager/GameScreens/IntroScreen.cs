@@ -13,7 +13,7 @@ namespace HarvestJump
     {
         //Konstanten hier deklarieren
 
-        private const double introDuration = 5d;
+        private const double introDuration = 1d;
 
         //Klassenvariablen hier deklarieren
 
@@ -26,7 +26,7 @@ namespace HarvestJump
 
         public IntroScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
-            menuBackground = new Sprite(0, 0, screenWidth, screenHeight);
+            menuBackground = new Sprite(new Rectangle(0, 0, screenWidth, screenHeight));
             introStarted = true;
         }
 
@@ -34,7 +34,7 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content)
         {
-            menuBackground.spriteTexture = content.Load<Texture2D>("IntroAssets/CompanyLogo");
+            menuBackground.LoadContent(content, "IntroAssets/CompanyLogo");
             introSound = content.Load<SoundEffect>("IntroAssets/LogoSound");
         }
 
@@ -54,6 +54,8 @@ namespace HarvestJump
                 introSound.Play();
                 introStarted = false;
             }
+
+            menuBackground.Update(gameTime, new Rectangle(0, 0, screenWidth, screenHeight));
         }
 
         //Intro Ende hier behandeln und ScreenManager informieren

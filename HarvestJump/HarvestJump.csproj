@@ -38,7 +38,6 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Grafik\SpriteSheet.cs" />
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />

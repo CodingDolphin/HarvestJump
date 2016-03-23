@@ -24,6 +24,7 @@ namespace HarvestJump
 
         public override void Update(GameTime gameTime)
         {
+            platformerWorld.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

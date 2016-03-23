@@ -52,8 +52,8 @@ namespace HarvestJump
             maxPlatforms = 0;
             levelConstructed = false;
 
-            maxPlatformLenght = 6;
-            maxHorizentalPlatformSpace = 5;
+            maxPlatformLenght = 8;
+            maxHorizentalPlatformSpace = 4;
             minPlatformLenght = 4;
             minHorizontalPlatformSpace = 2;
 
@@ -62,7 +62,7 @@ namespace HarvestJump
 
             //Instance Variables
 
-            grassTile = new Sprite(0, 0, tileWidth, tileHeight);
+            //grassTile = new Sprite(0, 0, tileWidth, tileHeight);
             tileList = new List<Tile>();
             random = new Random();
 
@@ -75,12 +75,16 @@ namespace HarvestJump
         {
             foreach (Tile tile in tileList)
             {
-                tile.LoadContent(content, "MapAssets/grassBlock");
+                tile.LoadContent(content, "MapAssets/GrassPlatformSheet");
             }
         }
 
         public void Update(GameTime gameTime)
         {
+            foreach (Tile tile in tileList)
+            {
+                tile.Update(gameTime);
+            }
         }
 
         public void CreateMap()
@@ -95,10 +99,26 @@ namespace HarvestJump
         public void CreateHorizontalTile()
         {
             platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
+            bool firstTile;
+            bool endTile;
 
             for (int i = 0; i < platformLenght; i++)
             {
-                tileList.Add(new Tile(tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                firstTile = false;
+                endTile = false;
+
+                if (i == 0)
+                    firstTile = true;
+                if (i == platformLenght -1)
+                    endTile = true;
+                
+
+                if (firstTile)
+                    tileList.Add(new Tile(TileType.grassLeftEnd, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                else if (endTile)
+                    tileList.Add(new Tile(TileType.grassRightEnd, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                else
+                    tileList.Add(new Tile(TileType.grassTop, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
             }
 
             int space = random.Next(minHorizontalPlatformSpace, maxHorizentalPlatformSpace);
@@ -115,7 +135,7 @@ namespace HarvestJump
         {
             foreach (Tile tile in tileList)
             {
-                spriteBatch.Draw(tile.tileSprite.spriteTexture, tile.tileSprite.spriteRectangle, Color.White);
+               tile.Draw(spriteBatch);
             }
         }
     }

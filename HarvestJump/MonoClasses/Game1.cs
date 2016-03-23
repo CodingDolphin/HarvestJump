@@ -82,6 +82,7 @@ namespace HarvestJump
         protected override void Draw(GameTime gameTime)
         {
             // TODO: Add your drawing code here
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             screenManager.Draw(spriteBatch);
 
