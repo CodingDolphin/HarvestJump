@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace HarvestJump
 {
@@ -27,7 +28,9 @@ namespace HarvestJump
 
         private List<Tile> tileList;
         private Random random;
-        private Sprite grassTile;
+        private Sprite mapBackground;
+        private Player player;
+        private Song bgm;
 
         //Horizontale Variablen
 
@@ -68,7 +71,10 @@ namespace HarvestJump
 
             //Map Generierung starten
 
-            CreateMap();         
+            
+            mapBackground = new Sprite(Vector2.Zero);
+
+            player = new Player(Vector2.Zero, CreateMap());
         }
 
         public void LoadContent(ContentManager content)
@@ -77,6 +83,10 @@ namespace HarvestJump
             {
                 tile.LoadContent(content, "MapAssets/GrassPlatformSheet");
             }
+
+            mapBackground.LoadContent(content, "MapAssets/Background02");
+            bgm = content.Load<Song>("PlayAssets/LevelBackground");
+            player.LoadContent(content, "PlayAssets/PlayerIdleAnimation");
         }
 
         public void Update(GameTime gameTime)
@@ -85,18 +95,65 @@ namespace HarvestJump
             {
                 tile.Update(gameTime);
             }
-        }
 
-        public void CreateMap()
-        {
-            while (maxPlatforms != 10)
+            if (MediaPlayer.State == MediaState.Stopped)
             {
-                CreateHorizontalTile();
-                maxPlatforms++;
+                MediaPlayer.Volume = 0.60f;
+                MediaPlayer.Play(bgm);
             }
+
+
+            player.Update(gameTime);
         }
 
-        public void CreateHorizontalTile()
+        public int CreateMap()
+        {  
+            int test = random.Next(0, 3);
+
+            switch (test)
+            {
+                case 0:
+
+                    while (maxPlatforms != 20)
+                    {
+                        CreateHorizontalTile(200);
+                        CreateHorizontalTile(400);
+                        CreateHorizontalTile(300);
+                        maxPlatforms++;
+                        return 200;
+                    }
+                    break;
+
+                case 1:
+
+                    while (maxPlatforms != 20)
+                    {
+
+                        CreateHorizontalTile(400);
+                        CreateHorizontalTile(300);
+                        CreateHorizontalTile(200);
+                        maxPlatforms++;
+                        return 400;
+                    }
+                    break;
+
+                case 2:
+
+                    while (maxPlatforms != 20)
+                    {
+                        CreateHorizontalTile(300);
+                        CreateHorizontalTile(400);
+                        CreateHorizontalTile(200);
+                        maxPlatforms++;
+                        return 300;
+                    }
+                    break;
+            }
+
+            return 0;
+        }
+
+        public void CreateHorizontalTile(int test)
         {
             platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
             bool firstTile;
@@ -114,11 +171,11 @@ namespace HarvestJump
                 
 
                 if (firstTile)
-                    tileList.Add(new Tile(TileType.grassLeftEnd, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                    tileList.Add(new Tile(TileType.grassLeftEnd, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
                 else if (endTile)
-                    tileList.Add(new Tile(TileType.grassRightEnd, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                    tileList.Add(new Tile(TileType.grassRightEnd, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
                 else
-                    tileList.Add(new Tile(TileType.grassTop, tileWidth * i + currentPositionX, startHeight, tileWidth, tileHeight));
+                    tileList.Add(new Tile(TileType.grassTop, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
             }
 
             int space = random.Next(minHorizontalPlatformSpace, maxHorizentalPlatformSpace);
@@ -127,16 +184,19 @@ namespace HarvestJump
             {
                 currentPositionX = currentPositionX + tileWidth;
             }
-
             currentPositionX = platformLenght * tileWidth + currentPositionX;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            mapBackground.Draw(spriteBatch);
+
             foreach (Tile tile in tileList)
             {
                tile.Draw(spriteBatch);
             }
+
+            player.Draw(spriteBatch);
         }
     }
 }

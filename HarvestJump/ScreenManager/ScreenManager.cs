@@ -18,8 +18,14 @@ namespace HarvestJump
 
         private List<GameScreen> screenList { get; set; }
         private GameScreen currentScreen { get; set; }
+        private RenderTarget2D target { get; set; }
         private int screenWidth { get; set; }
         private int screenHeight { get; set; }
+
+        //Konstanten
+
+        public const int virtualWidth = 800;
+        public const int virutalHeight = 600;
 
         //Alle Konstruktoren
 
@@ -31,11 +37,8 @@ namespace HarvestJump
 
             //Alle start Bildschimreinstellungen hier vornehmen
 
-            graphicDeviceManager.PreferredBackBufferWidth = 800;
-            graphicDeviceManager.PreferredBackBufferHeight = 600;
-
-            screenWidth = graphicDeviceManager.PreferredBackBufferWidth;
-            screenHeight = graphicDeviceManager.PreferredBackBufferHeight;
+            screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1200;
+            screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 900;
 
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
@@ -53,7 +56,10 @@ namespace HarvestJump
 
             //Events hier registrieren
 
-            screenList[0].ScreenChanged += HandleScreenChange;
+            foreach (GameScreen screen in screenList)
+            {
+                screen.ScreenChanged += HandleScreenChange;
+            }
         }
 
         //Allen Content hier laden
@@ -66,6 +72,8 @@ namespace HarvestJump
             {
                 screen.LoadContent(content);
             }
+
+            target = new RenderTarget2D(graphicDeviceManager.GraphicsDevice, virtualWidth, virutalHeight);
         }
 
         //Spiel Updaten
@@ -91,8 +99,16 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            graphicDeviceManager.GraphicsDevice.SetRenderTarget(target);
+
             spriteBatch.Begin();
             currentScreen.Draw(spriteBatch);
+            spriteBatch.End();
+
+            graphicDeviceManager.GraphicsDevice.SetRenderTarget(null);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(target, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
             spriteBatch.End();
         }
     }

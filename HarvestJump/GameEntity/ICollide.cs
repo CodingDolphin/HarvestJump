@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HarvestJump
 {
-    class GameEntity
+    interface ICollide
     {
     }
 }

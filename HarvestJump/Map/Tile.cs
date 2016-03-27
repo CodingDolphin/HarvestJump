@@ -16,19 +16,23 @@ namespace HarvestJump
         grassRightEnd,
     }
 
-    class Tile
+    class Tile : GameObject
     {
-        public Sprite tileSprite { get; set; }
-        public Rectangle position { get; set; }
-        public TileType tileType;
+        //Klassenvariablen
+
+        public SpriteSheet tileSprite { get; private set; }
+        public TileType tileType { get; private set; }
+
+        //Konstruktor
          
-        public Tile(TileType tileType,int x, int y, int tileWidth, int tileHeight)
+        public Tile(TileType tileType, int x, int y, int tileWidth, int tileHeight)
         {
             this.tileType = tileType;
-            this.position = new Rectangle(x, y, tileWidth, tileHeight);
-
-            tileSprite = new Sprite(tileWidth, tileHeight, getSpriteIndex(), 1, 1, 3, 0.3d);
+            this.position = new Vector2(x, y);
+            this.tileSprite = new SpriteSheet(position, getSpriteIndex(), tileWidth, tileHeight);
         }
+
+        //Methoden
 
         public int getSpriteIndex()
         {
@@ -42,17 +46,17 @@ namespace HarvestJump
             }
         }
 
-        public void LoadContent(ContentManager content, string assetName)
+        public override void LoadContent(ContentManager content, string assetName)
         {
             tileSprite.LoadContent(content, assetName);
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
-            tileSprite.Update(gameTime, position);
+            tileSprite.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             tileSprite.Draw(spriteBatch);
         }
