@@ -71,6 +71,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
+    <Compile Include="GameEntity\Camera.cs" />
+    <Compile Include="GameEntity\CollisionHelper.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Map\RandomPlatformerMap.cs" />
     <Compile Include="Manager\ResolutionManager.cs" />
     <Compile Include="ScreenManager\GameScreens\PlayScreen.cs" />
+    <Compile Include="ScreenManager\Platform.cs" />
     <Compile Include="ScreenManager\ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>

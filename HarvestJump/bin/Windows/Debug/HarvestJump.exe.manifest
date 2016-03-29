@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="173488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="175536">
       <assemblyIdentity name="HarvestJump" version="3.4.0.456" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Sh0ppGPdWmMZnc4UYdwyyg906hogogiTZKgsBS4PuJQ=</dsig:DigestValue>
+        <dsig:DigestValue>mwQh8tTVBAzJ16wpD95HuX8XJT5zh2LraSkZ18eszQQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

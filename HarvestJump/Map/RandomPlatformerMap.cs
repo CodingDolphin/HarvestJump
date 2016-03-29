@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -11,13 +12,8 @@ namespace HarvestJump
 {
     class RandomPlatformerMap
     {
-        //Konstanten hier deklarieren
-
-        private const float gravity = 9.71f;
-
         //Klassenvariablen hier deklarieren
 
-        private bool levelConstructed { get; set; }
         private int platformLenght { get; set; }
         private int maxPlatforms { get; set; }
         private int startHeight { get; set; }
@@ -26,7 +22,7 @@ namespace HarvestJump
         private int currentPositionX { get; set; }
         private int currentPositionY { get; set; }
 
-        private List<Tile> tileList;
+        private List<Platform> platformList;
         private Random random;
         private Sprite mapBackground;
         private Player player;
@@ -53,9 +49,8 @@ namespace HarvestJump
 
             startHeight = 400;
             maxPlatforms = 0;
-            levelConstructed = false;
 
-            maxPlatformLenght = 8;
+            maxPlatformLenght = 7;
             maxHorizentalPlatformSpace = 4;
             minPlatformLenght = 4;
             minHorizontalPlatformSpace = 2;
@@ -65,22 +60,38 @@ namespace HarvestJump
 
             //Instance Variables
 
-            tileList = new List<Tile>();
+            platformList = new List<Platform>();
             random = new Random();
-            collisionSystem = new CollisionSystem(tileList);
+            collisionSystem = new CollisionSystem(platformList);
 
             //Map Generierung starten
 
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero,75,75);
-            CreateMap();
+            createMap(300, 5);
+        }
+
+        public void createMap(int startposition, int maxPlatform)
+        {
+            int spaceX = 0;
+            int spaceY = startposition;
+
+            for (int i = 0; i < maxPlatform; i++)
+            {
+                platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
+                platformList.Add(new Platform(new Vector2(currentPositionX + spaceX, spaceY), platformLenght, 1, 32, 32));
+                spaceX = random.Next(100, 200);
+                spaceY = random.Next(100, 400);
+                currentPositionX = platformList[i].boundingRectangle.X + platformList[i].boundingRectangle.Width;
+            }
+
         }
 
         public void LoadContent(ContentManager content)
         {
-            foreach (Tile tile in tileList)
+            foreach (Platform platform in platformList)
             {
-                tile.LoadContent(content, "MapAssets/GrassPlatformSheet");
+                platform.LoadContent(content, "MapAssets/GrassPlatformSheet");
             }
 
             mapBackground.LoadContent(content, "MapAssets/Background02");
@@ -91,96 +102,20 @@ namespace HarvestJump
         {
             player.Update(gameTime);
             collisionSystem.checkCollision(player);
-        }
 
-        public int CreateMap()
-        {  
-            int test = random.Next(0, 1);
+            KeyboardState keyboardState = Keyboard.GetState();
 
-            switch (test)
-            {
-                case 0:
-
-                    while (maxPlatforms != 20)
-                    {
-                        CreateHorizontalTile(200);
-                        CreateHorizontalTile(400);
-                        CreateHorizontalTile(300);
-                        maxPlatforms++;
-                        return 200;
-                    }
-                    break;
-
-                case 1:
-
-                    while (maxPlatforms != 20)
-                    {
-
-                        CreateHorizontalTile(400);
-                        CreateHorizontalTile(300);
-                        CreateHorizontalTile(200);
-                        maxPlatforms++;
-                        return 400;
-                    }
-                    break;
-
-                case 2:
-
-                    while (maxPlatforms != 20)
-                    {
-                        CreateHorizontalTile(300);
-                        CreateHorizontalTile(400);
-                        CreateHorizontalTile(200);
-                        maxPlatforms++;
-                        return 300;
-                    }
-                    break;
-            }
-
-            return 0;
-        }
-
-        public void CreateHorizontalTile(int test)
-        {
-            platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
-            bool firstTile;
-            bool endTile;
-
-            for (int i = 0; i < platformLenght; i++)
-            {
-                firstTile = false;
-                endTile = false;
-
-                if (i == 0)
-                    firstTile = true;
-                if (i == platformLenght -1)
-                    endTile = true;
-                
-
-                if (firstTile)
-                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight,TileType.grassLeftEnd));
-                else if (endTile)
-                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight, TileType.grassRightEnd));
-                else
-                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight, TileType.grassTop));
-            }
-
-            int space = random.Next(minHorizontalPlatformSpace, maxHorizentalPlatformSpace);
-
-            for (int i = 0; i < space; i++)
-            {
-                currentPositionX = currentPositionX + tileWidth;
-            }
-            currentPositionX = platformLenght * tileWidth + currentPositionX;
+            if (keyboardState.IsKeyDown(Keys.Enter))
+                createMap(300, 5);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             mapBackground.Draw(spriteBatch);
 
-            foreach (Tile tile in tileList)
+            foreach (Platform platform in platformList)
             {
-               tile.Draw(spriteBatch);
+                platform.Draw(spriteBatch);
             }
 
             player.Draw(spriteBatch);

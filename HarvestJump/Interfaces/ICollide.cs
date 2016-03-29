@@ -13,6 +13,5 @@ namespace HarvestJump
         Vector2 oldPosition { get; set; }
         bool noClip { get; set; }
         void HandleCollision(ICollide collisionObject);
-
     }
 }
