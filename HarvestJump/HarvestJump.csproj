@@ -15,6 +15,8 @@
     <MonoGameContentBuilderExe>
     </MonoGameContentBuilderExe>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
     <PublishUrl>C:\Users\WhySoSad\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -40,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -49,6 +52,7 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
@@ -67,13 +71,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
-    <Compile Include="GameEntity\ICollide.cs" />
+    <Compile Include="Interfaces\ICollide.cs" />
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
     <Compile Include="Grafik\SpriteSheet.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
     <Compile Include="GameEntity\GameObject.cs" />
+    <Compile Include="GameEntity\CollisionSystem.cs" />
     <Compile Include="ScreenManager\GameScreens\GameScreen.cs" />
     <Compile Include="Manager\InputManager.cs" />
     <Compile Include="ScreenManager\GameScreens\IntroScreen.cs" />
@@ -116,6 +121,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="HarvestJump_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

@@ -30,7 +30,7 @@ namespace HarvestJump
         private Random random;
         private Sprite mapBackground;
         private Player player;
-        private Song bgm;
+        private CollisionSystem collisionSystem { get; set; }
 
         //Horizontale Variablen
 
@@ -65,16 +65,15 @@ namespace HarvestJump
 
             //Instance Variables
 
-            //grassTile = new Sprite(0, 0, tileWidth, tileHeight);
             tileList = new List<Tile>();
             random = new Random();
+            collisionSystem = new CollisionSystem(tileList);
 
             //Map Generierung starten
 
-            
             mapBackground = new Sprite(Vector2.Zero);
-
-            player = new Player(Vector2.Zero, CreateMap());
+            player = new Player(Vector2.Zero,75,75);
+            CreateMap();
         }
 
         public void LoadContent(ContentManager content)
@@ -85,30 +84,18 @@ namespace HarvestJump
             }
 
             mapBackground.LoadContent(content, "MapAssets/Background02");
-            bgm = content.Load<Song>("PlayAssets/LevelBackground");
             player.LoadContent(content, "PlayAssets/PlayerIdleAnimation");
         }
 
         public void Update(GameTime gameTime)
         {
-            foreach (Tile tile in tileList)
-            {
-                tile.Update(gameTime);
-            }
-
-            if (MediaPlayer.State == MediaState.Stopped)
-            {
-                MediaPlayer.Volume = 0.60f;
-                MediaPlayer.Play(bgm);
-            }
-
-
             player.Update(gameTime);
+            collisionSystem.checkCollision(player);
         }
 
         public int CreateMap()
         {  
-            int test = random.Next(0, 3);
+            int test = random.Next(0, 1);
 
             switch (test)
             {
@@ -171,11 +158,11 @@ namespace HarvestJump
                 
 
                 if (firstTile)
-                    tileList.Add(new Tile(TileType.grassLeftEnd, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
+                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight,TileType.grassLeftEnd));
                 else if (endTile)
-                    tileList.Add(new Tile(TileType.grassRightEnd, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
+                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight, TileType.grassRightEnd));
                 else
-                    tileList.Add(new Tile(TileType.grassTop, tileWidth * i + currentPositionX, test, tileWidth, tileHeight));
+                    tileList.Add(new Tile(new Vector2(tileWidth * i + currentPositionX, test), tileWidth, tileHeight, TileType.grassTop));
             }
 
             int space = random.Next(minHorizontalPlatformSpace, maxHorizentalPlatformSpace);

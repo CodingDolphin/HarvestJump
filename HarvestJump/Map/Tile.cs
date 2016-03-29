@@ -25,10 +25,10 @@ namespace HarvestJump
 
         //Konstruktor
          
-        public Tile(TileType tileType, int x, int y, int tileWidth, int tileHeight)
+        public Tile(Vector2 position, int tileWidth, int tileHeight, TileType tileType) : base(position, tileWidth, tileHeight)
         {
             this.tileType = tileType;
-            this.position = new Vector2(x, y);
+            this.position = position;
             this.tileSprite = new SpriteSheet(position, getSpriteIndex(), tileWidth, tileHeight);
         }
 
@@ -49,6 +49,12 @@ namespace HarvestJump
         public override void LoadContent(ContentManager content, string assetName)
         {
             tileSprite.LoadContent(content, assetName);
+            onContentLoad();
+        }
+
+        public void onContentLoad()
+        {
+            boundingRectangle = new Rectangle((int)position.X, (int)position.Y, tileSprite.frameWidth, tileSprite.frameHeight);
         }
 
         public override void Update(GameTime gameTime)

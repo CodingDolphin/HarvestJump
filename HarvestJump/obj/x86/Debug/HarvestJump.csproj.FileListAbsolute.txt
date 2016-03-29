@@ -121,3 +121,5 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\Harvest
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\HarvestJump.exe
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\HarvestJump.pdb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\LevelBackground.mp3
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\HarvestJump.csprojResolveAssemblyReference.cache
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\HarvestJump.exe.config
