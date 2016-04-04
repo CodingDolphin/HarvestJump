@@ -123,3 +123,9 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\Harvest
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\LevelBackground.mp3
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\obj\x86\Debug\HarvestJump.csprojResolveAssemblyReference.cache
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\HarvestJump.exe.config
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\GrassSheet.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\LevelBackgroundWav.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\speedDown.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\speedUp.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\PlayerIdleAnimationLeft.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\PlayAssets\PlayerIdleAnimationRight.xnb

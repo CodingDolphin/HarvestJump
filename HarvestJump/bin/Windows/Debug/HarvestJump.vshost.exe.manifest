@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="175536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="180144">
       <assemblyIdentity name="HarvestJump" version="3.4.0.456" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mwQh8tTVBAzJ16wpD95HuX8XJT5zh2LraSkZ18eszQQ=</dsig:DigestValue>
+        <dsig:DigestValue>uNYi6QNQ8cMpaA6F8y346d/Yu5BoRwjiem1PJSEqEHI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -273,22 +273,31 @@
       <dsig:DigestValue>bPSn7eAMfy8e/rlmwpuW3K1LelpUPjAnCuAZpXeZuK8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\MapAssets\GrassPlatformSheet.png" size="2222">
+  <file name="Content\MapAssets\GrassPlatformSheet.png" size="60394">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vgZ5trOOYMIvm5/k8cHyYb3TP1JP9VUfs72Gm3hdwE0=</dsig:DigestValue>
+      <dsig:DigestValue>IgCZHlP0HVmLC2Q0UmRADyRNdZsTBa0qhh+0thgZzn8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\MapAssets\GrassPlatformSheet.xnb" size="16469">
+  <file name="Content\MapAssets\GrassPlatformSheet.xnb" size="524373">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>y/0uxD0YpH4E5rCknH/wg70uiIscIxEKyctrW4/frRY=</dsig:DigestValue>
+      <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\PlayAssets\GrassSheet.xnb" size="524373">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\PlayAssets\LevelBackground.mp3" size="7245952">
@@ -318,6 +327,15 @@
       <dsig:DigestValue>IiMGOWHefdzch2Vly9x/AjrKVLOxJgcLVn/ztKUMI+w=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\PlayAssets\LevelBackgroundWav.xnb" size="39346281">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ySyiRwldIXPNIxlj4fkIk/bAjER+BeWbZIltXCFVogU=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\PlayAssets\Player.png" size="5441">
     <hash>
       <dsig:Transforms>
@@ -336,15 +354,6 @@
       <dsig:DigestValue>0Vij3P78MT+yGf1B0nUGStPWKRrgXPauxMeC2iwX7jw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\PlayAssets\PlayerIdleAnimation.png" size="40800">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/fwZN3t7FOZ+QsYVBlkb08xgAILYMOgT1DDcxrFonK0=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\PlayAssets\PlayerIdleAnimation.xnb" size="258085">
     <hash>
       <dsig:Transforms>
@@ -352,6 +361,42 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>HzCz0OrPpiskULeISi3vejVUrOLqALVeNQZrOK/Do3s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\PlayAssets\PlayerIdleAnimationLeft.xnb" size="258085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MgnkSlMeNujgRgzO20DAv+qgCndW2+yIe8KvGbMupgU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\PlayAssets\PlayerIdleAnimationRight.xnb" size="258085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HzCz0OrPpiskULeISi3vejVUrOLqALVeNQZrOK/Do3s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\PlayAssets\speedDown.xnb" size="579469">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>N+pz1Dtjfmt5vINZ3jyVO+gC2HhXx75XeAyJD5KyT0U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\PlayAssets\speedUp.xnb" size="327953">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UW+omYpQi96vEhHJlR1eBBO0DpgJC0npNZcEErNZJ2k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="HarvestJump.exe.config" size="161">

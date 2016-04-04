@@ -38,10 +38,10 @@ namespace HarvestJump
         {
             switch (tileType)
             {
-                case TileType.grassTop: return 0;
-                case TileType.grassMid: return 1;
-                case TileType.grassLeftEnd:return 2;
-                case TileType.grassRightEnd:return 3;
+                case TileType.grassTop: return 1;
+                case TileType.grassMid: return 16;
+                case TileType.grassLeftEnd:return 12;
+                case TileType.grassRightEnd:return 11;
                 default: return 0;
             }
         }
@@ -49,12 +49,6 @@ namespace HarvestJump
         public override void LoadContent(ContentManager content, string assetName)
         {
             tileSprite.LoadContent(content, assetName);
-            onContentLoad();
-        }
-
-        public void onContentLoad()
-        {
-            boundingRectangle = new Rectangle((int)position.X, (int)position.Y, tileSprite.frameWidth, tileSprite.frameHeight);
         }
 
         public override void Update(GameTime gameTime)

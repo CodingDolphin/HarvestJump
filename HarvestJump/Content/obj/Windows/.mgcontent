@@ -11,7 +11,12 @@
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MapAssets/GrassPlatformSheet.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MapAssets/Background02.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/Player.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/PlayerIdleAnimation.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/LevelBackground.mp3</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/GrassSheet.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/LevelBackgroundWav.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/speedUp.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/speedDown.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/PlayerIdleAnimationLeft.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/PlayerIdleAnimationRight.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -8,7 +8,7 @@ namespace HarvestJump
 {
     public interface ICollide
     {
-        Rectangle boundingRectangle { get; set; }
+        BoundingBox boundingBox { get; set; }
         Vector2 position { get; set; }
         Vector2 oldPosition { get; set; }
         bool noClip { get; set; }

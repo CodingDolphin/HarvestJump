@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -11,8 +12,8 @@ namespace HarvestJump
 {
     class PlayScreen : GameScreen
     {
-        RandomPlatformerMap platformerWorld;
-        Song backgroundMusicJumpMap;
+        public RandomPlatformerMap platformerWorld;
+        public Song backgroundMusicJumpMap;
 
         public PlayScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
@@ -23,15 +24,17 @@ namespace HarvestJump
         {
             platformerWorld.LoadContent(content);
             backgroundMusicJumpMap = content.Load<Song>("PlayAssets/LevelBackground");
+            MediaPlayer.Play(backgroundMusicJumpMap);
         }
 
         public override void Update(GameTime gameTime)
         {
             if (MediaPlayer.State == MediaState.Stopped)
             {
-                MediaPlayer.Volume = 0.0f;
+                MediaPlayer.Volume = 0.5f;
                 MediaPlayer.Play(backgroundMusicJumpMap);
             }
+
             platformerWorld.Update(gameTime);
         }
 

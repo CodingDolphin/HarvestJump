@@ -11,16 +11,18 @@ namespace HarvestJump
 {
     class Player : GameObject
     {
-        private KeyboardState prevState;
-
         public Player(Vector2 startPosition, int width, int height) : base(startPosition,width,height)
         {
-            sprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
+            currentSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
+            rightSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
+            leftSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            sprite.LoadContent(content, assetName);
+            rightSprite.LoadContent(content, assetName);
+            leftSprite.LoadContent(content, "PlayAssets/PlayerIdleAnimationLeft");
+            currentSprite = rightSprite;
         }
 
         public override void Update(GameTime gameTime)
@@ -30,19 +32,28 @@ namespace HarvestJump
             base.Update(gameTime);
         }
 
+        public void ChangeDirectionToLeft()
+        {
+            currentSprite = leftSprite;
+        }
+
+        public void ChangeDirectionToRight()
+        {
+            currentSprite = rightSprite;
+        }
+
         private void CheckKeyboardAndUpdateMovement()
         {
             KeyboardState keyboardState = Keyboard.GetState();
-            prevState = keyboardState;
 
-            if (keyboardState.IsKeyDown(Keys.Left)) { velocity += new Vector2(-20, 0); }
-            if (keyboardState.IsKeyDown(Keys.Right)) { velocity += new Vector2(20, 0); }
+            if (keyboardState.IsKeyDown(Keys.Left)) { velocity += new Vector2(-20, 0); ChangeDirectionToLeft(); }
+            if (keyboardState.IsKeyDown(Keys.Right)) { velocity += new Vector2(20, 0); ChangeDirectionToRight(); }
             if (keyboardState.IsKeyDown(Keys.Up) && !isJumping) { velocity += new Vector2(0, -1000);isJumping = true; hasContact = false;  }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            currentSprite.Draw(spriteBatch);
         }
     }
 }

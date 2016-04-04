@@ -21,18 +21,20 @@ namespace HarvestJump
         protected Vector2 gravity { get; set; }
         public Vector2 velocity { get; set; }
         protected Vector2 friction { get; set; }
-        protected Sprite sprite { get; set; }
-        public double deltaTime { get; set; }
+        protected Sprite currentSprite { get; set; }
+        protected Sprite leftSprite { get; set; }
+        protected Sprite rightSprite { get; set; }
+        protected double deltaTime { get; set; }
         public double slowMotion { get; set; }
-        public bool hasContact { get; set; }
+        protected bool hasContact { get; set; }
 
         //ICollide Interface
 
         public bool noClip { get; set; }
         public Vector2 oldPosition { get; set; }
         public Vector2 position { get; set; }
-        public Rectangle boundingRectangle { get; set; }
-        public bool isJumping;
+        public BoundingBox boundingBox { get; set; }
+        public bool isJumping { get; set; }
 
         //Konstruktor
 
@@ -43,34 +45,27 @@ namespace HarvestJump
         public GameObject(Vector2 position,int width, int height)
         {
             this.position = position;
-            createBondingRectangle(position, width, height);
+            boundingBox = new BoundingBox(position, width, height);
             slowMotion = 1;
             noClip = false;
             gravity = new Vector2(0, 2000);
         }
-
+        
         public abstract void LoadContent(ContentManager content, string assetName);
 
         public virtual void Update(GameTime gameTime)
         {
             deltaTime = gameTime.ElapsedGameTime.TotalSeconds / slowMotion;
-            oldPosition = new Vector2(position.X, position.Y);
 
             ApplyForce();
             ApplyVelocityToPosition();
-            createBondingRectangle(position, boundingRectangle.Width, boundingRectangle.Height);
-            UpdateAnimation(gameTime);
+            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
         }
 
         public virtual void ApplyForce()
         {
             velocity *= new Vector2(0.95f, 0.98f);
             velocity += gravity * (float)deltaTime;
-        }
-
-        public virtual void createBondingRectangle(Vector2 position, int width, int height)
-        {
-            boundingRectangle = new Rectangle((int)position.X,(int)position.Y, width, height);
         }
 
         public virtual void ApplyVelocityToPosition()
@@ -80,10 +75,10 @@ namespace HarvestJump
 
         public virtual void HandleCollision(ICollide collisionObject)
         {
-            float penetrationTop = position.Y + boundingRectangle.Height - collisionObject.boundingRectangle.Y;
-            float penetrationLeft = position.X + boundingRectangle.Width - collisionObject.boundingRectangle.X;
-            float penetrationBottom = collisionObject.boundingRectangle.Y + collisionObject.boundingRectangle.Height - position.Y;
-            float penetrationRight = collisionObject.boundingRectangle.X + collisionObject.boundingRectangle.Width - position.X;
+            float penetrationTop = position.Y + boundingBox.height - collisionObject.boundingBox.y;
+            float penetrationLeft = position.X + boundingBox.width - collisionObject.boundingBox.x;
+            float penetrationBottom = collisionObject.boundingBox.y + collisionObject.boundingBox.height - position.Y;
+            float penetrationRight = collisionObject.boundingBox.x + collisionObject.boundingBox.width - position.X;
 
             float lowestPenetation = CollisionHelper.getLowestNumber(penetrationTop, penetrationLeft, penetrationBottom, penetrationRight);
 
@@ -116,15 +111,14 @@ namespace HarvestJump
                 velocity = new Vector2(velocity.X, 0);
             }
 
-            sprite.position = new Vector2(position.X, position.Y);
-            createBondingRectangle(position, boundingRectangle.Width, boundingRectangle.Height);
+            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
             isJumping = false;
         }
 
         public void UpdateAnimation(GameTime gameTime)
         {
-            sprite.position = position;
-            sprite.Update(gameTime);
+            currentSprite.position = position;
+            currentSprite.Update(gameTime);
         }
 
         public abstract void Draw(SpriteBatch spriteBatch);

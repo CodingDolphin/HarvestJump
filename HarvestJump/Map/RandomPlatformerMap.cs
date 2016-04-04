@@ -17,15 +17,17 @@ namespace HarvestJump
         private int platformLenght { get; set; }
         private int maxPlatforms { get; set; }
         private int startHeight { get; set; }
+        private int maxPlatformHeight { get; set; }
         private int maxPlatformLenght { get; set; }  
         private int minPlatformLenght { get; set; }
+        private int minPlatformHeight { get; set; }
         private int currentPositionX { get; set; }
         private int currentPositionY { get; set; }
 
-        private List<Platform> platformList;
-        private Random random;
-        private Sprite mapBackground;
-        private Player player;
+        private List<Platform> platformList { get; set; }
+        private Random random { get; set; }
+        private Sprite mapBackground { get; set; }
+        public Player player { get; set; }
         private CollisionSystem collisionSystem { get; set; }
 
         //Horizontale Variablen
@@ -47,12 +49,14 @@ namespace HarvestJump
         {
             //Map Eigenschaften hier einstellen
 
-            startHeight = 400;
+            startHeight = 300;
             maxPlatforms = 0;
+            maxPlatformHeight = 10;
+            minPlatformHeight = 1;
 
-            maxPlatformLenght = 7;
+            maxPlatformLenght = 8;
             maxHorizentalPlatformSpace = 4;
-            minPlatformLenght = 4;
+            minPlatformLenght = 5;
             minHorizontalPlatformSpace = 2;
 
             tileWidth = 32;
@@ -68,23 +72,24 @@ namespace HarvestJump
 
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero,75,75);
-            createMap(300, 5);
+            createMap(300, 10);
         }
 
         public void createMap(int startposition, int maxPlatform)
         {
             int spaceX = 0;
             int spaceY = startposition;
+            int height;
 
             for (int i = 0; i < maxPlatform; i++)
             {
                 platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
-                platformList.Add(new Platform(new Vector2(currentPositionX + spaceX, spaceY), platformLenght, 1, 32, 32));
+                height = random.Next(minPlatformHeight, maxPlatformHeight);
+                platformList.Add(new Platform(new Vector2(currentPositionX + spaceX, spaceY), platformLenght, height, 32, 32));
                 spaceX = random.Next(100, 200);
                 spaceY = random.Next(100, 400);
-                currentPositionX = platformList[i].boundingRectangle.X + platformList[i].boundingRectangle.Width;
+                currentPositionX = (int)platformList[i].boundingBox.x + (int)platformList[i].boundingBox.width;
             }
-
         }
 
         public void LoadContent(ContentManager content)
@@ -95,18 +100,14 @@ namespace HarvestJump
             }
 
             mapBackground.LoadContent(content, "MapAssets/Background02");
-            player.LoadContent(content, "PlayAssets/PlayerIdleAnimation");
+            player.LoadContent(content, "PlayAssets/PlayerIdleAnimationRight");
         }
 
         public void Update(GameTime gameTime)
         {
             player.Update(gameTime);
             collisionSystem.checkCollision(player);
-
-            KeyboardState keyboardState = Keyboard.GetState();
-
-            if (keyboardState.IsKeyDown(Keys.Enter))
-                createMap(300, 5);
+            player.UpdateAnimation(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -73,6 +73,7 @@
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="GameEntity\Camera.cs" />
     <Compile Include="GameEntity\CollisionHelper.cs" />
+    <Compile Include="GameEntity\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
@@ -91,7 +92,7 @@
     <Compile Include="Map\RandomPlatformerMap.cs" />
     <Compile Include="Manager\ResolutionManager.cs" />
     <Compile Include="ScreenManager\GameScreens\PlayScreen.cs" />
-    <Compile Include="ScreenManager\Platform.cs" />
+    <Compile Include="GameEntity\Platform.cs" />
     <Compile Include="ScreenManager\ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +118,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\PlayAssets\Player.png" />
-    <Content Include="Content\PlayAssets\PlayerIdleAnimation.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
