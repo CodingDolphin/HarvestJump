@@ -9,8 +9,6 @@ namespace HarvestJump
 {
     public struct BoundingBox
     {
-        public float x { get; set; }
-        public float y { get; set; }
         public Vector2 position { get; set; }
         public float width { get; set; }
         public float height { get; set; }
@@ -21,15 +19,13 @@ namespace HarvestJump
 
         public BoundingBox(Vector2 position, float width, float height)
         {
-            this.x = position.X;
-            this.y = position.Y;
             this.position = position;
             this.width = width;
             this.height = height;
-            this.bottom = y + height;
-            this.top = y;
-            this.right = x + width;
-            this.left = x;
+            this.bottom = position.Y + height;
+            this.top = position.Y;
+            this.right = position.X + width;
+            this.left = position.X;
         }
 
         public bool Intersects(BoundingBox boundingBox)

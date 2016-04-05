@@ -75,10 +75,10 @@ namespace HarvestJump
 
         public virtual void HandleCollision(ICollide collisionObject)
         {
-            float penetrationTop = position.Y + boundingBox.height - collisionObject.boundingBox.y;
-            float penetrationLeft = position.X + boundingBox.width - collisionObject.boundingBox.x;
-            float penetrationBottom = collisionObject.boundingBox.y + collisionObject.boundingBox.height - position.Y;
-            float penetrationRight = collisionObject.boundingBox.x + collisionObject.boundingBox.width - position.X;
+            float penetrationTop = position.Y + boundingBox.height - collisionObject.boundingBox.position.Y;
+            float penetrationLeft = position.X + boundingBox.width - collisionObject.boundingBox.position.X;
+            float penetrationBottom = collisionObject.boundingBox.position.Y + collisionObject.boundingBox.height - position.Y;
+            float penetrationRight = collisionObject.boundingBox.position.X + collisionObject.boundingBox.width - position.X;
 
             float lowestPenetation = CollisionHelper.getLowestNumber(penetrationTop, penetrationLeft, penetrationBottom, penetrationRight);
 

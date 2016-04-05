@@ -51,7 +51,7 @@ namespace HarvestJump
 
             if (introStarted)
             {
-                introSound.Play(1f,0f,0.5f);
+                introSound.Play(0.5f, 0f, 0.0f);
                 introStarted = false;
             }
 

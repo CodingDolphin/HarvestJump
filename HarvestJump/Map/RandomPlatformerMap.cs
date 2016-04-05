@@ -88,7 +88,7 @@ namespace HarvestJump
                 platformList.Add(new Platform(new Vector2(currentPositionX + spaceX, spaceY), platformLenght, height, 32, 32));
                 spaceX = random.Next(100, 200);
                 spaceY = random.Next(100, 400);
-                currentPositionX = (int)platformList[i].boundingBox.x + (int)platformList[i].boundingBox.width;
+                currentPositionX = (int)platformList[i].boundingBox.position.X + (int)platformList[i].boundingBox.width;
             }
         }
 

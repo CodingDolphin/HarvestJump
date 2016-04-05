@@ -60,9 +60,9 @@ namespace HarvestJump
 
             //Weitere GameScreens hier hinzufügen
 
-            screenList.Add(new IntroScreen(screenWidth, screenHeight));
-            screenList.Add(new MenuScreen(screenWidth, screenHeight));
-            screenList.Add(new PlayScreen(screenWidth, screenHeight));
+            screenList.Add(new IntroScreen(virtualWidth, virutalHeight));
+            screenList.Add(new MenuScreen(virtualWidth, virutalHeight));
+            screenList.Add(new PlayScreen(virtualWidth, virutalHeight));
             currentScreen = screenList[0];
 
             //Events hier registrieren
@@ -120,7 +120,7 @@ namespace HarvestJump
                 if(currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 3)
                 {
                     MediaPlayer.Volume = 0.1f;
-                    speedDown.Play();
+                    speedDown.Play(0.5f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
                     test.platformerWorld.player.slowMotion = 3;
@@ -135,7 +135,7 @@ namespace HarvestJump
                 if (currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 1)
                 {
                     MediaPlayer.Volume = 0.5f;
-                    speedUp.Play();
+                    speedUp.Play(0.5f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
                     test.platformerWorld.player.slowMotion = 1;
