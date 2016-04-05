@@ -51,7 +51,7 @@ namespace HarvestJump
 
             if (introStarted)
             {
-                introSound.Play(1f,-0.3f,0.5f);
+                introSound.Play(1f,0f,0.5f);
                 introStarted = false;
             }
 
@@ -62,7 +62,7 @@ namespace HarvestJump
 
         private void onIntroEnd()
         {
-            NotifyScreenChange(ScreenName.PLAYSCREEN);
+            NotifyScreenChange(ScreenName.MENUSCREEN);
         }
 
         //Aktuellen Screen zeichnen

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="180144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="181168">
       <assemblyIdentity name="HarvestJump" version="3.4.0.456" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uNYi6QNQ8cMpaA6F8y346d/Yu5BoRwjiem1PJSEqEHI=</dsig:DigestValue>
+        <dsig:DigestValue>9ABXYDk11Y/Jte9lDwZp1pXEcpSIMm6g5kPpqrqAvnI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,6 +289,69 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuBackground.jpg" size="183008">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3RGTIzuDJqJI77d0RIKHVRp2oFIBfjxC9Oux4EDnwwg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuBackground.xnb" size="1920085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AnWd1PcgxeJyANTsw3YBHqshS4dyx/KrJudEOXCxhOY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuBanner.png" size="69035">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nIFkw5+LNQPeKJ38ekFZ2/fUyREZbVKIEItqwgytST8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuBanner.xnb" size="329269">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2+OD9PmAiPnFP6WCNYzBXLLJnDxEqD6fBQeLuNKcIfk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuMusic.mp3" size="3242171">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>APZ3U0bT7B4k+Ic7fER5FOPhfvvGaZ1njvwz64Fawr4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuMusic.wma" size="4663248">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gPfwyxcegL8ROFHApSelbwM/pDcJ1OSsRCZ/IDuHOv8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\MenuMusic.xnb" size="127">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w8ytLkKXe4asJIP24zJAMRrt6H9eIkY1UkOSCh6FQK4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\PlayAssets\GrassSheet.xnb" size="524373">

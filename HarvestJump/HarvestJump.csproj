@@ -114,6 +114,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\MapAssets\GrassPlatformSheet.png" />
+    <Content Include="Content\MenuAssets\MenuBackground.jpg" />
+    <Content Include="Content\MenuAssets\MenuBanner.png" />
+    <Content Include="Content\MenuAssets\MenuMusic.mp3" />
     <Content Include="Content\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -50,7 +50,7 @@ namespace HarvestJump
             //Map Eigenschaften hier einstellen
 
             startHeight = 300;
-            maxPlatforms = 0;
+            maxPlatforms = 5;
             maxPlatformHeight = 10;
             minPlatformHeight = 1;
 
@@ -72,7 +72,7 @@ namespace HarvestJump
 
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero,75,75);
-            createMap(300, 10);
+            createMap(startHeight, maxPlatforms);
         }
 
         public void createMap(int startposition, int maxPlatform)

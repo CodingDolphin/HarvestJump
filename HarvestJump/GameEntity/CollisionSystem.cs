@@ -15,13 +15,13 @@ namespace HarvestJump
             this.randomJumpMap = randomJumpMap;
         }
 
-        public void checkCollision(ICollide rectangleOne)
+        public void checkCollision(ICollide boundingBox)
         {
             foreach (Platform platform in randomJumpMap)
             {
-                if (rectangleOne.boundingBox.Intersects(platform.boundingBox))
+                if (boundingBox.boundingBox.Intersects(platform.boundingBox))
                 {
-                    rectangleOne.HandleCollision(platform);
+                    boundingBox.HandleCollision(platform);
                 }
             }
         }
