@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="HarvestJump.exe.manifest" size="24074">
+    <dependentAssembly dependencyType="install" codebase="HarvestJump.exe.manifest" size="25306">
       <assemblyIdentity name="HarvestJump.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sFOt6GBWKkS1ITyzNr7N9i4XWv6xMqLMZwoVfd5MkMA=</dsig:DigestValue>
+        <dsig:DigestValue>LmjkhWpyKxp53Abt/0zfgjbdiLiwa7X3bF+rdmwJQqA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

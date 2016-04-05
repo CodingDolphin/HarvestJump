@@ -78,6 +78,8 @@
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
     <Compile Include="Grafik\SpriteSheet.cs" />
+    <Compile Include="ScreenManager\MenuScreen\Button.cs" />
+    <Compile Include="ScreenManager\MenuScreen\MenuEntry.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
     <Compile Include="GameEntity\GameObject.cs" />
@@ -85,7 +87,7 @@
     <Compile Include="ScreenManager\GameScreens\GameScreen.cs" />
     <Compile Include="Manager\InputManager.cs" />
     <Compile Include="ScreenManager\GameScreens\IntroScreen.cs" />
-    <Compile Include="ScreenManager\GameScreens\MenuScreen.cs" />
+    <Compile Include="ScreenManager\MenuScreen\MenuScreen.cs" />
     <Compile Include="GameEntity\Player.cs" />
     <Compile Include="MonoClasses\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +119,7 @@
     <Content Include="Content\MenuAssets\MenuBackground.jpg" />
     <Content Include="Content\MenuAssets\MenuBanner.png" />
     <Content Include="Content\MenuAssets\MenuMusic.mp3" />
+    <Content Include="Content\MenuAssets\redButton.png" />
     <Content Include="Content\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -128,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Content\MenuAssets\LeagueFont.spritefont" />
+    <None Include="Content\MenuAssets\PlaytimeOblique.ttf" />
     <None Include="HarvestJump_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

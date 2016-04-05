@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="180656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="182704">
       <assemblyIdentity name="HarvestJump" version="3.4.0.456" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/88kynDjTh8Qb3qHpa8pjt7WWtMW4R6eK4AVUT68v7c=</dsig:DigestValue>
+        <dsig:DigestValue>AMimnU3FsfpPP+rUiorxFaxsFVn1dTt//k+d0pnGSWE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -291,6 +291,15 @@
       <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\MenuAssets\LeagueFont.xnb" size="70676">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HBN4gQSwTb7OHDYX0iKelHXIJGWA3MDwzx85aW2AkPA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\MenuAssets\MenuBackground.jpg" size="183008">
     <hash>
       <dsig:Transforms>
@@ -352,6 +361,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>w8ytLkKXe4asJIP24zJAMRrt6H9eIkY1UkOSCh6FQK4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\redButton.png" size="426">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3KgluPcgq6xUBCJYi5LxO7IbPYsa4w1R2PLmSilMDhI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuAssets\redButton.xnb" size="34285">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YJ2eIdy5EBZaVOBF/sW8ZwNmvV+qsx6kk5V06Jo5v/Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\PlayAssets\GrassSheet.xnb" size="524373">
