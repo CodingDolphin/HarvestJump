@@ -11,6 +11,10 @@ namespace HarvestJump
 {
     class FontButton : MenuEntry
     {
+        private float _scale;
+        private bool _isSelected;
+        private float _pulseValue = 0.001f;
+
         protected SpriteFont font { get; set; }
         protected Vector2 fontPosition { get; set; }
         protected Vector2 stringSize { get; set; }
@@ -39,14 +43,33 @@ namespace HarvestJump
         }
         public void AdjustFontToTexture()
         {
-            fontPosition = new Vector2(position.X + position.Width / 2 - stringSize.X / 2,
-                                       position.Y + position.Height / 2 - stringSize.Y / 2);
+            fontPosition = new Vector2(position.X + position.Width / 2 - stringSize.X / 2 - 4,
+                                       position.Y + position.Height / 2 - stringSize.Y / 2 - 2);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, buttonColor);
-            spriteBatch.DrawString(font, buttonText, fontPosition, Color.White);
+            Pulse();
+            spriteBatch.Draw(texture, new Vector2(position.X, position.Y), null, buttonColor, 0f, Vector2.Zero, new Vector2(_scale, _scale), SpriteEffects.None, 1f);
+            spriteBatch.DrawString(font, buttonText, fontPosition, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 1f);
+        }
+
+        public void Pulse()
+        {
+            _scale = MathHelper.Clamp(_scale += _pulseValue, 0.98f, 1.02f);
+
+            if (_isSelected)
+            {
+                if (_scale == 1.02f)
+                    _pulseValue = _pulseValue * -1;
+
+                if (_scale == 0.98f)
+                    _pulseValue = _pulseValue * -1;
+            }
+            else
+            {
+                _scale = 1f;
+            }
         }
     }
 }
