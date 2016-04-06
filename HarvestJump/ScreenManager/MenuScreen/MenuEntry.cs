@@ -16,8 +16,11 @@ namespace HarvestJump
         protected int endPosX { get; set; }
         protected bool slideAppear { get; set; }
         protected int appearSpeed { get; set; }
+        protected bool isSelected { get; set; }
+        protected ScreenName choice { get; set; }
+        public event ScreenHandler ScreenChanged;
 
-        public MenuEntry(Rectangle position, bool slideAppear)
+        public MenuEntry(Rectangle position, bool slideAppear, ScreenName choice)
         {
             this.position = new Rectangle(position.X, position.Y, position.Width, position.Height);
             endPosX = position.X;
@@ -25,6 +28,7 @@ namespace HarvestJump
             if (slideAppear)
                 this.position = new Rectangle(0 - position.Width, position.Y, position.Width, position.Height);
 
+            this.choice = choice;
             appearSpeed = 5;
         }
 
@@ -38,14 +42,34 @@ namespace HarvestJump
             SlideAppear();
         }
 
+        public void checkSelected(Vector2 mousePosition, bool mouseClick)
+        {
+            Rectangle mouseRectangle = new Rectangle((int)mousePosition.X, (int)mousePosition.Y, 1, 1);
+
+            if (mouseRectangle.Intersects(position))
+            {
+                this.isSelected = true;
+                if (mouseClick)
+                {
+                    NotifyScreenChange(this.choice);
+                }
+            }
+            else
+            {
+                this.isSelected = false;
+            }
+        }
+
+        public void NotifyScreenChange(ScreenName choice)
+        {
+            if (ScreenChanged != null)
+                ScreenChanged(choice);
+        }
+
         public virtual void SlideAppear()
         {
             if (position.X <= endPosX)
                 position = new Rectangle(position.X + appearSpeed, position.Y, position.Width, position.Height);
-        }
-
-        public virtual void AlphaTransition()
-        {
         }
 
         public  virtual void Draw(SpriteBatch spriteBatch)

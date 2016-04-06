@@ -34,8 +34,8 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content)
         {
-            menuBackground.LoadContent(content, "IntroAssets/CompanyLogo");
-            introSound = content.Load<SoundEffect>("IntroAssets/LogoSound");
+            menuBackground.LoadContent(content, "GraphicAssets/IntroAssets/CompanyLogo");
+            introSound = content.Load<SoundEffect>("SoundAssets/IntroAssets/LogoSound");
         }
 
         //GameScreen hier updaten

@@ -105,25 +105,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\IntroAssets\CompanyLogo.png" />
+    <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogo.png" />
     <Content Include="Content\blackPixel.png" />
-    <Content Include="Content\IntroAssets\Logo1.png" />
-    <Content Include="Content\IntroAssets\LogoSound.wav">
+    <Content Include="Content\GraphicAssets\IntroAssets\Logo1.png" />
+    <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\MapAssets\Background02.png" />
-    <Content Include="Content\MapAssets\grassBlock.png">
+    <Content Include="Content\GraphicAssets\MapAssets\Background02.png" />
+    <Content Include="Content\GraphicAssets\MapAssets\grassBlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\MapAssets\GrassPlatformSheet.png" />
-    <Content Include="Content\MenuAssets\MenuBackground.jpg" />
-    <Content Include="Content\MenuAssets\MenuBanner.png" />
-    <Content Include="Content\MenuAssets\MenuMusic.mp3" />
-    <Content Include="Content\MenuAssets\redButton.png" />
-    <Content Include="Content\PlayAssets\LevelBackground.mp3">
+    <Content Include="Content\GraphicAssets\MapAssets\GrassPlatformSheet.png" />
+    <Content Include="Content\GraphicAssets\MenuAssets\MenuBackground.jpg" />
+    <Content Include="Content\GraphicAssets\MenuAssets\MenuBanner.png" />
+    <Content Include="Content\SoundAssets\MenuAssets\MenuMusic.mp3" />
+    <Content Include="Content\GraphicAssets\MenuAssets\redButton.png" />
+    <Content Include="Content\SoundAssets\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\PlayAssets\Player.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\Player.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -131,8 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Content\MenuAssets\LeagueFont.spritefont" />
-    <None Include="Content\MenuAssets\PlaytimeOblique.ttf" />
+    <None Include="Content\Fonts\LeagueFont.spritefont" />
+    <None Include="Content\Fonts\PlaytimeOblique.ttf" />
+    <None Include="Content\SoundAssets\MenuAssets\rollover1.ogg" />
     <None Include="HarvestJump_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

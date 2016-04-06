@@ -19,6 +19,8 @@ namespace HarvestJump
         PLAYSCREEN,
         MENUSCREEN,
         INTROSCREEN,
+        OPTIONSSCREEN,
+        EXITSCREEN,
     }
 
     abstract class GameScreen

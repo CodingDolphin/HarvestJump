@@ -17,8 +17,9 @@ namespace HarvestJump
         private Sprite menuBanner { get; set; }
         private Sprite menuBackground { get; set; }
         private Song menuMusic { get; set; }
-        private List<MenuEntry> menuEntryList { get; set; }
+        public List<MenuEntry> menuEntryList { get; set; }
         private Vector2 startPosition { get; set; }
+        private InputManager input { get; set; }
 
         //Fields
 
@@ -35,6 +36,7 @@ namespace HarvestJump
             menuBackground = new Sprite(Vector2.Zero);
             menuBanner = new Sprite(Vector2.Zero);
             menuEntryList = new List<MenuEntry>();
+            input = new InputManager();
 
             //Spacing und Padding in Pixeln
 
@@ -50,21 +52,21 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content)
         {
-            menuBanner.LoadContent(content, "MenuAssets/MenuBanner");
-            menuBackground.LoadContent(content, "MenuAssets/MenuBackground");
-            menuMusic = content.Load<Song>("MenuAssets/MenuMusic");
+            menuBanner.LoadContent(content, "GraphicAssets/MenuAssets/MenuBanner");
+            menuBackground.LoadContent(content, "GraphicAssets/MenuAssets/MenuBackground");
+            menuMusic = content.Load<Song>("SoundAssets/MenuAssets/MenuMusic");
             menuBanner.position = (new Vector2(screenWidth / 2 - menuBanner.texture.Width / 2, bannerSpaceTop));
 
             //Buttons erstellen und Content laden
 
-            CreateButtons(new ScreenName[] { ScreenName.PLAYSCREEN }, "Start Game", "Options", "Exit");
+            CreateButtons(new ScreenName[] { ScreenName.PLAYSCREEN, ScreenName.OPTIONSSCREEN, ScreenName.EXITSCREEN }, "Start Game", "Options", "Exit");
 
             foreach (MenuEntry entry in menuEntryList)
             {
                 if (entry is FontButton)
                 {
                     var button = (FontButton)entry;
-                    button.LoadContent(content, "MenuAssets/redButton", "MenuAssets/LeagueFont");
+                    button.LoadContent(content, "GraphicAssets/MenuAssets/redButton", "Fonts/LeagueFont");
                 }
             }
         }
@@ -75,12 +77,14 @@ namespace HarvestJump
 
             for (int i = 0; i < buttonNames.Length; i++)
             {
-                menuEntryList.Add(new FontButton(new Rectangle((int)startPosition.X, (int)startPosition.Y + i * buttonSpacing, buttonWidth, buttonHeight),slideAppear, buttonNames[i]));
+                menuEntryList.Add(new FontButton(new Rectangle((int)startPosition.X, (int)startPosition.Y + i * buttonSpacing, buttonWidth, buttonHeight),slideAppear,screenNames[i], buttonNames[i]));
             }
         }
 
         public override void Update(GameTime gameTime)
         {
+            input.Update(gameTime);
+
             if (MediaPlayer.State == MediaState.Stopped)
             {
                 MediaPlayer.Volume = 0.5f;
@@ -90,6 +94,7 @@ namespace HarvestJump
             foreach (MenuEntry entry in menuEntryList)
             {
                 entry.Update(gameTime);
+                entry.checkSelected(input.getMousePosition(), input.GetLeftClick());
             }
         }
 

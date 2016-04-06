@@ -63,7 +63,7 @@ namespace HarvestJump
             screenList.Add(new IntroScreen(virtualWidth, virutalHeight));
             screenList.Add(new MenuScreen(virtualWidth, virutalHeight));
             screenList.Add(new PlayScreen(virtualWidth, virutalHeight));
-            currentScreen = screenList[1];
+            currentScreen = screenList[0];
 
             //Events hier registrieren
 
@@ -91,6 +91,12 @@ namespace HarvestJump
 
             speedUp = content.Load<SoundEffect>("PlayAssets/speedUp");
             speedDown = content.Load <SoundEffect>("PlayAssets/speedDown");
+
+            var menu = (MenuScreen)screenList[1];
+            foreach (MenuEntry entry in menu.menuEntryList)
+            {
+                entry.ScreenChanged += HandleScreenChange;
+            }
         }
 
         //Spiel Updaten
@@ -168,6 +174,8 @@ namespace HarvestJump
                 case ScreenName.MENUSCREEN: currentScreen = screenList[1]; break;
                 case ScreenName.PLAYSCREEN: currentScreen = screenList[2]; break;
             }
+
+            MediaPlayer.Stop();
         }
 
         //Aktuellen Gamescreen zeichnen

@@ -4,24 +4,33 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/IntroAssets/CompanyLogo.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/blackPixel.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/IntroAssets/LogoSound.wav</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MapAssets/grassBlock.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MapAssets/GrassPlatformSheet.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MapAssets/Background02.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/Player.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/LevelBackground.mp3</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/GrassSheet.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/LevelBackgroundWav.wav</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/speedUp.wav</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/speedDown.wav</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/PlayerIdleAnimationLeft.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/PlayAssets/PlayerIdleAnimationRight.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MenuAssets/MenuBanner.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MenuAssets/MenuBackground.jpg</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MenuAssets/MenuMusic.mp3</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MenuAssets/LeagueFont.spritefont</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/MenuAssets/redButton.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/Fonts/LeagueFont.spritefont</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/IntroAssets/CompanyLogo.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/IntroAssets/Logo1.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/Background012.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/Background02.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/CatIdle100.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/grassBlock.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet1.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/MenuBackground.jpg</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/MenuBanner.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/redButton.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/redButtona.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/Save.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/GrassSheet.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/LevelBackgroundWav.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/Player.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerIdleAnimationLeft.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerIdleAnimationRight.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/speedDown.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/speedUp.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/IntroAssets/LogoSound.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/MenuAssets/MenuMusic.mp3</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/MenuAssets/rollover1.ogg</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/LevelBackground.mp3</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/speedDown.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/speedUp.wav</File>
   </SourceFiles>
 </SourceFileCollection>

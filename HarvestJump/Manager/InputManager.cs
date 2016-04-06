@@ -21,7 +21,7 @@ namespace HarvestJump
 
         public Vector2 getMousePosition()
         {
-            return new Vector2(currentMouseState.X, currentMouseState.Y);
+            return new Vector2(currentMouseState.X * 800 / 1280, currentMouseState.Y * 600 / 960);
         }
 
         public bool GetLeftClickOnce()

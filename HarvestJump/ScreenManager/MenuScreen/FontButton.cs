@@ -12,7 +12,6 @@ namespace HarvestJump
     class FontButton : MenuEntry
     {
         private float _scale;
-        private bool _isSelected;
         private float _pulseValue = 0.001f;
 
         protected SpriteFont font { get; set; }
@@ -21,7 +20,7 @@ namespace HarvestJump
         protected Color buttonColor { get; set; }
         protected string buttonText { get; set; }
 
-        public FontButton(Rectangle position,bool slideAppear, string buttonText) : base(position, slideAppear)
+        public FontButton(Rectangle position,bool slideAppear,ScreenName choice, string buttonText) : base(position, slideAppear, choice)
         {
             this.buttonColor = new Color(200, 56, 90);
             this.buttonText = buttonText;
@@ -58,7 +57,7 @@ namespace HarvestJump
         {
             _scale = MathHelper.Clamp(_scale += _pulseValue, 0.98f, 1.02f);
 
-            if (_isSelected)
+            if (isSelected)
             {
                 if (_scale == 1.02f)
                     _pulseValue = _pulseValue * -1;
