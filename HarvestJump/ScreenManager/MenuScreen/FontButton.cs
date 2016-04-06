@@ -17,7 +17,7 @@ namespace HarvestJump
         protected Color buttonColor { get; set; }
         protected string buttonText { get; set; }
 
-        public FontButton(Rectangle position, string buttonText) : base(position)
+        public FontButton(Rectangle position,bool slideAppear, string buttonText) : base(position, slideAppear)
         {
             this.buttonColor = new Color(200, 56, 90);
             this.buttonText = buttonText;
@@ -32,22 +32,21 @@ namespace HarvestJump
             base.LoadContent(content, textureName);
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            AdjustFontToTexture();
+            base.Update(gameTime);
+        }
         public void AdjustFontToTexture()
         {
             fontPosition = new Vector2(position.X + position.Width / 2 - stringSize.X / 2,
                                        position.Y + position.Height / 2 - stringSize.Y / 2);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-        }
-
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, buttonColor);
             spriteBatch.DrawString(font, buttonText, fontPosition, Color.White);
-            //spriteBatch.DrawString(font, buttonText, new Vector2(stringSize.X + stringSize.Width / 2 - stringSize.X / 2 , stringSize.Y + stringSize.Height / 2 - stringSize.Y / 2), Color.White); 
         }
     }
 }

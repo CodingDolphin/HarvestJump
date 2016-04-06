@@ -11,12 +11,21 @@ namespace HarvestJump
 {
     abstract class MenuEntry
     {
-        public Rectangle position;
-        protected Texture2D texture;
+        protected Rectangle position { get; set; }
+        protected Texture2D texture { get; set; }
+        protected int endPosX { get; set; }
+        protected bool slideAppear { get; set; }
+        protected int appearSpeed { get; set; }
 
-        public MenuEntry(Rectangle position)
+        public MenuEntry(Rectangle position, bool slideAppear)
         {
-            this.position = position;
+            this.position = new Rectangle(position.X, position.Y, position.Width, position.Height);
+            endPosX = position.X;
+
+            if (slideAppear)
+                this.position = new Rectangle(0 - position.Width, position.Y, position.Width, position.Height);
+
+            appearSpeed = 5;
         }
 
         public virtual void LoadContent(ContentManager content, string assetName)
@@ -26,10 +35,13 @@ namespace HarvestJump
 
         public virtual void Update(GameTime gameTime)
         {
+            SlideAppear();
         }
 
         public virtual void SlideAppear()
         {
+            if (position.X <= endPosX)
+                position = new Rectangle(position.X + appearSpeed, position.Y, position.Width, position.Height);
         }
 
         public virtual void AlphaTransition()

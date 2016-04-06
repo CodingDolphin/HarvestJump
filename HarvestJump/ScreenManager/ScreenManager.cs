@@ -48,8 +48,8 @@ namespace HarvestJump
 
             //Alle start Bildschimreinstellungen hier vornehmen
 
-            screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1200;
-            screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 900;
+            screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1280;
+            screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 960;
 
             graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();

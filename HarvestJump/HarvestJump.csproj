@@ -71,19 +71,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
-    <Compile Include="GameEntity\Camera.cs" />
-    <Compile Include="GameEntity\CollisionHelper.cs" />
-    <Compile Include="GameEntity\BoundingBox.cs" />
+    <Compile Include="Camera\Camera.cs" />
+    <Compile Include="HelperClasses\CollisionHelper.cs" />
+    <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
     <Compile Include="Grafik\SpriteSheet.cs" />
-    <Compile Include="ScreenManager\MenuScreen\Button.cs" />
+    <Compile Include="ScreenManager\MenuScreen\FontButton.cs" />
     <Compile Include="ScreenManager\MenuScreen\MenuEntry.cs" />
-    <Compile Include="Map\Tile.cs" />
+    <Compile Include="GameEntity\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
     <Compile Include="GameEntity\GameObject.cs" />
-    <Compile Include="GameEntity\CollisionSystem.cs" />
+    <Compile Include="HelperClasses\CollisionSystem.cs" />
     <Compile Include="ScreenManager\GameScreens\GameScreen.cs" />
     <Compile Include="Manager\InputManager.cs" />
     <Compile Include="ScreenManager\GameScreens\IntroScreen.cs" />

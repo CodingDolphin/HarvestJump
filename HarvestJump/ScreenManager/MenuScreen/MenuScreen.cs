@@ -12,37 +12,52 @@ namespace HarvestJump
 {
     class MenuScreen : GameScreen
     {
-        private Sprite gameBanner { get; set; }
+        //Properties
+
+        private Sprite menuBanner { get; set; }
         private Sprite menuBackground { get; set; }
         private Song menuMusic { get; set; }
-        private double deltaTime { get; set; }
         private List<MenuEntry> menuEntryList { get; set; }
         private Vector2 startPosition { get; set; }
 
+        //Fields
+
+        private int bannerSpaceTop { get; set; }
+        private int buttonSpaceLeft { get; set; }
+        private int buttonSpaceFromBannerTop { get; set; }
+        private int buttonSpacing { get; set; }
+        private int buttonWidth { get; set; }
+        private int buttonHeight { get; set; }
+        private bool slideAppear { get; set; }
+
         public MenuScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)  
         {
-            gameBanner = new Sprite(Vector2.Zero);
             menuBackground = new Sprite(Vector2.Zero);
+            menuBanner = new Sprite(Vector2.Zero);
             menuEntryList = new List<MenuEntry>();
+
+            //Spacing und Padding in Pixeln
+
+            bannerSpaceTop = 50;
+            buttonSpaceLeft = 10;
+            buttonSpaceFromBannerTop = 50;
+            buttonWidth = 200;
+            buttonHeight = 50;
+            buttonSpacing = buttonHeight + 20;
+            slideAppear = true;
+
         }
 
         public override void LoadContent(ContentManager content)
         {
-            gameBanner.LoadContent(content, "MenuAssets/MenuBanner");
+            menuBanner.LoadContent(content, "MenuAssets/MenuBanner");
             menuBackground.LoadContent(content, "MenuAssets/MenuBackground");
             menuMusic = content.Load<Song>("MenuAssets/MenuMusic");
+            menuBanner.position = (new Vector2(screenWidth / 2 - menuBanner.texture.Width / 2, bannerSpaceTop));
 
-            //Game Banner Position relativ zur Screensize, Y Wert ist der obere Abstand
+            //Buttons erstellen und Content laden
 
-            gameBanner.position = new Vector2(screenWidth / 2 - gameBanner.texture.Width / 2, 50);
-
-            //Startposition abhängig vom Game Logo X und Y haben eine kleine Abweichung bitte hier setzen
-
-            startPosition = new Vector2(gameBanner.position.X + 10, gameBanner.position.Y + gameBanner.texture.Height + 30);
-
-            //Hier die einzelnen Menu Button hinzufügen
-
-            CreateButtons("Start Game", "Options", "Exit");
+            CreateButtons(new ScreenName[] { ScreenName.PLAYSCREEN }, "Start Game", "Options", "Exit");
 
             foreach (MenuEntry entry in menuEntryList)
             {
@@ -54,29 +69,34 @@ namespace HarvestJump
             }
         }
 
-        public void CreateButtons(params string[] buttonNames)
+        public void CreateButtons(ScreenName[] screenNames, params string[] buttonNames)
         {
+            startPosition = new Vector2(menuBanner.position.X + buttonSpaceLeft, menuBanner.position.Y + menuBanner.texture.Height + buttonSpaceFromBannerTop);
+
             for (int i = 0; i < buttonNames.Length; i++)
             {
-                menuEntryList.Add(new FontButton(new Rectangle((int)startPosition.X, (int)startPosition.Y + i * 50 + i * 20, 175, 50), buttonNames[i]));
+                menuEntryList.Add(new FontButton(new Rectangle((int)startPosition.X, (int)startPosition.Y + i * buttonSpacing, buttonWidth, buttonHeight),slideAppear, buttonNames[i]));
             }
         }
 
         public override void Update(GameTime gameTime)
         {
-            deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
-
             if (MediaPlayer.State == MediaState.Stopped)
             {
                 MediaPlayer.Volume = 0.5f;
                 MediaPlayer.Play(menuMusic);
+            }
+
+            foreach (MenuEntry entry in menuEntryList)
+            {
+                entry.Update(gameTime);
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             menuBackground.Draw(spriteBatch);
-            gameBanner.Draw(spriteBatch);
+            menuBanner.Draw(spriteBatch);
 
             foreach (MenuEntry entry in menuEntryList)
             {
@@ -86,9 +106,6 @@ namespace HarvestJump
                     button.Draw(spriteBatch);
                 }
             }
-
-            //playbutton.Draw(spriteBatch);
-            //optionbutton.Draw(spriteBatch);
         }
     }
 }
