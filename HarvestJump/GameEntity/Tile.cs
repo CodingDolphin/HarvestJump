@@ -23,6 +23,7 @@ namespace HarvestJump
         public SpriteSheet tileSprite { get; private set; }
         public TileType tileType { get; private set; }
 
+
         //Konstruktor
          
         public Tile(Vector2 position, int tileWidth, int tileHeight, TileType tileType) : base(position, tileWidth, tileHeight)

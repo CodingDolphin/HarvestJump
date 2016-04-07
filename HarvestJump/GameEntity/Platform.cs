@@ -9,6 +9,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace HarvestJump
 {
+    public enum isMoving
+    {
+        horizontal,
+        vertical,
+        none,
+    }
+
     class Platform : GameObject
     {
         protected List<Tile> tileList { get; set; }
@@ -16,10 +23,12 @@ namespace HarvestJump
         protected int platformHeight { get; set; }
         protected int tileWidth { get; set; }
         protected int tileHeight { get; set; }
+        protected isMoving moveDirection { get; set; }
 
         public Platform(Vector2 position,int platformWidth, int platformHeight, int tileWidth, int tileHeight) : base(position, platformWidth * tileWidth, platformHeight * tileHeight)
         {
             tileList = new List<Tile>();
+            this.moveDirection = isMoving.none;
             this.tileWidth = tileWidth;
             this.tileHeight = tileHeight;
             this.platformWidth = platformWidth;

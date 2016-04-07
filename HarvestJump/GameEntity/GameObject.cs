@@ -26,7 +26,6 @@ namespace HarvestJump
         protected Sprite rightSprite { get; set; }
         protected double deltaTime { get; set; }
         public double slowMotion { get; set; }
-        protected bool hasContact { get; set; }
 
         //ICollide Interface
 

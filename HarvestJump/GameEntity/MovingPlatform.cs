@@ -7,25 +7,18 @@ using Microsoft.Xna.Framework;
 
 namespace HarvestJump
 {
-    public enum isMoving
-    {
-        horizontal,
-        vertical,
-        none,
-    }
-
     class MovingPlatform : Platform
     {
         public int moveSpace { get; set; }
         public int endPosition { get; set; }
         public int startPosition { get; set; }
         public int moveSpeed { get; set; }
-        public isMoving moveDirection { get; set; }
 
         public MovingPlatform(Vector2 position, int platformWidth, int platformHeight, int tileWidth, int tileHeight, int moveSpeed, int moveSpace, isMoving moveDirection) : base(position, platformWidth, platformHeight, tileWidth, tileHeight)
         {
             this.moveSpace = moveSpace;
             this.moveSpeed = moveSpeed;
+            this.moveDirection = moveDirection;
 
             CreateWayPoints();
         }

@@ -48,7 +48,7 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.Left)) { velocity += new Vector2(-20, 0); ChangeDirectionToLeft(); }
             if (keyboardState.IsKeyDown(Keys.Right)) { velocity += new Vector2(20, 0); ChangeDirectionToRight(); }
-            if (keyboardState.IsKeyDown(Keys.Up) && !isJumping) { velocity += new Vector2(0, -1000);isJumping = true; hasContact = false;  }
+            if (keyboardState.IsKeyDown(Keys.Up) && !isJumping) { velocity += new Vector2(0, -1000);isJumping = true; }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

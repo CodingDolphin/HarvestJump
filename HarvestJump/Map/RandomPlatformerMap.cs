@@ -69,8 +69,6 @@ namespace HarvestJump
             random = new Random();
             collisionSystem = new CollisionSystem(platformList);
 
-            
-
             //Map Generierung starten
 
             mapBackground = new Sprite(Vector2.Zero);
