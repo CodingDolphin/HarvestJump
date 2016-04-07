@@ -140,7 +140,7 @@ namespace HarvestJump
 
                 if (currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 1)
                 {
-                    MediaPlayer.Volume = 0.5f;
+                    MediaPlayer.Volume = 0.3f;
                     speedUp.Play(0.5f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;

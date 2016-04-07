@@ -69,12 +69,16 @@ namespace HarvestJump
             random = new Random();
             collisionSystem = new CollisionSystem(platformList);
 
+            
+
             //Map Generierung starten
 
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero, 65, 90);
             enemy = new Enemy(Vector2.Zero, 140, 100);
             createMap(startHeight, maxPlatforms);
+
+            platformList.Add(new MovingPlatform(new Vector2(0, 100), 5, 1, 32, 32, 1, 200, isMoving.horizontal));
         }
 
         public void createMap(int startposition, int maxPlatform)
@@ -103,6 +107,9 @@ namespace HarvestJump
 
             mapBackground.LoadContent(content, "GraphicAssets/MapAssets/Background02");
             player.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationRight");
+
+            //Testing
+
             enemy.LoadContent(content, "GraphicAssets/PlayAssets/roflthecat");
         }
 
@@ -113,6 +120,12 @@ namespace HarvestJump
 
             collisionSystem.checkCollision(player);
             collisionSystem.checkCollision(enemy);
+
+            foreach (Platform item in platformList)
+            {
+                if (item is MovingPlatform)
+                    item.Update(gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
