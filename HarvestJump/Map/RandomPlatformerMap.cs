@@ -28,6 +28,7 @@ namespace HarvestJump
         private Random random { get; set; }
         private Sprite mapBackground { get; set; }
         public Player player { get; set; }
+        public Enemy enemy { get; set; }
         private CollisionSystem collisionSystem { get; set; }
 
         //Horizontale Variablen
@@ -50,11 +51,11 @@ namespace HarvestJump
             //Map Eigenschaften hier einstellen
 
             startHeight = 300;
-            maxPlatforms = 5;
+            maxPlatforms = 50;
             maxPlatformHeight = 10;
             minPlatformHeight = 1;
 
-            maxPlatformLenght = 8;
+            maxPlatformLenght = 100;
             maxHorizentalPlatformSpace = 4;
             minPlatformLenght = 5;
             minHorizontalPlatformSpace = 2;
@@ -71,7 +72,8 @@ namespace HarvestJump
             //Map Generierung starten
 
             mapBackground = new Sprite(Vector2.Zero);
-            player = new Player(Vector2.Zero,75,75);
+            player = new Player(Vector2.Zero, 65, 90);
+            enemy = new Enemy(Vector2.Zero, 140, 100);
             createMap(startHeight, maxPlatforms);
         }
 
@@ -96,18 +98,21 @@ namespace HarvestJump
         {
             foreach (Platform platform in platformList)
             {
-                platform.LoadContent(content, "MapAssets/GrassPlatformSheet");
+                platform.LoadContent(content, "GraphicAssets/MapAssets/GrassPlatformSheet");
             }
 
-            mapBackground.LoadContent(content, "MapAssets/Background02");
-            player.LoadContent(content, "PlayAssets/PlayerIdleAnimationRight");
+            mapBackground.LoadContent(content, "GraphicAssets/MapAssets/Background02");
+            player.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationRight");
+            enemy.LoadContent(content, "GraphicAssets/PlayAssets/roflthecat");
         }
 
         public void Update(GameTime gameTime)
         {
+            enemy.Update(gameTime);
             player.Update(gameTime);
+
             collisionSystem.checkCollision(player);
-            player.UpdateAnimation(gameTime);
+            collisionSystem.checkCollision(enemy);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -119,6 +124,7 @@ namespace HarvestJump
                 platform.Draw(spriteBatch);
             }
 
+            enemy.Draw(spriteBatch);
             player.Draw(spriteBatch);
         }
     }

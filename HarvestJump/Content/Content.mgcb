@@ -31,30 +31,6 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/LeagueFont.spritefont
 
-#begin GraphicAssets/IntroAssets/CompanyLogo.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/IntroAssets/CompanyLogo.png
-
-#begin GraphicAssets/IntroAssets/Logo1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/IntroAssets/Logo1.png
-
 #begin GraphicAssets/MapAssets/Background012.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -126,6 +102,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/GrassPlatformSheet1.png
+
+#begin GraphicAssets/MapAssets/vjrjA.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/MapAssets/vjrjA.jpg
 
 #begin GraphicAssets/MenuAssets/MenuBackground.jpg
 /importer:TextureImporter
@@ -217,7 +205,7 @@
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/Player.png
 
-#begin GraphicAssets/PlayAssets/PlayerIdleAnimationLeft.png
+#begin GraphicAssets/PlayAssets/roflthecat.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -227,19 +215,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/PlayerIdleAnimationLeft.png
-
-#begin GraphicAssets/PlayAssets/PlayerIdleAnimationRight.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/PlayerIdleAnimationRight.png
+/build:GraphicAssets/PlayAssets/roflthecat.png
 
 #begin GraphicAssets/PlayAssets/speedDown.wav
 /importer:WavImporter
@@ -253,39 +229,75 @@
 /processorParam:Quality=Best
 /build:GraphicAssets/PlayAssets/speedUp.wav
 
-#begin SoundAssets/IntroAssets/LogoSound.wav
+#begin SoundAssets\IntroAssets\LogoSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:SoundAssets/IntroAssets/LogoSound.wav
+/build:SoundAssets\IntroAssets\LogoSound.wav
 
-#begin SoundAssets/MenuAssets/MenuMusic.mp3
+#begin SoundAssets\MenuAssets\MenuMusic.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:SoundAssets/MenuAssets/MenuMusic.mp3
+/build:SoundAssets\MenuAssets\MenuMusic.mp3
 
-#begin SoundAssets/MenuAssets/rollover1.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:SoundAssets/MenuAssets/rollover1.ogg
-
-#begin SoundAssets/PlayAssets/LevelBackground.mp3
+#begin SoundAssets\PlayAssets\LevelBackground.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:SoundAssets/PlayAssets/LevelBackground.mp3
+/build:SoundAssets\PlayAssets\LevelBackground.mp3
 
-#begin SoundAssets/PlayAssets/speedDown.wav
+#begin SoundAssets\PlayAssets\speedDown.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:SoundAssets/PlayAssets/speedDown.wav
+/build:SoundAssets\PlayAssets\speedDown.wav
 
-#begin SoundAssets/PlayAssets/speedUp.wav
+#begin SoundAssets\PlayAssets\speedUp.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:SoundAssets/PlayAssets/speedUp.wav
+/build:SoundAssets\PlayAssets\speedUp.wav
+
+#begin GraphicAssets/PlayAssets/CatIdleAnimationLeft.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/CatIdleAnimationLeft.png
+
+#begin GraphicAssets/PlayAssets/CatIdleAnimationRight.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/CatIdleAnimationRight.png
+
+#begin GraphicAssets/IntroAssets/CompanyLogoo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/IntroAssets/CompanyLogoo.png
+
+#begin SoundAssets/MenuAssets/rollover1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/MenuAssets/rollover1.wav
 

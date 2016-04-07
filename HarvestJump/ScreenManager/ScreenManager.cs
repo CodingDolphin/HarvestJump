@@ -27,8 +27,8 @@ namespace HarvestJump
 
         //Konstanten
 
-        public const int virtualWidth = 800;
-        public const int virutalHeight = 600;
+        public const int virtualWidth = 1280;
+        public const int virutalHeight = 720;
 
         //Temporär Testing
 
@@ -49,9 +49,9 @@ namespace HarvestJump
             //Alle start Bildschimreinstellungen hier vornehmen
 
             screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1280;
-            screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 960;
+            screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 720;
 
-            graphicDeviceManager.IsFullScreen = false;
+            graphicDeviceManager.IsFullScreen = true;
             graphicDeviceManager.ApplyChanges();
 
             //Alle wichtigen Variablen instanzieren
@@ -89,8 +89,8 @@ namespace HarvestJump
 
             //Testing
 
-            speedUp = content.Load<SoundEffect>("PlayAssets/speedUp");
-            speedDown = content.Load <SoundEffect>("PlayAssets/speedDown");
+            speedUp = content.Load<SoundEffect>("SoundAssets/PlayAssets/speedUp");
+            speedDown = content.Load <SoundEffect>("SoundAssets/PlayAssets/speedDown");
 
             var menu = (MenuScreen)screenList[1];
             foreach (MenuEntry entry in menu.menuEntryList)

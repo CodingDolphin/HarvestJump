@@ -13,7 +13,7 @@ namespace HarvestJump
     {
         //Konstanten hier deklarieren
 
-        private const double introDuration = 6d;
+        private const double introDuration = 5d;
 
         //Klassenvariablen hier deklarieren
 
@@ -34,7 +34,7 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content)
         {
-            menuBackground.LoadContent(content, "GraphicAssets/IntroAssets/CompanyLogo");
+            menuBackground.LoadContent(content, "GraphicAssets/IntroAssets/CompanyLogoo");
             introSound = content.Load<SoundEffect>("SoundAssets/IntroAssets/LogoSound");
         }
 

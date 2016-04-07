@@ -22,6 +22,7 @@ namespace HarvestJump
                 if (boundingBox.boundingBox.Intersects(platform.boundingBox))
                 {
                     boundingBox.HandleCollision(platform);
+                    boundingBox.UpdateAnimation();
                 }
             }
         }

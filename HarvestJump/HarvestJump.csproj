@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="GameEntity\Enemy.cs" />
     <Compile Include="HelperClasses\CollisionHelper.cs" />
     <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
@@ -105,9 +106,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogo.png" />
     <Content Include="Content\blackPixel.png" />
-    <Content Include="Content\GraphicAssets\IntroAssets\Logo1.png" />
+    <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationLeft.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationRight.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\roflthecat.png" />
     <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -115,15 +118,20 @@
     <Content Include="Content\GraphicAssets\MapAssets\grassBlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GraphicAssets\MapAssets\GrassPlatformSheet.png" />
+    <Content Include="Content\GraphicAssets\MapAssets\GrassPlatformSheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\GraphicAssets\MenuAssets\MenuBackground.jpg" />
     <Content Include="Content\GraphicAssets\MenuAssets\MenuBanner.png" />
     <Content Include="Content\SoundAssets\MenuAssets\MenuMusic.mp3" />
     <Content Include="Content\GraphicAssets\MenuAssets\redButton.png" />
+    <Content Include="Content\SoundAssets\MenuAssets\rollover1.wav" />
     <Content Include="Content\SoundAssets\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GraphicAssets\PlayAssets\Player.png" />
+    <Content Include="Content\SoundAssets\PlayAssets\speedDown.wav" />
+    <Content Include="Content\SoundAssets\PlayAssets\speedUp.wav" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -131,9 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Content\Fonts\LeagueFont.spritefont" />
-    <None Include="Content\Fonts\PlaytimeOblique.ttf" />
-    <None Include="Content\SoundAssets\MenuAssets\rollover1.ogg" />
+    <None Include="Content\Fonts\LeagueFont.spritefont">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="HarvestJump_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/blackPixel.png</SourceFile>
   <SourceTime>2016-03-18T18:12:39.5022113+01:00</SourceTime>
   <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/blackPixel.xnb</DestFile>
-  <DestTime>2016-03-28T17:10:07.3357056+02:00</DestTime>
+  <DestTime>2016-04-07T01:19:00.6432184+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
@@ -26,6 +26,10 @@
   </Parameters>
   <Parameters>
     <Key>ResizeToPowerOfTwo</Key>
+    <Value>False</Value>
+  </Parameters>
+  <Parameters>
+    <Key>MakeSquare</Key>
     <Value>False</Value>
   </Parameters>
   <Parameters>

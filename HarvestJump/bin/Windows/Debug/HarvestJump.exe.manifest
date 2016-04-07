@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="187824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarvestJump.exe" size="188848">
       <assemblyIdentity name="HarvestJump" version="3.4.0.456" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lfuxl7JqRsb4co5gmKU9PA8mSHzkW3fVF0gQlnG0PDQ=</dsig:DigestValue>
+        <dsig:DigestValue>BzrA9g3kuzES0LsI0AAMW/cFimyirdq1HhROU5A9rho=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -201,31 +201,31 @@
       <dsig:DigestValue>HBN4gQSwTb7OHDYX0iKelHXIJGWA3MDwzx85aW2AkPA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\IntroAssets\CompanyLogo.png" size="23964">
+  <file name="Content\GraphicAssets\IntroAssets\CompanyLogo.xnb" size="3686485">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cXI3Vh0JXTdbXtVm4RbrncNkAJTu1LlLbacmGUNzxy4=</dsig:DigestValue>
+      <dsig:DigestValue>WrAReZPi4nxAUGV0uN7Q2/gqth81Q0NeJTLmiPIMejo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\IntroAssets\CompanyLogo.xnb" size="1920085">
+  <file name="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" size="62490">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X8oaDXlCDH6NK4gYA5GwcOo8InySRe13wkunDDX9cGg=</dsig:DigestValue>
+      <dsig:DigestValue>8otsOiv5aSUqQHgkKN3f/xrMlXgIvKUb5fz4dKE0HP0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\IntroAssets\Logo1.png" size="23964">
+  <file name="Content\GraphicAssets\IntroAssets\CompanyLogoo.xnb" size="3686485">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cXI3Vh0JXTdbXtVm4RbrncNkAJTu1LlLbacmGUNzxy4=</dsig:DigestValue>
+      <dsig:DigestValue>Z1Jc7S1HQKbuqsaI8Uq+NkvKGOK5bDsuc8M5ypoqNVk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\GraphicAssets\IntroAssets\Logo1.xnb" size="1920085">
@@ -318,40 +318,49 @@
       <dsig:DigestValue>y/0uxD0YpH4E5rCknH/wg70uiIscIxEKyctrW4/frRY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\MenuAssets\MenuBackground.jpg" size="183008">
+  <file name="Content\GraphicAssets\MapAssets\vjrjA.xnb" size="2019285">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3RGTIzuDJqJI77d0RIKHVRp2oFIBfjxC9Oux4EDnwwg=</dsig:DigestValue>
+      <dsig:DigestValue>YRryGOwFRlWe7ARHMY8e3GgQeWh+SVfYCqpsslpRaY4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\MenuAssets\MenuBackground.xnb" size="1920085">
+  <file name="Content\GraphicAssets\MenuAssets\MenuBackground.jpg" size="261590">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AnWd1PcgxeJyANTsw3YBHqshS4dyx/KrJudEOXCxhOY=</dsig:DigestValue>
+      <dsig:DigestValue>MWR+wF35pTzKqD8nInnbfzyuoP+126/ybD0JT5UsRXE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\MenuAssets\MenuBanner.png" size="69035">
+  <file name="Content\GraphicAssets\MenuAssets\MenuBackground.xnb" size="3686485">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>nIFkw5+LNQPeKJ38ekFZ2/fUyREZbVKIEItqwgytST8=</dsig:DigestValue>
+      <dsig:DigestValue>enOrB95+r377sh+NvNeRj2wVvvPRjvtfilEj5o34S+M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\MenuAssets\MenuBanner.xnb" size="329269">
+  <file name="Content\GraphicAssets\MenuAssets\MenuBanner.png" size="131723">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2+OD9PmAiPnFP6WCNYzBXLLJnDxEqD6fBQeLuNKcIfk=</dsig:DigestValue>
+      <dsig:DigestValue>A+uYCgnQ23YSxgTKZwR1aH6EfD3BRU0E1f/nvYz/VTg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\MenuAssets\MenuBanner.xnb" size="625237">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>C1WT5ExmToscSfetwCNyrh6zIa+dQRXrX/8NhoMR90I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\GraphicAssets\MenuAssets\redButton.png" size="426">
@@ -390,6 +399,42 @@
       <dsig:DigestValue>cegApcAHgU5YG3GLRBrtXH3Yf3L71Zf0+vVc5LB+4Eg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\GraphicAssets\PlayAssets\CatIdleAnimationLeft.png" size="40715">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ApEE+b3FJaHoTTwfWVmUqJLy3GzyzPd1hhNv3M6x+jU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\CatIdleAnimationLeft.xnb" size="234085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>50Gzq6W8XfAoOHMI9sq3mnLZKW/IrSyuH839tETSwrA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\CatIdleAnimationRight.png" size="53965">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HgSFjRbb7/waba1GiAC2FZHzRDlMpVrQDsYNuwhgMsI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\CatIdleAnimationRight.xnb" size="234085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+MvJxHAxWDm5HyvpmG4zT2Qw2HcqaNAJPnTBlMlRTZE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\GraphicAssets\PlayAssets\GrassSheet.xnb" size="524373">
     <hash>
       <dsig:Transforms>
@@ -426,22 +471,103 @@
       <dsig:DigestValue>0Vij3P78MT+yGf1B0nUGStPWKRrgXPauxMeC2iwX7jw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\PlayAssets\PlayerIdleAnimationLeft.xnb" size="258085">
+  <file name="Content\GraphicAssets\PlayAssets\roflthecat.png" size="120335">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MgnkSlMeNujgRgzO20DAv+qgCndW2+yIe8KvGbMupgU=</dsig:DigestValue>
+      <dsig:DigestValue>yZ0bUwHOMWd281idqmI8EZ5TGKh8EZY8sovtuADOSTc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GraphicAssets\PlayAssets\PlayerIdleAnimationRight.xnb" size="258085">
+  <file name="Content\GraphicAssets\PlayAssets\roflthecat.xnb" size="596485">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HzCz0OrPpiskULeISi3vejVUrOLqALVeNQZrOK/Do3s=</dsig:DigestValue>
+      <dsig:DigestValue>bfFVvGWOw4vl3DF0hlg0hOnqIjYBeTfbDbk/bZEsPP0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\IntroAssets\LogoSound.xnb" size="895081">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pvoLesxpdQ1zi0IOuFdoyiD+HLSxlUQBSrIMaJmEpMk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\MenuAssets\MenuMusic.wma" size="4663248">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gPfwyxcegL8ROFHApSelbwM/pDcJ1OSsRCZ/IDuHOv8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\MenuAssets\MenuMusic.xnb" size="127">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w8ytLkKXe4asJIP24zJAMRrt6H9eIkY1UkOSCh6FQK4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\MenuAssets\rollover1.wma" size="10144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HNrrwtgSdDPzzFU+/iVcg1P5pN1Q6c+7EiM8pTbQRFU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\MenuAssets\rollover1.xnb" size="127">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MNgRkaYpGLxTh2TYApivFqv2hWk9QLg4Y02NYiL81bA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\PlayAssets\LevelBackground.wma" size="7687738">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Mpti8G/DTmbKXaDZe4Xd77zFxlnTzhYyVoVxW+6fQxY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\PlayAssets\LevelBackground.xnb" size="133">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IiMGOWHefdzch2Vly9x/AjrKVLOxJgcLVn/ztKUMI+w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\PlayAssets\speedDown.xnb" size="579469">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>N+pz1Dtjfmt5vINZ3jyVO+gC2HhXx75XeAyJD5KyT0U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\GraphicAssets\PlayAssets\SoundAssets\PlayAssets\speedUp.xnb" size="327953">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UW+omYpQi96vEhHJlR1eBBO0DpgJC0npNZcEErNZJ2k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\GraphicAssets\PlayAssets\speedDown.xnb" size="579469">
@@ -454,213 +580,6 @@
     </hash>
   </file>
   <file name="Content\GraphicAssets\PlayAssets\speedUp.xnb" size="327953">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>UW+omYpQi96vEhHJlR1eBBO0DpgJC0npNZcEErNZJ2k=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\IntroAssets\CompanyLogo.xnb" size="1920085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X8oaDXlCDH6NK4gYA5GwcOo8InySRe13wkunDDX9cGg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\IntroAssets\LogoSound.xnb" size="895081">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pvoLesxpdQ1zi0IOuFdoyiD+HLSxlUQBSrIMaJmEpMk=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MapAssets\Background02.xnb" size="1920085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vIBc10gEQYbpClgVcsWeBEUJgvzrKjr+V06tuCyXRug=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MapAssets\grassBlock.xnb" size="4181">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>bPSn7eAMfy8e/rlmwpuW3K1LelpUPjAnCuAZpXeZuK8=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MapAssets\GrassPlatformSheet.xnb" size="524373">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\LeagueFont.xnb" size="70676">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HBN4gQSwTb7OHDYX0iKelHXIJGWA3MDwzx85aW2AkPA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\MenuBackground.xnb" size="1920085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AnWd1PcgxeJyANTsw3YBHqshS4dyx/KrJudEOXCxhOY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\MenuBanner.xnb" size="329269">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2+OD9PmAiPnFP6WCNYzBXLLJnDxEqD6fBQeLuNKcIfk=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\MenuMusic.wma" size="4663248">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gPfwyxcegL8ROFHApSelbwM/pDcJ1OSsRCZ/IDuHOv8=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\MenuMusic.xnb" size="127">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>w8ytLkKXe4asJIP24zJAMRrt6H9eIkY1UkOSCh6FQK4=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\redButton.xnb" size="34285">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YJ2eIdy5EBZaVOBF/sW8ZwNmvV+qsx6kk5V06Jo5v/Y=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\rollover1.wma" size="10144">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HNrrwtgSdDPzzFU+/iVcg1P5pN1Q6c+7EiM8pTbQRFU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\MenuAssets\rollover1.xnb" size="127">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MNgRkaYpGLxTh2TYApivFqv2hWk9QLg4Y02NYiL81bA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\GrassSheet.xnb" size="524373">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mnsyl9bMsgTLFWjSwEwIdnwxSTR9y8uKsP3dmqlRGJY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\LevelBackground.wma" size="7687738">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Mpti8G/DTmbKXaDZe4Xd77zFxlnTzhYyVoVxW+6fQxY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\LevelBackground.xnb" size="133">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>IiMGOWHefdzch2Vly9x/AjrKVLOxJgcLVn/ztKUMI+w=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\LevelBackgroundWav.xnb" size="39346281">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ySyiRwldIXPNIxlj4fkIk/bAjER+BeWbZIltXCFVogU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\Player.xnb" size="25885">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0Vij3P78MT+yGf1B0nUGStPWKRrgXPauxMeC2iwX7jw=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\PlayerIdleAnimation.xnb" size="258085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HzCz0OrPpiskULeISi3vejVUrOLqALVeNQZrOK/Do3s=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\PlayerIdleAnimationLeft.xnb" size="258085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MgnkSlMeNujgRgzO20DAv+qgCndW2+yIe8KvGbMupgU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\PlayerIdleAnimationRight.xnb" size="258085">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HzCz0OrPpiskULeISi3vejVUrOLqALVeNQZrOK/Do3s=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\speedDown.xnb" size="579469">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>N+pz1Dtjfmt5vINZ3jyVO+gC2HhXx75XeAyJD5KyT0U=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\PlayAssets\speedUp.xnb" size="327953">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -714,6 +633,15 @@
       <dsig:DigestValue>w8ytLkKXe4asJIP24zJAMRrt6H9eIkY1UkOSCh6FQK4=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\SoundAssets\MenuAssets\rollover1.wav" size="41806">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>CNIqRRb7O9mB4UHCVQtgMwOFFK7Wzk6TE33MpduBYLQ=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\SoundAssets\MenuAssets\rollover1.wma" size="10144">
     <hash>
       <dsig:Transforms>
@@ -723,13 +651,13 @@
       <dsig:DigestValue>HNrrwtgSdDPzzFU+/iVcg1P5pN1Q6c+7EiM8pTbQRFU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\SoundAssets\MenuAssets\rollover1.xnb" size="127">
+  <file name="Content\SoundAssets\MenuAssets\rollover1.xnb" size="41833">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MNgRkaYpGLxTh2TYApivFqv2hWk9QLg4Y02NYiL81bA=</dsig:DigestValue>
+      <dsig:DigestValue>gf3hqHRtKG2KdKbvBx4m9DX2MOguBHa0AMLQogYN7pY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SoundAssets\PlayAssets\LevelBackground.mp3" size="7245952">
@@ -759,6 +687,15 @@
       <dsig:DigestValue>IiMGOWHefdzch2Vly9x/AjrKVLOxJgcLVn/ztKUMI+w=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\SoundAssets\PlayAssets\speedDown.wav" size="583336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bSb6avta6Qt6fePV/94G4zonFD1YnGYw356wAxMyqW0=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\SoundAssets\PlayAssets\speedDown.xnb" size="579469">
     <hash>
       <dsig:Transforms>
@@ -766,6 +703,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>N+pz1Dtjfmt5vINZ3jyVO+gC2HhXx75XeAyJD5KyT0U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\SoundAssets\PlayAssets\speedUp.wav" size="327892">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dnWNOAgg93rz3Aw5BAoi+8dCkgO1EXYq3V4dyHCE1aQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SoundAssets\PlayAssets\speedUp.xnb" size="327953">

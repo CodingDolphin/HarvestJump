@@ -60,6 +60,9 @@ namespace HarvestJump
             ApplyForce();
             ApplyVelocityToPosition();
             boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
+
+            currentSprite.Update(gameTime);
+            UpdateAnimation();
         }
 
         public virtual void ApplyForce()
@@ -115,10 +118,9 @@ namespace HarvestJump
             isJumping = false;
         }
 
-        public void UpdateAnimation(GameTime gameTime)
+        public void UpdateAnimation()
         {
             currentSprite.position = position;
-            currentSprite.Update(gameTime);
         }
 
         public abstract void Draw(SpriteBatch spriteBatch);

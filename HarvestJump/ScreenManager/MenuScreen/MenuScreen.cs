@@ -40,14 +40,13 @@ namespace HarvestJump
 
             //Spacing und Padding in Pixeln
 
-            bannerSpaceTop = 50;
+            bannerSpaceTop = 65;
             buttonSpaceLeft = 10;
-            buttonSpaceFromBannerTop = 50;
-            buttonWidth = 200;
-            buttonHeight = 50;
+            buttonSpaceFromBannerTop = 65;
+            buttonWidth = 214;
+            buttonHeight = 58;
             buttonSpacing = buttonHeight + 20;
             slideAppear = true;
-
         }
 
         public override void LoadContent(ContentManager content)
@@ -66,7 +65,7 @@ namespace HarvestJump
                 if (entry is FontButton)
                 {
                     var button = (FontButton)entry;
-                    button.LoadContent(content, "GraphicAssets/MenuAssets/redButton", "Fonts/LeagueFont");
+                    button.LoadContent(content, "GraphicAssets/MenuAssets/redButton", "Fonts/LeagueFont","SoundAssets/MenuAssets/rollover1");
                 }
             }
         }

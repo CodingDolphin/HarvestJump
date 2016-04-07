@@ -6,14 +6,13 @@
   <SourceFiles>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/blackPixel.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/Fonts/LeagueFont.spritefont</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/IntroAssets/CompanyLogo.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/IntroAssets/Logo1.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/Background012.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/Background02.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/CatIdle100.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/grassBlock.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet1.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/vjrjA.jpg</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/MenuBackground.jpg</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/MenuBanner.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/redButton.png</File>
@@ -22,15 +21,17 @@
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/GrassSheet.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/LevelBackgroundWav.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/Player.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerIdleAnimationLeft.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerIdleAnimationRight.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/roflthecat.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/speedDown.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/speedUp.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/IntroAssets/LogoSound.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/MenuAssets/MenuMusic.mp3</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/MenuAssets/rollover1.ogg</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/LevelBackground.mp3</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/speedDown.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/speedUp.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/CatIdleAnimationLeft.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/CatIdleAnimationRight.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/IntroAssets/CompanyLogoo.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/MenuAssets/rollover1.wav</File>
   </SourceFiles>
 </SourceFileCollection>

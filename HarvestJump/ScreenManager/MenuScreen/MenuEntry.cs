@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
@@ -18,6 +19,8 @@ namespace HarvestJump
         protected int appearSpeed { get; set; }
         protected bool isSelected { get; set; }
         protected ScreenName choice { get; set; }
+        protected SoundEffect hoverSound { get; set; }
+        protected int soundDuration { get; set; }
         public event ScreenHandler ScreenChanged;
 
         public MenuEntry(Rectangle position, bool slideAppear, ScreenName choice)
@@ -32,8 +35,10 @@ namespace HarvestJump
             appearSpeed = 5;
         }
 
-        public virtual void LoadContent(ContentManager content, string assetName)
+        public virtual void LoadContent(ContentManager content, string assetName, string soundName)
         {
+            hoverSound = content.Load<SoundEffect>(soundName);
+            soundDuration = hoverSound.Duration.Seconds;
             texture = content.Load<Texture2D>(assetName);
         }
 
@@ -51,6 +56,7 @@ namespace HarvestJump
                 this.isSelected = true;
                 if (mouseClick)
                 {
+                    hoverSound.Play();
                     NotifyScreenChange(this.choice);
                 }
             }

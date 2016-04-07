@@ -24,15 +24,16 @@ namespace HarvestJump
         {
             this.buttonColor = new Color(200, 56, 90);
             this.buttonText = buttonText;
+            _scale = 1.25f;
         }
 
-        public void LoadContent(ContentManager content, string textureName, string fontName)
+        public void LoadContent(ContentManager content, string textureName, string fontName, string soundName)
         {
             font = content.Load<SpriteFont>(fontName);
             stringSize = font.MeasureString(buttonText);
             AdjustFontToTexture();
             
-            base.LoadContent(content, textureName);
+            base.LoadContent(content, textureName, soundName);
         }
 
         public override void Update(GameTime gameTime)
@@ -49,7 +50,7 @@ namespace HarvestJump
         public override void Draw(SpriteBatch spriteBatch)
         {
             Pulse();
-            spriteBatch.Draw(texture, new Vector2(position.X, position.Y), null, buttonColor, 0f, Vector2.Zero, new Vector2(_scale, _scale), SpriteEffects.None, 1f);
+            spriteBatch.Draw(texture, position, buttonColor);
             spriteBatch.DrawString(font, buttonText, fontPosition, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 1f);
         }
 

@@ -38,10 +38,10 @@ namespace HarvestJump
         {
             switch (tileType)
             {
-                case TileType.grassTop: return 1;
-                case TileType.grassMid: return 16;
-                case TileType.grassLeftEnd:return 12;
-                case TileType.grassRightEnd:return 11;
+                case TileType.grassTop: return 8;
+                case TileType.grassMid: return 1;
+                case TileType.grassLeftEnd: return 96;
+                case TileType.grassRightEnd: return 88;
                 default: return 0;
             }
         }

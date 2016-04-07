@@ -13,15 +13,15 @@ namespace HarvestJump
     {
         public Player(Vector2 startPosition, int width, int height) : base(startPosition,width,height)
         {
-            currentSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
-            rightSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
-            leftSprite = new Animation(startPosition, 0, 86, 75, 0.3, 9);
+            currentSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
+            rightSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
+            leftSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
             rightSprite.LoadContent(content, assetName);
-            leftSprite.LoadContent(content, "PlayAssets/PlayerIdleAnimationLeft");
+            leftSprite.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationLeft");
             currentSprite = rightSprite;
         }
 

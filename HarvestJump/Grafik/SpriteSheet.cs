@@ -32,8 +32,8 @@ namespace HarvestJump
 
         public void onContentLoad()
        {
-            rows = texture.Width / frameWidth;
-            columns = texture.Height / frameHeight;
+            columns = texture.Width / frameWidth;
+            rows = texture.Height / frameHeight;
             sourceRectangle = createSourceRectangle();
         }
 
@@ -45,7 +45,7 @@ namespace HarvestJump
         {
             int row = index / columns;
             int column = index % columns;
-            return new Rectangle(frameWidth * row, frameHeight * column, frameWidth, frameHeight);
+            return new Rectangle(frameWidth * column, frameHeight * row, frameWidth, frameHeight);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
