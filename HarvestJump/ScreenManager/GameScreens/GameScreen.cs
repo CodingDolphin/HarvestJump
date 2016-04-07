@@ -14,13 +14,13 @@ namespace HarvestJump
         hidden,
     }
 
-    public enum ScreenName
+    public enum ScreenManagerAction
     {
-        PLAYSCREEN,
-        MENUSCREEN,
-        INTROSCREEN,
-        OPTIONSSCREEN,
-        EXITSCREEN,
+        StartGame,
+        SwitchToMenu,
+        StartIntro,
+        SwitchToOptions,
+        Exit,
     }
 
     abstract class GameScreen
@@ -45,7 +45,7 @@ namespace HarvestJump
 
         public event ScreenHandler ScreenChanged;
 
-        protected void NotifyScreenChange(ScreenName input)
+        protected void NotifyScreenChange(ScreenManagerAction input)
         {
             if (ScreenChanged != null)
                 ScreenChanged(input); 

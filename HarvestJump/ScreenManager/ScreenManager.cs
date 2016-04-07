@@ -166,13 +166,13 @@ namespace HarvestJump
 
         //ScreenChange Events hier behandeln
 
-        public void HandleScreenChange(ScreenName input)
+        public void HandleScreenChange(ScreenManagerAction input)
         {
             switch (input)
             {
-                case ScreenName.INTROSCREEN: currentScreen = screenList[0]; break;
-                case ScreenName.MENUSCREEN: currentScreen = screenList[1]; break;
-                case ScreenName.PLAYSCREEN: currentScreen = screenList[2]; break;
+                case ScreenManagerAction.StartIntro: currentScreen = screenList[0]; break;
+                case ScreenManagerAction.SwitchToMenu: currentScreen = screenList[1]; break;
+                case ScreenManagerAction.StartGame: currentScreen = screenList[2]; break;
             }
 
             MediaPlayer.Stop();

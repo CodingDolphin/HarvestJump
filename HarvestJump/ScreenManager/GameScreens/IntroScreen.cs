@@ -62,7 +62,7 @@ namespace HarvestJump
 
         private void onIntroEnd()
         {
-            NotifyScreenChange(ScreenName.MENUSCREEN);
+            NotifyScreenChange(ScreenManagerAction.SwitchToMenu);
         }
 
         //Aktuellen Screen zeichnen

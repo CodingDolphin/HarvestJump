@@ -58,7 +58,7 @@ namespace HarvestJump
 
             //Buttons erstellen und Content laden
 
-            CreateButtons(new ScreenName[] { ScreenName.PLAYSCREEN, ScreenName.OPTIONSSCREEN, ScreenName.EXITSCREEN }, "Start Game", "Options", "Exit");
+            CreateButtons(new ScreenManagerAction[] { ScreenManagerAction.StartGame, ScreenManagerAction.SwitchToOptions, ScreenManagerAction.Exit }, "Start Game", "Options", "Exit");
 
             foreach (MenuEntry entry in menuEntryList)
             {
@@ -70,7 +70,7 @@ namespace HarvestJump
             }
         }
 
-        public void CreateButtons(ScreenName[] screenNames, params string[] buttonNames)
+        public void CreateButtons(ScreenManagerAction[] screenNames, params string[] buttonNames)
         {
             startPosition = new Vector2(menuBanner.position.X + buttonSpaceLeft, menuBanner.position.Y + menuBanner.texture.Height + buttonSpaceFromBannerTop);
 

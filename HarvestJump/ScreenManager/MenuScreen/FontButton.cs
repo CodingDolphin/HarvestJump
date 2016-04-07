@@ -20,7 +20,7 @@ namespace HarvestJump
         protected Color buttonColor { get; set; }
         protected string buttonText { get; set; }
 
-        public FontButton(Rectangle position,bool slideAppear,ScreenName choice, string buttonText) : base(position, slideAppear, choice)
+        public FontButton(Rectangle position,bool slideAppear,ScreenManagerAction choice, string buttonText) : base(position, slideAppear, choice)
         {
             this.buttonColor = new Color(200, 56, 90);
             this.buttonText = buttonText;

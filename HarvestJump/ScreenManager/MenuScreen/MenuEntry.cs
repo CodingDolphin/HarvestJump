@@ -18,11 +18,11 @@ namespace HarvestJump
         protected bool slideAppear { get; set; }
         protected int appearSpeed { get; set; }
         protected bool isSelected { get; set; }
-        protected ScreenName choice { get; set; }
+        protected ScreenManagerAction choice { get; set; }
         protected SoundEffect hoverSound { get; set; }
         public event ScreenHandler ScreenChanged;
 
-        public MenuEntry(Rectangle position, bool slideAppear, ScreenName choice)
+        public MenuEntry(Rectangle position, bool slideAppear, ScreenManagerAction choice)
         {
             this.position = new Rectangle(position.X, position.Y, position.Width, position.Height);
             endPosX = position.X;
@@ -64,7 +64,7 @@ namespace HarvestJump
             }
         }
 
-        public void NotifyScreenChange(ScreenName choice)
+        public void NotifyScreenChange(ScreenManagerAction choice)
         {
             if (ScreenChanged != null)
                 ScreenChanged(choice);

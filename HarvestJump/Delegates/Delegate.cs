@@ -6,6 +6,6 @@ using Microsoft.Xna.Framework;
 
 namespace HarvestJump
 {
-    public delegate void ScreenHandler(ScreenName input);
+    public delegate void ScreenHandler(ScreenManagerAction action);
 
 }
