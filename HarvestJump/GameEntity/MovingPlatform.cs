@@ -39,8 +39,6 @@ namespace HarvestJump
                 case isMoving.vertical:
                     endPosition = (int)position.Y + moveSpace;
                     startPosition = (int)position.Y - moveSpace; break;
-                case isMoving.none: break;
-                default: break;
             }
         }
 
@@ -49,17 +47,17 @@ namespace HarvestJump
             if(moveDirection == isMoving.horizontal)
             position = new Vector2(position.X + moveSpeed, position.Y);
             else
-                position = new Vector2(position.X, position.Y + moveSpeed);
+            position = new Vector2(position.X, position.Y + moveSpeed);
 
-            if (position.X > endPosition | position.X <= startPosition && moveDirection == isMoving.horizontal)
+            if (position.X > endPosition | position.X < startPosition && moveDirection == isMoving.horizontal)
                 moveSpeed = moveSpeed * -1;
-            else if (position.Y > endPosition | position.Y <= startPosition && moveDirection == isMoving.vertical)
+            else if (position.Y > endPosition | position.Y < startPosition && moveDirection == isMoving.vertical)
                 moveSpeed = moveSpeed * -1;
 
-            UpdateSprite();
+            UpdateTiles();
         }
 
-        public void UpdateSprite()
+        public void UpdateTiles()
         {
             for (int y = 0; y < platformHeight; y++)
             {

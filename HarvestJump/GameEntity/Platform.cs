@@ -19,8 +19,8 @@ namespace HarvestJump
     class Platform : GameObject
     {
         protected List<Tile> tileList { get; set; }
-        protected int platformWidth { get; set; }
-        protected int platformHeight { get; set; }
+        public int platformWidth { get; set; }
+        public int platformHeight { get; set; }
         protected int tileWidth { get; set; }
         protected int tileHeight { get; set; }
         protected isMoving moveDirection { get; set; }

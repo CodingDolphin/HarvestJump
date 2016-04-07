@@ -30,6 +30,7 @@ namespace HarvestJump
         public Player player { get; set; }
         public Enemy enemy { get; set; }
         private CollisionSystem collisionSystem { get; set; }
+        private PlatformManager platformManager { get; set; }
 
         //Horizontale Variablen
 
@@ -65,78 +66,49 @@ namespace HarvestJump
 
             //Instance Variables
 
-            platformList = new List<Platform>();
-            random = new Random();
-            collisionSystem = new CollisionSystem(platformList);
-
-            //Map Generierung starten
-
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero, 65, 90);
             enemy = new Enemy(Vector2.Zero, 140, 100);
+            random = new Random();
+            platformManager = new PlatformManager(tileWidth, tileHeight);
+
+            //Map Generierung starten
+
             createMap(startHeight, maxPlatforms);
 
-            platformList.Add(new MovingPlatform(new Vector2(0, 100), 5, 1, 32, 32, 1, 200, isMoving.horizontal));
+            collisionSystem = new CollisionSystem(platformManager.platformList);
         }
 
         public void createMap(int startposition, int maxPlatform)
         {
-            int spaceX = 0;
-            int spaceY = startposition;
-            int height;
-
-            for (int i = 0; i < maxPlatform; i++)
-            {
-                platformLenght = random.Next(minPlatformLenght, maxPlatformLenght);
-                height = random.Next(minPlatformHeight, maxPlatformHeight);
-                platformList.Add(new Platform(new Vector2(currentPositionX + spaceX, spaceY), platformLenght, height, 32, 32));
-                spaceX = random.Next(100, 200);
-                spaceY = random.Next(100, 400);
-                currentPositionX = (int)platformList[i].boundingBox.position.X + (int)platformList[i].boundingBox.width;
-            }
+            platformManager.CreateMovingPlatform(new Vector2(0,300), 10, 1, 1, 5 * 32, isMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(20 * tileWidth, 300), 10, 1, 1, 5 * 32, isMoving.horizontal);
         }
 
         public void LoadContent(ContentManager content)
         {
-            foreach (Platform platform in platformList)
-            {
-                platform.LoadContent(content, "GraphicAssets/MapAssets/GrassPlatformSheet");
-            }
-
             mapBackground.LoadContent(content, "GraphicAssets/MapAssets/Background02");
             player.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationRight");
-
-            //Testing
-
             enemy.LoadContent(content, "GraphicAssets/PlayAssets/roflthecat");
+            platformManager.LoadContent(content);
         }
 
         public void Update(GameTime gameTime)
         {
+            platformManager.Update(gameTime);
             enemy.Update(gameTime);
             player.Update(gameTime);
 
             collisionSystem.checkCollision(player);
             collisionSystem.checkCollision(enemy);
-
-            foreach (Platform item in platformList)
-            {
-                if (item is MovingPlatform)
-                    item.Update(gameTime);
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             mapBackground.Draw(spriteBatch);
-
-            foreach (Platform platform in platformList)
-            {
-                platform.Draw(spriteBatch);
-            }
-
             enemy.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            platformManager.Draw(spriteBatch);
         }
     }
 }
