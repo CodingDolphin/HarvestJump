@@ -16,6 +16,8 @@ namespace HarvestJump
         public List<Platform> platformList { get; set; }
         public int furthestPositionX { get; set; }
         public int furthestPositionY { get; set; }
+        public int lastestPositionX { get; set; }
+        public int latestPositionY { get; set; }
         private int tileWidth { get; set; }
         private int tileHeight { get; set; }
 

@@ -34,30 +34,42 @@ namespace HarvestJump
             switch (moveDirection)
             {
                 case isMoving.horizontal:
-                    endPosition = moveSpace + (int)position.X;
+                    endPosition = (int)position.X + moveSpace;
                     startPosition = (int)position.X - moveSpace; break;
                 case isMoving.vertical:
-                    break;
-                case isMoving.none:
-                    break;
-                default:
-                    break;
+                    endPosition = (int)position.Y + moveSpace;
+                    startPosition = (int)position.Y - moveSpace; break;
+                case isMoving.none: break;
+                default: break;
             }
         }
 
         public void movePlatform()
         {
+            if(moveDirection == isMoving.horizontal)
             position = new Vector2(position.X + moveSpeed, position.Y);
+            else
+                position = new Vector2(position.X, position.Y + moveSpeed);
 
-            if (position.X > endPosition | position.X <= startPosition)
+            if (position.X > endPosition | position.X <= startPosition && moveDirection == isMoving.horizontal)
+                moveSpeed = moveSpeed * -1;
+            else if (position.Y > endPosition | position.Y <= startPosition && moveDirection == isMoving.vertical)
                 moveSpeed = moveSpeed * -1;
 
+            UpdateSprite();
+        }
 
-            for (int x = 0; x < platformWidth; x++)
+        public void UpdateSprite()
+        {
+            for (int y = 0; y < platformHeight; y++)
             {
-                tileList[x].position = new Vector2(position.X + x * tileWidth, position.Y);
-                tileList[x].tileSprite.position = new Vector2(position.X + x * tileWidth, position.Y);
+                for (int x = 0; x < tileList.Count; x++)
+                {
+                    tileList[x].position = new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight);
+                    tileList[x].tileSprite.position = new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight);
+                }
             }
         }
     }
-}
+ }
+
