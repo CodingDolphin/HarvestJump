@@ -73,6 +73,7 @@
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
+    <Compile Include="GameEntity\MovingPlatform.cs" />
     <Compile Include="HelperClasses\CollisionHelper.cs" />
     <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />

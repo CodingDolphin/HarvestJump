@@ -11,41 +11,58 @@ namespace HarvestJump
 {
     class Platform : GameObject
     {
-        public List<Tile> tileList { get; set; }
-        public int tileWidth { get; set; }
-        public int tileHeight { get; set; }
+        protected List<Tile> tileList { get; set; }
+        protected int platformWidth { get; set; }
+        protected int platformHeight { get; set; }
+        protected int tileWidth { get; set; }
+        protected int tileHeight { get; set; }
 
-        public Platform(Vector2 position,int platformWidth, int platformHeight, int tileWidth, int tileHeight)
+        public Platform(Vector2 position,int platformWidth, int platformHeight, int tileWidth, int tileHeight) : base(position, platformWidth * tileWidth, platformHeight * tileHeight)
         {
+            tileList = new List<Tile>();
             this.tileWidth = tileWidth;
             this.tileHeight = tileHeight;
+            this.platformWidth = platformWidth;
+            this.platformHeight = platformHeight;
             this.position = position;
-            tileList = new List<Tile>();
-            boundingBox = new BoundingBox(position, platformWidth * tileWidth, platformHeight * tileHeight);
-            CreatePlatform(platformWidth, platformHeight);
+
+            CreatePlatform();
         }
 
-        public void CreatePlatform(int width, int height)
+        public void CreatePlatform()
         {
-            for (int y = 0; y < height; y++)
+            if (platformHeight == 1)
+                CreateSingleLayerPlatform();
+            else
+                CreateMultiLayerPlatform();
+        }
+
+        public void CreateSingleLayerPlatform()
+        {
+            for (int x = 0; x < platformWidth; x++)
             {
-                for (int i = 0; i < width; i++)
+                if (x == 0)
+                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassLeftEnd));
+                else if (x == platformWidth - 1)
+                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassRightEnd));
+                else
+                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassTop));
+            }
+        }
+
+        public void CreateMultiLayerPlatform()
+        {
+            for (int y = 0; y < platformHeight; y++)
+            {
+                for (int x = 0; x < platformWidth; x++)
                 {
-                    if(height >= 2 && y != 0)
+                    if(y == 0)
                     {
-                        tileList.Add(new Tile(new Vector2(position.X + i * tileWidth, position.Y + y * tileHeight), tileWidth, tileHeight, TileType.grassMid));
-                    }
-                    else if (i == 0 && height <= 1)
-                    {
-                        tileList.Add(new Tile(new Vector2(position.X + i * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassLeftEnd));
-                    }
-                    else if (i == width - 1 && height <= 1)
-                    {
-                        tileList.Add(new Tile(new Vector2(position.X + i * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassRightEnd));
+                        tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassTop));
                     }
                     else
                     {
-                        tileList.Add(new Tile(new Vector2(position.X + i * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassTop));
+                        tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight), tileWidth, tileHeight, TileType.grassMid));
                     }
                 }
             }

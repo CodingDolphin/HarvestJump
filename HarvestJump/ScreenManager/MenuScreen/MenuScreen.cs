@@ -44,7 +44,7 @@ namespace HarvestJump
             buttonSpaceLeft = 10;
             buttonSpaceFromBannerTop = 65;
             buttonWidth = 214;
-            buttonHeight = 58;
+            buttonHeight = 60;
             buttonSpacing = buttonHeight + 20;
             slideAppear = true;
         }

@@ -55,7 +55,7 @@ namespace HarvestJump
             maxPlatformHeight = 10;
             minPlatformHeight = 1;
 
-            maxPlatformLenght = 100;
+            maxPlatformLenght = 15;
             maxHorizentalPlatformSpace = 4;
             minPlatformLenght = 5;
             minHorizontalPlatformSpace = 2;

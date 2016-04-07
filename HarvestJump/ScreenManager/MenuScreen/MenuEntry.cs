@@ -20,7 +20,6 @@ namespace HarvestJump
         protected bool isSelected { get; set; }
         protected ScreenName choice { get; set; }
         protected SoundEffect hoverSound { get; set; }
-        protected int soundDuration { get; set; }
         public event ScreenHandler ScreenChanged;
 
         public MenuEntry(Rectangle position, bool slideAppear, ScreenName choice)
@@ -38,7 +37,6 @@ namespace HarvestJump
         public virtual void LoadContent(ContentManager content, string assetName, string soundName)
         {
             hoverSound = content.Load<SoundEffect>(soundName);
-            soundDuration = hoverSound.Duration.Seconds;
             texture = content.Load<Texture2D>(assetName);
         }
 

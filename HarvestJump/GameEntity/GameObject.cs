@@ -36,7 +36,7 @@ namespace HarvestJump
         public BoundingBox boundingBox { get; set; }
         public bool isJumping { get; set; }
 
-        //Konstruktor
+        //Konstruktors
 
         public GameObject()
         {
