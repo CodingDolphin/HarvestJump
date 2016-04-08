@@ -91,7 +91,7 @@
     <Compile Include="Grafik\Animation.cs" />
     <Compile Include="Grafik\Sprite.cs" />
     <Compile Include="Grafik\SpriteSheet.cs" />
-    <Compile Include="Map\PlatformManager.cs" />
+    <Compile Include="Manager\PlatformManager.cs" />
     <Compile Include="ScreenManager\MenuScreen\FontButton.cs" />
     <Compile Include="ScreenManager\MenuScreen\MenuEntry.cs" />
     <Compile Include="GameEntity\Tile.cs" />

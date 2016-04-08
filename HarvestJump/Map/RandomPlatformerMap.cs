@@ -81,8 +81,10 @@ namespace HarvestJump
 
         public void createMap(int startposition, int maxPlatform)
         {
-            platformManager.CreateMovingPlatform(new Vector2(0,300), 10, 1, 1, 5 * 32, isMoving.vertical);
-            platformManager.CreateMovingPlatform(new Vector2(20 * tileWidth, 300), 10, 1, 1, 5 * 32, isMoving.horizontal);
+            platformManager.CreatePlatform(new Vector2(0, 500), 20, 30);
+            platformManager.CreateMovingPlatform(new Vector2(800, 300), 10, 1, 1, 5 * 32, isMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(1400, 500), 10, 1, 1, 5 * 32, isMoving.horizontal);
+            platformManager.CreateMovingPlatform(new Vector2(2000, 500), 20, 1,1,32, isMoving.horizontal);
         }
 
         public void LoadContent(ContentManager content)

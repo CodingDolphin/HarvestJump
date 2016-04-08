@@ -16,7 +16,7 @@ namespace HarvestJump
         public List<Platform> platformList { get; set; }
         public int furthestPositionX { get; set; }
         public int furthestPositionY { get; set; }
-        public int lastestPositionX { get; set; }
+        public int latestPositionX { get; set; }
         public int latestPositionY { get; set; }
         private int tileWidth { get; set; }
         private int tileHeight { get; set; }
@@ -49,22 +49,34 @@ namespace HarvestJump
         public void CreatePlatform(Vector2 position, int platformWidth, int platformHeight)
         {
             platformList.Add(new Platform(position, platformWidth, platformHeight, tileWidth, tileHeight));
-            calculateFurthestPositions();
+            calculateFurthestDistance();
+
         }
 
         public void CreateMovingPlatform(Vector2 position, int platformWidth, int platformHeight, int moveSpeed, int distance, isMoving moveDirection)
         {
             platformList.Add(new MovingPlatform(position, platformWidth, platformHeight, tileWidth, tileHeight, moveSpeed, distance, moveDirection));
-            calculateFurthestPositions();
+            calculateFurthestDistance(distance);
         }
 
-        public void calculateFurthestPositions()
+        public void calculateFurthestDistance(int distance = 0)
         {
             int lastIndex = platformList.Count - 1;
-            if (furthestPositionX < platformList[lastIndex].platformWidth * tileWidth)
-                furthestPositionX = platformList[lastIndex].platformWidth * tileWidth;
-            if (furthestPositionY < platformList[lastIndex].platformHeight * tileWidth)
-                furthestPositionY = platformList[lastIndex].platformHeight * tileWidth;
+ 
+            if (furthestPositionX < platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance / 2)
+            {
+                if(platformList[lastIndex].moveDirection == isMoving.horizontal)
+                furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance / 2;
+                else
+                furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
+            }
+            if (furthestPositionY < platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance)
+            {
+                if (platformList[lastIndex].moveDirection == isMoving.vertical)
+                    furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance;
+                else
+                    furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileWidth;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

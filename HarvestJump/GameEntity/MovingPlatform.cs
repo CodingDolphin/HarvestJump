@@ -9,14 +9,14 @@ namespace HarvestJump
 {
     class MovingPlatform : Platform
     {
-        public int moveSpace { get; set; }
+        public int distance { get; set; }
         public int endPosition { get; set; }
         public int startPosition { get; set; }
         public int moveSpeed { get; set; }
 
         public MovingPlatform(Vector2 position, int platformWidth, int platformHeight, int tileWidth, int tileHeight, int moveSpeed, int moveSpace, isMoving moveDirection) : base(position, platformWidth, platformHeight, tileWidth, tileHeight)
         {
-            this.moveSpace = moveSpace;
+            this.distance = moveSpace;
             this.moveSpeed = moveSpeed;
             this.moveDirection = moveDirection;
 
@@ -34,11 +34,11 @@ namespace HarvestJump
             switch (moveDirection)
             {
                 case isMoving.horizontal:
-                    endPosition = (int)position.X + moveSpace;
-                    startPosition = (int)position.X - moveSpace; break;
+                    endPosition = (int)position.X + distance;
+                    startPosition = (int)position.X - distance; break;
                 case isMoving.vertical:
-                    endPosition = (int)position.Y + moveSpace;
-                    startPosition = (int)position.Y - moveSpace; break;
+                    endPosition = (int)position.Y + distance;
+                    startPosition = (int)position.Y - distance; break;
             }
         }
 

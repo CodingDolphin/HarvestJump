@@ -23,7 +23,7 @@ namespace HarvestJump
         public int platformHeight { get; set; }
         protected int tileWidth { get; set; }
         protected int tileHeight { get; set; }
-        protected isMoving moveDirection { get; set; }
+        public isMoving moveDirection { get; set; }
 
         public Platform(Vector2 position,int platformWidth, int platformHeight, int tileWidth, int tileHeight) : base(position, platformWidth * tileWidth, platformHeight * tileHeight)
         {
