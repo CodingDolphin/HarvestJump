@@ -75,7 +75,7 @@ namespace HarvestJump
             position += velocity * (float)deltaTime;
         }
 
-        public virtual void HandleCollision(ICollide collisionObject)
+        public virtual void HandleCollision(ICollide collisionObject)      
         {
             float penetrationTop = position.Y + boundingBox.height - collisionObject.boundingBox.position.Y;
             float penetrationLeft = position.X + boundingBox.width - collisionObject.boundingBox.position.X;
@@ -94,22 +94,22 @@ namespace HarvestJump
 
             if (lowestPenetation == penetrationTop)
             {
-                position = new Vector2(position.X, position.Y - penetrationTop);
+                position = new Vector2(position.X + collisionObject.velocity.X, position.Y - penetrationTop + collisionObject.velocity.Y);
                 velocity = new Vector2(velocity.X, 0);
             }
             else if (lowestPenetation == penetrationLeft)
             {
-                position = new Vector2(position.X - penetrationLeft, position.Y);
+                position = new Vector2(position.X - penetrationLeft + collisionObject.velocity.X, position.Y + collisionObject.velocity.Y);
                 velocity = new Vector2(0, velocity.Y);
             }
             else if (lowestPenetation == penetrationRight)
             {
-                position = new Vector2(position.X + penetrationRight, position.Y);
+                position = new Vector2(position.X + penetrationRight + collisionObject.velocity.X, position.Y + collisionObject.velocity.Y);
                 velocity = new Vector2(0, velocity.Y);
             }
             else if (lowestPenetation == penetrationBottom)
             {
-                position = new Vector2(position.X, position.Y + penetrationBottom);
+                position = new Vector2(position.X + collisionObject.velocity.X, position.Y + penetrationBottom + collisionObject.velocity.Y);
                 velocity = new Vector2(velocity.X, 0);
             }
 

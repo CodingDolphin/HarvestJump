@@ -12,20 +12,19 @@ namespace HarvestJump
         public int distance { get; set; }
         public int endPosition { get; set; }
         public int startPosition { get; set; }
-        public int moveSpeed { get; set; }
 
-        public MovingPlatform(Vector2 position, int platformWidth, int platformHeight, int tileWidth, int tileHeight, int moveSpeed, int moveSpace, isMoving moveDirection) : base(position, platformWidth, platformHeight, tileWidth, tileHeight)
+        public MovingPlatform(Vector2 position, int platformWidth, int platformHeight, int tileWidth, int tileHeight, int moveSpeed, int distance, IsMoving moveDirection) : base(position, platformWidth, platformHeight, tileWidth, tileHeight)
         {
-            this.distance = moveSpace;
-            this.moveSpeed = moveSpeed;
+            this.distance = distance;
             this.moveDirection = moveDirection;
 
+            CreateVelocityVector(moveSpeed);
             CreateWayPoints();
         }
 
         public override void Update(GameTime gameTime)
         {
-            movePlatform();
+            MovePlatform();
             boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
         }
 
@@ -33,28 +32,45 @@ namespace HarvestJump
         {
             switch (moveDirection)
             {
-                case isMoving.horizontal:
+                case IsMoving.horizontal:
                     endPosition = (int)position.X + distance;
                     startPosition = (int)position.X - distance; break;
-                case isMoving.vertical:
+                case IsMoving.vertical:
                     endPosition = (int)position.Y + distance;
                     startPosition = (int)position.Y - distance; break;
             }
         }
 
-        public void movePlatform()
+        public void MovePlatform()
         {
-            if(moveDirection == isMoving.horizontal)
-            position = new Vector2(position.X + moveSpeed, position.Y);
+            if (moveDirection == IsMoving.horizontal)
+                position += velocity;
             else
-            position = new Vector2(position.X, position.Y + moveSpeed);
+                position += velocity;
 
-            if (position.X > endPosition | position.X < startPosition && moveDirection == isMoving.horizontal)
-                moveSpeed = moveSpeed * -1;
-            else if (position.Y > endPosition | position.Y < startPosition && moveDirection == isMoving.vertical)
-                moveSpeed = moveSpeed * -1;
+            if (position.X > endPosition | position.X < startPosition && moveDirection == IsMoving.horizontal)
+                velocity = velocity * -1;
+            else if (position.Y > endPosition | position.Y < startPosition && moveDirection == IsMoving.vertical)
+                velocity = velocity * -1;
 
             UpdateTiles();
+        }
+
+        public void CreateVelocityVector(int moveSpeed)
+        {
+            switch (moveDirection)
+            {
+                case IsMoving.horizontal: velocity = new Vector2(moveSpeed, 0);
+                    break;
+                case IsMoving.vertical: velocity = new Vector2(0 , moveSpeed);
+                    break;
+                case IsMoving.directional: velocity = new Vector2(moveSpeed, moveSpeed);
+                    break;
+                case IsMoving.none:
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void UpdateTiles()

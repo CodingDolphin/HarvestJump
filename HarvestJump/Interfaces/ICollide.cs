@@ -10,8 +10,8 @@ namespace HarvestJump
     {
         BoundingBox boundingBox { get; set; }
         Vector2 position { get; set; }
+        Vector2 velocity { get; set; }
         bool noClip { get; set; }
         void HandleCollision(ICollide collisionObject);
-        void UpdateAnimation();
     }
 }

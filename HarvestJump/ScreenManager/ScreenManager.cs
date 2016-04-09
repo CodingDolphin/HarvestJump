@@ -51,7 +51,7 @@ namespace HarvestJump
             screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1280;
             screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 720;
 
-            graphicDeviceManager.IsFullScreen = false;
+            graphicDeviceManager.IsFullScreen = true;
             graphicDeviceManager.ApplyChanges();
 
             //Alle wichtigen Variablen instanzieren
@@ -63,7 +63,7 @@ namespace HarvestJump
             screenList.Add(new IntroScreen(virtualWidth, virutalHeight));
             screenList.Add(new MenuScreen(virtualWidth, virutalHeight));
             screenList.Add(new PlayScreen(virtualWidth, virutalHeight));
-            currentScreen = screenList[2];
+            currentScreen = screenList[1];
 
             //Events hier registrieren
 
@@ -109,8 +109,20 @@ namespace HarvestJump
             PlayScreen test = screenList[2] as PlayScreen;
             var keyboardState = Keyboard.GetState();
 
-            if (keyboardState.IsKeyDown(Keys.Q))
-                playerCamera.Position = test.platformerWorld.player.position;
+            if (currentScreen is PlayScreen)
+            {
+                const float cameraMoveFactor = 0.2f;
+
+                // Die Position die die Kamera haben soll (=player Pos)
+                Vector2 cameraTarget = new Vector2((int)(test.platformerWorld.player.position.X - test.screenWidth * 0.5f),
+                                                   (int)(test.platformerWorld.player.position.Y - test.screenHeight * 0.5f));
+
+                // Vektor, den sich die Kamera bewegt - nicht direkt dahin wo sie letztendlich sein soll durch den cameraMoveFactor
+                Vector2 cameraMove = cameraMoveFactor * (cameraTarget - playerCamera.Position);
+                cameraMove = new Vector2((int)cameraMove.X, (int)cameraMove.Y);
+
+                playerCamera.Position += cameraMove;
+            }
 
             if (currentSoundDuration <= deltaTime)
             {

@@ -9,10 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace HarvestJump
 {
-    public enum isMoving
+    public enum IsMoving
     {
         horizontal,
         vertical,
+        directional,
         none,
     }
 
@@ -23,12 +24,12 @@ namespace HarvestJump
         public int platformHeight { get; set; }
         protected int tileWidth { get; set; }
         protected int tileHeight { get; set; }
-        public isMoving moveDirection { get; set; }
+        public IsMoving moveDirection { get; set; }
 
         public Platform(Vector2 position,int platformWidth, int platformHeight, int tileWidth, int tileHeight) : base(position, platformWidth * tileWidth, platformHeight * tileHeight)
         {
             tileList = new List<Tile>();
-            this.moveDirection = isMoving.none;
+            this.moveDirection = IsMoving.none;
             this.tileWidth = tileWidth;
             this.tileHeight = tileHeight;
             this.platformWidth = platformWidth;

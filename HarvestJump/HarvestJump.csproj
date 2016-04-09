@@ -124,6 +124,7 @@
     <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationLeft.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationRight.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\roflthecat.png" />
+    <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
     <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

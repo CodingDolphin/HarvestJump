@@ -53,7 +53,7 @@ namespace HarvestJump
 
         }
 
-        public void CreateMovingPlatform(Vector2 position, int platformWidth, int platformHeight, int moveSpeed, int distance, isMoving moveDirection)
+        public void CreateMovingPlatform(Vector2 position, int platformWidth, int platformHeight, int moveSpeed, int distance, IsMoving moveDirection)
         {
             platformList.Add(new MovingPlatform(position, platformWidth, platformHeight, tileWidth, tileHeight, moveSpeed, distance, moveDirection));
             calculateFurthestDistance(distance);
@@ -63,16 +63,16 @@ namespace HarvestJump
         {
             int lastIndex = platformList.Count - 1;
  
-            if (furthestPositionX < platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance / 2)
+            if (furthestPositionX < platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance)
             {
-                if(platformList[lastIndex].moveDirection == isMoving.horizontal)
-                furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance / 2;
+                if(platformList[lastIndex].moveDirection == IsMoving.horizontal)
+                    furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
                 else
-                furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
+                    furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
             }
             if (furthestPositionY < platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance)
             {
-                if (platformList[lastIndex].moveDirection == isMoving.vertical)
+                if (platformList[lastIndex].moveDirection == IsMoving.vertical)
                     furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance;
                 else
                     furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileWidth;

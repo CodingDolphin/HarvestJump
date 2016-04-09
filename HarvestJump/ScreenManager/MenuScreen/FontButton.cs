@@ -39,6 +39,7 @@ namespace HarvestJump
         public override void Update(GameTime gameTime)
         {
             AdjustFontToTexture();
+            Pulse();
             base.Update(gameTime);
         }
         public void AdjustFontToTexture()
@@ -49,7 +50,6 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Pulse();
             spriteBatch.Draw(texture, position, buttonColor);
             spriteBatch.DrawString(font, buttonText, fontPosition, Color.White, 0f, Vector2.Zero, _scale, SpriteEffects.None, 1f);
         }

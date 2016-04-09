@@ -14,7 +14,7 @@ namespace HarvestJump
     {
         private readonly Viewport _viewport;
 
-        public Camera(Viewport viewport)
+        public Camera(Viewport viewport )
         {
             _viewport = viewport;
 

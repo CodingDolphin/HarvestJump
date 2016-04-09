@@ -81,15 +81,16 @@ namespace HarvestJump
 
         public void createMap(int startposition, int maxPlatform)
         {
-            platformManager.CreatePlatform(new Vector2(0, 500), 20, 30);
-            platformManager.CreateMovingPlatform(new Vector2(800, 300), 10, 1, 1, 5 * 32, isMoving.vertical);
-            platformManager.CreateMovingPlatform(new Vector2(1400, 500), 10, 1, 1, 5 * 32, isMoving.horizontal);
-            platformManager.CreateMovingPlatform(new Vector2(2000, 500), 20, 1,1,32, isMoving.horizontal);
+            platformManager.CreatePlatform(new Vector2(0, 300), 15, 300);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 5 * 32, 300), 10, 1, 1, 5 * 32, IsMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 300), 10, 1, 1, 5 * 32, IsMoving.horizontal);
+            platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 300), 25, 30);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 300), 15, 1, 2, 10 * 32,IsMoving.directional);
         }
 
         public void LoadContent(ContentManager content)
         {
-            mapBackground.LoadContent(content, "GraphicAssets/MapAssets/Background02");
+            mapBackground.LoadContent(content, "GraphicAssets/MapAssets/ScrollingBG");
             player.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationRight");
             enemy.LoadContent(content, "GraphicAssets/PlayAssets/roflthecat");
             platformManager.LoadContent(content);
