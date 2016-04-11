@@ -51,7 +51,7 @@ namespace HarvestJump
             screenWidth = graphicDeviceManager.PreferredBackBufferWidth = 1280;
             screenHeight = graphicDeviceManager.PreferredBackBufferHeight = 720;
 
-            graphicDeviceManager.IsFullScreen = true;
+            graphicDeviceManager.IsFullScreen = false;
             graphicDeviceManager.ApplyChanges();
 
             //Alle wichtigen Variablen instanzieren
@@ -63,7 +63,7 @@ namespace HarvestJump
             screenList.Add(new IntroScreen(virtualWidth, virutalHeight));
             screenList.Add(new MenuScreen(virtualWidth, virutalHeight));
             screenList.Add(new PlayScreen(virtualWidth, virutalHeight));
-            currentScreen = screenList[1];
+            currentScreen = screenList[2];
 
             //Events hier registrieren
 

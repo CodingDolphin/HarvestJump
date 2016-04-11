@@ -25,10 +25,10 @@ namespace HarvestJump
         private int currentPositionY { get; set; }
 
         private List<Platform> platformList { get; set; }
-        private Random random { get; set; }
-        private Sprite mapBackground { get; set; }
         public Player player { get; set; }
         public Enemy enemy { get; set; }
+        private Random random { get; set; }
+        private Sprite mapBackground { get; set; }
         private CollisionSystem collisionSystem { get; set; }
         private PlatformManager platformManager { get; set; }
 
@@ -68,7 +68,7 @@ namespace HarvestJump
 
             mapBackground = new Sprite(Vector2.Zero);
             player = new Player(Vector2.Zero, 65, 90);
-            enemy = new Enemy(Vector2.Zero, 140, 100);
+            enemy = new Enemy(new Vector2(350,0), 140, 100);
             random = new Random();
             platformManager = new PlatformManager(tileWidth, tileHeight);
 
@@ -81,7 +81,7 @@ namespace HarvestJump
 
         public void createMap(int startposition, int maxPlatform)
         {
-            platformManager.CreatePlatform(new Vector2(0, 300), 15, 300);
+            platformManager.CreatePlatform(new Vector2(0, 250), 15, 300);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 5 * 32, 300), 10, 1, 1, 5 * 32, IsMoving.vertical);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 300), 10, 1, 1, 5 * 32, IsMoving.horizontal);
             platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 300), 25, 30);

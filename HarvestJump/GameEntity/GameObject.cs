@@ -11,7 +11,17 @@ namespace HarvestJump
     public enum Status
     {
         activ,
-        inactiv
+        inactiv,
+        jumping,
+        atacking,
+        waiting,
+        flee,
+    }
+
+    public enum Direction
+    {
+        left,
+        right,
     }
 
     abstract class GameObject : ICollide
@@ -60,8 +70,7 @@ namespace HarvestJump
             ApplyVelocityToPosition();
             boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
 
-            currentSprite.Update(gameTime);
-            UpdateAnimation();
+            UpdateAnimation(gameTime);
         }
 
         public virtual void ApplyForce()
@@ -74,6 +83,8 @@ namespace HarvestJump
         {
             position += velocity * (float)deltaTime;
         }
+
+        //TODO Variable einbauen um Velocity zu berechnen oder nicht.
 
         public virtual void HandleCollision(ICollide collisionObject)      
         {
@@ -117,8 +128,9 @@ namespace HarvestJump
             isJumping = false;
         }
 
-        public void UpdateAnimation()
+        public void UpdateAnimation(GameTime gameTime)
         {
+            currentSprite.Update(gameTime);
             currentSprite.position = position;
         }
 
