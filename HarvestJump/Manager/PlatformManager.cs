@@ -38,10 +38,10 @@ namespace HarvestJump
 
         public void Update(GameTime gameTime)
         {
-            foreach (Platform item in platformList)
+            foreach (Platform platform in platformList)
             {
-                if (item is MovingPlatform)
-                    item.Update(gameTime);
+                if (platform is MovingPlatform)
+                    platform.Update(gameTime);
 
             }
         }

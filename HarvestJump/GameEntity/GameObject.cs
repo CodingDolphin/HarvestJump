@@ -12,10 +12,16 @@ namespace HarvestJump
     {
         activ,
         inactiv,
-        jumping,
-        atacking,
-        waiting,
-        flee,
+        walkingLeft,
+        walkingRight,
+        jumpingLeft,
+        jumpingRight,
+        atackingLeft,
+        atackingRight,
+        idleLeft,
+        idleRight,
+        fleeLeft,
+        fleeRight,
     }
 
     public enum Direction
