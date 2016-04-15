@@ -13,16 +13,44 @@ namespace HarvestJump
     {
         public Player(Vector2 startPosition, int width, int height) : base(startPosition,width,height)
         {
-            currentSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
-            rightSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
-            leftSprite = new Animation(startPosition, 0, 65, 90, 0.3, 8);
+            testSprite = new Sprite(Vector2.Zero);
+            initializePlayerAnimation();
         }
+
+        public void initializePlayerAnimation()
+        {
+            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9);
+            this.AddAnimation(AnimationStatus.run, position, 0, 68, 97, 0.2f, 7);
+            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9);
+            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 7);
+            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7);
+            this.currentAnimation = animationDictionary[AnimationStatus.idle];
+        }
+
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            rightSprite.LoadContent(content, assetName);
-            leftSprite.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationLeft");
-            currentSprite = rightSprite;
+            string contentPath = "GraphicAssets/PlayAssets/";
+            testSprite.LoadContent(content, "blackPixel");
+
+            foreach (var item in animationDictionary)
+            {
+                switch (item.Key)
+                {
+                    case AnimationStatus.walking:item.Value.LoadContent(content, contentPath + "PlayerWalkAnimation");
+                        break;
+                    case AnimationStatus.run:item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
+                        break;
+                    case AnimationStatus.jumping:item.Value.LoadContent(content, contentPath + "PlayerJumpAnimation");
+                        break;
+                    case AnimationStatus.idle:item.Value.LoadContent(content, contentPath + "PlayerIdleAnimation");
+                        break;
+                    case AnimationStatus.slide:item.Value.LoadContent(content, contentPath + "PlayerSlideAnimation");
+                        break;
+                    case AnimationStatus.dead:item.Value.LoadContent(content, contentPath + "PlayerDeadAnimation");
+                        break;
+                }
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -32,28 +60,34 @@ namespace HarvestJump
             base.Update(gameTime);
         }
 
-        public void ChangeDirectionToLeft()
-        {
-            currentSprite = leftSprite;
-        }
-
-        public void ChangeDirectionToRight()
-        {
-            currentSprite = rightSprite;
-        }
-
         private void CheckKeyboardAndUpdateMovement()
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if (keyboardState.IsKeyDown(Keys.Left)) { velocity += new Vector2(-20, 0); ChangeDirectionToLeft(); }
-            if (keyboardState.IsKeyDown(Keys.Right)) { velocity += new Vector2(20, 0); ChangeDirectionToRight(); }
-            if (keyboardState.IsKeyDown(Keys.Up) && !isJumping) { velocity += new Vector2(0, -1000);isJumping = true; }
+            if (keyboardState.IsKeyDown(Keys.Left))
+            {
+              velocity += new Vector2(-20, 0);
+              currentAnimation.direction = SpriteEffects.FlipHorizontally;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Right))
+            {
+                velocity += new Vector2(20, 0);
+                currentAnimation.direction = SpriteEffects.None;
+            }
+
+            if ((keyboardState.IsKeyDown(Keys.Up) || (keyboardState.IsKeyDown(Keys.Space))) && !isJumping)
+            {
+                velocity += new Vector2(0, -1000);isJumping = true;
+                currentAnimation = animationDictionary[AnimationStatus.jumping];
+                currentAnimation.index = 0;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentSprite.Draw(spriteBatch);
+            currentAnimation.Draw(spriteBatch);
+            spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X,(int) position.Y, 65, 100), new Color(255,1,1,0.5f));
         }
     }
 }

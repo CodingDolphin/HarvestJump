@@ -66,9 +66,9 @@ namespace HarvestJump
 
             //Instance Variables
 
+            player = new Player(Vector2.Zero, 67, 95);
             mapBackground = new Sprite(Vector2.Zero);
-            player = new Player(Vector2.Zero, 65, 90);
-            enemy = new Enemy(new Vector2(350,0), 140, 100);
+            enemy = new Enemy(new Vector2(350,0), 191, 110);
             random = new Random();
             platformManager = new PlatformManager(tileWidth, tileHeight);
 
@@ -91,8 +91,8 @@ namespace HarvestJump
         public void LoadContent(ContentManager content)
         {
             mapBackground.LoadContent(content, "GraphicAssets/MapAssets/ScrollingBG");
-            player.LoadContent(content, "GraphicAssets/PlayAssets/CatIdleAnimationRight");
-            enemy.LoadContent(content, "GraphicAssets/PlayAssets/roflthecat");
+            player.LoadContent(content, "GraphicAssets/PlayAssets/PlayerIdleAnimation");
+            enemy.LoadContent(content, "GraphicAssets/PlayAssets/RaptorAtackAnimation");
             platformManager.LoadContent(content);
         }
 

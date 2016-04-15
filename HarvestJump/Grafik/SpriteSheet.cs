@@ -50,7 +50,7 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, position, sourceRectangle, color, rotation, Vector2.Zero, scale, direction, 1f);
         }
     }
 }

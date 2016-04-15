@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/Save.png</SourceFile>
-  <SourceTime>2016-04-07T22:43:47.8574725+02:00</SourceTime>
-  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/GraphicAssets/MenuAssets/Save.xnb</DestFile>
-  <DestTime>2016-04-07T22:44:15.8036267+02:00</DestTime>
+  <SourceFile>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/MenuAssets/Save.png</SourceFile>
+  <SourceTime>2016-04-15T20:33:17.1096162+02:00</SourceTime>
+  <DestFile>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/bin/Windows/GraphicAssets/MenuAssets/Save.xnb</DestFile>
+  <DestTime>2016-04-15T20:38:46.2627519+02:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
+  <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2016-03-16T03:18:04+01:00</ProcessorTime>
+  <ProcessorTime>2015-04-29T19:14:44+02:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
@@ -26,10 +26,6 @@
   </Parameters>
   <Parameters>
     <Key>ResizeToPowerOfTwo</Key>
-    <Value>False</Value>
-  </Parameters>
-  <Parameters>
-    <Key>MakeSquare</Key>
     <Value>False</Value>
   </Parameters>
   <Parameters>

@@ -85,6 +85,7 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
     <Compile Include="GameEntity\MovingPlatform.cs" />
+    <Compile Include="GameEntity\Raptor.cs" />
     <Compile Include="HelperClasses\CollisionHelper.cs" />
     <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
@@ -121,10 +122,16 @@
   <ItemGroup>
     <Content Include="Content\blackPixel.png" />
     <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationLeft.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\CatIdleAnimationRight.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\roflthecat.png" />
     <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerDeadAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerJumpAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerSlideAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerWalkAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorRunAnimation.png" />
     <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -143,13 +150,14 @@
     <Content Include="Content\SoundAssets\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GraphicAssets\PlayAssets\Player.png" />
     <Content Include="Content\SoundAssets\PlayAssets\speedDown.wav" />
     <Content Include="Content\SoundAssets\PlayAssets\speedUp.wav" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <MonoGameContentReference Include="Content\Content.mgcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

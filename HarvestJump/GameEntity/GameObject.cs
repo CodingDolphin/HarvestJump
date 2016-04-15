@@ -8,20 +8,17 @@ using Microsoft.Xna.Framework.Content;
 
 namespace HarvestJump
 {
-    public enum Status
+    public enum AnimationStatus
     {
-        activ,
-        inactiv,
-        walkingLeft,
-        walkingRight,
-        jumpingLeft,
-        jumpingRight,
-        atackingLeft,
-        atackingRight,
-        idleLeft,
-        idleRight,
-        fleeLeft,
-        fleeRight,
+        walking,
+        jumping,
+        atacking,
+        idle,
+        flee,
+        slide,
+        run,
+        hurt,
+        dead,
     }
 
     public enum Direction
@@ -37,9 +34,8 @@ namespace HarvestJump
         protected Vector2 gravity { get; set; }
         public Vector2 velocity { get; set; }
         protected Vector2 friction { get; set; }
-        protected Sprite currentSprite { get; set; }
-        protected Sprite leftSprite { get; set; }
-        protected Sprite rightSprite { get; set; }
+        protected Animation currentAnimation { get; set; }
+        protected Dictionary<AnimationStatus, Animation> animationDictionary { get; set; }
         protected double deltaTime { get; set; }
         public double slowMotion { get; set; }
 
@@ -51,6 +47,10 @@ namespace HarvestJump
         public BoundingBox boundingBox { get; set; }
         public bool isJumping { get; set; }
 
+        //Testing
+
+        public Sprite testSprite;
+
         //Konstruktors
 
         public GameObject()
@@ -59,6 +59,7 @@ namespace HarvestJump
 
         public GameObject(Vector2 position,int width, int height)
         {
+            animationDictionary = new Dictionary<AnimationStatus, Animation>();
             this.position = position;
             boundingBox = new BoundingBox(position, width, height);
             slowMotion = 1;
@@ -132,12 +133,24 @@ namespace HarvestJump
 
             boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
             isJumping = false;
+
+            if(this is Player)
+            {
+                animationDictionary[AnimationStatus.idle].position = currentAnimation.position;
+                animationDictionary[AnimationStatus.idle].direction = currentAnimation.direction;
+                currentAnimation = animationDictionary[AnimationStatus.run];
+            }
+        }
+
+        public void AddAnimation(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount)
+        {
+            animationDictionary.Add(status, new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount));
         }
 
         public void UpdateAnimation(GameTime gameTime)
         {
-            currentSprite.Update(gameTime);
-            currentSprite.position = position;
+            currentAnimation.Update(gameTime);
+            currentAnimation.position = position;
         }
 
         public abstract void Draw(SpriteBatch spriteBatch);

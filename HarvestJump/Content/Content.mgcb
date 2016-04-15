@@ -1,8 +1,8 @@
 
 #----------------------------- Global Properties ----------------------------#
 
-/outputDir:bin/Windows
-/intermediateDir:obj/Windows
+/outputDir:bin
+/intermediateDir:obj
 /platform:Windows
 /config:
 /profile:Reach
@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin blackPixel.png
+#begin GraphicAssets/IntroAssets/CompanyLogoo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -21,15 +21,8 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:blackPixel.png
-
-#begin Fonts/LeagueFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LeagueFont.spritefont
+/build:GraphicAssets/IntroAssets/CompanyLogoo.png
 
 #begin GraphicAssets/MapAssets/Background012.png
 /importer:TextureImporter
@@ -39,7 +32,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/Background012.png
 
@@ -51,7 +43,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/Background02.png
 
@@ -63,7 +54,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/CatIdle100.png
 
@@ -75,7 +65,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/grassBlock.png
 
@@ -87,7 +76,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/GrassPlatformSheet.png
 
@@ -99,9 +87,19 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/GrassPlatformSheet1.png
+
+#begin GraphicAssets/MapAssets/ScrollingBG.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/MapAssets/ScrollingBG.png
 
 #begin GraphicAssets/MapAssets/vjrjA.jpg
 /importer:TextureImporter
@@ -111,7 +109,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MapAssets/vjrjA.jpg
 
@@ -123,7 +120,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MenuAssets/MenuBackground.jpg
 
@@ -135,7 +131,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MenuAssets/MenuBanner.png
 
@@ -147,7 +142,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MenuAssets/redButton.png
 
@@ -159,7 +153,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MenuAssets/redButtona.png
 
@@ -171,7 +164,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/MenuAssets/Save.png
 
@@ -183,7 +175,6 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/GrassSheet.png
 
@@ -192,30 +183,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:GraphicAssets/PlayAssets/LevelBackgroundWav.wav
-
-#begin GraphicAssets/PlayAssets/Player.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/Player.png
-
-#begin GraphicAssets/PlayAssets/roflthecat.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/roflthecat.png
 
 #begin GraphicAssets/PlayAssets/speedDown.wav
 /importer:WavImporter
@@ -229,71 +196,17 @@
 /processorParam:Quality=Best
 /build:GraphicAssets/PlayAssets/speedUp.wav
 
-#begin SoundAssets\IntroAssets\LogoSound.wav
+#begin SoundAssets/IntroAssets/LogoSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:SoundAssets\IntroAssets\LogoSound.wav
+/build:SoundAssets/IntroAssets/LogoSound.wav
 
-#begin SoundAssets\MenuAssets\MenuMusic.mp3
+#begin SoundAssets/MenuAssets/MenuMusic.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:SoundAssets\MenuAssets\MenuMusic.mp3
-
-#begin SoundAssets\PlayAssets\LevelBackground.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:SoundAssets\PlayAssets\LevelBackground.mp3
-
-#begin SoundAssets\PlayAssets\speedDown.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:SoundAssets\PlayAssets\speedDown.wav
-
-#begin SoundAssets\PlayAssets\speedUp.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:SoundAssets\PlayAssets\speedUp.wav
-
-#begin GraphicAssets/PlayAssets/CatIdleAnimationLeft.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/CatIdleAnimationLeft.png
-
-#begin GraphicAssets/PlayAssets/CatIdleAnimationRight.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/CatIdleAnimationRight.png
-
-#begin GraphicAssets/IntroAssets/CompanyLogoo.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/IntroAssets/CompanyLogoo.png
+/build:SoundAssets/MenuAssets/MenuMusic.mp3
 
 #begin SoundAssets/MenuAssets/rollover1.wav
 /importer:WavImporter
@@ -301,7 +214,25 @@
 /processorParam:Quality=Best
 /build:SoundAssets/MenuAssets/rollover1.wav
 
-#begin GraphicAssets/MapAssets/ScrollingBG.png
+#begin SoundAssets/PlayAssets/LevelBackground.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/LevelBackground.mp3
+
+#begin SoundAssets/PlayAssets/speedDown.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/speedDown.wav
+
+#begin SoundAssets/PlayAssets/speedUp.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/speedUp.wav
+
+#begin blackPixel.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -309,7 +240,100 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:GraphicAssets/MapAssets/ScrollingBG.png
+/build:blackPixel.png
+
+#begin Fonts/LeagueFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/LeagueFont.spritefont
+
+#begin GraphicAssets/PlayAssets/PlayerIdleAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerIdleAnimation.png
+
+#begin GraphicAssets/PlayAssets/PlayerJumpAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerJumpAnimation.png
+
+#begin GraphicAssets/PlayAssets/PlayerSlideAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerSlideAnimation.png
+
+#begin GraphicAssets/PlayAssets/PlayerWalkAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerWalkAnimation.png
+
+#begin GraphicAssets/PlayAssets/RaptorAtackAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorAtackAnimation.png
+
+#begin GraphicAssets/PlayAssets/RaptorIdleAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorIdleAnimation.png
+
+#begin GraphicAssets/PlayAssets/PlayerDeadAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerDeadAnimation.png
+
+#begin GraphicAssets/PlayAssets/PlayerRunAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/PlayerRunAnimation.png
 

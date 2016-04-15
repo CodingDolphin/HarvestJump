@@ -12,10 +12,18 @@ namespace HarvestJump
     {
         public Vector2 position { get; set; }
         public Texture2D texture { get; set; }
+        public SpriteEffects direction { get; set; }
+        public float rotation { get; set; }
+        public float scale { get; set; }
+        public Color color { get; set; }
+
 
         public Sprite(Vector2 position)
         {
             this.position = position;
+            this.color = Color.White;
+            this.rotation = 0f;
+            this.scale = 1f;
         }
 
         public virtual void LoadContent(ContentManager content, string assetName)

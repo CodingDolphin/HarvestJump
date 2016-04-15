@@ -13,7 +13,8 @@ namespace HarvestJump
     {
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
-            currentSprite = new Animation(new Vector2(100, 0), 5, 142, 105, 0.1f, 9);
+            testSprite = new Sprite(Vector2.Zero);
+            currentAnimation = new Animation(new Vector2(100, 0), 5, 191, 115, 0.1f, 9);
             isJumping = false;
         }
 
@@ -24,12 +25,14 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            currentSprite.LoadContent(content, assetName);
+            testSprite.LoadContent(content, "blackPixel");
+            currentAnimation.LoadContent(content, assetName);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentSprite.Draw(spriteBatch);
+            currentAnimation.Draw(spriteBatch);
+            spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255,1,1,0.5f));
         }
     }
 }
