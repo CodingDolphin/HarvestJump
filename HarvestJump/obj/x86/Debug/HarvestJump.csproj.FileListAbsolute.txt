@@ -90,7 +90,6 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Sha
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\MapAssets\ScrollingBG.xnb
-C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\LevelBackground.wma
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\blackPixel.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\Fonts\LeagueFont.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\IntroAssets\CompanyLogoo.xnb
@@ -126,6 +125,9 @@ C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Conte
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\MenuAssets\MenuMusic.wma
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\MenuAssets\MenuMusic.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\MenuAssets\rollover1.xnb
+C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\LevelBackground.wma
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\LevelBackground.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\speedDown.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\speedUp.xnb
+C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorDeadAnimation.xnb
+C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimation.xnb

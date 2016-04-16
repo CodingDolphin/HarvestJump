@@ -130,8 +130,10 @@
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerSlideAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerWalkAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorIdleAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorWalkAnimation.png" />
     <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

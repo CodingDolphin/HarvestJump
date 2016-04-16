@@ -37,6 +37,8 @@
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorAtackAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerDeadAnimation.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorDeadAnimation.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorWalkAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerRunAnimation.png</File>
   </SourceFiles>
 </SourceFileCollection>

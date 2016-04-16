@@ -26,7 +26,7 @@ namespace HarvestJump
 
         private List<Platform> platformList { get; set; }
         public Player player { get; set; }
-        public Enemy enemy { get; set; }
+        public Raptor enemy { get; set; }
         private Random random { get; set; }
         private Sprite mapBackground { get; set; }
         private CollisionSystem collisionSystem { get; set; }
@@ -66,9 +66,9 @@ namespace HarvestJump
 
             //Instance Variables
 
-            player = new Player(Vector2.Zero, 67, 95);
+            player = new Player(Vector2.Zero);
             mapBackground = new Sprite(Vector2.Zero);
-            enemy = new Enemy(new Vector2(350,0), 191, 110);
+            enemy = new Raptor(new Vector2(200, 0), 191, 110);
             random = new Random();
             platformManager = new PlatformManager(tileWidth, tileHeight);
 
@@ -91,8 +91,8 @@ namespace HarvestJump
         public void LoadContent(ContentManager content)
         {
             mapBackground.LoadContent(content, "GraphicAssets/MapAssets/ScrollingBG");
-            player.LoadContent(content, "GraphicAssets/PlayAssets/PlayerIdleAnimation");
-            enemy.LoadContent(content, "GraphicAssets/PlayAssets/RaptorAtackAnimation");
+            player.LoadContent(content, "GraphicAssets/PlayAssets/");
+            enemy.LoadContent(content, "GraphicAssets/PlayAssets/");
             platformManager.LoadContent(content);
         }
 

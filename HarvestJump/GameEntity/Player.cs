@@ -11,35 +11,33 @@ namespace HarvestJump
 {
     class Player : GameObject
     {
-        public Player(Vector2 startPosition, int width, int height) : base(startPosition,width,height)
+        public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
-            testSprite = new Sprite(Vector2.Zero);
+            debugRectangle = new Sprite(Vector2.Zero);
             initializePlayerAnimation();
         }
 
         public void initializePlayerAnimation()
         {
             this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9);
-            this.AddAnimation(AnimationStatus.run, position, 0, 68, 97, 0.2f, 7);
             this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9);
             this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 7);
             this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7);
+            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7);
             this.currentAnimation = animationDictionary[AnimationStatus.idle];
         }
 
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            string contentPath = "GraphicAssets/PlayAssets/";
-            testSprite.LoadContent(content, "blackPixel");
+            string contentPath = assetName;
+            debugRectangle.LoadContent(content, "blackPixel");
 
             foreach (var item in animationDictionary)
             {
                 switch (item.Key)
                 {
                     case AnimationStatus.walking:item.Value.LoadContent(content, contentPath + "PlayerWalkAnimation");
-                        break;
-                    case AnimationStatus.run:item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
                         break;
                     case AnimationStatus.jumping:item.Value.LoadContent(content, contentPath + "PlayerJumpAnimation");
                         break;
@@ -48,6 +46,8 @@ namespace HarvestJump
                     case AnimationStatus.slide:item.Value.LoadContent(content, contentPath + "PlayerSlideAnimation");
                         break;
                     case AnimationStatus.dead:item.Value.LoadContent(content, contentPath + "PlayerDeadAnimation");
+                        break;
+                    case AnimationStatus.run:item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
                         break;
                 }
             }
@@ -87,7 +87,7 @@ namespace HarvestJump
         public override void Draw(SpriteBatch spriteBatch)
         {
             currentAnimation.Draw(spriteBatch);
-            spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X,(int) position.Y, 65, 100), new Color(255,1,1,0.5f));
+            //spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X,(int) position.Y, 65, 100), new Color(255,1,1,0.5f));
         }
     }
 }

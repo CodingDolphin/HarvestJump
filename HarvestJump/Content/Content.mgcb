@@ -326,6 +326,28 @@
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/PlayerDeadAnimation.png
 
+#begin GraphicAssets/PlayAssets/RaptorDeadAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorDeadAnimation.png
+
+#begin GraphicAssets/PlayAssets/RaptorWalkAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorWalkAnimation.png
+
 #begin GraphicAssets/PlayAssets/PlayerRunAnimation.png
 /importer:TextureImporter
 /processor:TextureProcessor

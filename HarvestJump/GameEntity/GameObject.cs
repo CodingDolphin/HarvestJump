@@ -36,20 +36,20 @@ namespace HarvestJump
         protected Vector2 friction { get; set; }
         protected Animation currentAnimation { get; set; }
         protected Dictionary<AnimationStatus, Animation> animationDictionary { get; set; }
+        protected Direction direction { get; set; }
         protected double deltaTime { get; set; }
         public double slowMotion { get; set; }
 
         //ICollide Interface
 
         public bool noClip { get; set; }
-        public Vector2 oldPosition { get; set; }
         public Vector2 position { get; set; }
         public BoundingBox boundingBox { get; set; }
         public bool isJumping { get; set; }
 
         //Testing
 
-        public Sprite testSprite;
+        public Sprite debugRectangle;
 
         //Konstruktors
 
@@ -60,6 +60,7 @@ namespace HarvestJump
         public GameObject(Vector2 position,int width, int height)
         {
             animationDictionary = new Dictionary<AnimationStatus, Animation>();
+            direction = Direction.right;
             this.position = position;
             boundingBox = new BoundingBox(position, width, height);
             slowMotion = 1;
@@ -138,8 +139,15 @@ namespace HarvestJump
             {
                 animationDictionary[AnimationStatus.idle].position = currentAnimation.position;
                 animationDictionary[AnimationStatus.idle].direction = currentAnimation.direction;
-                currentAnimation = animationDictionary[AnimationStatus.run];
+                currentAnimation = animationDictionary[AnimationStatus.idle];
             }
+            else
+            {
+                animationDictionary[AnimationStatus.idle].position = currentAnimation.position;
+                animationDictionary[AnimationStatus.idle].direction = currentAnimation.direction;
+                currentAnimation = animationDictionary[AnimationStatus.walking];
+            }
+
         }
 
         public void AddAnimation(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount)

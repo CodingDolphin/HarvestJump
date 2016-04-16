@@ -9,12 +9,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace HarvestJump
 {
+    public enum AIState
+    {
+        walking,
+        atacking,
+        idle,
+        jumping,
+    }
     class Enemy : GameObject
     {
+        public Vector2 speed { get; set; }
+        public Vector2 jumpStrength { get; set; }
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
-            testSprite = new Sprite(Vector2.Zero);
-            currentAnimation = new Animation(new Vector2(100, 0), 5, 191, 115, 0.1f, 9);
             isJumping = false;
         }
 
@@ -25,14 +32,13 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            testSprite.LoadContent(content, "blackPixel");
-            currentAnimation.LoadContent(content, assetName);
+            debugRectangle.LoadContent(content, "blackPixel");
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             currentAnimation.Draw(spriteBatch);
-            spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255,1,1,0.5f));
+            //spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255,1,1,0.5f));
         }
     }
 }
