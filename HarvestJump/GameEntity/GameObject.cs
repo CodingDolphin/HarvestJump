@@ -29,6 +29,9 @@ namespace HarvestJump
 
     abstract class GameObject : ICollide
     {
+        //TEST
+        protected Vector2 boxXTranslate { get; set; }
+
         //Klassenvariablen
 
         protected Vector2 gravity { get; set; }
@@ -57,8 +60,9 @@ namespace HarvestJump
         {
         }
 
-        public GameObject(Vector2 position,int width, int height)
+        public GameObject(Vector2 position, int width, int height)
         {
+            debugRectangle = new Sprite(position);
             animationDictionary = new Dictionary<AnimationStatus, Animation>();
             direction = Direction.right;
             this.position = position;
@@ -66,6 +70,8 @@ namespace HarvestJump
             slowMotion = 1;
             noClip = false;
             gravity = new Vector2(0, 2000);
+
+            boxXTranslate = Vector2.Zero;
         }
         
         public abstract void LoadContent(ContentManager content, string assetName);
@@ -76,8 +82,8 @@ namespace HarvestJump
 
             ApplyForce();
             ApplyVelocityToPosition();
-            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
 
+            boundingBox = new BoundingBox(Vector2.Add(position, boxXTranslate), boundingBox.width, boundingBox.height);
             UpdateAnimation(gameTime);
         }
 
@@ -132,10 +138,11 @@ namespace HarvestJump
                 velocity = new Vector2(velocity.X, 0);
             }
 
-            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
+
+            boundingBox = new BoundingBox(Vector2.Add(position, boxXTranslate), boundingBox.width, boundingBox.height);
             isJumping = false;
 
-            if(this is Player)
+            if (this is Player)
             {
                 animationDictionary[AnimationStatus.idle].position = currentAnimation.position;
                 animationDictionary[AnimationStatus.idle].direction = currentAnimation.direction;

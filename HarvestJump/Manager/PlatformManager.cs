@@ -23,7 +23,7 @@ namespace HarvestJump
 
         public PlatformManager(int tileWidth, int tileHeight)
         {
-            platformList = new List<Platform>();
+            this.platformList = new List<Platform>();
             this.tileWidth = tileWidth;
             this.tileHeight = tileHeight;
         }

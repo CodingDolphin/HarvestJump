@@ -30,7 +30,7 @@ namespace HarvestJump
         {
             if (MediaPlayer.State == MediaState.Stopped)
             {
-                MediaPlayer.Volume = 0.3f;
+                MediaPlayer.Volume = 0.4f;
                 MediaPlayer.Play(backgroundMusicJumpMap);
             }
 

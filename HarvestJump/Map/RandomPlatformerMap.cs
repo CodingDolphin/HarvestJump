@@ -68,7 +68,7 @@ namespace HarvestJump
 
             player = new Player(Vector2.Zero);
             mapBackground = new Sprite(Vector2.Zero);
-            enemy = new Raptor(new Vector2(200, 0), 191, 110);
+            enemy = new Raptor(new Vector2(200, 0));
             random = new Random();
             platformManager = new PlatformManager(tileWidth, tileHeight);
 
@@ -82,10 +82,10 @@ namespace HarvestJump
         public void createMap(int startposition, int maxPlatform)
         {
             platformManager.CreatePlatform(new Vector2(0, 250), 15, 300);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 5 * 32, 300), 10, 1, 1, 5 * 32, IsMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 4 * 32, 300), 10, 1, 1, 5 * 32, IsMoving.vertical);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 300), 10, 1, 1, 5 * 32, IsMoving.horizontal);
             platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 300), 25, 30);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 300), 15, 1, 2, 10 * 32,IsMoving.directional);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 300), 15, 1, 1, 10 * 32,IsMoving.directional);
         }
 
         public void LoadContent(ContentManager content)

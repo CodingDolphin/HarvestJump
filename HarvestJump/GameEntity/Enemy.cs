@@ -20,6 +20,7 @@ namespace HarvestJump
     {
         public Vector2 speed { get; set; }
         public Vector2 jumpStrength { get; set; }
+
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
             isJumping = false;
@@ -38,7 +39,8 @@ namespace HarvestJump
         public override void Draw(SpriteBatch spriteBatch)
         {
             currentAnimation.Draw(spriteBatch);
-            //spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255,1,1,0.5f));
+
+            spriteBatch.Draw(debugRectangle.texture, Vector2.Add(position, boxXTranslate), new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(1, 1, 1, 0.5f));
         }
     }
 }

@@ -56,7 +56,7 @@ namespace HarvestJump
             UpdateTiles();
         }
 
-        public void CreateVelocityVector(int moveSpeed)
+        public void CreateVelocityVector(float moveSpeed)
         {
             switch (moveDirection)
             {

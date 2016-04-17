@@ -37,7 +37,7 @@ namespace HarvestJump
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(texture, position, null, color, rotation, Vector2.Zero, scale, direction, 1f);
         }
     }
 }

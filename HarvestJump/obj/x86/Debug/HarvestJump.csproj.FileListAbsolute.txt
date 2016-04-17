@@ -131,3 +131,16 @@ C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Conte
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\speedUp.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorDeadAnimation.xnb
 C:\Users\milan\Desktop\MProjects\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerHurtAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorRunAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkRight.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerDeadAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerIdleAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerJumpAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerRunAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerSlideAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerWalkAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorAtackAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorDeadAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorIdleAnimation.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimation.xnb

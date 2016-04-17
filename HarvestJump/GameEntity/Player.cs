@@ -37,17 +37,23 @@ namespace HarvestJump
             {
                 switch (item.Key)
                 {
-                    case AnimationStatus.walking:item.Value.LoadContent(content, contentPath + "PlayerWalkAnimation");
+                    case AnimationStatus.walking:
+                        item.Value.LoadContent(content, contentPath + "PlayerWalkAnimation");
                         break;
-                    case AnimationStatus.jumping:item.Value.LoadContent(content, contentPath + "PlayerJumpAnimation");
+                    case AnimationStatus.jumping:
+                        item.Value.LoadContent(content, contentPath + "PlayerJumpAnimation");
                         break;
-                    case AnimationStatus.idle:item.Value.LoadContent(content, contentPath + "PlayerIdleAnimation");
+                    case AnimationStatus.idle:
+                        item.Value.LoadContent(content, contentPath + "PlayerIdleAnimation");
                         break;
-                    case AnimationStatus.slide:item.Value.LoadContent(content, contentPath + "PlayerSlideAnimation");
+                    case AnimationStatus.slide:
+                        item.Value.LoadContent(content, contentPath + "PlayerSlideAnimation");
                         break;
-                    case AnimationStatus.dead:item.Value.LoadContent(content, contentPath + "PlayerDeadAnimation");
+                    case AnimationStatus.dead:
+                        item.Value.LoadContent(content, contentPath + "PlayerDeadAnimation");
                         break;
-                    case AnimationStatus.run:item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
+                    case AnimationStatus.run:
+                        item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
                         break;
                 }
             }
@@ -87,7 +93,7 @@ namespace HarvestJump
         public override void Draw(SpriteBatch spriteBatch)
         {
             currentAnimation.Draw(spriteBatch);
-            //spriteBatch.Draw(testSprite.texture, position, new Rectangle((int)position.X,(int) position.Y, 65, 100), new Color(255,1,1,0.5f));
+            spriteBatch.Draw(debugRectangle.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255, 1, 1, 0.5f));
         }
     }
 }

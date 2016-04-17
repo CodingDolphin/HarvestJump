@@ -12,7 +12,7 @@ namespace HarvestJump
 {
     class Raptor : Enemy
     {
-        public Raptor(Vector2 position, int width, int height) : base(position, width, height)
+        public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
             speed = new Vector2(2f, 0);
             jumpStrength = new Vector2(0f, -250f);
@@ -28,7 +28,6 @@ namespace HarvestJump
             this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8);
             this.currentAnimation = animationDictionary[AnimationStatus.walking];
         }
-
 
         public override void LoadContent(ContentManager content, string assetName)
         {
@@ -58,6 +57,32 @@ namespace HarvestJump
                         break;
                 }
             }
+
+            base.LoadContent(content, "0");
+        }
+
+        private void SetDirection(Direction dir)
+        {
+            Vector2 flipTranslate = new Vector2(-(currentAnimation.frameWidth / 2), 0.0f);
+
+            if (direction != dir)
+            {
+                if (direction == Direction.right)
+                {
+                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                    this.boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
+
+                    position += flipTranslate;
+                }
+                else if (direction == Direction.left)
+                {
+                    position -= flipTranslate;
+                    currentAnimation.direction = SpriteEffects.None;
+                    boxXTranslate = Vector2.Zero;
+                }
+            }
+
+            direction = dir;
         }
 
         public override void Update(GameTime gameTime)
@@ -66,22 +91,16 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.Enter))
             {
-                if (direction == Direction.right)
-                {
-                    direction = Direction.left;
-                    position = new Vector2(position.X - boundingBox.width / 2, position.Y);
-                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
-                }
+                this.SetDirection(Direction.left);
             }
 
             if (keyboardState.IsKeyDown(Keys.RightShift))
             {
-                if (direction == Direction.left)
-                {
-                    direction = Direction.right;
-                    position = new Vector2(position.X + boundingBox.width / 2, position.Y);
-                    currentAnimation.direction = SpriteEffects.None;
-                }
+                this.SetDirection(Direction.right);
+            }
+
+            if (keyboardState.IsKeyDown(Keys.RightControl))
+            {
             }
 
             if (direction == Direction.right)

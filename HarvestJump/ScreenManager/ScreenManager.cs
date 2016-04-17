@@ -137,8 +137,8 @@ namespace HarvestJump
 
                 if(currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 3)
                 {
-                    MediaPlayer.Volume = 0.1f;
-                    speedDown.Play(0.5f, 0f, 0f);
+                    MediaPlayer.Volume = 0.2f;
+                    speedDown.Play(0.9f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
                     test.platformerWorld.player.slowMotion = 3;
@@ -152,8 +152,8 @@ namespace HarvestJump
 
                 if (currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 1)
                 {
-                    MediaPlayer.Volume = 0.3f;
-                    speedUp.Play(0.5f, 0f, 0f);
+                    MediaPlayer.Volume = 0.4f;
+                    speedUp.Play(0.9f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
                     test.platformerWorld.player.slowMotion = 1;
