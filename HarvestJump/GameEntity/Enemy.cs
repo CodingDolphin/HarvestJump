@@ -33,14 +33,12 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            debugRectangle.LoadContent(content, "blackPixel");
+            base.LoadContent(content, assetName);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentAnimation.Draw(spriteBatch);
-
-            spriteBatch.Draw(debugRectangle.texture, Vector2.Add(position, boxXTranslate), new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(1, 1, 1, 0.5f));
+            base.Draw(spriteBatch);
         }
     }
 }

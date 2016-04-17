@@ -13,18 +13,18 @@ namespace HarvestJump
     {
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
-            debugRectangle = new Sprite(Vector2.Zero);
+            direction = Direction.left;
             initializePlayerAnimation();
         }
 
         public void initializePlayerAnimation()
         {
-            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9);
-            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 7);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7);
-            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7);
-            this.currentAnimation = animationDictionary[AnimationStatus.idle];
+            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, 67, 95);
+            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, 67, 95);
+            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 7, 67, 95);
+            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, 80, 70);
+            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7, 67, 95);
+            this.currentAnimation = animationDictionary[AnimationStatus.idle].Item1;
         }
 
 
@@ -38,25 +38,27 @@ namespace HarvestJump
                 switch (item.Key)
                 {
                     case AnimationStatus.walking:
-                        item.Value.LoadContent(content, contentPath + "PlayerWalkAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerWalkAnimation");
                         break;
                     case AnimationStatus.jumping:
-                        item.Value.LoadContent(content, contentPath + "PlayerJumpAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerJumpAnimation");
                         break;
                     case AnimationStatus.idle:
-                        item.Value.LoadContent(content, contentPath + "PlayerIdleAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerIdleAnimation");
                         break;
                     case AnimationStatus.slide:
-                        item.Value.LoadContent(content, contentPath + "PlayerSlideAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerSlideAnimation");
                         break;
                     case AnimationStatus.dead:
-                        item.Value.LoadContent(content, contentPath + "PlayerDeadAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerDeadAnimation");
                         break;
                     case AnimationStatus.run:
-                        item.Value.LoadContent(content, contentPath + "PlayerRunAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerRunAnimation");
                         break;
                 }
             }
+
+            base.LoadContent(content, assetName);
         }
 
         public override void Update(GameTime gameTime)
@@ -74,6 +76,7 @@ namespace HarvestJump
             {
               velocity += new Vector2(-20, 0);
               currentAnimation.direction = SpriteEffects.FlipHorizontally;
+              SetDirection(Direction.left);
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
@@ -85,15 +88,14 @@ namespace HarvestJump
             if ((keyboardState.IsKeyDown(Keys.Up) || (keyboardState.IsKeyDown(Keys.Space))) && !isJumping)
             {
                 velocity += new Vector2(0, -1000);isJumping = true;
-                currentAnimation = animationDictionary[AnimationStatus.jumping];
+                currentAnimation = animationDictionary[AnimationStatus.jumping].Item1;
                 currentAnimation.index = 0;
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentAnimation.Draw(spriteBatch);
-            spriteBatch.Draw(debugRectangle.texture, position, new Rectangle((int)position.X, (int)position.Y, (int)boundingBox.width, (int)boundingBox.height), new Color(255, 1, 1, 0.5f));
+            base.Draw(spriteBatch);
         }
     }
 }

@@ -14,19 +14,19 @@ namespace HarvestJump
     {
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
-            speed = new Vector2(2f, 0);
+            speed = new Vector2(3f, 0);
             jumpStrength = new Vector2(0f, -250f);
             initializeRaptorAnimation();
         }
 
         public void initializeRaptorAnimation()
         {
-            this.AddAnimation(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7);
-            this.AddAnimation(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7);
-            this.AddAnimation(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8);
-            this.currentAnimation = animationDictionary[AnimationStatus.walking];
+            this.AddAnimation(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, 151, 115);
+            this.AddAnimation(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, 151, 115);
+            this.AddAnimation(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, 151, 115);
+            this.AddAnimation(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, 151, 115);
+            this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, 175, 85);
+            this.currentAnimation = animationDictionary[AnimationStatus.walking].Item1;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
@@ -38,51 +38,27 @@ namespace HarvestJump
                 switch (item.Key)
                 {
                     case AnimationStatus.run:
-                        item.Value.LoadContent(content, contentPath + "RaptorRunAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorRunAnimation");
                         break;
                     case AnimationStatus.walking:
-                        item.Value.LoadContent(content, contentPath + "RaptorWalkAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorWalkAnimation");
                         break;
                     case AnimationStatus.dead:
-                        item.Value.LoadContent(content, contentPath + "RaptorDeadAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorDeadAnimation");
                         break;
                     case AnimationStatus.jumping:
-                        item.Value.LoadContent(content, contentPath + "RaptorJumpAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorJumpAnimation");
                         break;
                     case AnimationStatus.idle:
-                        item.Value.LoadContent(content, contentPath + "RaptorIdleAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorIdleAnimation");
                         break;
                     case AnimationStatus.atacking:
-                        item.Value.LoadContent(content, contentPath + "RaptorAtackAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorAtackAnimation");
                         break;
                 }
             }
 
-            base.LoadContent(content, "0");
-        }
-
-        private void SetDirection(Direction dir)
-        {
-            Vector2 flipTranslate = new Vector2(-(currentAnimation.frameWidth / 2), 0.0f);
-
-            if (direction != dir)
-            {
-                if (direction == Direction.right)
-                {
-                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
-                    this.boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
-
-                    position += flipTranslate;
-                }
-                else if (direction == Direction.left)
-                {
-                    position -= flipTranslate;
-                    currentAnimation.direction = SpriteEffects.None;
-                    boxXTranslate = Vector2.Zero;
-                }
-            }
-
-            direction = dir;
+            base.LoadContent(content, string.Empty);
         }
 
         public override void Update(GameTime gameTime)
@@ -101,6 +77,10 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.RightControl))
             {
+                animationDictionary[AnimationStatus.dead].Item1.direction = currentAnimation.direction;
+                this.currentAnimation = animationDictionary[AnimationStatus.dead].Item1;
+                this.boundingBox = animationDictionary[AnimationStatus.dead].Item2;
+                this.speed = Vector2.Zero;
             }
 
             if (direction == Direction.right)
