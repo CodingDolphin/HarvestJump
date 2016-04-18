@@ -27,10 +27,12 @@ namespace HarvestJump
         private List<Platform> platformList { get; set; }
         public Player player { get; set; }
         public Raptor enemy { get; set; }
+        public Raptor enemy1 { get; set; }
         private Random random { get; set; }
         private Sprite mapBackground { get; set; }
         private CollisionSystem collisionSystem { get; set; }
         private PlatformManager platformManager { get; set; }
+        private WayPointManager wayPointManager { get; set; }
 
         //Horizontale Variablen
 
@@ -68,13 +70,15 @@ namespace HarvestJump
 
             player = new Player(Vector2.Zero);
             mapBackground = new Sprite(Vector2.Zero);
-            enemy = new Raptor(new Vector2(200, 0));
+            enemy = new Raptor(new Vector2(250, 0));
+            enemy1 = new Raptor(new Vector2(0, 0));
             random = new Random();
             platformManager = new PlatformManager(tileWidth, tileHeight);
 
             //Map Generierung starten
 
             createMap(startHeight, maxPlatforms);
+            wayPointManager = new WayPointManager(platformManager.platformList);
 
             collisionSystem = new CollisionSystem(platformManager.platformList);
         }
@@ -93,25 +97,34 @@ namespace HarvestJump
             mapBackground.LoadContent(content, "GraphicAssets/MapAssets/ScrollingBG");
             player.LoadContent(content, "GraphicAssets/PlayAssets/");
             enemy.LoadContent(content, "GraphicAssets/PlayAssets/");
+            enemy1.LoadContent(content, "GraphicAssets/PlayAssets/");
             platformManager.LoadContent(content);
+            wayPointManager.LoadContent(content);
         }
 
         public void Update(GameTime gameTime)
         {
+            wayPointManager.Update(enemy);
+            wayPointManager.Update(enemy1);
             platformManager.Update(gameTime);
+
             enemy.Update(gameTime);
+            enemy1.Update(gameTime);
             player.Update(gameTime);
 
             collisionSystem.checkCollision(player);
             collisionSystem.checkCollision(enemy);
+            collisionSystem.checkCollision(enemy1);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             mapBackground.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
+            enemy1.Draw(spriteBatch);
             player.Draw(spriteBatch);
             platformManager.Draw(spriteBatch);
+            wayPointManager.Draw(spriteBatch);
         }
     }
 }

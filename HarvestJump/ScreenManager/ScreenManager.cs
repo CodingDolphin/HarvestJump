@@ -195,6 +195,7 @@ namespace HarvestJump
         public void Draw(SpriteBatch spriteBatch)
         {
             graphicDeviceManager.GraphicsDevice.SetRenderTarget(target);
+            graphicDeviceManager.GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(transformMatrix: playerCamera.GetViewMatrix());
             currentScreen.Draw(spriteBatch);

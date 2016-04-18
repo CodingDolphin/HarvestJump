@@ -63,16 +63,15 @@ namespace HarvestJump
 
         public GameObject(Vector2 position, int width, int height)
         {
-            debugRectangle = new Sprite(position);
-            stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
-            direction = Direction.right;
+            this.debugRectangle = new Sprite(position);
+            this.stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
+            this.direction = Direction.right;
             this.position = position;
-            boundingBox = new BoundingBox(position, width, height);
-            slowMotion = 1;
-            noClip = false;
-            gravity = new Vector2(0, 2000);
-
-            boxXTranslate = Vector2.Zero;
+            this.boundingBox = new BoundingBox(position, width, height);
+            this.slowMotion = 1;
+            this.noClip = false;
+            this.gravity = new Vector2(0, 2000);
+            this.boxXTranslate = Vector2.Zero;
         }
         
         public virtual void LoadContent(ContentManager content, string assetName)
@@ -160,9 +159,10 @@ namespace HarvestJump
             }
             //else
             //{
-            //    animationDictionary[AnimationStatus.idle].Item1.position = currentAnimation.position;
-            //    animationDictionary[AnimationStatus.idle].Item1.direction = currentAnimation.direction;
-            //    currentAnimation = animationDictionary[AnimationStatus.walking].Item1;
+            //    stateData[AnimationStatus.walking].Item1.position = currentAnimation.position;
+            //    stateData[AnimationStatus.walking].Item1.direction = currentAnimation.direction;
+            //    currentAnimation = stateData[AnimationStatus.walking].Item1;
+            //    boundingBox = stateData[AnimationStatus.walking].Item2;
             //}
         }
 
@@ -205,7 +205,7 @@ namespace HarvestJump
         {
             currentAnimation.Draw(spriteBatch);
 
-            if(this is Tile)
+            if(this is Raptor)
             {
                 spriteBatch.Draw(debugRectangle.texture, boundingBox.position, new Rectangle((int)boundingBox.position.X, (int)boundingBox.position.Y, (int)boundingBox.width , (int)boundingBox.height), new Color(1, 1, 1, 0.5f));
                 spriteBatch.DrawString(debugFont, CreateString(this), Vector2.Zero, Color.Red);

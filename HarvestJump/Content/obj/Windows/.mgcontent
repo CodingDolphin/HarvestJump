@@ -34,11 +34,17 @@
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerJumpAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerSlideAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerWalkAnimation.png</File>
-    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorAtackAnimation.png</File>
-    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerDeadAnimation.png</File>
-    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorDeadAnimation.png</File>
-    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorWalkAnimation.png</File>
     <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerRunAnimation.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorAtackAnimationGreen.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorDeadAnimationGreen.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorRunAnimationGreen.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorWalkAnimationGreen.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorAtackAnimationBlue.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorDeadAnimationBlue.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationBlue.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorRunAnimationBlue.png</File>
+    <File>C:/Users/milan/Desktop/MProjects/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorWalkAnimationBlue.png</File>
   </SourceFiles>
 </SourceFileCollection>

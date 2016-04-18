@@ -293,28 +293,6 @@
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/PlayerWalkAnimation.png
 
-#begin GraphicAssets/PlayAssets/RaptorAtackAnimation.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/RaptorAtackAnimation.png
-
-#begin GraphicAssets/PlayAssets/RaptorIdleAnimation.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/RaptorIdleAnimation.png
-
 #begin GraphicAssets/PlayAssets/PlayerDeadAnimation.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -326,28 +304,6 @@
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/PlayerDeadAnimation.png
 
-#begin GraphicAssets/PlayAssets/RaptorDeadAnimation.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/RaptorDeadAnimation.png
-
-#begin GraphicAssets/PlayAssets/RaptorWalkAnimation.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:GraphicAssets/PlayAssets/RaptorWalkAnimation.png
-
 #begin GraphicAssets/PlayAssets/PlayerRunAnimation.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -358,4 +314,114 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/PlayerRunAnimation.png
+
+#begin GraphicAssets/PlayAssets/RaptorAtackAnimationGreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorAtackAnimationGreen.png
+
+#begin GraphicAssets/PlayAssets/RaptorDeadAnimationGreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorDeadAnimationGreen.png
+
+#begin GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png
+
+#begin GraphicAssets/PlayAssets/RaptorRunAnimationGreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorRunAnimationGreen.png
+
+#begin GraphicAssets/PlayAssets/RaptorWalkAnimationGreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorWalkAnimationGreen.png
+
+#begin GraphicAssets/PlayAssets/RaptorAtackAnimationBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorAtackAnimationBlue.png
+
+#begin GraphicAssets/PlayAssets/RaptorDeadAnimationBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorDeadAnimationBlue.png
+
+#begin GraphicAssets/PlayAssets/RaptorIdleAnimationBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorIdleAnimationBlue.png
+
+#begin GraphicAssets/PlayAssets/RaptorRunAnimationBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorRunAnimationBlue.png
+
+#begin GraphicAssets/PlayAssets/RaptorWalkAnimationBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:GraphicAssets/PlayAssets/RaptorWalkAnimationBlue.png
 

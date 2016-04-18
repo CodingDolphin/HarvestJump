@@ -84,8 +84,11 @@
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
-    <Compile Include="GameEntity\MovingPlatform.cs" />
+    <Compile Include="Interfaces\ISmart.cs" />
+    <Compile Include="Map\MovingPlatform.cs" />
     <Compile Include="GameEntity\Raptor.cs" />
+    <Compile Include="Manager\Waypoint.cs" />
+    <Compile Include="Manager\WayPointManager.cs" />
     <Compile Include="HelperClasses\CollisionHelper.cs" />
     <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />
@@ -95,7 +98,7 @@
     <Compile Include="Manager\PlatformManager.cs" />
     <Compile Include="ScreenManager\MenuScreen\FontButton.cs" />
     <Compile Include="ScreenManager\MenuScreen\MenuEntry.cs" />
-    <Compile Include="GameEntity\Tile.cs" />
+    <Compile Include="Map\Tile.cs" />
     <Compile Include="MonoClasses\Game1.cs" />
     <Compile Include="GameEntity\GameObject.cs" />
     <Compile Include="HelperClasses\CollisionSystem.cs" />
@@ -109,7 +112,7 @@
     <Compile Include="Map\RandomPlatformerMap.cs" />
     <Compile Include="Manager\ResolutionManager.cs" />
     <Compile Include="ScreenManager\GameScreens\PlayScreen.cs" />
-    <Compile Include="GameEntity\Platform.cs" />
+    <Compile Include="Map\Platform.cs" />
     <Compile Include="ScreenManager\ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,11 +132,16 @@
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerRunAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerSlideAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerWalkAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\RaptorIdleAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\RaptorRunAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\RaptorWalkAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationBlue.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationGreen.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimationBlue.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimationGreen.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorIdleAnimationBlue.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorIdleAnimationGreen.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorRunAnimationBlue.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorRunAnimationGreen.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorWalkAnimationBlue.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\RaptorWalkAnimationGreen.png" />
     <Content Include="Content\SoundAssets\IntroAssets\LogoSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
