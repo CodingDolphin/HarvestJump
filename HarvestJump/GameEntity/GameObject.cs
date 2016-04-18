@@ -39,7 +39,7 @@ namespace HarvestJump
         public Vector2 velocity { get; set; }
         protected Vector2 friction { get; set; }
         protected Animation currentAnimation { get; set; }
-        protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> animationDictionary { get; set; }
+        protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> stateData { get; set; }
         protected Direction direction { get; set; }
         protected double deltaTime { get; set; }
         public double slowMotion { get; set; }
@@ -64,7 +64,7 @@ namespace HarvestJump
         public GameObject(Vector2 position, int width, int height)
         {
             debugRectangle = new Sprite(position);
-            animationDictionary = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
+            stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
             direction = Direction.right;
             this.position = position;
             boundingBox = new BoundingBox(position, width, height);
@@ -154,9 +154,9 @@ namespace HarvestJump
      
             if (this is Player)
             {
-                animationDictionary[AnimationStatus.idle].Item1.position = currentAnimation.position;
-                animationDictionary[AnimationStatus.idle].Item1.direction = currentAnimation.direction;
-                currentAnimation = animationDictionary[AnimationStatus.idle].Item1;
+                stateData[AnimationStatus.idle].Item1.position = currentAnimation.position;
+                stateData[AnimationStatus.idle].Item1.direction = currentAnimation.direction;
+                currentAnimation = stateData[AnimationStatus.idle].Item1;
             }
             //else
             //{
@@ -166,9 +166,9 @@ namespace HarvestJump
             //}
         }
 
-        public void AddAnimation(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount, int width, int height)
+        public void AddAnimation(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
         {
-            animationDictionary.Add(status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount),
+            stateData.Add(status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping),
                                             new BoundingBox(position, width, height)));
         }
 
@@ -220,6 +220,5 @@ namespace HarvestJump
 
             return debugString;
         }
-
     }
 }

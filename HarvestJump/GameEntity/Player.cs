@@ -19,21 +19,20 @@ namespace HarvestJump
 
         public void initializePlayerAnimation()
         {
-            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, 67, 95);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, 67, 95);
-            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 7, 67, 95);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, 80, 70);
-            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7, 67, 95);
-            this.currentAnimation = animationDictionary[AnimationStatus.idle].Item1;
+            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, true, 67, 95);
+            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, true, 67, 95);
+            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 6, false, 67, 95);
+            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, false, 80, 70);
+            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7, true, 67, 95);
+            this.currentAnimation = stateData[AnimationStatus.idle].Item1;
         }
 
 
         public override void LoadContent(ContentManager content, string assetName)
         {
             string contentPath = assetName;
-            debugRectangle.LoadContent(content, "blackPixel");
 
-            foreach (var item in animationDictionary)
+            foreach (var item in stateData)
             {
                 switch (item.Key)
                 {
@@ -88,8 +87,9 @@ namespace HarvestJump
             if ((keyboardState.IsKeyDown(Keys.Up) || (keyboardState.IsKeyDown(Keys.Space))) && !isJumping)
             {
                 velocity += new Vector2(0, -1000);isJumping = true;
-                currentAnimation = animationDictionary[AnimationStatus.jumping].Item1;
+                currentAnimation = stateData[AnimationStatus.jumping].Item1;
                 currentAnimation.index = 0;
+                currentAnimation.animationIsActive = true;
             }
         }
 

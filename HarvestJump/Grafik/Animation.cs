@@ -14,28 +14,39 @@ namespace HarvestJump
         public double deltaTime { get; private set; }
         public double frameCycle { get; private set; }
         public bool animationIsActive { get; set; }
+        public bool isLooping { get; set; }
 
-        public Animation(Vector2 position, int index, int frameWidth, int frameHeight, double frameCycle, int frameCount) : base(position, index, frameWidth, frameHeight)
+        public Animation(Vector2 position, int index, int frameWidth, int frameHeight, double frameCycle, int frameCount, bool isLooping) : base(position, index, frameWidth, frameHeight)
         {
             this.animationIsActive = true;
+            this.isLooping = isLooping;
             this.frameCycle = frameCycle;
             this.frameCount = frameCount;
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (animationIsActive)
-            {
-                deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
+            deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
 
+            if(animationIsActive)
+            {
                 if (index == frameCount)
+                {
+                    if (!isLooping)
+                    {
+                        index = frameCount;
+                        return;
+                    }
+
                     index = 0;
+                }
 
                 if (deltaTime >= frameCycle)
                 {
                     index++;
                     deltaTime = 0d;
                 }
+
                 sourceRectangle = createSourceRectangle();
             }
         }

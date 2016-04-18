@@ -21,19 +21,19 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddAnimation(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, 151, 115);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, 151, 115);
-            this.AddAnimation(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, 151, 115);
-            this.AddAnimation(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, 151, 115);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, 175, 85);
-            this.currentAnimation = animationDictionary[AnimationStatus.walking].Item1;
+            this.AddAnimation(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 115);
+            this.AddAnimation(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddAnimation(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddAnimation(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 151, 115);
+            this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, false, 191, 85);
+            this.currentAnimation = stateData[AnimationStatus.walking].Item1;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
             string contentPath = assetName;
 
-            foreach (var item in animationDictionary)
+            foreach (var item in stateData)
             {
                 switch (item.Key)
                 {
@@ -77,9 +77,9 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.RightControl))
             {
-                animationDictionary[AnimationStatus.dead].Item1.direction = currentAnimation.direction;
-                this.currentAnimation = animationDictionary[AnimationStatus.dead].Item1;
-                this.boundingBox = animationDictionary[AnimationStatus.dead].Item2;
+                this.stateData[AnimationStatus.dead].Item1.direction = currentAnimation.direction;
+                this.currentAnimation = stateData[AnimationStatus.dead].Item1;
+                this.boundingBox = stateData[AnimationStatus.dead].Item2;
                 this.speed = Vector2.Zero;
             }
 
