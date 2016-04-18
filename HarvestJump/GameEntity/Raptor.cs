@@ -14,18 +14,18 @@ namespace HarvestJump
     {
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
-            speed = new Vector2(3f, 0);
+            speed = new Vector2(1f, 0);
             jumpStrength = new Vector2(0f, -250f);
             initializeRaptorAnimation();
         }
 
         public void initializeRaptorAnimation()
         {
-            this.AddAnimation(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 115);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddAnimation(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddAnimation(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 151, 115);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, false, 191, 85);
+            this.AddState(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 115);
+            this.AddState(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 151, 115);
+            this.AddState(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, false, 191, 85);
             this.currentAnimation = stateData[AnimationStatus.walking].Item1;
         }
 

@@ -19,11 +19,11 @@ namespace HarvestJump
 
         public void initializePlayerAnimation()
         {
-            this.AddAnimation(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, true, 67, 95);
-            this.AddAnimation(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, true, 67, 95);
-            this.AddAnimation(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 6, false, 67, 95);
-            this.AddAnimation(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, false, 80, 70);
-            this.AddAnimation(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7, true, 67, 95);
+            this.AddState(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, true, 67, 95);
+            this.AddState(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, true, 67, 95);
+            this.AddState(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 6, false, 67, 95);
+            this.AddState(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, false, 80, 70);
+            this.AddState(AnimationStatus.run, position, 0, 64, 96, 0.25f, 7, true, 67, 95);
             this.currentAnimation = stateData[AnimationStatus.idle].Item1;
         }
 
