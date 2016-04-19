@@ -52,6 +52,8 @@ namespace HarvestJump
 
         public void Update(ISmart iSmartObject)
         {
+            CreateWaypoints();
+
             foreach (Waypoint item in waypointList)
             {
                 if(item.wayPointCollider.Intersects(iSmartObject.boundingBox))
@@ -66,9 +68,10 @@ namespace HarvestJump
             foreach (Waypoint item in waypointList)
             {
                 spriteBatch.Draw(debugRectangle.texture, new Rectangle((int)item.wayPointCollider.position.X, (int)item.wayPointCollider.position.Y,
-                                                                       (int)item.wayPointCollider.width, (int)item.wayPointCollider.height), Color.Black);
+                                                                       (int)item.wayPointCollider.width, (int)item.wayPointCollider.height), Color.White);
             }
 
+            waypointList.Clear();
         }
     }
 }
