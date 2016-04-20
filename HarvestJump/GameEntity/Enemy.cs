@@ -16,6 +16,7 @@ namespace HarvestJump
         idle,
         jumping,
     }
+
     class Enemy : GameObject, ISmart
     {
         public Vector2 speed { get; set; }
@@ -36,9 +37,9 @@ namespace HarvestJump
             base.LoadContent(content, assetName);
         }
 
-        public void HandleWaypoint(Direction direction)
+        public virtual void HandleWaypoint(Direction direction)
         {
-            SetDirection(direction);
+            base.SetDirection(direction);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

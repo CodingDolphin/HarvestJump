@@ -23,16 +23,12 @@ namespace HarvestJump
 
     public enum Direction
     {
-        left,
         right,
+        left,
     }
 
     abstract class GameObject : ICollide
     {
-        //TEST
-        protected Vector2 boxXTranslate { get; set; }
-        protected SpriteFont debugFont { get; set; }
-
         //Klassenvariablen
 
         protected Vector2 gravity { get; set; }
@@ -53,7 +49,9 @@ namespace HarvestJump
 
         //Testing
 
-        public Sprite debugRectangle;
+        public Sprite debugRectangle { get; set; }
+        protected Vector2 boxXTranslate { get; set; }
+        protected SpriteFont debugFont { get; set; }
 
         //Konstruktors
 
@@ -65,7 +63,6 @@ namespace HarvestJump
         {
             this.debugRectangle = new Sprite(position);
             this.stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
-            this.direction = Direction.right;
             this.position = position;
             this.boundingBox = new BoundingBox(position, width, height);
             this.slowMotion = 1;
@@ -91,13 +88,13 @@ namespace HarvestJump
             UpdateAnimation(gameTime);
         }
 
-        public virtual void ApplyForce()
+        public void ApplyForce()
         {
             velocity *= new Vector2(0.95f, 0.98f);
             velocity += gravity * (float)deltaTime;
         }
 
-        public virtual void ApplyVelocityToPosition()
+        public void ApplyVelocityToPosition()
         {
             position += velocity * (float)deltaTime;
         }
@@ -109,7 +106,7 @@ namespace HarvestJump
 
         //TODO Variable einbauen um Velocity zu berechnen oder nicht.
 
-        public virtual void HandleCollision(ICollide collisionObject)      
+        public void HandleCollision(ICollide collisionObject)      
         {
             float penetrationTop = boundingBox.position.Y + boundingBox.height - collisionObject.boundingBox.position.Y;
             float penetrationLeft = boundingBox.position.X + boundingBox.width - collisionObject.boundingBox.position.X;
@@ -147,23 +144,15 @@ namespace HarvestJump
                 velocity = new Vector2(velocity.X, 0);
             }
 
-
             CreateBoundingBox();
             isJumping = false;
      
             if (this is Player)
             {
-                stateData[AnimationStatus.idle].Item1.position = currentAnimation.position;
+                stateData[AnimationStatus.idle].Item1.position = position;
                 stateData[AnimationStatus.idle].Item1.direction = currentAnimation.direction;
                 currentAnimation = stateData[AnimationStatus.idle].Item1;
             }
-            //else
-            //{
-            //    stateData[AnimationStatus.walking].Item1.position = currentAnimation.position;
-            //    stateData[AnimationStatus.walking].Item1.direction = currentAnimation.direction;
-            //    currentAnimation = stateData[AnimationStatus.walking].Item1;
-            //    boundingBox = stateData[AnimationStatus.walking].Item2;
-            //}
         }
 
         public void AddState(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
@@ -205,10 +194,10 @@ namespace HarvestJump
         {
             currentAnimation.Draw(spriteBatch);
 
-            if(this is Raptor)
+            if(Game1.debug == true)
             {
                 spriteBatch.Draw(debugRectangle.texture, boundingBox.position, new Rectangle((int)boundingBox.position.X, (int)boundingBox.position.Y, (int)boundingBox.width , (int)boundingBox.height), new Color(1, 1, 1, 0.5f));
-                spriteBatch.DrawString(debugFont, CreateString(this), Vector2.Zero, Color.Red);
+                spriteBatch.DrawString(debugFont, CreateString(this), boundingBox.position, Color.Red);
             }
         }
 

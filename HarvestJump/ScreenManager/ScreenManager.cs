@@ -109,20 +109,20 @@ namespace HarvestJump
             PlayScreen test = screenList[2] as PlayScreen;
             var keyboardState = Keyboard.GetState();
 
-            if (currentScreen is PlayScreen)
-            {
-                const float cameraMoveFactor = 0.2f;
+            //if (currentScreen is PlayScreen)
+            //{
+            //    const float cameraMoveFactor = 0.2f;
 
-                // Die Position die die Kamera haben soll (=player Pos)
-                Vector2 cameraTarget = new Vector2((int)(test.platformerWorld.player.position.X - test.screenWidth * 0.5f),
-                                                   (int)(test.platformerWorld.player.position.Y - test.screenHeight * 0.5f));
+            //    // Die Position die die Kamera haben soll (=player Pos)
+            //    Vector2 cameraTarget = new Vector2((int)(test.platformerWorld.player.position.X - test.screenWidth * 0.5f),
+            //                                       (int)(test.platformerWorld.player.position.Y - test.screenHeight * 0.5f));
 
-                // Vektor, den sich die Kamera bewegt - nicht direkt dahin wo sie letztendlich sein soll durch den cameraMoveFactor
-                Vector2 cameraMove = cameraMoveFactor * (cameraTarget - playerCamera.Position);
-                cameraMove = new Vector2((int)cameraMove.X, (int)cameraMove.Y);
+            //    // Vektor, den sich die Kamera bewegt - nicht direkt dahin wo sie letztendlich sein soll durch den cameraMoveFactor
+            //    Vector2 cameraMove = cameraMoveFactor * (cameraTarget - playerCamera.Position);
+            //    cameraMove = new Vector2((int)cameraMove.X, (int)cameraMove.Y);
 
-                playerCamera.Position += cameraMove;
-            }
+            //    playerCamera.Position += cameraMove;
+            //}
 
             if (currentSoundDuration <= deltaTime)
             {
@@ -160,18 +160,19 @@ namespace HarvestJump
                 }
             }
 
+            int cameraForce = 50;
 
             if (keyboardState.IsKeyDown(Keys.W))
-                playerCamera.Position -= new Vector2(0, 11);
+                playerCamera.Position -= new Vector2(0, cameraForce);
 
             if (keyboardState.IsKeyDown(Keys.S))
-                playerCamera.Position += new Vector2(0, 11);
+                playerCamera.Position += new Vector2(0, cameraForce);
 
             if (keyboardState.IsKeyDown(Keys.A))
-                playerCamera.Position -= new Vector2(11, 0);
+                playerCamera.Position -= new Vector2(cameraForce, 0);
 
             if (keyboardState.IsKeyDown(Keys.D))
-                playerCamera.Position += new Vector2(11, 0);
+                playerCamera.Position += new Vector2(cameraForce, 0);
 
             currentScreen.Update(gameTime);
         }
@@ -195,7 +196,7 @@ namespace HarvestJump
         public void Draw(SpriteBatch spriteBatch)
         {
             graphicDeviceManager.GraphicsDevice.SetRenderTarget(target);
-            graphicDeviceManager.GraphicsDevice.Clear(Color.CornflowerBlue);
+            graphicDeviceManager.GraphicsDevice.Clear(Color.Gray);
 
             spriteBatch.Begin(transformMatrix: playerCamera.GetViewMatrix());
             currentScreen.Draw(spriteBatch);

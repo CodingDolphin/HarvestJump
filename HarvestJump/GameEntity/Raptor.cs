@@ -14,22 +14,27 @@ namespace HarvestJump
     {
         string variant { get; set; }
         Random random { get; set; }
+
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
             speed = new Vector2(2.5f, 0);
             jumpStrength = new Vector2(0f, -250f);
             random = new Random(System.DateTime.Now.Millisecond);
 
-            decideVariant();
             initializeRaptorAnimation();
+            decideVariant();
         }
 
         public void decideVariant()
         {
             if (random.Next(0,2) == 0)
+            {
                 variant = "Green";
+            }
             else
+            {
                 variant = "Blue";
+            }
         }
 
         public void initializeRaptorAnimation()
@@ -37,7 +42,7 @@ namespace HarvestJump
             this.AddState(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 115);
             this.AddState(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
             this.AddState(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddState(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 150, 110);
+            this.AddState(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 125, 110);
             this.AddState(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, false, 191, 85);
             this.currentAnimation = stateData[AnimationStatus.walking].Item1;
             this.boundingBox = stateData[AnimationStatus.walking].Item2;
@@ -72,7 +77,7 @@ namespace HarvestJump
                 }
             }
 
-            base.LoadContent(content, string.Empty);
+            base.LoadContent(content, assetName);
         }
 
         public override void Update(GameTime gameTime)

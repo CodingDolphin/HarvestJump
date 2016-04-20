@@ -9,6 +9,7 @@ namespace HarvestJump
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ScreenManager screenManager;
+        public static bool debug = true;
 
         public Game1()
         {
@@ -26,6 +27,11 @@ namespace HarvestJump
 
         protected override void Update(GameTime gameTime)
         {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                debug = true;
+            else
+                debug = false;
+
             screenManager.Update(gameTime);
         }
 

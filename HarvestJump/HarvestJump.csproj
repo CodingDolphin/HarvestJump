@@ -85,6 +85,7 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
     <Compile Include="Interfaces\ISmart.cs" />
+    <Compile Include="Map\GameObjectManager.cs" />
     <Compile Include="Map\MovingPlatform.cs" />
     <Compile Include="GameEntity\Raptor.cs" />
     <Compile Include="Manager\Waypoint.cs" />

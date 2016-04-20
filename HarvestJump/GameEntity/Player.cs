@@ -57,7 +57,7 @@ namespace HarvestJump
                 }
             }
 
-            base.LoadContent(content, assetName);
+            base.LoadContent(content, string.Empty);
         }
 
         public override void Update(GameTime gameTime)
@@ -93,7 +93,7 @@ namespace HarvestJump
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
         }

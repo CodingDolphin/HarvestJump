@@ -65,10 +65,13 @@ namespace HarvestJump
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Waypoint item in waypointList)
+            if (Game1.debug == true)
             {
-                spriteBatch.Draw(debugRectangle.texture, new Rectangle((int)item.wayPointCollider.position.X, (int)item.wayPointCollider.position.Y,
-                                                                       (int)item.wayPointCollider.width, (int)item.wayPointCollider.height), Color.White);
+                foreach (Waypoint item in waypointList)
+                {
+                    spriteBatch.Draw(debugRectangle.texture, new Rectangle((int)item.wayPointCollider.position.X, (int)item.wayPointCollider.position.Y,
+                                                                           (int)item.wayPointCollider.width, (int)item.wayPointCollider.height), Color.White);
+                }
             }
 
             waypointList.Clear();
