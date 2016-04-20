@@ -11,6 +11,9 @@ namespace HarvestJump
 {
     class Player : GameObject
     {
+        GamePadState gamePadState;
+        GamePadState oldGamePadState;
+
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
             direction = Direction.left;
@@ -71,11 +74,14 @@ namespace HarvestJump
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
+            oldGamePadState = gamePadState;
+            gamePadState = GamePad.GetState(PlayerIndex.One);
+
+
             if (keyboardState.IsKeyDown(Keys.Left))
             {
               velocity += new Vector2(-20, 0);
               currentAnimation.direction = SpriteEffects.FlipHorizontally;
-              SetDirection(Direction.left);
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
@@ -84,13 +90,27 @@ namespace HarvestJump
                 currentAnimation.direction = SpriteEffects.None;
             }
 
-            if ((keyboardState.IsKeyDown(Keys.Up) || (keyboardState.IsKeyDown(Keys.Space))) && !isJumping)
+            if ((keyboardState.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).IsButtonDown(Buttons.A)) && !isJumping)
             {
                 velocity += new Vector2(0, -1000);isJumping = true;
                 currentAnimation = stateData[AnimationStatus.jumping].Item1;
                 currentAnimation.index = 0;
                 currentAnimation.animationIsActive = true;
             }
+
+            if (oldGamePadState != gamePadState)
+            {
+                if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X >= 0)
+                {
+                    currentAnimation.direction = SpriteEffects.None;
+                }
+                else
+                {
+                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                }
+            }
+
+            //this.position += new Vector2(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * 5, 0);
         }
 
         public void Draw(SpriteBatch spriteBatch)

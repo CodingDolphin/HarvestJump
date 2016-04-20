@@ -174,6 +174,8 @@ namespace HarvestJump
             if (keyboardState.IsKeyDown(Keys.D))
                 playerCamera.Position += new Vector2(cameraForce, 0);
 
+            //playerCamera.Position += new Vector2((float)(Math.Round(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * 5)), (float)Math.Round(-GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y * 5));
+
             currentScreen.Update(gameTime);
         }
 

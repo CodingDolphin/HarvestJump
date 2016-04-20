@@ -53,7 +53,7 @@ namespace HarvestJump
         protected Vector2 boxXTranslate { get; set; }
         protected SpriteFont debugFont { get; set; }
 
-        //Konstruktors
+        //Konstruktoren
 
         public GameObject()
         {
@@ -103,8 +103,6 @@ namespace HarvestJump
         {
             boundingBox = new BoundingBox(Vector2.Add(position, boxXTranslate), boundingBox.width, boundingBox.height);
         }
-
-        //TODO Variable einbauen um Velocity zu berechnen oder nicht.
 
         public void HandleCollision(ICollide collisionObject)      
         {
@@ -176,7 +174,7 @@ namespace HarvestJump
                 if (direction == Direction.right)
                 {
                     currentAnimation.direction = SpriteEffects.FlipHorizontally;
-                    this.boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
+                    boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
                     position += flipTranslate;
                 }
                 else if (direction == Direction.left)

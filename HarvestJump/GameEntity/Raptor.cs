@@ -12,8 +12,8 @@ namespace HarvestJump
 {
     class Raptor : Enemy
     {
-        string variant { get; set; }
-        Random random { get; set; }
+        private string variant { get; set; }
+        private Random random { get; set; }
 
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
