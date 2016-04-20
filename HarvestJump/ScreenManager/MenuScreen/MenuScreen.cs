@@ -36,7 +36,7 @@ namespace HarvestJump
             menuBackground = new Sprite(Vector2.Zero);
             menuBanner = new Sprite(Vector2.Zero);
             menuEntryList = new List<MenuEntry>();
-            input = new InputManager();
+            input = new InputManager(0);
 
             //Spacing und Padding in Pixeln
 
@@ -93,7 +93,7 @@ namespace HarvestJump
             foreach (MenuEntry entry in menuEntryList)
             {
                 entry.Update(gameTime);
-                entry.checkSelected(input.getMousePosition(), input.GetLeftClick());
+                entry.checkSelected(input.getMousePosition(), input.GetLeftClickOnce());
             }
         }
 

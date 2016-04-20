@@ -8,13 +8,29 @@ using Microsoft.Xna.Framework.Input;
 
 namespace HarvestJump
 {
-    class InputManager
+   public class InputManager
     {
+        public KeyboardState currentKeyboardState;
+        public KeyboardState prevKeyboardState;
+        public GamePadState gamePadState;
+        public GamePadState prevGamePadState;
         public MouseState currentMouseState;
         public MouseState oldMouseState;
+        public PlayerIndex playerIndex;
+        
+        public InputManager(int index)
+        {
+            playerIndex = (PlayerIndex)index;
+        }
 
         public void Update(GameTime gameTime)
         {
+            prevKeyboardState = currentKeyboardState;
+            currentKeyboardState = Keyboard.GetState();
+
+            prevGamePadState = gamePadState;
+            gamePadState = GamePad.GetState(playerIndex);
+
             oldMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
         }
@@ -39,6 +55,16 @@ namespace HarvestJump
         public bool GetLeftClick()
         {
             return currentMouseState.LeftButton == ButtonState.Pressed;
+        }
+
+        public bool getAButtonPressed()
+        {
+            return gamePadState.Buttons.A == ButtonState.Pressed;
+        }
+
+        public Vector2 getLeftThumbStickMovement()
+        {
+            return gamePadState.ThumbSticks.Left;
         }
     }
 }

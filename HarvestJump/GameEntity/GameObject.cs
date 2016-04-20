@@ -27,25 +27,28 @@ namespace HarvestJump
         left,
     }
 
-    abstract class GameObject : ICollide
+    abstract class GameObject : ICollide, IFocus
     {
         //Klassenvariablen
 
         protected Vector2 gravity { get; set; }
-        public Vector2 velocity { get; set; }
         protected Vector2 friction { get; set; }
         protected Animation currentAnimation { get; set; }
         protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> stateData { get; set; }
         protected Direction direction { get; set; }
         protected double deltaTime { get; set; }
-        public double slowMotion { get; set; }
+        protected Vector2 speed { get; set; }
+        protected Vector2 jumpStrength { get; set; }
+        public static double slowMotion { get; set; }
+        public bool isJumping { get; set; }
 
         //ICollide Interface
 
-        public bool noClip { get; set; }
         public Vector2 position { get; set; }
         public BoundingBox boundingBox { get; set; }
-        public bool isJumping { get; set; }
+        public Vector2 velocity { get; set; }
+        public bool noClip { get; set; }
+
 
         //Testing
 
@@ -65,10 +68,11 @@ namespace HarvestJump
             this.stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
             this.position = position;
             this.boundingBox = new BoundingBox(position, width, height);
-            this.slowMotion = 1;
             this.noClip = false;
             this.gravity = new Vector2(0, 2000);
             this.boxXTranslate = Vector2.Zero;
+
+            GameObject.slowMotion = 1;
         }
         
         public virtual void LoadContent(ContentManager content, string assetName)

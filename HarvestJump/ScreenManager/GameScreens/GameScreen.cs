@@ -31,12 +31,20 @@ namespace HarvestJump
         public string screenName { get; protected set; }
         public int screenWidth { get; private set; }
         public int screenHeight { get; private set; }
+        protected Viewport viewport { get; set; }
 
         //Alle Konstruktoren hier deklarieren
 
-        protected GameScreen(int screenWidth, int screenHeight)
+        protected GameScreen(int screenWidth, int screenHeight, Viewport viewport)
         {
             this.screenName = screenName;
+            this.screenWidth = screenWidth;
+            this.screenHeight = screenHeight;
+            this.viewport = viewport;
+        }
+
+        public GameScreen(int screenWidth, int screenHeight)
+        {
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
         }

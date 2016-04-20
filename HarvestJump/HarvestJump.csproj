@@ -84,6 +84,7 @@
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
+    <Compile Include="Interfaces\IFocus.cs" />
     <Compile Include="Interfaces\ISmart.cs" />
     <Compile Include="Manager\GameObjectManager.cs" />
     <Compile Include="Map\MovingPlatform.cs" />

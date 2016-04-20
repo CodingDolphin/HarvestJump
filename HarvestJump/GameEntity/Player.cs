@@ -11,12 +11,19 @@ namespace HarvestJump
 {
     class Player : GameObject
     {
-        GamePadState gamePadState;
-        GamePadState oldGamePadState;
+        private static int playerCount;
+
+        private InputManager inputManager { get; set; }
+        Vector2 movementVector;
+        Vector2 lastMovementVector;
 
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
-            direction = Direction.left;
+            speed = new Vector2(28f, 0);
+            jumpStrength = new Vector2(0, -1100);
+            inputManager = new InputManager(playerCount);
+            playerCount++;
+
             initializePlayerAnimation();
         }
 
@@ -65,52 +72,46 @@ namespace HarvestJump
 
         public override void Update(GameTime gameTime)
         {
-            CheckKeyboardAndUpdateMovement();
+            inputManager.Update(gameTime);
+            MoveCharacter();
 
             base.Update(gameTime);
         }
 
-        private void CheckKeyboardAndUpdateMovement()
+        private void MoveCharacter()
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            oldGamePadState = gamePadState;
-            gamePadState = GamePad.GetState(PlayerIndex.One);
-
-
             if (keyboardState.IsKeyDown(Keys.Left))
             {
-              velocity += new Vector2(-20, 0);
-              currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                velocity -= speed;
+                currentAnimation.direction = SpriteEffects.FlipHorizontally;
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
             {
-                velocity += new Vector2(20, 0);
+                velocity += speed;
                 currentAnimation.direction = SpriteEffects.None;
             }
 
-            if ((keyboardState.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).IsButtonDown(Buttons.A)) && !isJumping)
+            if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !isJumping)
             {
-                velocity += new Vector2(0, -1000);isJumping = true;
+                velocity += jumpStrength;isJumping = true;
                 currentAnimation = stateData[AnimationStatus.jumping].Item1;
                 currentAnimation.index = 0;
                 currentAnimation.animationIsActive = true;
             }
 
-            if (oldGamePadState != gamePadState)
+            movementVector = inputManager.getLeftThumbStickMovement();
+
+            if (movementVector.X >= 0 && movementVector.X != 0)
+                currentAnimation.direction = SpriteEffects.None;
+            else if(movementVector.X <= 0 && movementVector.X != 0)
             {
-                if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X >= 0)
-                {
-                    currentAnimation.direction = SpriteEffects.None;
-                }
-                else
-                {
-                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
-                }
+                currentAnimation.direction = SpriteEffects.FlipHorizontally;
             }
 
-            //this.position += new Vector2(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * 5, 0);
+            velocity += movementVector * speed;
         }
 
         public void Draw(SpriteBatch spriteBatch)

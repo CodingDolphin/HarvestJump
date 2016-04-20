@@ -12,12 +12,14 @@ namespace HarvestJump
 {
     class PlayScreen : GameScreen
     {
-        public RandomPlatformerMap platformerWorld;
-        public Song backgroundMusicJumpMap;
+        public RandomPlatformerMap platformerWorld { get; set; }
+        public Song backgroundMusicJumpMap { get; set; }
+        private Camera camera { get; set; }
 
         public PlayScreen(int screenWidth, int screenHeight) : base(screenWidth, screenHeight)
         {
             platformerWorld = new RandomPlatformerMap();
+            camera = new Camera(new Viewport(0, 0, screenWidth, screenHeight));
         }
 
         public override void LoadContent(ContentManager content)
@@ -39,7 +41,9 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix());
             platformerWorld.Draw(spriteBatch);
+            spriteBatch.End();
         }
     }
 }

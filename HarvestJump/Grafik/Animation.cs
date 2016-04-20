@@ -26,9 +26,9 @@ namespace HarvestJump
 
         public override void Update(GameTime gameTime)
         {
-            deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
+            deltaTime += gameTime.ElapsedGameTime.TotalSeconds / GameObject.slowMotion;
 
-            if(animationIsActive)
+            if (animationIsActive)
             {
                 if (index == frameCount)
                 {

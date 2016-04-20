@@ -52,7 +52,7 @@ namespace HarvestJump
         {
             //Map Eigenschaften hier einstellen
 
-            startHeight = 300;
+            startHeight = 100;
             maxPlatforms = 50;
             maxPlatformHeight = 10;
             minPlatformHeight = 1;
@@ -86,11 +86,11 @@ namespace HarvestJump
 
         public void createMap(int startposition, int maxPlatform)
         {
-            platformManager.CreatePlatform(new Vector2(0, 250), 20, 300);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 4 * 32, 300), 10, 1, 1, 5 * 32, IsMoving.vertical);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 300), 10, 1, 1, 5 * 32, IsMoving.horizontal);
-            platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 300), 25, 30);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 300), 15, 1, 1, 10 * 32,IsMoving.directional);
+            platformManager.CreatePlatform(new Vector2(0, 400), 20, 300);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 4 * 32, 450), 10, 1, 1, 5 * 32, IsMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 400), 10, 1, 1, 5 * 32, IsMoving.horizontal);
+            platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 400), 25, 30);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 400), 15, 1, 1, 10 * 32,IsMoving.directional);
         }
 
         public void LoadContent(ContentManager content)

@@ -21,7 +21,6 @@ namespace HarvestJump
         private List<GameScreen> screenList { get; set; }
         private GameScreen currentScreen { get; set; }
         private RenderTarget2D target { get; set; }
-        private Camera playerCamera { get; set; }
         private int screenWidth { get; set; }
         private int screenHeight { get; set; }
 
@@ -37,6 +36,8 @@ namespace HarvestJump
         private bool isPlaying;
         private double currentSoundDuration;
         private double deltaTime;
+        private float triggerSpeed = 1;
+        private float triggerSlowdown;
 
         //Alle Konstruktoren
 
@@ -84,7 +85,6 @@ namespace HarvestJump
                 screen.LoadContent(content);
             }
 
-            playerCamera = new Camera(graphicDeviceManager.GraphicsDevice.Viewport);
             target = new RenderTarget2D(graphicDeviceManager.GraphicsDevice, virtualWidth, virutalHeight);
 
             //Testing
@@ -109,20 +109,7 @@ namespace HarvestJump
             PlayScreen test = screenList[2] as PlayScreen;
             var keyboardState = Keyboard.GetState();
 
-            //if (currentScreen is PlayScreen)
-            //{
-            //    const float cameraMoveFactor = 0.2f;
 
-            //    // Die Position die die Kamera haben soll (=player Pos)
-            //    Vector2 cameraTarget = new Vector2((int)(test.platformerWorld.player.position.X - test.screenWidth * 0.5f),
-            //                                       (int)(test.platformerWorld.player.position.Y - test.screenHeight * 0.5f));
-
-            //    // Vektor, den sich die Kamera bewegt - nicht direkt dahin wo sie letztendlich sein soll durch den cameraMoveFactor
-            //    Vector2 cameraMove = cameraMoveFactor * (cameraTarget - playerCamera.Position);
-            //    cameraMove = new Vector2((int)cameraMove.X, (int)cameraMove.Y);
-
-            //    playerCamera.Position += cameraMove;
-            //}
 
             if (currentSoundDuration <= deltaTime)
             {
@@ -131,50 +118,37 @@ namespace HarvestJump
                 deltaTime = 0;
             }
 
-            if (keyboardState.IsKeyDown(Keys.E))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.RightShoulder == ButtonState.Pressed)
             {
                 currentSoundDuration = speedDown.Duration.Seconds;
 
-                if(currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 3)
+                if(currentSoundDuration >= deltaTime && isPlaying == false && GameObject.slowMotion != 3)
                 {
                     MediaPlayer.Volume = 0.2f;
                     speedDown.Play(0.9f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
-                    test.platformerWorld.player.slowMotion = 3;
+                    GameObject.slowMotion = 3;
                 }
             }
 
-            if (keyboardState.IsKeyDown(Keys.Enter))
+            //GameObject.slowMotion = triggerSpeed += GamePad.GetState(PlayerIndex.One).Triggers.Right / 50;
+            //GameObject.slowMotion = triggerSpeed -= GamePad.GetState(PlayerIndex.One).Triggers.Left / 50;
+
+            if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed)
             {
 
                 currentSoundDuration = speedUp.Duration.Seconds;
 
-                if (currentSoundDuration >= deltaTime && isPlaying == false && test.platformerWorld.player.slowMotion != 1)
+                if (currentSoundDuration >= deltaTime && isPlaying == false && GameObject.slowMotion != 1)
                 {
                     MediaPlayer.Volume = 0.4f;
                     speedUp.Play(0.9f, 0f, 0f);
                     isPlaying = true;
                     deltaTime = 0;
-                    test.platformerWorld.player.slowMotion = 1;
+                    GameObject.slowMotion = 1;
                 }
             }
-
-            int cameraForce = 50;
-
-            if (keyboardState.IsKeyDown(Keys.W))
-                playerCamera.Position -= new Vector2(0, cameraForce);
-
-            if (keyboardState.IsKeyDown(Keys.S))
-                playerCamera.Position += new Vector2(0, cameraForce);
-
-            if (keyboardState.IsKeyDown(Keys.A))
-                playerCamera.Position -= new Vector2(cameraForce, 0);
-
-            if (keyboardState.IsKeyDown(Keys.D))
-                playerCamera.Position += new Vector2(cameraForce, 0);
-
-            //playerCamera.Position += new Vector2((float)(Math.Round(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * 5)), (float)Math.Round(-GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y * 5));
 
             currentScreen.Update(gameTime);
         }
@@ -200,9 +174,7 @@ namespace HarvestJump
             graphicDeviceManager.GraphicsDevice.SetRenderTarget(target);
             graphicDeviceManager.GraphicsDevice.Clear(Color.Gray);
 
-            spriteBatch.Begin(transformMatrix: playerCamera.GetViewMatrix());
             currentScreen.Draw(spriteBatch);
-            spriteBatch.End();
 
             graphicDeviceManager.GraphicsDevice.SetRenderTarget(null);
 
