@@ -9,21 +9,14 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 
+
 namespace HarvestJump
 {
-    public interface ISmart
+    interface ITarget
     {
-        AIState aiState
-        {
-            get;
-            set;
-        }
-
-        Direction direction { get; set; }
         Vector2 position { get; set; }
-        float chaseTreshold { get; set; }
+        Vector2 velocity { get; set; }
         BoundingBox boundingBox { get; set; }
-        void HandleWaypoint(Direction direction);
-        void Chase(Vector2 target, Direction direction);
+        Direction direction { get; set; }
     }
 }

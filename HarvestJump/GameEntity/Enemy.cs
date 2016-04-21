@@ -13,6 +13,8 @@ namespace HarvestJump
     {
         walking,
         atacking,
+        chasing,
+        searching,
         idle,
         jumping,
     }
@@ -21,9 +23,12 @@ namespace HarvestJump
     {
         public Vector2 speed { get; set; }
         public Vector2 jumpStrength { get; set; }
+        public AIState aiState { get; set; }
+        public float chaseTreshold { get; set; }
 
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
+
             this.isJumping = false;
         }
 
@@ -40,6 +45,11 @@ namespace HarvestJump
         public virtual void HandleWaypoint(Direction direction)
         {
             base.SetDirection(direction);
+        }
+
+        public void Chase(Vector2 target, Direction direction)
+        {
+            throw new NotImplementedException();
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png</SourceFile>
-  <SourceTime>2016-04-19T03:16:40.6062296+02:00</SourceTime>
-  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/HarvestJump/Content/bin/Windows/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.xnb</DestFile>
-  <DestTime>2016-04-19T03:16:55.9102697+02:00</DestTime>
+  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/harvestjump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png</SourceFile>
+  <SourceTime>2016-04-21T05:51:14.1866113+02:00</SourceTime>
+  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/harvestjump/HarvestJump/Content/bin/Windows/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.xnb</DestFile>
+  <DestTime>2016-04-21T05:52:30.0720372+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -86,11 +86,12 @@
     <Compile Include="GameEntity\Enemy.cs" />
     <Compile Include="Interfaces\IFocus.cs" />
     <Compile Include="Interfaces\ISmart.cs" />
+    <Compile Include="Interfaces\ITarget.cs" />
     <Compile Include="Manager\GameObjectManager.cs" />
     <Compile Include="Map\MovingPlatform.cs" />
     <Compile Include="GameEntity\Raptor.cs" />
     <Compile Include="Manager\Waypoint.cs" />
-    <Compile Include="Manager\WayPointManager.cs" />
+    <Compile Include="Manager\AIManager.cs" />
     <Compile Include="HelperClasses\CollisionHelper.cs" />
     <Compile Include="HelperClasses\BoundingBox.cs" />
     <Compile Include="Interfaces\ICollide.cs" />

@@ -27,7 +27,7 @@ namespace HarvestJump
         left,
     }
 
-    abstract class GameObject : ICollide, IFocus
+    abstract class GameObject : ICollide, IFocus , ITarget
     {
         //Klassenvariablen
 
@@ -35,7 +35,7 @@ namespace HarvestJump
         protected Vector2 friction { get; set; }
         protected Animation currentAnimation { get; set; }
         protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> stateData { get; set; }
-        protected Direction direction { get; set; }
+        public Direction direction { get; set; }
         protected double deltaTime { get; set; }
         protected Vector2 speed { get; set; }
         protected Vector2 jumpStrength { get; set; }

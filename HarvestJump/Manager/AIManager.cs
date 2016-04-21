@@ -9,13 +9,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace HarvestJump
 {
-    class WayPointManager
+    class AiManager
     {
         private List<Platform> platformList;
         private List<Waypoint> waypointList;
         private Sprite debugRectangle;
 
-        public WayPointManager(List<Platform> platformList)
+        public AiManager(List<Platform> platformList)
         {
             this.platformList = platformList;
             this.waypointList = new List<Waypoint>();
@@ -50,7 +50,7 @@ namespace HarvestJump
             }
         }
 
-        public void Update(ISmart iSmartObject)
+        public void CheckWayoints(ISmart iSmartObject)
         {
             CreateWaypoints();
 
@@ -60,6 +60,14 @@ namespace HarvestJump
                 {
                     iSmartObject.HandleWaypoint(item.direction);
                 }
+            }
+        }
+
+        public void CheckTarget(ISmart iSmartObject)
+        {
+            if(iSmartObject.chaseTreshold <= Vector2.Distance(iSmartObject.position , Vector2.Zero))
+            {
+                iSmartObject.Chase(Vector2.Zero, Direction.left);
             }
         }
 

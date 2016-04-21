@@ -18,14 +18,14 @@ namespace HarvestJump
 
     class GameObjectManager
     {
-        private List<GameObject> gameObjectList;
+        private List<GameObject> gameObjectList { get; set; }
         private CollisionSystem collisionSystem { get; set; }
-        private WayPointManager wayPointManager { get; set; }
+        private AiManager wayPointManager { get; set; }
 
         public GameObjectManager(List<Platform> platformList)
         {
             gameObjectList = new List<GameObject>();
-            wayPointManager = new WayPointManager(platformList);
+            wayPointManager = new AiManager(platformList);
             collisionSystem = new CollisionSystem(platformList);
         }
 
@@ -75,7 +75,7 @@ namespace HarvestJump
                 if (item is Enemy)
                 {
                     Enemy enemy = item as Enemy;
-                    wayPointManager.Update(enemy);
+                    wayPointManager.CheckWayoints  (enemy);
                 }
             }
         }
