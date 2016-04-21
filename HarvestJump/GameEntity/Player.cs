@@ -14,8 +14,7 @@ namespace HarvestJump
         private static int playerCount;
 
         private InputManager inputManager { get; set; }
-        Vector2 movementVector;
-        Vector2 lastMovementVector;
+        Vector2 movementVector { get; set; }
 
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {

@@ -9,15 +9,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace HarvestJump
 {
-    class AiManager
+    class AISystem
     {
         private List<Platform> platformList;
         private List<Waypoint> waypointList;
+        private List<ITarget> aiTargetList;
         private Sprite debugRectangle;
 
-        public AiManager(List<Platform> platformList)
+        public AISystem(List<Platform> platformList)
         {
             this.platformList = platformList;
+            this.aiTargetList = new List<ITarget>();
             this.waypointList = new List<Waypoint>();
             this.debugRectangle = new Sprite(Vector2.Zero);
 
@@ -27,6 +29,11 @@ namespace HarvestJump
         public void LoadContent(ContentManager content)
         {
             debugRectangle.LoadContent(content, "blackPixel");
+        }
+
+        public void addAITarget(ITarget iTargetObject)
+        {
+            this.aiTargetList.Add(iTargetObject);
         }
 
         public void CreateWaypoints()
@@ -64,10 +71,13 @@ namespace HarvestJump
         }
 
         public void CheckTarget(ISmart iSmartObject)
-        {
-            if(iSmartObject.chaseTreshold <= Vector2.Distance(iSmartObject.position , Vector2.Zero))
+        { 
+            foreach (Player player in aiTargetList)
             {
-                iSmartObject.Chase(Vector2.Zero, Direction.left);
+                if(iSmartObject.chaseTreshold >= Vector2.Distance(iSmartObject.position, player.position))
+                {
+                    iSmartObject.Chase(player.position);
+                }     
             }
         }
 

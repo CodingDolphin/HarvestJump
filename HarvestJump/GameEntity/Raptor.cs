@@ -17,7 +17,7 @@ namespace HarvestJump
 
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
-            speed = new Vector2(2.5f, 0);
+            speed = new Vector2(2, 0);
             jumpStrength = new Vector2(0f, -250f);
             random = new Random(System.DateTime.Now.Millisecond);
 

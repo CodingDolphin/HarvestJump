@@ -20,12 +20,12 @@ namespace HarvestJump
     {
         private List<GameObject> gameObjectList { get; set; }
         private CollisionSystem collisionSystem { get; set; }
-        private AiManager wayPointManager { get; set; }
+        private AISystem aiSystem { get; set; }
 
         public GameObjectManager(List<Platform> platformList)
         {
             gameObjectList = new List<GameObject>();
-            wayPointManager = new AiManager(platformList);
+            aiSystem = new AISystem(platformList);
             collisionSystem = new CollisionSystem(platformList);
         }
 
@@ -35,13 +35,14 @@ namespace HarvestJump
             {
                 item.LoadContent(content, assetName);
             }
-
-            wayPointManager.LoadContent(content);
+    
+            aiSystem.LoadContent(content);
         }
 
         public void AddPlayer(Vector2 position)
         {
             gameObjectList.Add(new Player(position));
+            aiSystem.addAITarget(gameObjectList.Last());
         }
 
         public void AddEnemy(EnemyType type, Vector2 position)
@@ -58,25 +59,17 @@ namespace HarvestJump
 
         public void Update(GameTime gameTime)
         {
-            checkWayPoints();
-
-            foreach (GameObject item in gameObjectList)
-            {
-                item.Update(gameTime);
-                collisionSystem.checkCollision(item);         
-            }
-        }
-
-
-        private void checkWayPoints()
-        {
             foreach (GameObject item in gameObjectList)
             {
                 if (item is Enemy)
                 {
                     Enemy enemy = item as Enemy;
-                    wayPointManager.CheckWayoints  (enemy);
+                    aiSystem.CheckWayoints(enemy);
+                    aiSystem.CheckTarget(enemy);
                 }
+
+                item.Update(gameTime);
+                collisionSystem.checkCollision(item);         
             }
         }
 
@@ -87,7 +80,7 @@ namespace HarvestJump
                 item.Draw(spriteBatch);
             }
 
-            wayPointManager.Draw(spriteBatch);
+            aiSystem.Draw(spriteBatch);
         }
     }
 }

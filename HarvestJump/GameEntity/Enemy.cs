@@ -28,7 +28,7 @@ namespace HarvestJump
 
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
-
+            chaseTreshold = 200f;
             this.isJumping = false;
         }
 
@@ -47,9 +47,23 @@ namespace HarvestJump
             base.SetDirection(direction);
         }
 
-        public void Chase(Vector2 target, Direction direction)
+        public void Chase(Vector2 target)
         {
-            throw new NotImplementedException();
+            if (target.X > position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
+                SetDirection(Direction.right);
+            else if(target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
+                SetDirection(Direction.left);
+
+            if(Vector2.Distance(target, position) >= currentAnimation.frameWidth)
+            {
+                speed = Vector2.Zero;
+                currentAnimation = stateData[AnimationStatus.atacking].Item1;
+            }
+            else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth)
+            {
+                speed = Vector2.Zero;
+                currentAnimation = stateData[AnimationStatus.atacking].Item1;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

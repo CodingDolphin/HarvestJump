@@ -92,18 +92,18 @@ namespace HarvestJump
             UpdateAnimation(gameTime);
         }
 
-        public void ApplyForce()
+        protected void ApplyForce()
         {
             velocity *= new Vector2(0.95f, 0.98f);
             velocity += gravity * (float)deltaTime;
         }
 
-        public void ApplyVelocityToPosition()
+        protected void ApplyVelocityToPosition()
         {
             position += velocity * (float)deltaTime;
         }
 
-        public void CreateBoundingBox()
+        protected void CreateBoundingBox()
         {
             boundingBox = new BoundingBox(Vector2.Add(position, boxXTranslate), boundingBox.width, boundingBox.height);
         }
@@ -114,14 +114,11 @@ namespace HarvestJump
             float penetrationLeft = boundingBox.position.X + boundingBox.width - collisionObject.boundingBox.position.X;
             float penetrationBottom = collisionObject.boundingBox.position.Y + collisionObject.boundingBox.height - position.Y;
             float penetrationRight = collisionObject.boundingBox.position.X + collisionObject.boundingBox.width - position.X;
-
             float lowestPenetation = CollisionHelper.getLowestNumber(penetrationTop, penetrationLeft, penetrationBottom, penetrationRight);
 
             float edgeThreshold = 2f;
-
             float lowestPenetrationX = Math.Min(penetrationLeft, penetrationRight);
             float lowestPenetrationY = Math.Min(penetrationTop, penetrationBottom);
-
             if (Math.Max(lowestPenetrationX, lowestPenetrationY) <= edgeThreshold)
                 return;
 
@@ -163,7 +160,7 @@ namespace HarvestJump
                                             new BoundingBox(position, width, height)));
         }
 
-        public void UpdateAnimation(GameTime gameTime)
+        protected void UpdateAnimation(GameTime gameTime)
         {
             currentAnimation.Update(gameTime);
             currentAnimation.position = position;
