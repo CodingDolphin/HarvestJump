@@ -7,9 +7,16 @@ using Microsoft.Xna.Framework;
 
 namespace HarvestJump
 {
-    public struct BoundingBox
+    public class BoundingBox
     {
-        public Vector2 position { get; set; }
+        public Vector2 position;
+
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
         public float width { get; set; }
         public float height { get; set; }
         public float bottom { get; set; }
@@ -26,6 +33,11 @@ namespace HarvestJump
             this.top = position.Y;
             this.right = position.X + width;
             this.left = position.X;
+        }
+
+        public void ChangePosition(Vector2 position)
+        {
+            this.position = position;
         }
 
         public bool Intersects(BoundingBox boundingBox)

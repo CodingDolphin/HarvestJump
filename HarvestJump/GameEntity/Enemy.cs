@@ -17,6 +17,7 @@ namespace HarvestJump
         searching,
         idle,
         jumping,
+        dead,
     }
 
     class Enemy : GameObject, ISmart
@@ -28,7 +29,7 @@ namespace HarvestJump
 
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
-            chaseTreshold = 200f;
+            this.chaseTreshold = 200f;
             this.isJumping = false;
         }
 
@@ -49,21 +50,22 @@ namespace HarvestJump
 
         public void Chase(Vector2 target)
         {
-            if (target.X > position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
-                SetDirection(Direction.right);
-            else if(target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
-                SetDirection(Direction.left);
 
-            if(Vector2.Distance(target, position) >= currentAnimation.frameWidth)
-            {
-                speed = Vector2.Zero;
-                currentAnimation = stateData[AnimationStatus.atacking].Item1;
-            }
-            else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth)
-            {
-                speed = Vector2.Zero;
-                currentAnimation = stateData[AnimationStatus.atacking].Item1;
-            }
+                if (target.X > position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
+                    SetDirection(Direction.right);
+                else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
+                    SetDirection(Direction.left);
+
+                if (Vector2.Distance(target, position) >= currentAnimation.frameWidth)
+                {
+                    speed = Vector2.Zero;
+                    SwitchAnimation(AnimationStatus.atacking);
+                }
+                else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth)
+                {
+                    speed = Vector2.Zero;
+                    SwitchAnimation(AnimationStatus.atacking);
+                }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -52,8 +52,6 @@ namespace HarvestJump
                 case EnemyType.raptor:
                     gameObjectList.Add(new Raptor(position));
                     break;
-                default:
-                    break;
             }
         }
 

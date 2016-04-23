@@ -12,14 +12,32 @@ namespace HarvestJump
     {
         public Vector2 position { get; set; }
         public Texture2D texture { get; set; }
-        public SpriteEffects direction { get; set; }
+        public SpriteEffects spriteEffect { get; set; }
         public float rotation { get; set; }
         public float scale { get; set; }
         public Color color { get; set; }
         public float rotationPoint { get; set; }
+        private Direction direction;
+        public Direction Direction
+        {
+            get { return direction; }
+
+            set {
+                if (value == Direction.left)
+                {
+                    spriteEffect = SpriteEffects.FlipHorizontally;
+                }
+                else
+                {
+                    spriteEffect = SpriteEffects.None;
+                }
+                direction = value; }
+        }
+
 
         public Sprite(Vector2 position)
         {
+            this.direction = Direction.right;
             this.position = position;
             this.color = Color.White;
             this.rotation = 0f;
@@ -37,7 +55,7 @@ namespace HarvestJump
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, null, color, rotation, Vector2.Zero, scale, direction, 1f);
+            spriteBatch.Draw(texture, position, null, color, rotation, Vector2.Zero, scale, spriteEffect, 1f);
         }
     }
 }

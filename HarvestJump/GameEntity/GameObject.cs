@@ -8,6 +8,12 @@ using Microsoft.Xna.Framework.Content;
 
 namespace HarvestJump
 {
+    public enum State
+    {
+        active,
+        inactive,
+    }
+
     public enum AnimationStatus
     {
         walking,
@@ -41,6 +47,7 @@ namespace HarvestJump
         protected Vector2 jumpStrength { get; set; }
         public static double slowMotion { get; set; }
         public bool isJumping { get; set; }
+        public State state { get; set; }
 
         //ICollide Interface
 
@@ -89,7 +96,9 @@ namespace HarvestJump
             ApplyVelocityToPosition();
 
             CreateBoundingBox();
-            UpdateAnimation(gameTime);
+            currentAnimation.Update(gameTime);
+            currentAnimation.position = position;
+            SetDirection(direction);
         }
 
         protected void ApplyForce()
@@ -143,15 +152,17 @@ namespace HarvestJump
                 velocity = new Vector2(velocity.X, 0);
             }
 
-            CreateBoundingBox();
             isJumping = false;
-     
-            if (this is Player)
-            {
-                stateData[AnimationStatus.idle].Item1.position = position;
-                stateData[AnimationStatus.idle].Item1.direction = currentAnimation.direction;
-                currentAnimation = stateData[AnimationStatus.idle].Item1;
-            }
+            UpdateAnimation();
+        }
+
+        public void SwitchAnimation(AnimationStatus animation)
+        {
+            stateData[animation].Item1.position = position;
+            stateData[animation].Item1.Direction = direction;
+            boundingBox = stateData[animation].Item2;
+            currentAnimation = stateData[animation].Item1;
+            CreateBoundingBox();
         }
 
         public void AddState(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
@@ -160,10 +171,14 @@ namespace HarvestJump
                                             new BoundingBox(position, width, height)));
         }
 
-        protected void UpdateAnimation(GameTime gameTime)
+        protected void UpdateAnimation()
         {
-            currentAnimation.Update(gameTime);
+            if (!isJumping  && state != State.inactive)
+                currentAnimation = stateData[AnimationStatus.walking].Item1;
+
             currentAnimation.position = position;
+            currentAnimation.Direction = direction;
+            CreateBoundingBox();
         }
 
         protected void SetDirection(Direction dir)
@@ -174,14 +189,14 @@ namespace HarvestJump
             {
                 if (direction == Direction.right)
                 {
-                    currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                    currentAnimation.Direction = direction;
                     boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
                     position += flipTranslate;
                 }
                 else if (direction == Direction.left)
                 {
                     position -= flipTranslate;
-                    currentAnimation.direction = SpriteEffects.None;
+                    currentAnimation.Direction = direction;
                     boxXTranslate = Vector2.Zero;
                 }
             }

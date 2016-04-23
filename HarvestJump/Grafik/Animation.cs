@@ -20,7 +20,6 @@ namespace HarvestJump
         public double AnimationDuration
         {
             get { return frameCycle * frameCount; }
-            set { animationDuration = value; }
         }
 
         public Animation(Vector2 position, int index, int frameWidth, int frameHeight, double frameCycle, int frameCount, bool isLooping) : base(position, index, frameWidth, frameHeight)

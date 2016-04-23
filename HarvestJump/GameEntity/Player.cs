@@ -28,7 +28,7 @@ namespace HarvestJump
 
         public void initializePlayerAnimation()
         {
-            this.AddState(AnimationStatus.walking, position, 0, 67, 97, 0.25f, 9, true, 67, 95);
+            this.AddState(AnimationStatus.walking, position, 0, 67, 97, 0.1f, 9, true, 67, 95);
             this.AddState(AnimationStatus.idle, position, 0, 67, 97, 0.3f, 9, true, 67, 95);
             this.AddState(AnimationStatus.jumping, position, 0, 67, 97, 0.3f, 6, false, 67, 95);
             this.AddState(AnimationStatus.dead, position, 0, 102, 93, 0.25f, 7, false, 80, 70);
@@ -84,30 +84,30 @@ namespace HarvestJump
             if (keyboardState.IsKeyDown(Keys.Left))
             {
                 velocity -= speed;
-                currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                currentAnimation.Direction = direction = Direction.left;
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
             {
                 velocity += speed;
-                currentAnimation.direction = SpriteEffects.None;
+                currentAnimation.Direction = direction = Direction.right;
             }
 
             if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !isJumping)
             {
                 velocity += jumpStrength;isJumping = true;
-                currentAnimation = stateData[AnimationStatus.jumping].Item1;
-                currentAnimation.index = 0;
-                currentAnimation.animationIsActive = true;
+                SwitchAnimation(AnimationStatus.jumping);
             }
+
 
             movementVector = inputManager.getLeftThumbStickMovement();
 
             if (movementVector.X >= 0 && movementVector.X != 0)
-                currentAnimation.direction = SpriteEffects.None;
-            else if(movementVector.X <= 0 && movementVector.X != 0)
+                direction = Direction.right;
+
+            else if (movementVector.X <= 0 && movementVector.X != 0)
             {
-                currentAnimation.direction = SpriteEffects.FlipHorizontally;
+                direction = Direction.left;
             }
 
             velocity += movementVector * speed;

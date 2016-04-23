@@ -39,7 +39,7 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddState(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 115);
+            this.AddState(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 110);
             this.AddState(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
             this.AddState(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
             this.AddState(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 125, 110);
@@ -96,10 +96,9 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.RightControl))
             {
-                this.stateData[AnimationStatus.dead].Item1.direction = currentAnimation.direction;
-                this.currentAnimation = stateData[AnimationStatus.dead].Item1;
-                this.boundingBox = stateData[AnimationStatus.dead].Item2;
-                this.speed = Vector2.Zero;
+                SwitchAnimation(AnimationStatus.dead);
+                state = State.inactive;
+                speed = Vector2.Zero;
             }
 
             if (direction == Direction.right)
