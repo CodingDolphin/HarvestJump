@@ -19,7 +19,7 @@ namespace HarvestJump
         {
             foreach (Platform platform in randomJumpMap)
             {
-                if (entity.boundingBox.Intersects(platform.boundingBox))
+                if (entity.BoundingBox.Intersects(platform.BoundingBox))
                 {
                         entity.HandleCollision(platform);
                 }

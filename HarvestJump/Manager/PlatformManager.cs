@@ -63,19 +63,19 @@ namespace HarvestJump
         {
             int lastIndex = platformList.Count - 1;
  
-            if (furthestPositionX < platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance)
+            if (furthestPositionX < platformList[lastIndex].Position.X + platformList[lastIndex].platformWidth * tileWidth + distance)
             {
                 if(platformList[lastIndex].moveDirection == IsMoving.horizontal)
-                    furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
+                    furthestPositionX = (int)platformList[lastIndex].Position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
                 else
-                    furthestPositionX = (int)platformList[lastIndex].position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
+                    furthestPositionX = (int)platformList[lastIndex].Position.X + platformList[lastIndex].platformWidth * tileWidth + distance;
             }
-            if (furthestPositionY < platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance)
+            if (furthestPositionY < platformList[lastIndex].Position.Y + platformList[lastIndex].platformHeight * tileHeight + distance)
             {
                 if (platformList[lastIndex].moveDirection == IsMoving.vertical)
-                    furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileHeight + distance;
+                    furthestPositionY = (int)platformList[lastIndex].Position.Y + platformList[lastIndex].platformHeight * tileHeight + distance;
                 else
-                    furthestPositionY = (int)platformList[lastIndex].position.Y + platformList[lastIndex].platformHeight * tileWidth;
+                    furthestPositionY = (int)platformList[lastIndex].Position.Y + platformList[lastIndex].platformHeight * tileWidth;
             }
         }
 

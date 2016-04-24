@@ -25,7 +25,7 @@ namespace HarvestJump
         public override void Update(GameTime gameTime)
         {
             MovePlatform();
-            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
+            BoundingBox = new BoundingBox(Position, BoundingBox.width, BoundingBox.height);
         }
 
         public void CreateWayPoints()
@@ -33,25 +33,25 @@ namespace HarvestJump
             switch (moveDirection)
             {
                 case IsMoving.horizontal:
-                    endPosition = (int)position.X + distance;
-                    startPosition = (int)position.X - distance; break;
+                    endPosition = (int)Position.X + distance;
+                    startPosition = (int)Position.X - distance; break;
                 case IsMoving.vertical:
-                    endPosition = (int)position.Y + distance;
-                    startPosition = (int)position.Y - distance; break;
+                    endPosition = (int)Position.Y + distance;
+                    startPosition = (int)Position.Y - distance; break;
             }
         }
 
         public void MovePlatform()
         {
             if (moveDirection == IsMoving.horizontal)
-                position += velocity;
+                Position += Velocity;
             else
-                position += velocity;
+                Position += Velocity;
 
-            if (position.X > endPosition | position.X < startPosition && moveDirection == IsMoving.horizontal)
-                velocity = velocity * -1;
-            else if (position.Y > endPosition | position.Y < startPosition && moveDirection == IsMoving.vertical)
-                velocity = velocity * -1;
+            if (Position.X > endPosition | Position.X < startPosition && moveDirection == IsMoving.horizontal)
+                Velocity = Velocity * -1;
+            else if (Position.Y > endPosition | Position.Y < startPosition && moveDirection == IsMoving.vertical)
+                Velocity = Velocity * -1;
 
             UpdateTiles();
         }
@@ -60,11 +60,11 @@ namespace HarvestJump
         {
             switch (moveDirection)
             {
-                case IsMoving.horizontal: velocity = new Vector2(moveSpeed, 0);
+                case IsMoving.horizontal: Velocity = new Vector2(moveSpeed, 0);
                     break;
-                case IsMoving.vertical: velocity = new Vector2(0 , moveSpeed);
+                case IsMoving.vertical: Velocity = new Vector2(0 , moveSpeed);
                     break;
-                case IsMoving.directional: velocity = new Vector2(moveSpeed, moveSpeed);
+                case IsMoving.directional: Velocity = new Vector2(moveSpeed, moveSpeed);
                     break;
                 case IsMoving.none:
                     break;
@@ -79,8 +79,8 @@ namespace HarvestJump
             {
                 for (int x = 0; x < tileList.Count; x++)
                 {
-                    tileList[x].position = new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight);
-                    tileList[x].tileSprite.position = new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight);
+                    tileList[x].Position = new Vector2(Position.X + x * tileWidth, Position.Y + y * tileHeight);
+                    tileList[x].tileSprite.position = new Vector2(Position.X + x * tileWidth, Position.Y + y * tileHeight);
                 }
             }
         }

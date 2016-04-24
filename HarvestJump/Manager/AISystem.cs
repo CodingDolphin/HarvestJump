@@ -46,11 +46,11 @@ namespace HarvestJump
 
             foreach (Platform item in platformList)
             {
-                startPositionX = (int)item.position.X;
-                startPositionY = (int)item.position.Y;
+                startPositionX = (int)item.Position.X;
+                startPositionY = (int)item.Position.Y;
 
                 endPositionX = (int)item.PlatformWidthPx + startPositionX;
-                endPositionY = (int)item.position.Y;
+                endPositionY = (int)item.Position.Y;
 
                 waypointList.Add(new Waypoint(Direction.right, new BoundingBox(new Vector2(startPositionX - wayPointSize, startPositionY - wayPointSize), wayPointSize, wayPointSize)));
                 waypointList.Add(new Waypoint(Direction.left, new BoundingBox(new Vector2(endPositionX, endPositionY - wayPointSize), wayPointSize, wayPointSize)));
@@ -63,7 +63,7 @@ namespace HarvestJump
 
             foreach (Waypoint item in waypointList)
             {
-                if(item.wayPointCollider.Intersects(iSmartObject.boundingBox))
+                if(item.wayPointCollider.Intersects(iSmartObject.BoundingBox))
                 {
                     iSmartObject.HandleWaypoint(item.direction);
                 }
@@ -74,9 +74,9 @@ namespace HarvestJump
         { 
             foreach (Player player in aiTargetList)
             {
-                if(iSmartObject.chaseTreshold >= Vector2.Distance(iSmartObject.position, player.position))
+                if(iSmartObject.chaseTreshold >= Vector2.Distance(iSmartObject.Position, player.Position))
                 {
-                    iSmartObject.Chase(player.position);
+                    iSmartObject.Chase(player.Position);
                 }     
             }
         }

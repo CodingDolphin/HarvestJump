@@ -17,8 +17,8 @@ namespace HarvestJump
 
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
-            speed = new Vector2(28f, 0);
-            jumpStrength = new Vector2(0, -1100);
+            Speed = new Vector2(28f, 0);
+            JumpStrength = new Vector2(0, -1100);
             inputManager = new InputManager(playerCount);
             playerCount++;
 
@@ -27,12 +27,12 @@ namespace HarvestJump
 
         public void initializePlayerAnimation()
         {
-            this.AddState(AnimationStatus.walking, position, 33.5f, 0, 67, 97, 0.1f, 9, true, 67, 95);
-            this.AddState(AnimationStatus.idle, position, 33.5f, 0, 67, 97, 0.3f, 9, true, 67, 95);
-            this.AddState(AnimationStatus.jumping, position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
-            this.AddState(AnimationStatus.dead, position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
-            this.AddState(AnimationStatus.run, position,32, 0, 64, 96, 0.25f, 7, true, 67, 95);
-            this.currentAnimation = stateData[AnimationStatus.idle].Item1;
+            this.AddState(AnimationStatus.walking, Position, 33.5f, 0, 67, 97, 0.1f, 9, true, 67, 95);
+            this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 67, 97, 0.3f, 9, true, 67, 95);
+            this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
+            this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
+            this.AddState(AnimationStatus.run, Position,32, 0, 64, 96, 0.25f, 7, true, 67, 95);
+            this.CurrentAnimation = StateData[AnimationStatus.idle].Item1;
         }
 
 
@@ -40,7 +40,7 @@ namespace HarvestJump
         {
             string contentPath = assetName;
 
-            foreach (var item in stateData)
+            foreach (var item in StateData)
             {
                 switch (item.Key)
                 {
@@ -82,19 +82,19 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.Left))
             {
-                velocity -= speed;
-                currentAnimation.Direction = Direction = Direction.left;
+                Velocity -= Speed;
+                CurrentAnimation.Direction = Direction = Direction.left;
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
             {
-                velocity += speed;
-                currentAnimation.Direction = Direction = Direction.right;
+                Velocity += Speed;
+                CurrentAnimation.Direction = Direction = Direction.right;
             }
 
-            if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !isJumping)
+            if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !IsJumping)
             {
-                velocity += jumpStrength;isJumping = true;
+                Velocity += JumpStrength;IsJumping = true;
             }
 
             movementVector = inputManager.getLeftThumbStickMovement();
@@ -107,7 +107,7 @@ namespace HarvestJump
                 Direction = Direction.left;
             }
 
-            velocity += movementVector * speed;
+            Velocity += movementVector * Speed;
         }
 
         public void Draw(SpriteBatch spriteBatch)

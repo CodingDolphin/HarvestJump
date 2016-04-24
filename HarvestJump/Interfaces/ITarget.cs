@@ -14,9 +14,9 @@ namespace HarvestJump
 {
     interface ITarget
     {
-        Vector2 position { get; set; }
-        Vector2 velocity { get; set; }
-        BoundingBox boundingBox { get; set; }
+        Vector2 Position { get; set; }
+        Vector2 Velocity { get; set; }
+        BoundingBox BoundingBox { get; set; }
         Direction Direction { get; set; }
     }
 }

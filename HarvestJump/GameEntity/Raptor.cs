@@ -39,20 +39,20 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddState(AnimationStatus.atacking, position, 53, 0, 191, 115, 0.1f, 9, true, 151, 110);
-            this.AddState(AnimationStatus.idle, position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddState(AnimationStatus.run, position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddState(AnimationStatus.walking, position, 53, 0, 191, 115, 0.3f, 9, true, 125, 110);
-            this.AddState(AnimationStatus.dead, position, 104.5f, 0, 209, 115, 0.3f, 8, false, 191, 85);
-            this.currentAnimation = stateData[AnimationStatus.walking].Item1;
-            this.boundingBox = stateData[AnimationStatus.walking].Item2;
+            this.AddState(AnimationStatus.atacking, Position, 53, 0, 191, 115, 0.1f, 9, true, 151, 110);
+            this.AddState(AnimationStatus.idle, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.run, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.walking, Position, 53, 0, 191, 115, 0.3f, 9, true, 125, 110);
+            this.AddState(AnimationStatus.dead, Position, 104.5f, 0, 209, 115, 0.3f, 8, false, 191, 85);
+            this.CurrentAnimation = StateData[AnimationStatus.walking].Item1;
+            this.BoundingBox = StateData[AnimationStatus.walking].Item2;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
             string contentPath = assetName;
 
-            foreach (var item in stateData)
+            foreach (var item in StateData)
             {
                 switch (item.Key)
                 {
@@ -109,17 +109,17 @@ namespace HarvestJump
             if (keyboardState.IsKeyDown(Keys.Enter))
             {
                 SwitchAnimation(AnimationStatus.dead);
-                currentAnimation.index = 0;
+                CurrentAnimation.index = 0;
                 speed = new Vector2(0, 0);
             }
 
             if (Direction == Direction.right)
             {
-                velocity += speed;
+                Velocity += speed;
             }
             else if(Direction == Direction.left)
             {
-                velocity -= speed;
+                Velocity -= speed;
             }
 
             base.Update(gameTime);

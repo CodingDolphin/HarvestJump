@@ -46,7 +46,7 @@ namespace HarvestJump
             this.tileHeight = tileHeight;
             this.platformWidth = platformWidth;
             this.platformHeight = platformHeight;
-            this.position = position;
+            this.Position = position;
 
             CreatePlatform();
         }
@@ -64,11 +64,11 @@ namespace HarvestJump
             for (int x = 0; x < platformWidth; x++)
             {
                 if (x == 0)
-                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassLeftEnd));
+                tileList.Add(new Tile(new Vector2(Position.X + x * tileWidth, Position.Y), tileWidth, tileHeight, TileType.grassLeftEnd));
                 else if (x == platformWidth - 1)
-                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassRightEnd));
+                tileList.Add(new Tile(new Vector2(Position.X + x * tileWidth, Position.Y), tileWidth, tileHeight, TileType.grassRightEnd));
                 else
-                tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassTop));
+                tileList.Add(new Tile(new Vector2(Position.X + x * tileWidth, Position.Y), tileWidth, tileHeight, TileType.grassTop));
             }
         }
 
@@ -80,11 +80,11 @@ namespace HarvestJump
                 {
                     if(y == 0)
                     {
-                        tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y), tileWidth, tileHeight, TileType.grassTop));
+                        tileList.Add(new Tile(new Vector2(Position.X + x * tileWidth, Position.Y), tileWidth, tileHeight, TileType.grassTop));
                     }
                     else
                     {
-                        tileList.Add(new Tile(new Vector2(position.X + x * tileWidth, position.Y + y * tileHeight), tileWidth, tileHeight, TileType.grassMid));
+                        tileList.Add(new Tile(new Vector2(Position.X + x * tileWidth, Position.Y + y * tileHeight), tileWidth, tileHeight, TileType.grassMid));
                     }
                 }
             }

@@ -8,10 +8,10 @@ namespace HarvestJump
 {
     public interface ICollide
     {
-        BoundingBox boundingBox { get; set; }
-        Vector2 position { get; set; }
-        Vector2 velocity { get; set; }
-        bool noClip { get; set; }
+        BoundingBox BoundingBox { get; set; }
+        Vector2 Position { get; set; }
+        Vector2 Velocity { get; set; }
+        bool NoClip { get; set; }
         void HandleCollision(ICollide collisionObject);
     }
 }

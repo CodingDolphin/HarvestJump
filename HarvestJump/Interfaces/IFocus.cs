@@ -13,7 +13,7 @@ namespace HarvestJump
 {
     interface IFocus
     {
-        Vector2 position { get; set; }
-        BoundingBox boundingBox { get; set; }
+        Vector2 Position { get; set; }
+        BoundingBox BoundingBox { get; set; }
     }
 }

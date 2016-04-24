@@ -29,7 +29,7 @@ namespace HarvestJump
         public Tile(Vector2 position, int tileWidth, int tileHeight, TileType tileType) : base(position, tileWidth, tileHeight)
         {
             this.tileType = tileType;
-            this.position = position;
+            this.Position = position;
             this.tileSprite = new SpriteSheet(position, getSpriteIndex(), tileWidth, tileHeight);
         }
 

@@ -30,7 +30,7 @@ namespace HarvestJump
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
             this.chaseTreshold = 200f;
-            this.isJumping = false;
+            this.IsJumping = false;
         }
 
         public override void Update(GameTime gameTime)

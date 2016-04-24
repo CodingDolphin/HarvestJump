@@ -42,28 +42,27 @@ namespace HarvestJump
 
         //Properties
 
-        protected Vector2 gravity { get; set; }
-        protected Vector2 friction { get; set; }
-        protected Animation currentAnimation { get; set; }
-        protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> stateData { get; set; }
-        protected double deltaTime { get; set; }
-        protected Vector2 speed { get; set; }
-        protected Vector2 jumpStrength { get; set; }
-        public bool isJumping { get; set; }
-        public State state { get; set; }
+        protected Vector2 Gravity { get; set; }
+        protected Vector2 Friction { get; set; }
+        protected Animation CurrentAnimation { get; set; }
+        protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> StateData { get; set; }
+        protected double DeltaTime { get; set; }
+        protected Vector2 Speed { get; set; }
+        protected Vector2 JumpStrength { get; set; }
+        public bool IsJumping { get; set; }
+        public State State { get; set; }
 
         //Interfaces
 
-        public Vector2 position { get; set; }
-        public BoundingBox boundingBox { get; set; }
-        public Vector2 velocity { get; set; }
-        public bool noClip { get; set; }
+        public Vector2 Position { get; set; }
+        public BoundingBox BoundingBox { get; set; }
+        public Vector2 Velocity { get; set; }
+        public bool NoClip { get; set; }
 
         //Testing
 
-        public Sprite debugRectangle { get; set; }
-        protected Vector2 boxXTranslate { get; set; }
-        protected SpriteFont debugFont { get; set; }
+        public Sprite DebugRectangle { get; set; }
+        protected SpriteFont DebugFont { get; set; }
 
         private Direction direction;
         public Direction Direction
@@ -74,13 +73,13 @@ namespace HarvestJump
             {
                 if (value == Direction.left && value != direction)
                 {
-                    position = new Vector2(position.X - currentAnimation.width + currentAnimation.rotationPoint.X * 2, position.Y);
-                    currentAnimation.Direction = Direction.left;
+                    Position = new Vector2(Position.X - CurrentAnimation.width + CurrentAnimation.rotationPoint.X * 2, Position.Y);
+                    CurrentAnimation.Direction = Direction.left;
                 }
                 else if(value == Direction.right && value != direction)
                 {
-                    position = new Vector2(position.X + currentAnimation.width - currentAnimation.rotationPoint.X * 2, position.Y);
-                    currentAnimation.Direction = Direction.right;
+                    Position = new Vector2(Position.X + CurrentAnimation.width - CurrentAnimation.rotationPoint.X * 2, Position.Y);
+                    CurrentAnimation.Direction = Direction.right;
                 }
                 direction = value;
             }
@@ -94,57 +93,57 @@ namespace HarvestJump
 
         public GameObject(Vector2 position, int width, int height)
         {
-            this.stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
-            this.debugRectangle = new Sprite(position);
-            this.position = position;
-            this.boundingBox = new BoundingBox(position, width, height);
-            this.noClip = false;
-            this.gravity = new Vector2(0, 2000);
+            this.StateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
+            this.DebugRectangle = new Sprite(position);
+            this.Position = position;
+            this.BoundingBox = new BoundingBox(position, width, height);
+            this.NoClip = false;
+            this.Gravity = new Vector2(0, 2000);
         }
         
         public virtual void LoadContent(ContentManager content, string assetName)
         {
-            debugRectangle.LoadContent(content, "blackPixel");
-            debugFont = content.Load<SpriteFont>("Fonts/LeagueFont");
+            DebugRectangle.LoadContent(content, "blackPixel");
+            DebugFont = content.Load<SpriteFont>("Fonts/LeagueFont");
         }
 
         public virtual void Update(GameTime gameTime)
         {
-            deltaTime = gameTime.ElapsedGameTime.TotalSeconds / slowMotion;
+            DeltaTime = gameTime.ElapsedGameTime.TotalSeconds / slowMotion;
 
             ApplyForce();
             ApplyVelocityToPosition();
             CreateBoundingBox();
 
-            currentAnimation.Update(gameTime);
+            CurrentAnimation.Update(gameTime);
             UpdateAnimation();
         }
 
         protected void ApplyForce()
         {
-            velocity *= new Vector2(0.95f, 0.98f);
-            velocity += gravity * (float)deltaTime;
+            Velocity *= new Vector2(0.95f, 0.98f);
+            Velocity += Gravity * (float)DeltaTime;
         }
 
         protected void ApplyVelocityToPosition()
         {
-            position += velocity * (float)deltaTime;
+            Position += Velocity * (float)DeltaTime;
         }
 
         protected void CreateBoundingBox()
         {
             if(direction == Direction.right)
-            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
+            BoundingBox = new BoundingBox(Position, BoundingBox.width, BoundingBox.height);
             if (direction == Direction.left)
-                boundingBox = new BoundingBox(Vector2.Add(position, new Vector2(currentAnimation.width - boundingBox.width, 0)), boundingBox.width, boundingBox.height);
+                BoundingBox = new BoundingBox(Vector2.Add(Position, new Vector2(CurrentAnimation.width - BoundingBox.width, 0)), BoundingBox.width, BoundingBox.height);
         }
 
         public void HandleCollision(ICollide collisionObject)      
         {
-            float penetrationTop = boundingBox.position.Y + boundingBox.height - collisionObject.boundingBox.position.Y;
-            float penetrationLeft = boundingBox.position.X + boundingBox.width - collisionObject.boundingBox.position.X;
-            float penetrationBottom = collisionObject.boundingBox.position.Y + collisionObject.boundingBox.height - position.Y;
-            float penetrationRight = collisionObject.boundingBox.position.X + collisionObject.boundingBox.width - position.X;
+            float penetrationTop = BoundingBox.position.Y + BoundingBox.height - collisionObject.BoundingBox.position.Y;
+            float penetrationLeft = BoundingBox.position.X + BoundingBox.width - collisionObject.BoundingBox.position.X;
+            float penetrationBottom = collisionObject.BoundingBox.position.Y + collisionObject.BoundingBox.height - Position.Y;
+            float penetrationRight = collisionObject.BoundingBox.position.X + collisionObject.BoundingBox.width - Position.X;
             float lowestPenetation = CollisionHelper.getLowestNumber(penetrationTop, penetrationLeft, penetrationBottom, penetrationRight);
 
             float edgeThreshold = 2f;
@@ -155,67 +154,67 @@ namespace HarvestJump
 
             if (lowestPenetation == penetrationTop)
             {
-                position = new Vector2(position.X + collisionObject.velocity.X, position.Y - penetrationTop + collisionObject.velocity.Y);
-                velocity = new Vector2(velocity.X, 0);
+                Position = new Vector2(Position.X + collisionObject.Velocity.X, Position.Y - penetrationTop + collisionObject.Velocity.Y);
+                Velocity = new Vector2(Velocity.X, 0);
             }
             else if (lowestPenetation == penetrationLeft)
             {
-                position = new Vector2(position.X - penetrationLeft + collisionObject.velocity.X, position.Y + collisionObject.velocity.Y);
-                velocity = new Vector2(0, velocity.Y);
+                Position = new Vector2(Position.X - penetrationLeft + collisionObject.Velocity.X, Position.Y + collisionObject.Velocity.Y);
+                Velocity = new Vector2(0, Velocity.Y);
             }
             else if (lowestPenetation == penetrationRight)
             {
-                position = new Vector2(position.X + penetrationRight + collisionObject.velocity.X, position.Y + collisionObject.velocity.Y);
-                velocity = new Vector2(0, velocity.Y);
+                Position = new Vector2(Position.X + penetrationRight + collisionObject.Velocity.X, Position.Y + collisionObject.Velocity.Y);
+                Velocity = new Vector2(0, Velocity.Y);
             }
             else if (lowestPenetation == penetrationBottom)
             {
-                position = new Vector2(position.X + collisionObject.velocity.X, position.Y + penetrationBottom + collisionObject.velocity.Y);
-                velocity = new Vector2(velocity.X, 0);
+                Position = new Vector2(Position.X + collisionObject.Velocity.X, Position.Y + penetrationBottom + collisionObject.Velocity.Y);
+                Velocity = new Vector2(Velocity.X, 0);
             }
 
-            isJumping = false;
+            IsJumping = false;
             UpdateAnimation();
             CreateBoundingBox();
         }
 
         public void SwitchAnimation(AnimationStatus animation)
         {
-            stateData[animation].Item1.position = position;
-            stateData[animation].Item2.position = position;
-            stateData[animation].Item1.Direction = direction;
+            StateData[animation].Item1.position = Position;
+            StateData[animation].Item2.position = Position;
+            StateData[animation].Item1.Direction = direction;
 
-            currentAnimation = stateData[animation].Item1;
-            boundingBox = stateData[animation].Item2;       
+            CurrentAnimation = StateData[animation].Item1;
+            BoundingBox = StateData[animation].Item2;       
         }
 
         public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
         {
-            stateData.Add(  status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
+            StateData.Add(  status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
                                     new BoundingBox(position, width, height)));
         }
 
         protected void UpdateAnimation()
         {
-            currentAnimation.position = position;
+            CurrentAnimation.position = Position;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            currentAnimation.Draw(spriteBatch);
+            CurrentAnimation.Draw(spriteBatch);
 
             if(Game1.debug == true)
             {
-                spriteBatch.Draw(debugRectangle.texture, boundingBox.position, new Rectangle((int)boundingBox.position.X, (int)boundingBox.position.Y, (int)boundingBox.width , (int)boundingBox.height), new Color(1, 1, 1, 0.5f));
-                spriteBatch.DrawString(debugFont, CreateString(this), boundingBox.position, Color.Red);
+                spriteBatch.Draw(DebugRectangle.texture, BoundingBox.position, new Rectangle((int)BoundingBox.position.X, (int)BoundingBox.position.Y, (int)BoundingBox.width , (int)BoundingBox.height), new Color(1, 1, 1, 0.5f));
+                spriteBatch.DrawString(DebugFont, CreateString(this), BoundingBox.position, Color.Red);
             }
         }
 
         private string CreateString(GameObject gameObject)
         {
-            string debugString = "BBPosX: " + String.Format("{0:0}", boundingBox.position.X) + "\n" + "BBPosY: " + String.Format("{0:0}", boundingBox.position.Y)
-                               + "\n" + "BBWidth: " + String.Format("{0:0}", boundingBox.width) + "\n" + "BBHeight: " + String.Format("{0:0}", boundingBox.height)
-                               + "\n" + "PosX: " + String.Format("{0:0}", position.X) + "\n" + "PosY: " + String.Format("{0:0}", position.Y);
+            string debugString = "BBPosX: " + String.Format("{0:0}", BoundingBox.position.X) + "\n" + "BBPosY: " + String.Format("{0:0}", BoundingBox.position.Y)
+                               + "\n" + "BBWidth: " + String.Format("{0:0}", BoundingBox.width) + "\n" + "BBHeight: " + String.Format("{0:0}", BoundingBox.height)
+                               + "\n" + "PosX: " + String.Format("{0:0}", Position.X) + "\n" + "PosY: " + String.Format("{0:0}", Position.Y);
 
             return debugString;
         }
