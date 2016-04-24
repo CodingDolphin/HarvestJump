@@ -14,14 +14,12 @@ namespace HarvestJump
         public int index { get; set; }
         public int rows { get; set; }
         public int columns { get; set; }
-        public int frameWidth { get; set; }
-        public int frameHeight { get; set; }
 
-        public SpriteSheet(Vector2 position, int index, int frameWidth, int frameHeight) : base(position)
+        public SpriteSheet(Vector2 position, int index, int frameWidth, int frameHeight, Vector2? rotationPoint = null) : base(position, rotationPoint)
         {
             this.index = index;
-            this.frameWidth = frameWidth;
-            this.frameHeight = frameHeight;
+            this.width = frameWidth;
+            this.height = frameHeight;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
@@ -32,9 +30,10 @@ namespace HarvestJump
 
         public void onContentLoad()
        {
-            columns = texture.Width / frameWidth;
-            rows = texture.Height / frameHeight;
+            columns = texture.Width / width;
+            rows = texture.Height / height;
             sourceRectangle = createSourceRectangle();
+            SetRotationPoint();
         }
 
         public override void Update(GameTime gameTime)
@@ -45,7 +44,7 @@ namespace HarvestJump
         {
             int row = index / columns;
             int column = index % columns;
-            return new Rectangle(frameWidth * column, frameHeight * row, frameWidth, frameHeight);
+            return new Rectangle(width * column, height * row, width, height);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

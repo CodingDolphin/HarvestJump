@@ -45,6 +45,7 @@ namespace HarvestJump
 
         public virtual void HandleWaypoint(Direction direction)
         {
+            Direction = direction;
         }
 
         public void Chase(Vector2 target)

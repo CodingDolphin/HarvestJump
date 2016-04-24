@@ -17,6 +17,9 @@ namespace HarvestJump
         public float scale { get; set; }
         public Color color { get; set; }
         public Vector2 rotationPoint { get; set; }
+        public Vector2? initRotationPoint { get; set; }
+        public int width { get; set; }
+        public int height { get; set; }
 
         private Direction direction;
         public Direction Direction
@@ -36,8 +39,9 @@ namespace HarvestJump
         }
 
 
-        public Sprite(Vector2 position)
+        public Sprite(Vector2 position, Vector2? rotationPoint = null)
         {
+            this.initRotationPoint = rotationPoint;
             this.direction = Direction.right;
             this.position = position;
             this.color = Color.White;
@@ -47,7 +51,23 @@ namespace HarvestJump
 
         public virtual void LoadContent(ContentManager content, string assetName)
         {
-            texture = content.Load<Texture2D>(assetName);
+            this.texture = content.Load<Texture2D>(assetName);
+            this.width = texture.Width;
+            this.height = texture.Height;
+
+            SetRotationPoint();
+        }
+
+        protected void SetRotationPoint()
+        {
+            if(initRotationPoint == null)
+            {
+                rotationPoint = new Vector2(width / 2, 0);
+            }
+            else
+            {
+                rotationPoint = (Vector2)initRotationPoint;
+            }
         }
 
         public virtual void Update(GameTime gameTime)

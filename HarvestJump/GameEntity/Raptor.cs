@@ -39,11 +39,11 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddState(AnimationStatus.atacking, position, 0, 191, 115, 0.1f, 9, true, 151, 110);
-            this.AddState(AnimationStatus.idle, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddState(AnimationStatus.run, position, 0, 191, 115, 0.3f, 7, true, 151, 115);
-            this.AddState(AnimationStatus.walking, position, 0, 191, 115, 0.3f, 9, true, 125, 110);
-            this.AddState(AnimationStatus.dead, position, 0, 209, 115, 0.3f, 8, false, 191, 85);
+            this.AddState(AnimationStatus.atacking, position, 53, 0, 191, 115, 0.1f, 9, true, 151, 110);
+            this.AddState(AnimationStatus.idle, position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.run, position, 53, 0, 191, 115, 0.3f, 7, true, 151, 115);
+            this.AddState(AnimationStatus.walking, position, 53, 0, 191, 115, 0.3f, 9, true, 125, 110);
+            this.AddState(AnimationStatus.dead, position, 104.5f, 0, 209, 115, 0.3f, 8, false, 191, 85);
             this.currentAnimation = stateData[AnimationStatus.walking].Item1;
             this.boundingBox = stateData[AnimationStatus.walking].Item2;
         }
@@ -60,7 +60,7 @@ namespace HarvestJump
                         item.Value.Item1.LoadContent(content, contentPath + "RaptorRunAnimation" + variant);
                         break;
                     case AnimationStatus.walking:
-                        item.Value.Item1.LoadContent(content, contentPath + "RaptorWalkAnimation" + variant); stateData[AnimationStatus.walking].Item1.rotationPoint = new Vector2(53f, 0);
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorWalkAnimation" + variant);
                         break;
                     case AnimationStatus.dead:
                         item.Value.Item1.LoadContent(content, contentPath + "RaptorDeadAnimation" + variant);
@@ -84,21 +84,33 @@ namespace HarvestJump
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if (keyboardState.IsKeyDown(Keys.Enter))
+            if (keyboardState.IsKeyDown(Keys.A))
             {
                 this.Direction = Direction.left;
             }
 
-            if (keyboardState.IsKeyDown(Keys.RightShift))
+            if (keyboardState.IsKeyDown(Keys.D))
             {
                 this.Direction = Direction.right;
             }
 
             if (keyboardState.IsKeyDown(Keys.RightControl))
             {
-                SwitchAnimation(AnimationStatus.dead);
-                state = State.inactive;
+                SwitchAnimation(AnimationStatus.atacking);
                 speed = Vector2.Zero;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.LeftControl))
+            {
+                SwitchAnimation(AnimationStatus.walking);
+                speed = new Vector2(2, 0);
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Enter))
+            {
+                SwitchAnimation(AnimationStatus.dead);
+                currentAnimation.index = 0;
+                speed = new Vector2(0, 0);
             }
 
             if (Direction == Direction.right)

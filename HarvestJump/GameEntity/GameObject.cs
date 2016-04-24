@@ -74,12 +74,12 @@ namespace HarvestJump
             {
                 if (value == Direction.left && value != direction)
                 {
-                    position = new Vector2(position.X - currentAnimation.frameWidth + currentAnimation.rotationPoint.X * 2, position.Y);
+                    position = new Vector2(position.X - currentAnimation.width + currentAnimation.rotationPoint.X * 2, position.Y);
                     currentAnimation.Direction = Direction.left;
                 }
                 else if(value == Direction.right && value != direction)
                 {
-                    position = new Vector2(position.X + currentAnimation.frameWidth - currentAnimation.rotationPoint.X * 2, position.Y);
+                    position = new Vector2(position.X + currentAnimation.width - currentAnimation.rotationPoint.X * 2, position.Y);
                     currentAnimation.Direction = Direction.right;
                 }
                 direction = value;
@@ -136,7 +136,7 @@ namespace HarvestJump
             if(direction == Direction.right)
             boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
             if (direction == Direction.left)
-                boundingBox = new BoundingBox(Vector2.Add(position, new Vector2(currentAnimation.frameWidth - boundingBox.width, 0)), boundingBox.width, boundingBox.height);
+                boundingBox = new BoundingBox(Vector2.Add(position, new Vector2(currentAnimation.width - boundingBox.width, 0)), boundingBox.width, boundingBox.height);
         }
 
         public void HandleCollision(ICollide collisionObject)      
@@ -176,18 +176,23 @@ namespace HarvestJump
 
             isJumping = false;
             UpdateAnimation();
+            CreateBoundingBox();
         }
 
         public void SwitchAnimation(AnimationStatus animation)
         {
+            stateData[animation].Item1.position = position;
+            stateData[animation].Item2.position = position;
+            stateData[animation].Item1.Direction = direction;
+
             currentAnimation = stateData[animation].Item1;
-            boundingBox = stateData[animation].Item2;
+            boundingBox = stateData[animation].Item2;       
         }
 
-        public void AddState(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
+        public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
         {
-            stateData.Add(status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping),
-                                            new BoundingBox(position, width, height)));
+            stateData.Add(  status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
+                                    new BoundingBox(position, width, height)));
         }
 
         protected void UpdateAnimation()

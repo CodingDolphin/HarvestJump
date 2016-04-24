@@ -21,7 +21,7 @@ namespace HarvestJump
             get { return frameCycle * frameCount; }
         }
 
-        public Animation(Vector2 position, int index, int frameWidth, int frameHeight, double frameCycle, int frameCount, bool isLooping) : base(position, index, frameWidth, frameHeight)
+        public Animation(Vector2 position, int index, int frameWidth, int frameHeight, double frameCycle, int frameCount, bool isLooping, Vector2? rotationPoint = null) : base(position, index, frameWidth, frameHeight, rotationPoint)
         {
             this.animationIsActive = true;
             this.isLooping = isLooping;
