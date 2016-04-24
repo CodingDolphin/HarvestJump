@@ -29,12 +29,32 @@ namespace HarvestJump
 
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
-            this.chaseTreshold = 200f;
+            this.aiState = AIState.walking;
+            this.chaseTreshold = 300f;
             this.IsJumping = false;
         }
 
         public override void Update(GameTime gameTime)
         {
+            switch (aiState)
+            {
+                case AIState.walking: Walk();
+                    break;
+                case AIState.atacking:Atack();
+                    break;
+                case AIState.chasing: Chase();
+                    break;
+                case AIState.searching:
+                    break;
+                case AIState.idle:
+                    break;
+                case AIState.jumping:
+                    break;
+                case AIState.dead:
+                    break;
+                default:
+                    break;
+            }
             base.Update(gameTime);
         }
 
@@ -48,8 +68,43 @@ namespace HarvestJump
             Direction = direction;
         }
 
-        public void Chase(Vector2 target)
+        public void AddTarget(ITarget target)
         {
+            if(Vector2.Distance(target.Position, Position) <= chaseTreshold)
+            {
+                aiState = AIState.chasing;
+
+                if (Vector2.Distance(target.Position, Position) <= target.BoundingBox.width && Direction == Direction.left)
+                {
+                    aiState = AIState.atacking;
+                }
+                else if (Vector2.Distance(target.Position, Position) - StateData[AnimationStatus.atacking].Item2.width <= target.BoundingBox.width && Direction == Direction.right)
+                {
+                    aiState = AIState.atacking;
+                }
+            }
+            else if(aiState != AIState.dead)
+            {
+                aiState = AIState.walking;
+            }
+        }
+
+        protected void Chase()
+        {
+            SwitchAnimation(AnimationStatus.run);
+            speed = new Vector2(6, 0);
+        }
+
+        protected void Walk()
+        {
+            SwitchAnimation(AnimationStatus.walking);
+            speed = new Vector2(2, 0);
+        }
+
+        protected void Atack()
+        {
+            SwitchAnimation(AnimationStatus.atacking);
+            speed = new Vector2(0, 0);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

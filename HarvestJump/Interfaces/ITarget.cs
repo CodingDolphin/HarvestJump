@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace HarvestJump
 {
-    interface ITarget
+    public interface ITarget
     {
         Vector2 Position { get; set; }
         Vector2 Velocity { get; set; }

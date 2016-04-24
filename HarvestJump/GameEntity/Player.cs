@@ -95,6 +95,8 @@ namespace HarvestJump
             if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !IsJumping)
             {
                 Velocity += JumpStrength;IsJumping = true;
+                StateData[AnimationStatus.jumping].Item1.index = 0;
+                SwitchAnimation(AnimationStatus.jumping);
             }
 
             movementVector = inputManager.getLeftThumbStickMovement();

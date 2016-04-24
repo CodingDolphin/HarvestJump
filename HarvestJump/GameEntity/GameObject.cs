@@ -166,7 +166,7 @@ namespace HarvestJump
             {
                 Position = new Vector2(Position.X + penetrationRight + collisionObject.Velocity.X, Position.Y + collisionObject.Velocity.Y);
                 Velocity = new Vector2(0, Velocity.Y);
-            }
+            } 
             else if (lowestPenetation == penetrationBottom)
             {
                 Position = new Vector2(Position.X + collisionObject.Velocity.X, Position.Y + penetrationBottom + collisionObject.Velocity.Y);
@@ -174,6 +174,17 @@ namespace HarvestJump
             }
 
             IsJumping = false;
+
+            if (this is Player)
+            {
+                if (Velocity.X >= 2 && direction == Direction.right)
+                    SwitchAnimation(AnimationStatus.walking);
+                else if (Velocity.X <= -2 && direction == Direction.left)
+                    SwitchAnimation(AnimationStatus.walking);
+                else
+                    SwitchAnimation(AnimationStatus.idle);
+            }
+
             UpdateAnimation();
             CreateBoundingBox();
         }

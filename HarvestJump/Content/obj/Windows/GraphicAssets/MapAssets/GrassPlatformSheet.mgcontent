@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/milan/Desktop/Project/harvestjump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet.png</SourceFile>
-  <SourceTime>2016-04-24T10:50:55.6040914+02:00</SourceTime>
-  <DestFile>C:/Users/milan/Desktop/Project/harvestjump/HarvestJump/Content/bin/Windows/GraphicAssets/MapAssets/GrassPlatformSheet.xnb</DestFile>
-  <DestTime>2016-04-24T10:53:41.666874+02:00</DestTime>
+  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/MapAssets/GrassPlatformSheet.png</SourceFile>
+  <SourceTime>2016-04-24T13:08:21.4476433+02:00</SourceTime>
+  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/GraphicAssets/MapAssets/GrassPlatformSheet.xnb</DestFile>
+  <DestTime>2016-04-24T13:08:59.6984957+02:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
+  <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2015-04-29T19:14:44+02:00</ProcessorTime>
+  <ProcessorTime>2016-03-16T03:18:04+01:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

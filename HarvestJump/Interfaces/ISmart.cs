@@ -24,6 +24,6 @@ namespace HarvestJump
         float chaseTreshold { get; set; }
         BoundingBox BoundingBox { get; set; }
         void HandleWaypoint(Direction direction);
-        void Chase(Vector2 target);
+        void AddTarget(ITarget target);
     }
 }

@@ -72,12 +72,9 @@ namespace HarvestJump
 
         public void CheckTarget(ISmart iSmartObject)
         { 
-            foreach (Player player in aiTargetList)
+            foreach (ITarget target in aiTargetList)
             {
-                if(iSmartObject.chaseTreshold >= Vector2.Distance(iSmartObject.Position, player.Position))
-                {
-                    iSmartObject.Chase(player.Position);
-                }     
+                iSmartObject.AddTarget(target); 
             }
         }
 

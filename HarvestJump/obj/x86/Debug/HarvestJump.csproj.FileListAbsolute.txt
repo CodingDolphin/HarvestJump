@@ -399,3 +399,13 @@ C:\Users\milan\Desktop\Project\harvestjump\HarvestJump\bin\Windows\Debug\SharpDX
 C:\Users\milan\Desktop\Project\harvestjump\HarvestJump\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\milan\Desktop\Project\harvestjump\HarvestJump\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\milan\Desktop\Project\harvestjump\HarvestJump\obj\x86\Debug\HarvestJump.csprojResolveAssemblyReference.cache
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorAtackAnimationBlue.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorAtackAnimationGreen.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorDeadAnimationBlue.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorDeadAnimationGreen.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorIdleAnimationBlue.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorIdleAnimationGreen.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorRunAnimationBlue.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorRunAnimationGreen.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimationBlue.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimationGreen.xnb
