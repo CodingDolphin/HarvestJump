@@ -60,7 +60,7 @@ namespace HarvestJump
                         item.Value.Item1.LoadContent(content, contentPath + "RaptorRunAnimation" + variant);
                         break;
                     case AnimationStatus.walking:
-                        item.Value.Item1.LoadContent(content, contentPath + "RaptorWalkAnimation" + variant);
+                        item.Value.Item1.LoadContent(content, contentPath + "RaptorWalkAnimation" + variant); stateData[AnimationStatus.walking].Item1.rotationPoint = new Vector2(53f, 0);
                         break;
                     case AnimationStatus.dead:
                         item.Value.Item1.LoadContent(content, contentPath + "RaptorDeadAnimation" + variant);
@@ -86,12 +86,12 @@ namespace HarvestJump
 
             if (keyboardState.IsKeyDown(Keys.Enter))
             {
-                this.SetDirection(Direction.left);
+                this.Direction = Direction.left;
             }
 
             if (keyboardState.IsKeyDown(Keys.RightShift))
             {
-                this.SetDirection(Direction.right);
+                this.Direction = Direction.right;
             }
 
             if (keyboardState.IsKeyDown(Keys.RightControl))
@@ -101,11 +101,11 @@ namespace HarvestJump
                 speed = Vector2.Zero;
             }
 
-            if (direction == Direction.right)
+            if (Direction == Direction.right)
             {
                 velocity += speed;
             }
-            else if( direction == Direction.left)
+            else if(Direction == Direction.left)
             {
                 velocity -= speed;
             }

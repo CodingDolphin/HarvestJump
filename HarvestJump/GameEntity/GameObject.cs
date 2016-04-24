@@ -35,33 +35,56 @@ namespace HarvestJump
 
     abstract class GameObject : ICollide, IFocus , ITarget
     {
+
         //Klassenvariablen
+
+        public static double slowMotion { get; set; } = 1;
+
+        //Properties
 
         protected Vector2 gravity { get; set; }
         protected Vector2 friction { get; set; }
         protected Animation currentAnimation { get; set; }
         protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> stateData { get; set; }
-        public Direction direction { get; set; }
         protected double deltaTime { get; set; }
         protected Vector2 speed { get; set; }
         protected Vector2 jumpStrength { get; set; }
-        public static double slowMotion { get; set; }
         public bool isJumping { get; set; }
         public State state { get; set; }
 
-        //ICollide Interface
+        //Interfaces
 
         public Vector2 position { get; set; }
         public BoundingBox boundingBox { get; set; }
         public Vector2 velocity { get; set; }
         public bool noClip { get; set; }
 
-
         //Testing
 
         public Sprite debugRectangle { get; set; }
         protected Vector2 boxXTranslate { get; set; }
         protected SpriteFont debugFont { get; set; }
+
+        private Direction direction;
+        public Direction Direction
+        {
+            get { return direction; }
+
+            set
+            {
+                if (value == Direction.left && value != direction)
+                {
+                    position = new Vector2(position.X - currentAnimation.frameWidth + currentAnimation.rotationPoint.X * 2, position.Y);
+                    currentAnimation.Direction = Direction.left;
+                }
+                else if(value == Direction.right && value != direction)
+                {
+                    position = new Vector2(position.X + currentAnimation.frameWidth - currentAnimation.rotationPoint.X * 2, position.Y);
+                    currentAnimation.Direction = Direction.right;
+                }
+                direction = value;
+            }
+        }
 
         //Konstruktoren
 
@@ -71,15 +94,12 @@ namespace HarvestJump
 
         public GameObject(Vector2 position, int width, int height)
         {
-            this.debugRectangle = new Sprite(position);
             this.stateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
+            this.debugRectangle = new Sprite(position);
             this.position = position;
             this.boundingBox = new BoundingBox(position, width, height);
             this.noClip = false;
             this.gravity = new Vector2(0, 2000);
-            this.boxXTranslate = Vector2.Zero;
-
-            GameObject.slowMotion = 1;
         }
         
         public virtual void LoadContent(ContentManager content, string assetName)
@@ -94,11 +114,10 @@ namespace HarvestJump
 
             ApplyForce();
             ApplyVelocityToPosition();
-
             CreateBoundingBox();
+
             currentAnimation.Update(gameTime);
-            currentAnimation.position = position;
-            SetDirection(direction);
+            UpdateAnimation();
         }
 
         protected void ApplyForce()
@@ -114,7 +133,10 @@ namespace HarvestJump
 
         protected void CreateBoundingBox()
         {
-            boundingBox = new BoundingBox(Vector2.Add(position, boxXTranslate), boundingBox.width, boundingBox.height);
+            if(direction == Direction.right)
+            boundingBox = new BoundingBox(position, boundingBox.width, boundingBox.height);
+            if (direction == Direction.left)
+                boundingBox = new BoundingBox(Vector2.Add(position, new Vector2(currentAnimation.frameWidth - boundingBox.width, 0)), boundingBox.width, boundingBox.height);
         }
 
         public void HandleCollision(ICollide collisionObject)      
@@ -158,11 +180,8 @@ namespace HarvestJump
 
         public void SwitchAnimation(AnimationStatus animation)
         {
-            stateData[animation].Item1.position = position;
-            stateData[animation].Item1.Direction = direction;
-            boundingBox = stateData[animation].Item2;
             currentAnimation = stateData[animation].Item1;
-            CreateBoundingBox();
+            boundingBox = stateData[animation].Item2;
         }
 
         public void AddState(AnimationStatus status, Vector2 position, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
@@ -173,35 +192,7 @@ namespace HarvestJump
 
         protected void UpdateAnimation()
         {
-            if (!isJumping  && state != State.inactive)
-                currentAnimation = stateData[AnimationStatus.walking].Item1;
-
             currentAnimation.position = position;
-            currentAnimation.Direction = direction;
-            CreateBoundingBox();
-        }
-
-        protected void SetDirection(Direction dir)
-        {
-            Vector2 flipTranslate = new Vector2(-(currentAnimation.frameWidth / 2), 0.0f);
-
-            if (direction != dir)
-            {
-                if (direction == Direction.right)
-                {
-                    currentAnimation.Direction = direction;
-                    boxXTranslate = new Vector2(currentAnimation.frameWidth - boundingBox.width, 0);
-                    position += flipTranslate;
-                }
-                else if (direction == Direction.left)
-                {
-                    position -= flipTranslate;
-                    currentAnimation.Direction = direction;
-                    boxXTranslate = Vector2.Zero;
-                }
-            }
-
-            direction = dir;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)

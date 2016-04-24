@@ -19,7 +19,7 @@ namespace HarvestJump
             set;
         }
 
-        Direction direction { get; set; }
+        Direction Direction { get; set; }
         Vector2 position { get; set; }
         float chaseTreshold { get; set; }
         BoundingBox boundingBox { get; set; }

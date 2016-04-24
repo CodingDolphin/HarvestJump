@@ -17,6 +17,6 @@ namespace HarvestJump
         Vector2 position { get; set; }
         Vector2 velocity { get; set; }
         BoundingBox boundingBox { get; set; }
-        Direction direction { get; set; }
+        Direction Direction { get; set; }
     }
 }

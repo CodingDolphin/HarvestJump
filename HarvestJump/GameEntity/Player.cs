@@ -11,10 +11,9 @@ namespace HarvestJump
 {
     class Player : GameObject
     {
-        private static int playerCount;
-
+        private static int playerCount { get; set; }
         private InputManager inputManager { get; set; }
-        Vector2 movementVector { get; set; }
+        private Vector2 movementVector { get; set; }
 
         public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
         {
@@ -52,7 +51,7 @@ namespace HarvestJump
                         item.Value.Item1.LoadContent(content, contentPath + "PlayerJumpAnimation");
                         break;
                     case AnimationStatus.idle:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerIdleAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerIdleAnimation"); stateData[AnimationStatus.idle].Item1.rotationPoint = new Vector2(33.5f, 0);
                         break;
                     case AnimationStatus.slide:
                         item.Value.Item1.LoadContent(content, contentPath + "PlayerSlideAnimation");
@@ -66,7 +65,7 @@ namespace HarvestJump
                 }
             }
 
-            base.LoadContent(content, string.Empty);
+            base.LoadContent(content, assetName);
         }
 
         public override void Update(GameTime gameTime)
@@ -84,30 +83,28 @@ namespace HarvestJump
             if (keyboardState.IsKeyDown(Keys.Left))
             {
                 velocity -= speed;
-                currentAnimation.Direction = direction = Direction.left;
+                currentAnimation.Direction = Direction = Direction.left;
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
             {
                 velocity += speed;
-                currentAnimation.Direction = direction = Direction.right;
+                currentAnimation.Direction = Direction = Direction.right;
             }
 
             if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !isJumping)
             {
                 velocity += jumpStrength;isJumping = true;
-                SwitchAnimation(AnimationStatus.jumping);
             }
-
 
             movementVector = inputManager.getLeftThumbStickMovement();
 
             if (movementVector.X >= 0 && movementVector.X != 0)
-                direction = Direction.right;
+                Direction = Direction.right;
 
             else if (movementVector.X <= 0 && movementVector.X != 0)
             {
-                direction = Direction.left;
+                Direction = Direction.left;
             }
 
             velocity += movementVector * speed;

@@ -16,7 +16,6 @@ namespace HarvestJump
         public bool animationIsActive { get; set; }
         public bool isLooping { get; set; }
 
-        private double animationDuration;
         public double AnimationDuration
         {
             get { return frameCycle * frameCount; }
@@ -28,7 +27,6 @@ namespace HarvestJump
             this.isLooping = isLooping;
             this.frameCycle = frameCycle;
             this.frameCount = frameCount;
-            this.animationDuration = frameCount * frameCycle;
         }
 
         public override void Update(GameTime gameTime)

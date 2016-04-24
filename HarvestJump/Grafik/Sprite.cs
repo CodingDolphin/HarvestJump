@@ -16,7 +16,8 @@ namespace HarvestJump
         public float rotation { get; set; }
         public float scale { get; set; }
         public Color color { get; set; }
-        public float rotationPoint { get; set; }
+        public Vector2 rotationPoint { get; set; }
+
         private Direction direction;
         public Direction Direction
         {

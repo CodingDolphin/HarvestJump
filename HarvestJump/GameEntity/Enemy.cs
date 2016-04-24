@@ -45,27 +45,10 @@ namespace HarvestJump
 
         public virtual void HandleWaypoint(Direction direction)
         {
-            base.SetDirection(direction);
         }
 
         public void Chase(Vector2 target)
         {
-
-                if (target.X > position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
-                    SetDirection(Direction.right);
-                else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth / 2)
-                    SetDirection(Direction.left);
-
-                if (Vector2.Distance(target, position) >= currentAnimation.frameWidth)
-                {
-                    speed = Vector2.Zero;
-                    SwitchAnimation(AnimationStatus.atacking);
-                }
-                else if (target.X < position.X && Vector2.Distance(target, position) >= currentAnimation.frameWidth)
-                {
-                    speed = Vector2.Zero;
-                    SwitchAnimation(AnimationStatus.atacking);
-                }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
