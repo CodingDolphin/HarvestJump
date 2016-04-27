@@ -91,7 +91,7 @@ namespace HarvestJump
         {
         }
 
-        public GameObject(Vector2 position, int width, int height)
+        public GameObject(Vector2 position, int width = 0, int height = 0)
         {
             this.StateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
             this.DebugRectangle = new Sprite(position);
@@ -201,8 +201,8 @@ namespace HarvestJump
 
         public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
         {
-            StateData.Add(  status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
-                                    new BoundingBox(position, width, height)));
+            StateData.Add(status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
+                                  new BoundingBox(position, width, height)));
         }
 
         protected void UpdateAnimation()

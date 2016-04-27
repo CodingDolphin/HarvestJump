@@ -31,7 +31,7 @@ namespace HarvestJump
             this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 67, 97, 0.3f, 9, true, 67, 95);
             this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
             this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
-            this.AddState(AnimationStatus.run, Position,32, 0, 64, 96, 0.25f, 7, true, 67, 95);
+            this.AddState(AnimationStatus.run, Position, 32, 0, 64, 96, 0.25f, 7, true, 67, 95);
             this.CurrentAnimation = StateData[AnimationStatus.idle].Item1;
         }
 
@@ -94,7 +94,7 @@ namespace HarvestJump
 
             if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !IsJumping)
             {
-                Velocity += JumpStrength;IsJumping = true;
+                Velocity += JumpStrength; IsJumping = true;
                 StateData[AnimationStatus.jumping].Item1.index = 0;
                 SwitchAnimation(AnimationStatus.jumping);
             }

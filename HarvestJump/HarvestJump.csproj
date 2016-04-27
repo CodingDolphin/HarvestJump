@@ -165,6 +165,7 @@
     </Content>
     <Content Include="Content\SoundAssets\PlayAssets\speedDown.wav" />
     <Content Include="Content\SoundAssets\PlayAssets\speedUp.wav" />
+    <Content Include="GameEntity\DogIdleAnimation.xml" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -26,16 +26,26 @@ namespace HarvestJump
         public Vector2 jumpStrength { get; set; }
         public AIState aiState { get; set; }
         public float chaseTreshold { get; set; }
+        public float atackDuration { get; set; }
+        public bool atackFinish { get; set; }
+        public float animationStatus { get; set; }
 
         public Enemy(Vector2 position, int width, int height) : base(position, width, height)
         {
             this.aiState = AIState.walking;
-            this.chaseTreshold = 300f;
+            this.chaseTreshold = 350f;
             this.IsJumping = false;
         }
 
         public override void Update(GameTime gameTime)
         {
+            animationStatus += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if(animationStatus >= StateData[AnimationStatus.atacking].Item1.AnimationDuration)
+            {
+                animationStatus = 0f;
+                atackFinish = true;
+            }
+
             switch (aiState)
             {
                 case AIState.walking: Walk();
@@ -55,12 +65,19 @@ namespace HarvestJump
                 default:
                     break;
             }
+
             base.Update(gameTime);
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
             base.LoadContent(content, assetName);
+            onContentLoad();
+        }
+
+        public void onContentLoad()
+        {
+            atackDuration = (float)StateData[AnimationStatus.atacking].Item1.AnimationDuration;
         }
 
         public virtual void HandleWaypoint(Direction direction)
@@ -74,11 +91,21 @@ namespace HarvestJump
             {
                 aiState = AIState.chasing;
 
+                if (atackFinish)
+                {
+                    if (target.Position.X >= Position.X && Direction == Direction.left)
+                        Direction = Direction.right;
+                    else if (target.Position.X <= Position.X && Direction == Direction.right)
+                        Direction = Direction.left;
+
+                    atackFinish = false;
+                }
+
                 if (Vector2.Distance(target.Position, Position) <= target.BoundingBox.width && Direction == Direction.left)
                 {
                     aiState = AIState.atacking;
                 }
-                else if (Vector2.Distance(target.Position, Position) - StateData[AnimationStatus.atacking].Item2.width <= target.BoundingBox.width && Direction == Direction.right)
+                else if (Position.X + StateData[AnimationStatus.atacking].Item2.width >= target.Position.X && Direction == Direction.right && Position.X <= target.Position.X)
                 {
                     aiState = AIState.atacking;
                 }
