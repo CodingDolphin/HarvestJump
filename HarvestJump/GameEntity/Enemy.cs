@@ -114,7 +114,7 @@ namespace HarvestJump
             }
 
             if (Vector2.Distance(currentTarget.Position, Position) >= chaseTreshold)
-                Search();
+                aiState = AIState.searching;
         }
 
         private void Search()
@@ -139,7 +139,8 @@ namespace HarvestJump
 
         public virtual void HandleWaypoint(Direction direction)
         {
-            Direction = direction;
+            if (aiState != AIState.chasing || aiState == AIState.atacking)
+                Direction = direction;
         }
 
         public void AddTarget(ITarget target)

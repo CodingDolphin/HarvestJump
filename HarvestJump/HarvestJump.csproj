@@ -129,6 +129,12 @@
     <Content Include="Content\blackPixel.png" />
     <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
     <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatDeadAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatJumpAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatSlideAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatWalkAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogDeadAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogFallAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogHurtAnimation.png" />
@@ -137,12 +143,6 @@
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogRunAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogSlideAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogWalkAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerDeadAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerIdleAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerJumpAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerRunAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerSlideAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerWalkAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationBlue.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationGreen.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimationBlue.png" />
