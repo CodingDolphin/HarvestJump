@@ -129,20 +129,20 @@
     <Content Include="Content\blackPixel.png" />
     <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
     <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogDeadAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogFallAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogHurtAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogIdleAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogJumpAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogRunAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogSlideAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\DogWalkAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerDeadAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerIdleAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerJumpAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerRunAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerSlideAnimation.png" />
-    <Content Include="Content\GraphicAssets\PlayAssets\PlayerWalkAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogDeadAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogFallAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogHurtAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogJumpAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogSlideAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\DogWalkAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerDeadAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerJumpAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerSlideAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\PlayerWalkAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationBlue.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorAtackAnimationGreen.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\RaptorDeadAnimationBlue.png" />
@@ -206,6 +206,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

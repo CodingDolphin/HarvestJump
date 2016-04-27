@@ -12,26 +12,39 @@ namespace HarvestJump
     class Player : GameObject
     {
         private static int playerCount { get; set; }
+        private PlayerType playerType { get; set; }
         private InputManager inputManager { get; set; }
         private Vector2 movementVector { get; set; }
 
-        public Player(Vector2 startPosition) : base(startPosition)
+        public Player(Vector2 startPosition, PlayerType playerType) : base(startPosition)
         {
-            Speed = new Vector2(28f, 0);
-            JumpStrength = new Vector2(0, -1100);
-            inputManager = new InputManager(playerCount);
-            playerCount++;
+            this.playerType = playerType;
+            this.Speed = new Vector2(28f, 0);
+            this.JumpStrength = new Vector2(0, -1100);
+            this.inputManager = new InputManager(playerCount);
+            this.initializePlayerAnimation();
 
-            initializePlayerAnimation();
+            playerCount++;
         }
 
         public void initializePlayerAnimation()
-        {
-            this.AddState(AnimationStatus.walking, Position, 33.5f, 0, 67, 97, 0.1f, 9, true, 67, 95);
-            this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 67, 97, 0.3f, 9, true, 67, 95);
-            this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
-            this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
-            this.AddState(AnimationStatus.run, Position, 32, 0, 64, 96, 0.25f, 7, true, 67, 95);
+        { 
+            if(playerType == PlayerType.dog)
+            {
+                this.AddState(AnimationStatus.walking, Position, 33.5f, 0, 65, 100, 0.1f, 9, true, 67, 95);
+                this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 65, 97, 0.3f, 9, true, 67, 95);
+                this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 65, 97, 0.3f, 6, false, 67, 95);
+                this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
+                this.AddState(AnimationStatus.run, Position, 32, 0, 65, 100, 0.25f, 7, true, 67, 95);
+            }
+            else if(playerType == PlayerType.cat)
+            {
+                this.AddState(AnimationStatus.walking, Position, 33.5f, 0, 67, 97, 0.1f, 9, true, 67, 95);
+                this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 67, 97, 0.3f, 9, true, 67, 95);
+                this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
+                this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
+                this.AddState(AnimationStatus.run, Position, 32, 0, 64, 96, 0.25f, 7, true, 67, 95);
+            }
 
             SwitchAnimation(AnimationStatus.idle);
         }
@@ -40,28 +53,34 @@ namespace HarvestJump
         public override void LoadContent(ContentManager content, string assetName)
         {
             string contentPath = assetName;
+            string pType;
+
+            if (playerType == PlayerType.dog)
+                pType = "Dog";
+            else
+                pType = "Cat";
 
             foreach (var item in StateData)
             {
                 switch (item.Key)
                 {
                     case AnimationStatus.walking:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerWalkAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "WalkAnimation");
                         break;
                     case AnimationStatus.jumping:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerJumpAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "JumpAnimation");
                         break;
                     case AnimationStatus.idle:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerIdleAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "IdleAnimation");
                         break;
                     case AnimationStatus.slide:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerSlideAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "SlideAnimation");
                         break;
                     case AnimationStatus.dead:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerDeadAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "DeadAnimation");
                         break;
                     case AnimationStatus.run:
-                        item.Value.Item1.LoadContent(content, contentPath + "PlayerRunAnimation");
+                        item.Value.Item1.LoadContent(content, contentPath + "PlayerAssets/" + pType + "RunAnimation");
                         break;
                 }
             }

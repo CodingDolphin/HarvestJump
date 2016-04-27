@@ -30,12 +30,6 @@
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/speedUp.wav</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/blackPixel.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/Fonts/LeagueFont.spritefont</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerIdleAnimation.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerJumpAnimation.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerSlideAnimation.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerWalkAnimation.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerDeadAnimation.png</File>
-    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerRunAnimation.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorAtackAnimationGreen.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorDeadAnimationGreen.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationGreen.png</File>
@@ -46,5 +40,19 @@
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorIdleAnimationBlue.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorRunAnimationBlue.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/RaptorWalkAnimationBlue.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogDeadAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogFallAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogHurtAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogIdleAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogJumpAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogRunAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogSlideAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/DogWalkAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatDeadAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatIdleAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatJumpAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatRunAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatSlideAnimation.png</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatWalkAnimation.png</File>
   </SourceFiles>
 </SourceFileCollection>

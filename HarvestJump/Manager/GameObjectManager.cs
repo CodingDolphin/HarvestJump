@@ -14,6 +14,13 @@ namespace HarvestJump
     public enum EnemyType
     {
         raptor,
+        dilophosaurus,
+    }
+
+    public enum PlayerType
+    {
+        cat,
+        dog,
     }
 
     class GameObjectManager
@@ -39,9 +46,9 @@ namespace HarvestJump
             aiSystem.LoadContent(content);
         }
 
-        public void AddPlayer(Vector2 position)
+        public void AddPlayer(Vector2 position, PlayerType type)
         {
-            gameObjectList.Add(new Player(position));
+            gameObjectList.Add(new Player(position, type));
             aiSystem.addAITarget(gameObjectList.Last());
         }
 
