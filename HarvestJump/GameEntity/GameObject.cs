@@ -173,27 +173,6 @@ namespace HarvestJump
 
             IsJumping = false;
 
-            if (this is Player)
-            {
-                if (Velocity.X >= 10 && direction == Direction.right)
-                    SwitchAnimation(AnimationStatus.walking);
-
-                if (Velocity.X <= -10 && direction == Direction.left)
-                    SwitchAnimation(AnimationStatus.walking);
-
-                if (Velocity.X >= 300 && direction == Direction.right)
-                    SwitchAnimation(AnimationStatus.run);
-
-                if (Velocity.X <= -300 && direction == Direction.left)
-                    SwitchAnimation(AnimationStatus.run);
-
-                if (Velocity.X <= 10 && Direction == Direction.right)
-                    SwitchAnimation(AnimationStatus.idle);
-
-                if (Velocity.X >= -10 && Direction == Direction.left)
-                    SwitchAnimation(AnimationStatus.idle);
-            }
-
             UpdateCurrentAnimationPosition();
             CreateBoundingBox();
         }
@@ -232,12 +211,10 @@ namespace HarvestJump
 
         private string CreateString(GameObject gameObject)
         {
-            string debugString = "BBPosX: " + String.Format("{0:0}", BoundingBox.position.X) + "\n" + "BBPosY: " + String.Format("{0:0}", BoundingBox.position.Y)
-                               + "\n" + "BBWidth: " + String.Format("{0:0}", BoundingBox.width) + "\n" + "BBHeight: " + String.Format("{0:0}", BoundingBox.height)
-                               + "\n" + "PosX: " + String.Format("{0:0}", Position.X) + "\n" + "PosY: " + String.Format("{0:0}", Position.Y)
-                               + "\n" + "Velocity: " + String.Format("{0:0}", Velocity.X);
-
-            return debugString;
+            return "BBPosX: " + String.Format("{0:0}", BoundingBox.position.X) + "\n" + "BBPosY: " + String.Format("{0:0}", BoundingBox.position.Y)
+                   + "\n" + "BBWidth: " + String.Format("{0:0}", BoundingBox.width) + "\n" + "BBHeight: " + String.Format("{0:0}", BoundingBox.height)
+                   + "\n" + "PosX: " + String.Format("{0:0}", Position.X) + "\n" + "PosY: " + String.Format("{0:0}", Position.Y)
+                   + "\n" + "Velocity: " + String.Format("{0:0}", Velocity.X);
         }
     }
 }

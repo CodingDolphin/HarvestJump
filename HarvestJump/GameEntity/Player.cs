@@ -28,8 +28,9 @@ namespace HarvestJump
         }
 
         public void initializePlayerAnimation()
-        { 
-            if(playerType == PlayerType.dog)
+        {
+            #region AnimationData
+            if (playerType == PlayerType.dog)
             {
                 this.AddState(AnimationStatus.walking, Position, 33.5f, 0, 65, 100, 0.1f, 9, true, 67, 95);
                 this.AddState(AnimationStatus.idle, Position, 33.5f, 0, 65, 97, 0.3f, 9, true, 67, 95);
@@ -45,13 +46,14 @@ namespace HarvestJump
                 this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
                 this.AddState(AnimationStatus.run, Position, 32, 0, 64, 96, 0.25f, 7, true, 67, 95);
             }
+            #endregion Animationdata
 
             SwitchAnimation(AnimationStatus.idle);
         }
 
-
         public override void LoadContent(ContentManager content, string assetName)
         {
+            #region LoadContent
             string contentPath = assetName;
             string pType;
 
@@ -85,6 +87,8 @@ namespace HarvestJump
                 }
             }
 
+            #endregion LoadContent
+
             base.LoadContent(content, assetName);
         }
 
@@ -99,6 +103,7 @@ namespace HarvestJump
         private void MoveCharacter()
         {
             KeyboardState keyboardState = Keyboard.GetState();
+            movementVector = inputManager.getLeftThumbStickMovement();
 
             if (keyboardState.IsKeyDown(Keys.Left))
             {
@@ -119,17 +124,37 @@ namespace HarvestJump
                 SwitchAnimation(AnimationStatus.jumping);
             }
 
-            movementVector = inputManager.getLeftThumbStickMovement();
-
             if (movementVector.X >= 0 && movementVector.X != 0)
                 Direction = Direction.right;
-
             else if (movementVector.X <= 0 && movementVector.X != 0)
-            {
                 Direction = Direction.left;
-            }
 
             Velocity += movementVector * Speed;
+            SwitchAnimationAccordingToVelocity();
+        }
+
+        private void SwitchAnimationAccordingToVelocity()
+        {
+            if (!IsJumping)
+            {
+                if (Velocity.X >= 10 && Direction == Direction.right)
+                    SwitchAnimation(AnimationStatus.walking);
+
+                if (Velocity.X <= -10 && Direction == Direction.left)
+                    SwitchAnimation(AnimationStatus.walking);
+
+                if (Velocity.X >= 300 && Direction == Direction.right)
+                    SwitchAnimation(AnimationStatus.run);
+
+                if (Velocity.X <= -300 && Direction == Direction.left)
+                    SwitchAnimation(AnimationStatus.run);
+
+                if (Velocity.X <= 10 && Direction == Direction.right)
+                    SwitchAnimation(AnimationStatus.idle);
+
+                if (Velocity.X >= -10 && Direction == Direction.left)
+                    SwitchAnimation(AnimationStatus.idle);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

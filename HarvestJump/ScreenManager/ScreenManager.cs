@@ -109,8 +109,6 @@ namespace HarvestJump
             PlayScreen test = screenList[2] as PlayScreen;
             var keyboardState = Keyboard.GetState();
 
-
-
             if (currentSoundDuration <= deltaTime)
             {
                 isPlaying = false;
