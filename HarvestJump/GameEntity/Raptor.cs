@@ -13,13 +13,12 @@ namespace HarvestJump
     class Raptor : Enemy
     {
         private string variant { get; set; }
-        private Random random { get; set; }
 
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
-            speed = new Vector2(2, 0);
-            jumpStrength = new Vector2(0f, -250f);
-            random = new Random(System.DateTime.Now.Millisecond);
+            this.speed = new Vector2(2, 0);
+            this.jumpStrength = new Vector2(0f, -250f);
+            this.random = new Random(System.DateTime.Now.Millisecond);
 
             initializeRaptorAnimation();
             decideVariant();
@@ -82,47 +81,6 @@ namespace HarvestJump
 
         public override void Update(GameTime gameTime)
         {
-            KeyboardState keyboardState = Keyboard.GetState();
-
-            if (keyboardState.IsKeyDown(Keys.A))
-            {
-                this.Direction = Direction.left;
-            }
-
-            if (keyboardState.IsKeyDown(Keys.D))
-            {
-                this.Direction = Direction.right;
-            }
-
-            if (keyboardState.IsKeyDown(Keys.RightControl))
-            {
-                SwitchAnimation(AnimationStatus.atacking);
-                speed = Vector2.Zero;
-            }
-
-            if (keyboardState.IsKeyDown(Keys.LeftControl))
-            {
-                SwitchAnimation(AnimationStatus.walking);
-                speed = new Vector2(2, 0);
-            }
-
-            if (keyboardState.IsKeyDown(Keys.Enter))
-            {
-                aiState = AIState.dead;
-                SwitchAnimation(AnimationStatus.dead);
-                CurrentAnimation.index = 0;
-                speed = new Vector2(0, 0);
-            }
-
-            if (Direction == Direction.right)
-            {
-                Velocity += speed;
-            }
-            else if(Direction == Direction.left)
-            {
-                Velocity -= speed;
-            }
-
             base.Update(gameTime);
         }
 

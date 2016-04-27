@@ -33,7 +33,7 @@ namespace HarvestJump
         left,
     }
 
-    abstract class GameObject : ICollide, IFocus , ITarget
+    abstract class GameObject : ICollide, IFocus, ITarget
     {
 
         //Klassenvariablen
@@ -48,6 +48,7 @@ namespace HarvestJump
         protected Animation CurrentAnimation { get; set; }
         protected Vector2 Speed { get; set; }
         protected Vector2 JumpStrength { get; set; }
+        protected Random random { get; set; }
         public bool IsJumping { get; set; }
         protected double DeltaTime { get; set; }
 
@@ -75,7 +76,7 @@ namespace HarvestJump
                     Position = new Vector2(Position.X - CurrentAnimation.width + CurrentAnimation.rotationPoint.X * 2, Position.Y);
                     CurrentAnimation.Direction = Direction.left;
                 }
-                else if(value == Direction.right && value != direction)
+                else if (value == Direction.right && value != direction)
                 {
                     Position = new Vector2(Position.X + CurrentAnimation.width - CurrentAnimation.rotationPoint.X * 2, Position.Y);
                     CurrentAnimation.Direction = Direction.right;
@@ -97,8 +98,9 @@ namespace HarvestJump
             this.Position = position;
             this.BoundingBox = new BoundingBox(position, width, height);
             this.NoClip = false;
+            this.IsJumping = false;
         }
-        
+
         public virtual void LoadContent(ContentManager content, string assetName)
         {
             DebugRectangle.LoadContent(content, "blackPixel");
@@ -130,13 +132,13 @@ namespace HarvestJump
 
         protected void CreateBoundingBox()
         {
-            if(direction == Direction.right)
-            BoundingBox = new BoundingBox(Position, BoundingBox.width, BoundingBox.height);
+            if (direction == Direction.right)
+                BoundingBox = new BoundingBox(Position, BoundingBox.width, BoundingBox.height);
             if (direction == Direction.left)
                 BoundingBox = new BoundingBox(Vector2.Add(Position, new Vector2(CurrentAnimation.width - BoundingBox.width, 0)), BoundingBox.width, BoundingBox.height);
         }
 
-        public void HandleCollision(ICollide collisionObject)      
+        public void HandleCollision(ICollide collisionObject)
         {
             float penetrationTop = BoundingBox.position.Y + BoundingBox.height - collisionObject.BoundingBox.position.Y;
             float penetrationLeft = BoundingBox.position.X + BoundingBox.width - collisionObject.BoundingBox.position.X;
@@ -164,7 +166,7 @@ namespace HarvestJump
             {
                 Position = new Vector2(Position.X + penetrationRight + collisionObject.Velocity.X, Position.Y + collisionObject.Velocity.Y);
                 Velocity = new Vector2(0, Velocity.Y);
-            } 
+            }
             else if (lowestPenetation == penetrationBottom)
             {
                 Position = new Vector2(Position.X + collisionObject.Velocity.X, Position.Y + penetrationBottom + collisionObject.Velocity.Y);
@@ -177,17 +179,17 @@ namespace HarvestJump
             CreateBoundingBox();
         }
 
-        public void SwitchAnimation(AnimationStatus animation)
+        public virtual void SwitchAnimation(AnimationStatus animation)
         {
             StateData[animation].Item1.position = Position;
             StateData[animation].Item2.position = Position;
             StateData[animation].Item1.Direction = direction;
 
             CurrentAnimation = StateData[animation].Item1;
-            BoundingBox = StateData[animation].Item2;       
+            BoundingBox = StateData[animation].Item2;
         }
 
-        public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount,bool isLooping, int width, int height)
+        public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount, bool isLooping, int width, int height)
         {
             StateData.Add(status, new Tuple<Animation, BoundingBox>(new Animation(position, index, frameWidth, frameHeight, frameCycle, frameCount, isLooping, new Vector2(rotationPointX, 0)),
                                   new BoundingBox(position, width, height)));
@@ -202,9 +204,9 @@ namespace HarvestJump
         {
             CurrentAnimation.Draw(spriteBatch);
 
-            if(Game1.debug == true)
+            if (Game1.debug == true)
             {
-                spriteBatch.Draw(DebugRectangle.texture, BoundingBox.position, new Rectangle((int)BoundingBox.position.X, (int)BoundingBox.position.Y, (int)BoundingBox.width , (int)BoundingBox.height), new Color(1, 1, 1, 0.5f));
+                spriteBatch.Draw(DebugRectangle.texture, BoundingBox.position, new Rectangle((int)BoundingBox.position.X, (int)BoundingBox.position.Y, (int)BoundingBox.width, (int)BoundingBox.height), new Color(1, 1, 1, 0.5f));
                 spriteBatch.DrawString(DebugFont, CreateString(this), BoundingBox.position, Color.Red);
             }
         }

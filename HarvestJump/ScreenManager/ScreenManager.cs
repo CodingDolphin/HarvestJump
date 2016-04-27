@@ -90,7 +90,7 @@ namespace HarvestJump
             //Testing
 
             speedUp = content.Load<SoundEffect>("SoundAssets/PlayAssets/speedUp");
-            speedDown = content.Load <SoundEffect>("SoundAssets/PlayAssets/speedDown");
+            speedDown = content.Load<SoundEffect>("SoundAssets/PlayAssets/speedDown");
 
             var menu = (MenuScreen)screenList[1];
             foreach (MenuEntry entry in menu.menuEntryList)
@@ -103,8 +103,8 @@ namespace HarvestJump
 
         public void Update(GameTime gameTime)
         {
-            if(isPlaying)
-            deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
+            if (isPlaying)
+                deltaTime += gameTime.ElapsedGameTime.TotalSeconds;
 
             PlayScreen test = screenList[2] as PlayScreen;
             var keyboardState = Keyboard.GetState();
@@ -120,7 +120,7 @@ namespace HarvestJump
             {
                 currentSoundDuration = speedDown.Duration.Seconds;
 
-                if(currentSoundDuration >= deltaTime && isPlaying == false && GameObject.slowMotion != 3)
+                if (currentSoundDuration >= deltaTime && isPlaying == false && GameObject.slowMotion != 3)
                 {
                     MediaPlayer.Volume = 0.2f;
                     speedDown.Play(0.9f, 0f, 0f);

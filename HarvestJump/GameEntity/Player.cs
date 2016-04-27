@@ -143,10 +143,10 @@ namespace HarvestJump
                 if (Velocity.X <= -10 && Direction == Direction.left)
                     SwitchAnimation(AnimationStatus.walking);
 
-                if (Velocity.X >= 300 && Direction == Direction.right)
+                if (Velocity.X >= 350 && Direction == Direction.right)
                     SwitchAnimation(AnimationStatus.run);
 
-                if (Velocity.X <= -300 && Direction == Direction.left)
+                if (Velocity.X <= -350 && Direction == Direction.left)
                     SwitchAnimation(AnimationStatus.run);
 
                 if (Velocity.X <= 10 && Direction == Direction.right)

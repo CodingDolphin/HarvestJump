@@ -24,17 +24,19 @@ namespace HarvestJump
             this.debugRectangle = new Sprite(Vector2.Zero);
 
             CreateWaypoints();
-        } 
+        }
 
         public void LoadContent(ContentManager content)
         {
-            debugRectangle.LoadContent(content, "blackPixel");
+            this.debugRectangle.LoadContent(content, "blackPixel");
         }
 
         public void addAITarget(ITarget iTargetObject)
         {
             this.aiTargetList.Add(iTargetObject);
         }
+
+        //TODO Dont create new Waypoints very Frame
 
         public void CreateWaypoints()
         {
@@ -63,18 +65,19 @@ namespace HarvestJump
 
             foreach (Waypoint item in waypointList)
             {
-                if(item.wayPointCollider.Intersects(iSmartObject.BoundingBox))
+                if (item.wayPointCollider.Intersects(iSmartObject.BoundingBox))
                 {
                     iSmartObject.HandleWaypoint(item.direction);
                 }
             }
         }
 
-        public void CheckTarget(ISmart iSmartObject)
-        { 
+        public void AssignTargets(ISmart iSmartObject)
+        {
             foreach (ITarget target in aiTargetList)
             {
-                iSmartObject.AddTarget(target); 
+                if (Vector2.Distance(iSmartObject.Position, target.Position) <= iSmartObject.seeRadius)
+                    iSmartObject.AddTarget(target);
             }
         }
 

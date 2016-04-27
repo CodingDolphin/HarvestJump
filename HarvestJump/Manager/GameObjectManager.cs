@@ -70,7 +70,7 @@ namespace HarvestJump
                 {
                     Enemy enemy = item as Enemy;
                     aiSystem.CheckWayoints(enemy);
-                    aiSystem.CheckTarget(enemy);
+                    aiSystem.AssignTargets(enemy);
                 }
 
                 item.Update(gameTime);

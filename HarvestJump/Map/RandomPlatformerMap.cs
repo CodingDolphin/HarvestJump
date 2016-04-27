@@ -18,7 +18,7 @@ namespace HarvestJump
         private int maxPlatforms { get; set; }
         private int startHeight { get; set; }
         private int maxPlatformHeight { get; set; }
-        private int maxPlatformLenght { get; set; }  
+        private int maxPlatformLenght { get; set; }
         private int minPlatformLenght { get; set; }
         private int minPlatformHeight { get; set; }
         private int currentPositionX { get; set; }
@@ -76,10 +76,10 @@ namespace HarvestJump
             createMap(startHeight, maxPlatforms);
 
             //Manager
-            
+
             gameObjectManager = new GameObjectManager(platformManager.platformList);
             gameObjectManager.AddEnemy(EnemyType.raptor, Vector2.Zero);
-            gameObjectManager.AddPlayer(new Vector2(550, 0), PlayerType.cat);
+            //gameObjectManager.AddPlayer(new Vector2(550, 0), PlayerType.cat);
             gameObjectManager.AddPlayer(new Vector2(450, 0), PlayerType.dog);
         }
 
@@ -89,7 +89,7 @@ namespace HarvestJump
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 4 * 32, 450), 10, 1, 1, 5 * 32, IsMoving.vertical);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 400), 10, 1, 1, 5 * 32, IsMoving.horizontal);
             platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 400), 25, 30);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 400), 15, 1, 1, 10 * 32,IsMoving.directional);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 400), 15, 1, 1, 10 * 32, IsMoving.directional);
         }
 
         public void LoadContent(ContentManager content)
