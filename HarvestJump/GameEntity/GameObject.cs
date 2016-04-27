@@ -42,15 +42,14 @@ namespace HarvestJump
 
         //Properties
 
-        protected Vector2 Gravity { get; set; }
-        protected Vector2 Friction { get; set; }
-        protected Animation CurrentAnimation { get; set; }
+        protected Vector2 Gravity { get; set; } = new Vector2(0, 2000);
+        protected Vector2 Friction { get; set; } = new Vector2(0.95f, 0.98f);
         protected Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>> StateData { get; set; }
-        protected double DeltaTime { get; set; }
+        protected Animation CurrentAnimation { get; set; }
         protected Vector2 Speed { get; set; }
         protected Vector2 JumpStrength { get; set; }
         public bool IsJumping { get; set; }
-        public State State { get; set; }
+        protected double DeltaTime { get; set; }
 
         //Interfaces
 
@@ -59,7 +58,7 @@ namespace HarvestJump
         public Vector2 Velocity { get; set; }
         public bool NoClip { get; set; }
 
-        //Testing
+        //Debug
 
         public Sprite DebugRectangle { get; set; }
         protected SpriteFont DebugFont { get; set; }
@@ -98,7 +97,6 @@ namespace HarvestJump
             this.Position = position;
             this.BoundingBox = new BoundingBox(position, width, height);
             this.NoClip = false;
-            this.Gravity = new Vector2(0, 2000);
         }
         
         public virtual void LoadContent(ContentManager content, string assetName)
@@ -121,7 +119,7 @@ namespace HarvestJump
 
         protected void ApplyForce()
         {
-            Velocity *= new Vector2(0.95f, 0.98f);
+            Velocity *= Friction;
             Velocity += Gravity * (float)DeltaTime;
         }
 

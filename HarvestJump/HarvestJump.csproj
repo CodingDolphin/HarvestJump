@@ -129,6 +129,14 @@
     <Content Include="Content\blackPixel.png" />
     <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
     <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogDeadAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogFallAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogHurtAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogIdleAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogJumpAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogRunAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogSlideAnimation.png" />
+    <Content Include="Content\GraphicAssets\PlayAssets\DogWalkAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerDeadAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerIdleAnimation.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerJumpAnimation.png" />

@@ -15,7 +15,7 @@ namespace HarvestJump
         private InputManager inputManager { get; set; }
         private Vector2 movementVector { get; set; }
 
-        public Player(Vector2 startPosition, int width = 67, int height = 95) : base(startPosition, width, height)
+        public Player(Vector2 startPosition) : base(startPosition)
         {
             Speed = new Vector2(28f, 0);
             JumpStrength = new Vector2(0, -1100);
@@ -32,7 +32,8 @@ namespace HarvestJump
             this.AddState(AnimationStatus.jumping, Position, 33.5f, 0, 67, 97, 0.3f, 6, false, 67, 95);
             this.AddState(AnimationStatus.dead, Position, 51f, 0, 102, 93, 0.25f, 7, false, 80, 70);
             this.AddState(AnimationStatus.run, Position, 32, 0, 64, 96, 0.25f, 7, true, 67, 95);
-            this.CurrentAnimation = StateData[AnimationStatus.idle].Item1;
+
+            SwitchAnimation(AnimationStatus.idle);
         }
 
 
