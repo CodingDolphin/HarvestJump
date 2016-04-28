@@ -195,7 +195,7 @@ namespace HarvestJump
 
         public void HandleHit()
         {
-            CurrentAnimation.color = Color.Red;
+            CurrentAnimation.color = Color.IndianRed;
             HitTimer = 0;
             GotHit = true;
         }
@@ -228,10 +228,10 @@ namespace HarvestJump
 
         protected void SwitchHitColor()
         {
-            if (CurrentAnimation.color == Color.Red)
+            if (CurrentAnimation.color == Color.IndianRed)
                 CurrentAnimation.color = Color.White;
             else
-                CurrentAnimation.color = Color.Red;
+                CurrentAnimation.color = Color.IndianRed;
 
             if(HitTimer >= 1)
             {

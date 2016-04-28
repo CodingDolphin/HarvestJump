@@ -172,7 +172,7 @@ namespace HarvestJump
 
         private void switchToRun()
         {
-            speed = new Vector2(7f, 0);
+            speed = new Vector2(10f, 0);
             SwitchAnimation(AnimationStatus.run);
         }
 

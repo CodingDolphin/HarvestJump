@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/Fonts/LeagueFont.spritefont</SourceFile>
-  <SourceTime>2016-04-28T16:57:44.9425247+02:00</SourceTime>
+  <SourceTime>2016-04-28T21:24:36.739477+02:00</SourceTime>
   <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/Fonts/LeagueFont.xnb</DestFile>
-  <DestTime>2016-04-28T16:57:45.69356+02:00</DestTime>
+  <DestTime>2016-04-28T21:24:37.2597003+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
