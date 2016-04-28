@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/IntroAssets/LogoSound.wav</SourceFile>
-  <SourceTime>2016-04-24T13:08:21.7690866+02:00</SourceTime>
+  <SourceTime>2016-04-27T22:58:21.7786792+02:00</SourceTime>
   <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/SoundAssets/IntroAssets/LogoSound.xnb</DestFile>
-  <DestTime>2016-04-24T13:09:01.4965121+02:00</DestTime>
+  <DestTime>2016-04-27T22:59:18.1624075+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

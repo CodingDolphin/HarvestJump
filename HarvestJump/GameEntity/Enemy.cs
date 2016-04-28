@@ -23,6 +23,8 @@ namespace HarvestJump
         public Vector2 jumpStrength { get; set; }
         public List<ITarget> targetList { get; set; }
         public ITarget currentTarget { get; set; }
+        public Direction wayPointDirection { get; set; }
+        public bool wayPointAdded { get; set; }
         public double targetSwitchTimer { get; set; }
         public double dirSwitchTimer { get; set; }
         public double atackDuration { get; set; }
@@ -39,7 +41,7 @@ namespace HarvestJump
         {
             this.targetList = new List<ITarget>();
             this.aiState = AIState.searching;
-            this.chaseTreshold = 350;
+            this.chaseTreshold = 400;
             this.seeRadius = 1000;
             this.targetSwitchTimer = 5;
             this.isAtacking = false;
@@ -48,7 +50,7 @@ namespace HarvestJump
         public override void LoadContent(ContentManager content, string assetName)
         {
             base.LoadContent(content, assetName);
-            onContentLoad();
+            this.onContentLoad();
         }
 
         public void onContentLoad()
@@ -60,11 +62,10 @@ namespace HarvestJump
         {
             targetSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
             dirSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (isAtacking)
-                atackTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            atackTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
             SetState();
+            DebugEnemyInput();
 
             if (Direction == Direction.right)
             {
@@ -76,6 +77,12 @@ namespace HarvestJump
             }
 
             base.Update(gameTime);
+
+            if (wayPointAdded)
+                Direction = wayPointDirection;
+
+            wayPointAdded = false;
+
         }
 
         private void SetState()
@@ -97,7 +104,7 @@ namespace HarvestJump
         private void Chase()
         {
             if (currentTarget != null)
-                SwitchDirectionToTarget(currentTarget);
+                SwitchDirectionToTarget();
 
             speed = new Vector2(5, 0);
             SwitchAnimation(AnimationStatus.run);
@@ -107,7 +114,8 @@ namespace HarvestJump
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
             }
-            if (Direction == Direction.left && Position.X <= currentTarget.Position.X + currentTarget.BoundingBox.width)
+
+            if (Direction == Direction.left && currentTarget.BoundingBox.position.X + currentTarget.BoundingBox.width >= BoundingBox.position.X)
             {
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
@@ -139,39 +147,17 @@ namespace HarvestJump
 
         public virtual void HandleWaypoint(Direction direction)
         {
-            if (aiState != AIState.chasing || aiState == AIState.atacking)
-                Direction = direction;
+            if (aiState == AIState.searching && aiState != AIState.chasing)
+            {
+                wayPointDirection = direction;
+                wayPointAdded = true;
+            }
+
         }
 
         public void AddTarget(ITarget target)
         {
             targetList.Add(target);
-            #region
-
-            //if (Vector2.Distance(target.Position, Position) <= chaseTreshold)
-            //{
-            //    aiState = AIState.chasing;
-
-            //    if (atackFinish)
-            //    {
-            //        SwitchDirectionToTarget(target);
-            //        atackFinish = false;
-            //    }
-
-            //    if (Vector2.Distance(target.Position, Position) <= target.BoundingBox.width && Direction == Direction.left)
-            //    {
-            //        aiState = AIState.atacking;
-            //    }
-            //    else if (Position.X + StateData[AnimationStatus.atacking].Item2.width >= target.Position.X && Direction == Direction.right && Position.X <= target.Position.X)
-            //    {
-            //        aiState = AIState.atacking;
-            //    }
-            //}
-            //else if (aiState != AIState.dead)
-            //{
-            //    aiState = AIState.walking;
-            //}+
-            #endregion
         }
 
         protected void Atack()
@@ -182,18 +168,18 @@ namespace HarvestJump
 
             if (CurrentAnimation.index == StateData[AnimationStatus.atacking].Item1.frameCount)
             {
-                isAtacking = false;
                 aiState = AIState.searching;
             }
         }
 
-        protected void SwitchDirectionToTarget(ITarget target)
+        protected void SwitchDirectionToTarget()
         {
             if (dirSwitchTimer >= 0.5)
             {
-                if (target.Position.X >= Position.X && Direction == Direction.left)
+                if (this.MidPositionX.X <= currentTarget.MidPositionX.X)
                     Direction = Direction.right;
-                else if (target.Position.X <= Position.X && Direction == Direction.right)
+
+                if (this.MidPositionX.X >= currentTarget.MidPositionX.X)
                     Direction = Direction.left;
 
                 dirSwitchTimer = 0;

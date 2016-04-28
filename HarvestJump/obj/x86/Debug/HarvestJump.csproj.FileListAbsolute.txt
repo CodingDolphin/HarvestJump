@@ -403,8 +403,6 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Con
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorRunAnimationGreen.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimationBlue.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\RaptorWalkAnimationGreen.xnb
-C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerAssets\CatIdleAnimationLeft.xnb
-C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerAssets\CatIdleAnimationRight.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerAssets\DogDeadAnimation.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerAssets\DogFallAnimation.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\GraphicAssets\PlayAssets\PlayerAssets\DogHurtAnimation.xnb

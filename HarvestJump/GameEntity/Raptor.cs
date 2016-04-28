@@ -16,7 +16,7 @@ namespace HarvestJump
 
         public Raptor(Vector2 position, int width = 151, int height = 115) : base(position, width, height)
         {
-            this.speed = new Vector2(2, 0);
+            this.speed = new Vector2(0, 0);
             this.jumpStrength = new Vector2(0f, -250f);
             this.random = new Random(System.DateTime.Now.Millisecond);
 
@@ -38,7 +38,7 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddState(AnimationStatus.atacking, Position, 53, 0, 191, 115, 0.1f, 9, true, 151, 110);
+            this.AddState(AnimationStatus.atacking, Position, 53, 0, 191, 115, 0.1f, 9, false, 151, 110);
             this.AddState(AnimationStatus.idle, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 110);
             this.AddState(AnimationStatus.run, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 110);
             this.AddState(AnimationStatus.walking, Position, 53, 0, 191, 115, 0.3f, 9, true, 125, 110);

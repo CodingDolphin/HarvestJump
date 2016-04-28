@@ -78,15 +78,15 @@ namespace HarvestJump
             //Manager
 
             gameObjectManager = new GameObjectManager(platformManager.platformList);
-            gameObjectManager.AddEnemy(EnemyType.raptor, Vector2.Zero);
+            gameObjectManager.AddEnemy(EnemyType.raptor, new Vector2(450, 200));
             //gameObjectManager.AddPlayer(new Vector2(550, 0), PlayerType.cat);
-            gameObjectManager.AddPlayer(new Vector2(450, 0), PlayerType.dog);
+            gameObjectManager.AddPlayer(new Vector2(0, 0), PlayerType.dog);
         }
 
         public void createMap(int startposition, int maxPlatform)
         {
             platformManager.CreatePlatform(new Vector2(0, 400), 25, 300);
-            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 4 * 32, 450), 10, 1, 1, 5 * 32, IsMoving.vertical);
+            platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 5 * 32, 450), 10, 1, 1, 5 * 32, IsMoving.vertical);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX, 400), 10, 1, 1, 5 * 32, IsMoving.horizontal);
             platformManager.CreatePlatform(new Vector2(platformManager.furthestPositionX, 400), 25, 30);
             platformManager.CreateMovingPlatform(new Vector2(platformManager.furthestPositionX + 10 * 32, 400), 15, 1, 1, 10 * 32, IsMoving.directional);

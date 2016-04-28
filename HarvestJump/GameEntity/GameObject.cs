@@ -31,6 +31,7 @@ namespace HarvestJump
     {
         right,
         left,
+        ignore,
     }
 
     abstract class GameObject : ICollide, IFocus, ITarget
@@ -82,6 +83,14 @@ namespace HarvestJump
                     CurrentAnimation.Direction = Direction.right;
                 }
                 direction = value;
+            }
+        }
+
+        public Vector2 MidPositionX
+        {
+            get
+            {
+                return new Vector2(Position.X + BoundingBox.width / 2, Position.Y);
             }
         }
 
@@ -176,17 +185,17 @@ namespace HarvestJump
             IsJumping = false;
 
             UpdateCurrentAnimationPosition();
-            CreateBoundingBox();
         }
 
         public virtual void SwitchAnimation(AnimationStatus animation)
         {
-            StateData[animation].Item1.position = Position;
-            StateData[animation].Item2.position = Position;
-            StateData[animation].Item1.Direction = direction;
+            this.StateData[animation].Item1.position = this.Position;
+            this.StateData[animation].Item1.Direction = this.Direction;
+            this.BoundingBox = this.StateData[animation].Item2;
+            this.CurrentAnimation = this.StateData[animation].Item1;
 
-            CurrentAnimation = StateData[animation].Item1;
-            BoundingBox = StateData[animation].Item2;
+            this.Direction = this.CurrentAnimation.Direction;
+            this.CreateBoundingBox();
         }
 
         public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount, bool isLooping, int width, int height)

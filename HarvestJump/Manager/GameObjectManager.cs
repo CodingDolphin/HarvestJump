@@ -31,9 +31,9 @@ namespace HarvestJump
 
         public GameObjectManager(List<Platform> platformList)
         {
-            gameObjectList = new List<GameObject>();
-            aiSystem = new AISystem(platformList);
-            collisionSystem = new CollisionSystem(platformList);
+            this.gameObjectList = new List<GameObject>();
+            this.aiSystem = new AISystem(platformList);
+            this.collisionSystem = new CollisionSystem(platformList);
         }
 
         public void LoadContent(ContentManager content, string assetName)

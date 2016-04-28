@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatSlideAnimation.png</SourceFile>
-  <SourceTime>2016-04-24T13:08:21.7415497+02:00</SourceTime>
+  <SourceTime>2016-04-27T22:58:21.7511423+02:00</SourceTime>
   <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/GraphicAssets/PlayAssets/PlayerAssets/CatSlideAnimation.xnb</DestFile>
-  <DestTime>2016-04-27T15:47:32.9845332+02:00</DestTime>
+  <DestTime>2016-04-27T22:59:21.2816567+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
