@@ -19,5 +19,8 @@ namespace HarvestJump
         Vector2 MidPositionX { get;}
         BoundingBox BoundingBox { get; set; }
         Direction Direction { get; set; }
+        void HandleHit();
+        bool GotHit { get; set; }
+        double HitTimer { get; set; }
     }
 }

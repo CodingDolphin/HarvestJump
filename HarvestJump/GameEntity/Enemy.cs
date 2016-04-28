@@ -76,13 +76,12 @@ namespace HarvestJump
                 Velocity -= speed;
             }
 
-            base.Update(gameTime);
-
             if (wayPointAdded)
                 Direction = wayPointDirection;
 
             wayPointAdded = false;
 
+            base.Update(gameTime);
         }
 
         private void SetState()
@@ -106,8 +105,7 @@ namespace HarvestJump
             if (currentTarget != null)
                 SwitchDirectionToTarget();
 
-            speed = new Vector2(5, 0);
-            SwitchAnimation(AnimationStatus.run);
+            switchToRun();
 
             if (Direction == Direction.right && Position.X + StateData[AnimationStatus.atacking].Item2.width >= currentTarget.Position.X)
             {
@@ -127,8 +125,7 @@ namespace HarvestJump
 
         private void Search()
         {
-            speed = new Vector2(2, 0);
-            CurrentAnimation = StateData[AnimationStatus.walking].Item1;
+            switchToWalk();
 
             foreach (ITarget target in targetList)
             {
@@ -169,7 +166,20 @@ namespace HarvestJump
             if (CurrentAnimation.index == StateData[AnimationStatus.atacking].Item1.frameCount)
             {
                 aiState = AIState.searching;
+                currentTarget.HandleHit();
             }
+        }
+
+        private void switchToRun()
+        {
+            speed = new Vector2(7f, 0);
+            SwitchAnimation(AnimationStatus.run);
+        }
+
+        private void switchToWalk()
+        {
+            speed = new Vector2(2.5f, 0);
+            SwitchAnimation(AnimationStatus.walking);
         }
 
         protected void SwitchDirectionToTarget()

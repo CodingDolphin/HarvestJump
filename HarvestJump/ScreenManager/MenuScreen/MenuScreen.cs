@@ -99,6 +99,7 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             menuBackground.Draw(spriteBatch);
             menuBanner.Draw(spriteBatch);
 
@@ -110,6 +111,8 @@ namespace HarvestJump
                     button.Draw(spriteBatch);
                 }
             }
+
+            spriteBatch.End();
         }
     }
 }

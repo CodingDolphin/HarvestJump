@@ -38,10 +38,10 @@ namespace HarvestJump
 
         public void initializeRaptorAnimation()
         {
-            this.AddState(AnimationStatus.atacking, Position, 53, 0, 191, 115, 0.1f, 9, false, 151, 110);
-            this.AddState(AnimationStatus.idle, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 110);
-            this.AddState(AnimationStatus.run, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 110);
-            this.AddState(AnimationStatus.walking, Position, 53, 0, 191, 115, 0.3f, 9, true, 125, 110);
+            this.AddState(AnimationStatus.atacking, Position, 53, 0, 191, 115, 0.07f, 9, false, 151, 111);
+            this.AddState(AnimationStatus.idle, Position, 53, 0, 191, 115, 0.3f, 7, true, 151, 111);
+            this.AddState(AnimationStatus.run, Position, 53, 0, 191, 115, 0.2f, 7, true, 151, 111);
+            this.AddState(AnimationStatus.walking, Position, 53, 0, 191, 115, 0.3f, 9, true, 125, 111);
             this.AddState(AnimationStatus.dead, Position, 104.5f, 0, 209, 115, 0.3f, 8, false, 191, 85);
             this.CurrentAnimation = StateData[AnimationStatus.walking].Item1;
             this.BoundingBox = StateData[AnimationStatus.walking].Item2;

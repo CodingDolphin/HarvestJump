@@ -69,7 +69,9 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             menuBackground.Draw(spriteBatch);
+            spriteBatch.End();
         }
     }
 }

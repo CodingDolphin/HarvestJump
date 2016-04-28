@@ -59,6 +59,8 @@ namespace HarvestJump
         public BoundingBox BoundingBox { get; set; }
         public Vector2 Velocity { get; set; }
         public bool NoClip { get; set; }
+        public bool GotHit { get; set; }
+        public double HitTimer { get; set; }
 
         //Debug
 
@@ -113,19 +115,23 @@ namespace HarvestJump
         public virtual void LoadContent(ContentManager content, string assetName)
         {
             DebugRectangle.LoadContent(content, "blackPixel");
-            DebugFont = content.Load<SpriteFont>("Fonts/LeagueFont");
+            DebugFont = content.Load<SpriteFont>("Fonts/DebugFont");
         }
 
         public virtual void Update(GameTime gameTime)
         {
             DeltaTime = gameTime.ElapsedGameTime.TotalSeconds / slowMotion;
+            HitTimer += gameTime.ElapsedGameTime.TotalSeconds / slowMotion;
+
+            if (GotHit)
+                SwitchHitColor();
 
             ApplyForce();
             ApplyVelocityToPosition();
             CreateBoundingBox();
 
             CurrentAnimation.Update(gameTime);
-            UpdateCurrentAnimationPosition();
+            UpdateStates();
         }
 
         protected void ApplyForce()
@@ -184,18 +190,23 @@ namespace HarvestJump
 
             IsJumping = false;
 
-            UpdateCurrentAnimationPosition();
+            UpdateStates();
+        }
+
+        public void HandleHit()
+        {
+            CurrentAnimation.color = Color.Red;
+            HitTimer = 0;
+            GotHit = true;
         }
 
         public virtual void SwitchAnimation(AnimationStatus animation)
         {
-            this.StateData[animation].Item1.position = this.Position;
-            this.StateData[animation].Item1.Direction = this.Direction;
-            this.BoundingBox = this.StateData[animation].Item2;
-            this.CurrentAnimation = this.StateData[animation].Item1;
+            UpdateStates();
+            CurrentAnimation = StateData[animation].Item1;
+            BoundingBox = StateData[animation].Item2;
 
-            this.Direction = this.CurrentAnimation.Direction;
-            this.CreateBoundingBox();
+            CreateBoundingBox();
         }
 
         public void AddState(AnimationStatus status, Vector2 position, float rotationPointX, int index, int frameWidth, int frameHeight, float frameCycle, int frameCount, bool isLooping, int width, int height)
@@ -204,9 +215,30 @@ namespace HarvestJump
                                   new BoundingBox(position, width, height)));
         }
 
-        protected void UpdateCurrentAnimationPosition()
+        protected void UpdateStates()
         {
-            CurrentAnimation.position = Position;
+            foreach (var item in StateData)
+            {
+                item.Value.Item1.position = Position;
+                item.Value.Item1.color = CurrentAnimation.color;
+                item.Value.Item1.Direction = Direction;
+                item.Value.Item2.position = Position;
+            }
+        }
+
+        protected void SwitchHitColor()
+        {
+            if (CurrentAnimation.color == Color.Red)
+                CurrentAnimation.color = Color.White;
+            else
+                CurrentAnimation.color = Color.Red;
+
+            if(HitTimer >= 1)
+            {
+                HitTimer = 0;
+                CurrentAnimation.color = Color.White;
+                GotHit = false;      
+            }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)

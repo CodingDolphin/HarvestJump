@@ -48,7 +48,8 @@ namespace HarvestJump
             }
             #endregion Animationdata
 
-            SwitchAnimation(AnimationStatus.idle);
+            CurrentAnimation = StateData[AnimationStatus.idle].Item1;
+            BoundingBox = StateData[AnimationStatus.idle].Item2;
         }
 
         public override void LoadContent(ContentManager content, string assetName)

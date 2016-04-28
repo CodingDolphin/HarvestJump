@@ -553,3 +553,9 @@
 /processorParam:TextureFormat=Color
 /build:GraphicAssets/PlayAssets/PlayerAssets/CatWalkAnimation.png
 
+#begin Fonts/DebugFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/DebugFont.spritefont
+
