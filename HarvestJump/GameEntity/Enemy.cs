@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace HarvestJump
 {
@@ -30,6 +31,8 @@ namespace HarvestJump
         public double atackDuration { get; set; }
         public double atackTimer { get; set; }
         public bool isAtacking { get; set; }
+        private SoundEffect biteSound { get; set; }
+
 
         //ISmart Interface
 
@@ -49,6 +52,7 @@ namespace HarvestJump
 
         public override void LoadContent(ContentManager content, string assetName)
         {
+            biteSound = content.Load<SoundEffect>("SoundAssets/PlayAssets/bite");
             base.LoadContent(content, assetName);
             this.onContentLoad();
         }
@@ -159,9 +163,15 @@ namespace HarvestJump
 
         protected void Atack()
         {
-            Velocity = Vector2.Zero;
+            Velocity = new Vector2(0, Velocity.Y);
             speed = Vector2.Zero;
             SwitchAnimation(AnimationStatus.atacking);
+
+            if(atackTimer >= 0.9 * GameObject.slowMotion)
+            {
+                biteSound.Play();
+                atackTimer = 0;
+            }
 
             if (CurrentAnimation.index == StateData[AnimationStatus.atacking].Item1.frameCount)
             {

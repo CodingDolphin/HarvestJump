@@ -559,3 +559,21 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/DebugFont.spritefont
 
+#begin SoundAssets/PlayAssets/jumpSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/jumpSound.wav
+
+#begin SoundAssets/PlayAssets/LevelBackground2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/LevelBackground2.mp3
+
+#begin SoundAssets/PlayAssets/bite.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundAssets/PlayAssets/bite.wav
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -15,6 +16,7 @@ namespace HarvestJump
         private PlayerType playerType { get; set; }
         private InputManager inputManager { get; set; }
         private Vector2 movementVector { get; set; }
+        private SoundEffect jumpSound { get; set; }
 
         public Player(Vector2 startPosition, PlayerType playerType) : base(startPosition)
         {
@@ -89,6 +91,7 @@ namespace HarvestJump
             }
 
             #endregion LoadContent
+            jumpSound = content.Load<SoundEffect>("SoundAssets/PlayAssets/jumpSound");
 
             base.LoadContent(content, assetName);
         }
@@ -120,6 +123,8 @@ namespace HarvestJump
 
             if ((keyboardState.IsKeyDown(Keys.Up) || inputManager.getAButtonPressed()) && !IsJumping)
             {
+                jumpSound.Play(0.3f, 0.5f,0);
+
                 Velocity += JumpStrength; IsJumping = true;
                 StateData[AnimationStatus.jumping].Item1.index = 0;
                 SwitchAnimation(AnimationStatus.jumping);

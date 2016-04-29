@@ -64,7 +64,7 @@ namespace HarvestJump
             screenList.Add(new IntroScreen(virtualWidth, virutalHeight));
             screenList.Add(new MenuScreen(virtualWidth, virutalHeight));
             screenList.Add(new PlayScreen(virtualWidth, virutalHeight));
-            currentScreen = screenList[1];
+            currentScreen = screenList[2];
 
             //Events hier registrieren
 

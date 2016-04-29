@@ -25,14 +25,14 @@ namespace HarvestJump
         public override void LoadContent(ContentManager content)
         {
             platformerWorld.LoadContent(content);
-            backgroundMusicJumpMap = content.Load<Song>("SoundAssets/PlayAssets/LevelBackground");
+            backgroundMusicJumpMap = content.Load<Song>("SoundAssets/PlayAssets/LevelBackground2");
         }
 
         public override void Update(GameTime gameTime)
         {
             if (MediaPlayer.State == MediaState.Stopped)
             {
-                MediaPlayer.Volume = 0.4f;
+                MediaPlayer.Volume = 0.5f;
                 MediaPlayer.Play(backgroundMusicJumpMap);
             }
 

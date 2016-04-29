@@ -55,5 +55,8 @@
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatSlideAnimation.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/GraphicAssets/PlayAssets/PlayerAssets/CatWalkAnimation.png</File>
     <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/Fonts/DebugFont.spritefont</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/jumpSound.wav</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/LevelBackground2.mp3</File>
+    <File>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/bite.wav</File>
   </SourceFiles>
 </SourceFileCollection>

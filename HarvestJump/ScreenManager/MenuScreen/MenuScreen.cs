@@ -43,8 +43,8 @@ namespace HarvestJump
             bannerSpaceTop = 65;
             buttonSpaceLeft = 10;
             buttonSpaceFromBannerTop = 65;
-            buttonWidth = 214;
-            buttonHeight = 60;
+            buttonWidth = 220;
+            buttonHeight = 65;
             buttonSpacing = buttonHeight + 20;
             slideAppear = true;
         }
@@ -58,7 +58,7 @@ namespace HarvestJump
 
             //Buttons erstellen und Content laden
 
-            CreateButtons(new ScreenManagerAction[] { ScreenManagerAction.StartGame, ScreenManagerAction.SwitchToOptions, ScreenManagerAction.Exit }, "Start Game", "Options", "Exit");
+            CreateButtons(new ScreenManagerAction[] { ScreenManagerAction.StartGame, ScreenManagerAction.SwitchToOptions, ScreenManagerAction.Exit }, "FABI IST SCHWUL!", "EDM SUCKS", "PORNOESIUS");
 
             foreach (MenuEntry entry in menuEntryList)
             {

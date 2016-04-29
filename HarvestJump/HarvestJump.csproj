@@ -168,9 +168,12 @@
     <Content Include="Content\SoundAssets\MenuAssets\MenuMusic.mp3" />
     <Content Include="Content\GraphicAssets\MenuAssets\redButton.png" />
     <Content Include="Content\SoundAssets\MenuAssets\rollover1.wav" />
+    <Content Include="Content\SoundAssets\PlayAssets\bite.wav" />
+    <Content Include="Content\SoundAssets\PlayAssets\jumpSound.wav" />
     <Content Include="Content\SoundAssets\PlayAssets\LevelBackground.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\SoundAssets\PlayAssets\LevelBackground2.mp3" />
     <Content Include="Content\SoundAssets\PlayAssets\speedDown.wav" />
     <Content Include="Content\SoundAssets\PlayAssets\speedUp.wav" />
     <Content Include="Icon.ico" />
@@ -182,7 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Content\Fonts\DebugFont.spritefont" />
+    <None Include="Content\Fonts\DebugFont.spritefont">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Content\Fonts\LeagueFont.spritefont">
       <SubType>Designer</SubType>
     </None>
