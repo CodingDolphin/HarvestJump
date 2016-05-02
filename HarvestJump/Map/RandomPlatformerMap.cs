@@ -79,7 +79,7 @@ namespace HarvestJump
 
             gameObjectManager = new GameObjectManager(platformManager.platformList);
             gameObjectManager.AddEnemy(EnemyType.raptor, new Vector2(450, 200));
-            //gameObjectManager.AddPlayer(new Vector2(550, 0), PlayerType.cat);
+            gameObjectManager.AddPlayer(new Vector2(67, 0), PlayerType.cat);
             gameObjectManager.AddPlayer(new Vector2(0, 0), PlayerType.dog);
         }
 

@@ -45,7 +45,7 @@ namespace HarvestJump
         {
             //Referenz zu GrafikDeviceManager holen
 
-            this.graphicDeviceManager = graphicsDeviceManager;
+            graphicDeviceManager = graphicsDeviceManager;
 
             //Alle start Bildschimreinstellungen hier vornehmen
 

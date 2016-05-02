@@ -20,18 +20,19 @@ namespace HarvestJump
 
     class Enemy : GameObject, ISmart
     {
-        public Vector2 speed { get; set; }
-        public Vector2 jumpStrength { get; set; }
         public List<ITarget> targetList { get; set; }
         public ITarget currentTarget { get; set; }
-        public Direction wayPointDirection { get; set; }
-        public bool wayPointAdded { get; set; }
-        public double targetSwitchTimer { get; set; }
-        public double dirSwitchTimer { get; set; }
-        public double atackDuration { get; set; }
-        public double atackTimer { get; set; }
-        public bool isAtacking { get; set; }
+        protected Vector2 speed { get; set; }
+        protected Vector2 jumpStrength { get; set; }
+        private Direction wayPointDirection { get; set; }
         private SoundEffect biteSound { get; set; }
+        protected bool wayPointAdded { get; set; }
+        protected double targetSwitchTimer { get; set; }
+        protected double dirSwitchTimer { get; set; }
+        protected double atackDuration { get; set; }
+        protected double atackTimer { get; set; }
+        protected bool isAtacking { get; set; }
+
 
 
         //ISmart Interface
@@ -44,15 +45,16 @@ namespace HarvestJump
         {
             this.targetList = new List<ITarget>();
             this.aiState = AIState.searching;
-            this.chaseTreshold = 400;
-            this.seeRadius = 1000;
+            this.chaseTreshold = 350;
+            this.seeRadius = 800;
             this.targetSwitchTimer = 5;
+            this.dirSwitchTimer = 0.5;
             this.isAtacking = false;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
         {
-            biteSound = content.Load<SoundEffect>("SoundAssets/PlayAssets/bite");
+            this.biteSound = content.Load<SoundEffect>("SoundAssets/PlayAssets/bite");
             base.LoadContent(content, assetName);
             this.onContentLoad();
         }
@@ -64,26 +66,30 @@ namespace HarvestJump
 
         public override void Update(GameTime gameTime)
         {
-            targetSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            dirSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
-            atackTimer += gameTime.ElapsedGameTime.TotalSeconds;
-
-            SetState();
-            DebugEnemyInput();
-
-            if (Direction == Direction.right)
+            if (State == State.active)
             {
-                Velocity += speed;
-            }
-            else if (Direction == Direction.left)
-            {
-                Velocity -= speed;
-            }
+                targetSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
+                dirSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
+                atackTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (wayPointAdded)
-                Direction = wayPointDirection;
+                SetState();
+                DebugEnemyInput();
 
-            wayPointAdded = false;
+                if (Direction == Direction.right)
+                {
+                    Velocity += speed;
+                }
+                else if (Direction == Direction.left)
+                {
+                    Velocity -= speed;
+                }
+
+                if (wayPointAdded)
+                    Direction = wayPointDirection;
+                else
+                    wayPointAdded = false;
+
+            }
 
             base.Update(gameTime);
         }
@@ -111,13 +117,13 @@ namespace HarvestJump
 
             switchToRun();
 
-            if (Direction == Direction.right && Position.X + StateData[AnimationStatus.atacking].Item2.width >= currentTarget.Position.X)
+            if (Direction == Direction.right && Position.X + StateData[AnimationStatus.atacking].Item2.width >= currentTarget.Position.X && Position.Y - currentTarget.Position.Y <= 100)
             {
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
             }
 
-            if (Direction == Direction.left && currentTarget.BoundingBox.position.X + currentTarget.BoundingBox.width >= BoundingBox.position.X)
+            if (Direction == Direction.left && currentTarget.BoundingBox.position.X + currentTarget.BoundingBox.width >= BoundingBox.position.X && Position.Y - currentTarget.Position.Y <= 100)
             {
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
@@ -130,6 +136,7 @@ namespace HarvestJump
         private void Search()
         {
             switchToWalk();
+            List<ITarget> removeList = new List<ITarget>();
 
             foreach (ITarget target in targetList)
             {
@@ -137,12 +144,21 @@ namespace HarvestJump
                 {
                     aiState = AIState.chasing;
 
-                    if (targetSwitchTimer >= 5)
+                    if (targetSwitchTimer >= 0)
                     {
                         targetSwitchTimer = 0;
                         currentTarget = target;
                     }
                 }
+                else if(Vector2.Distance(target.Position, Position) >= seeRadius)
+                {
+                    removeList.Add(target);
+                }
+            }
+
+            foreach (var item in removeList)
+            {
+                targetList.Remove(item);
             }
         }
 
@@ -167,9 +183,9 @@ namespace HarvestJump
             speed = Vector2.Zero;
             SwitchAnimation(AnimationStatus.atacking);
 
-            if(atackTimer >= 0.9 * GameObject.slowMotion)
+            if (atackTimer >= 0.9 * GameObject.slowMotion)
             {
-                biteSound.Play();
+                biteSound.Play(0.5f, -0.1f, 0);
                 atackTimer = 0;
             }
 
@@ -188,7 +204,7 @@ namespace HarvestJump
 
         private void switchToWalk()
         {
-            speed = new Vector2(2.5f, 0);
+            speed = new Vector2(2f, 0);
             SwitchAnimation(AnimationStatus.walking);
         }
 
@@ -237,6 +253,7 @@ namespace HarvestJump
                 SwitchAnimation(AnimationStatus.dead);
                 CurrentAnimation.index = 0;
                 speed = new Vector2(0, 0);
+                State = State.inactive;
             }
 
         }

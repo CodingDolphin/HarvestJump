@@ -22,6 +22,8 @@ namespace HarvestJump
         Direction Direction { get; set; }
         Vector2 Position { get; set; }
         BoundingBox BoundingBox { get; set; }
+        ITarget currentTarget { get; set; }
+        List<ITarget> targetList { get; set; }
         float chaseTreshold { get; set; }
         float seeRadius { get; set; }
         void HandleWaypoint(Direction direction);

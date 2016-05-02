@@ -52,6 +52,7 @@ namespace HarvestJump
         protected Random random { get; set; }
         public bool IsJumping { get; set; }
         protected double DeltaTime { get; set; }
+        protected State State { get; set; }
 
         //Interfaces
 

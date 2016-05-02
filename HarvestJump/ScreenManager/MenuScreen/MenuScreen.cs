@@ -58,7 +58,7 @@ namespace HarvestJump
 
             //Buttons erstellen und Content laden
 
-            CreateButtons(new ScreenManagerAction[] { ScreenManagerAction.StartGame, ScreenManagerAction.SwitchToOptions, ScreenManagerAction.Exit }, "FABI IST SCHWUL!", "EDM SUCKS", "PORNOESIUS");
+            CreateButtons(new ScreenManagerAction[] { ScreenManagerAction.StartGame, ScreenManagerAction.SwitchToOptions, ScreenManagerAction.Exit }, "Start Game", "EDM SUCKS", "PORNOESIUS");
 
             foreach (MenuEntry entry in menuEntryList)
             {

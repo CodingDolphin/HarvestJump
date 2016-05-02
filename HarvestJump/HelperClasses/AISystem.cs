@@ -76,7 +76,7 @@ namespace HarvestJump
         {
             foreach (ITarget target in aiTargetList)
             {
-                if (Vector2.Distance(iSmartObject.Position, target.Position) <= iSmartObject.seeRadius)
+                if (Vector2.Distance(iSmartObject.Position, target.Position) <= iSmartObject.seeRadius && !iSmartObject.targetList.Contains(target))
                     iSmartObject.AddTarget(target);
             }
         }

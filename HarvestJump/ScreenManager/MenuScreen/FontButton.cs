@@ -40,6 +40,8 @@ namespace HarvestJump
         {
             AdjustFontToTexture();
             Pulse();
+
+
             base.Update(gameTime);
         }
         public void AdjustFontToTexture()
