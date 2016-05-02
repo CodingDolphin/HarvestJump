@@ -422,3 +422,4 @@ C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Con
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\LevelBackground2.wma
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\LevelBackground2.xnb
 C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\SoundAssets\PlayAssets\bite.xnb
+C:\Users\WhySoSad\Desktop\MProject\HarvestJump\HarvestJump\bin\Windows\Debug\Content\currentTargetArrow.xnb

@@ -67,6 +67,7 @@ namespace HarvestJump
 
         public Sprite DebugRectangle { get; set; }
         protected SpriteFont DebugFont { get; set; }
+        protected Sprite CurrentTargetArrow { get; set; }
 
         private Direction direction;
         public Direction Direction
@@ -107,6 +108,7 @@ namespace HarvestJump
         {
             this.StateData = new Dictionary<AnimationStatus, Tuple<Animation, BoundingBox>>();
             this.DebugRectangle = new Sprite(position);
+            this.CurrentTargetArrow = new Sprite(Vector2.Zero);
             this.Position = position;
             this.BoundingBox = new BoundingBox(position, width, height);
             this.NoClip = false;
@@ -117,6 +119,7 @@ namespace HarvestJump
         {
             DebugRectangle.LoadContent(content, "blackPixel");
             DebugFont = content.Load<SpriteFont>("Fonts/DebugFont");
+            CurrentTargetArrow.LoadContent(content, "currentTargetArrow");
         }
 
         public virtual void Update(GameTime gameTime)

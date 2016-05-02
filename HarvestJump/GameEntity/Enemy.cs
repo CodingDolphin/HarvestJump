@@ -33,8 +33,6 @@ namespace HarvestJump
         protected double atackTimer { get; set; }
         protected bool isAtacking { get; set; }
 
-
-
         //ISmart Interface
 
         public AIState aiState { get; set; }
@@ -86,7 +84,7 @@ namespace HarvestJump
 
                 if (wayPointAdded)
                     Direction = wayPointDirection;
-                else
+
                     wayPointAdded = false;
 
             }
@@ -144,13 +142,13 @@ namespace HarvestJump
                 {
                     aiState = AIState.chasing;
 
-                    if (targetSwitchTimer >= 0)
+                    if (targetSwitchTimer >= 1)
                     {
                         targetSwitchTimer = 0;
                         currentTarget = target;
                     }
                 }
-                else if(Vector2.Distance(target.Position, Position) >= seeRadius)
+                else if (Vector2.Distance(target.Position, Position) >= seeRadius)
                 {
                     removeList.Add(target);
                 }
@@ -159,6 +157,11 @@ namespace HarvestJump
             foreach (var item in removeList)
             {
                 targetList.Remove(item);
+
+                if(!targetList.Any())
+                {
+                    currentTarget = null;
+                }
             }
         }
 
@@ -194,6 +197,26 @@ namespace HarvestJump
                 aiState = AIState.searching;
                 currentTarget.HandleHit();
             }
+        }
+
+        protected void CreateAtackArea()
+        {
+            Vector2 atackPosition = Vector2.Zero;
+
+            if (Direction == Direction.left)
+            {
+                atackPosition = new Vector2(StateData[AnimationStatus.atacking].Item2.position.X, Position.Y);
+            }
+            else if (Direction == Direction.right)
+            {
+                atackPosition = new Vector2(StateData[AnimationStatus.atacking].Item2.position.X + StateData[AnimationStatus.atacking].Item2.width, Position.Y);
+            }
+
+            BoundingBox atackArea = new BoundingBox(atackPosition, BoundingBox.width, BoundingBox.height);
+        }
+
+        protected void CheckIfTargetsInAtackArea()
+        {
         }
 
         private void switchToRun()
@@ -260,6 +283,10 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            if(currentTarget != null)
+            spriteBatch.Draw(CurrentTargetArrow.texture, new Vector2(currentTarget.Position.X + currentTarget.BoundingBox.width / 2 - CurrentTargetArrow.width / 2,
+                                                                     currentTarget.Position.Y - CurrentTargetArrow.height) , Color.Red);
+
             base.Draw(spriteBatch);
         }
     }

@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\blackPixel.png" />
+    <Content Include="Content\currentTargetArrow.png" />
     <Content Include="Content\GraphicAssets\IntroAssets\CompanyLogoo.png" />
     <Content Include="Content\GraphicAssets\MapAssets\ScrollingBG.png" />
     <Content Include="Content\GraphicAssets\PlayAssets\PlayerAssets\CatDeadAnimation.png" />
