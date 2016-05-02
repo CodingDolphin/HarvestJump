@@ -32,6 +32,7 @@ namespace HarvestJump
         protected double atackDuration { get; set; }
         protected double atackTimer { get; set; }
         protected bool isAtacking { get; set; }
+        protected double speedSwitchTimer { get; set; }
 
         //ISmart Interface
 
@@ -47,6 +48,7 @@ namespace HarvestJump
             this.seeRadius = 800;
             this.targetSwitchTimer = 5;
             this.dirSwitchTimer = 0.5;
+            this.speedSwitchTimer = 1;
             this.isAtacking = false;
         }
 
@@ -69,6 +71,7 @@ namespace HarvestJump
                 targetSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
                 dirSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
                 atackTimer += gameTime.ElapsedGameTime.TotalSeconds;
+                speedSwitchTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
                 SetState();
                 DebugEnemyInput();
@@ -85,7 +88,7 @@ namespace HarvestJump
                 if (wayPointAdded)
                     Direction = wayPointDirection;
 
-                    wayPointAdded = false;
+                wayPointAdded = false;
 
             }
 
@@ -115,13 +118,13 @@ namespace HarvestJump
 
             switchToRun();
 
-            if (Direction == Direction.right && Position.X + StateData[AnimationStatus.atacking].Item2.width >= currentTarget.Position.X && Position.Y - currentTarget.Position.Y <= 100)
+            if (Direction == Direction.right && Position.X + StateData[AnimationStatus.atacking].Item2.width >= currentTarget.Position.X && Position.Y - currentTarget.Position.Y <= currentTarget.BoundingBox.height)
             {
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
             }
 
-            if (Direction == Direction.left && currentTarget.BoundingBox.position.X + currentTarget.BoundingBox.width >= BoundingBox.position.X && Position.Y - currentTarget.Position.Y <= 100)
+            if (Direction == Direction.left && currentTarget.BoundingBox.position.X + currentTarget.BoundingBox.width >= BoundingBox.position.X && Position.Y - currentTarget.Position.Y <= currentTarget.BoundingBox.height)
             {
                 StateData[AnimationStatus.atacking].Item1.index = 0;
                 aiState = AIState.atacking;
@@ -133,8 +136,8 @@ namespace HarvestJump
 
         private void Search()
         {
-            switchToWalk();
             List<ITarget> removeList = new List<ITarget>();
+            switchToWalk();
 
             foreach (ITarget target in targetList)
             {
@@ -142,7 +145,7 @@ namespace HarvestJump
                 {
                     aiState = AIState.chasing;
 
-                    if (targetSwitchTimer >= 1)
+                    if (targetSwitchTimer >= 3)
                     {
                         targetSwitchTimer = 0;
                         currentTarget = target;
@@ -158,7 +161,7 @@ namespace HarvestJump
             {
                 targetList.Remove(item);
 
-                if(!targetList.Any())
+                if (!targetList.Any())
                 {
                     currentTarget = null;
                 }
@@ -221,14 +224,22 @@ namespace HarvestJump
 
         private void switchToRun()
         {
-            speed = new Vector2(10f, 0);
-            SwitchAnimation(AnimationStatus.run);
+            if (speedSwitchTimer >= 0.1)
+            {
+                speedSwitchTimer = 0;
+                speed = new Vector2(10f, 0);
+                SwitchAnimation(AnimationStatus.run);
+            }
         }
 
         private void switchToWalk()
         {
-            speed = new Vector2(2f, 0);
-            SwitchAnimation(AnimationStatus.walking);
+            if (speedSwitchTimer >= 0.1)
+            {
+                speedSwitchTimer = 0;
+                speed = new Vector2(2f, 0);
+                SwitchAnimation(AnimationStatus.walking);
+            }
         }
 
         protected void SwitchDirectionToTarget()
@@ -283,9 +294,11 @@ namespace HarvestJump
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if(currentTarget != null)
-            spriteBatch.Draw(CurrentTargetArrow.texture, new Vector2(currentTarget.Position.X + currentTarget.BoundingBox.width / 2 - CurrentTargetArrow.width / 2,
-                                                                     currentTarget.Position.Y - CurrentTargetArrow.height) , Color.Red);
+            if (currentTarget != null)
+                spriteBatch.Draw(CurrentTargetArrow.texture, new Vector2(currentTarget.Position.X + currentTarget.BoundingBox.width / 2 - CurrentTargetArrow.width / 2,
+                                                                         currentTarget.Position.Y - CurrentTargetArrow.height), Color.Red);
+
+            spriteBatch.DrawString(DebugFont, String.Format("{0:0}", targetSwitchTimer), Vector2.Zero, Color.Red);
 
             base.Draw(spriteBatch);
         }
