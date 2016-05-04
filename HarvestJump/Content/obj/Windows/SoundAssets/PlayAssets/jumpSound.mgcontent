@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/SoundAssets/PlayAssets/jumpSound.wav</SourceFile>
+  <SourceTime>2016-04-28T23:13:27.9336579+02:00</SourceTime>
+  <DestFile>C:/Users/WhySoSad/Desktop/MProject/HarvestJump/HarvestJump/Content/bin/Windows/SoundAssets/PlayAssets/jumpSound.xnb</DestFile>
+  <DestTime>2016-04-28T23:16:29.2643704+02:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2016-03-16T03:18:04+01:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2016-03-16T03:18:04+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

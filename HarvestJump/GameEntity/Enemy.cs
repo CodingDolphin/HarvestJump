@@ -289,7 +289,6 @@ namespace HarvestJump
                 speed = new Vector2(0, 0);
                 State = State.inactive;
             }
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
