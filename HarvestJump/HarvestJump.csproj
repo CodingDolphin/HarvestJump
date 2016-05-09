@@ -83,6 +83,8 @@
   <ItemGroup>
     <Compile Include="Delegates\Delegate.cs" />
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="GameEntity\MeleeAtack.cs" />
+    <Compile Include="GameEntity\Damage.cs" />
     <Compile Include="GameEntity\Enemy.cs" />
     <Compile Include="Interfaces\IFocus.cs" />
     <Compile Include="Interfaces\ISmart.cs" />
